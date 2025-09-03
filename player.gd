@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED = 150
+const SPEED = 175
 func _process(delta: float) -> void:
 	var yChange = 0
 	var xChange = 0

@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=14 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://d3qu1bea31e07" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://c008fxlrk5pjg" path="res://workstation.gd" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://hotbar.png" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://resevoir.gd" id="5_272bh"]
+[ext_resource type="Script" uid="uid://cngg15t1lim6i" path="res://stove.gd" id="4_5vw27"]
+[ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://reservoir.gd" id="5_272bh"]
 [ext_resource type="Shader" uid="uid://day38ouyppi2j" path="res://recolor.gdshader" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
@@ -49,8 +50,7 @@ shape = SubResource("RectangleShape2D_272bh")
 
 [node name="Stove" type="StaticBody2D" parent="."]
 position = Vector2(318, 79)
-script = ExtResource("3_h2yge")
-item = "rice"
+script = ExtResource("4_5vw27")
 
 [node name="Icon" type="Sprite2D" parent="Stove"]
 texture = ExtResource("1_ig7tw")
@@ -100,15 +100,22 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Rice Pot"
 
-[node name="Rice Resevoir" type="StaticBody2D" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="Stove/Interactable"]
+offset_left = -112.0
+offset_top = 40.0
+offset_right = 126.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 26
+
+[node name="Rice Reservoir" type="StaticBody2D" parent="."]
 position = Vector2(53, 75)
 script = ExtResource("5_272bh")
 item = "rice"
 
-[node name="Icon" type="Sprite2D" parent="Rice Resevoir"]
+[node name="Icon" type="Sprite2D" parent="Rice Reservoir"]
 texture = ExtResource("1_ig7tw")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rice Resevoir/Icon"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Rice Reservoir/Icon"]
 offset_left = -41.0
 offset_top = -46.0
 offset_right = 59.0
@@ -117,19 +124,19 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Rice"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rice Resevoir"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rice Reservoir"]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_h2yge")
 
-[node name="Area2D" type="Area2D" parent="Rice Resevoir"]
+[node name="Area2D" type="Area2D" parent="Rice Reservoir"]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rice Resevoir/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rice Reservoir/Area2D"]
 position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rice Resevoir"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Rice Reservoir"]
 visible = false
 offset_left = -37.0
 offset_top = 3.0
@@ -138,15 +145,23 @@ offset_bottom = 43.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Grab Rice"
 
-[node name="Fish Resevoir" type="StaticBody2D" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Rice Reservoir"]
+offset_left = 19.0
+offset_top = 36.0
+offset_right = 59.0
+offset_bottom = 76.0
+text = "1"
+horizontal_alignment = 2
+
+[node name="Fish Reservoir" type="StaticBody2D" parent="."]
 position = Vector2(678, 80)
 script = ExtResource("5_272bh")
 item = "fish"
 
-[node name="Icon" type="Sprite2D" parent="Fish Resevoir"]
+[node name="Icon" type="Sprite2D" parent="Fish Reservoir"]
 texture = ExtResource("1_ig7tw")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Fish Resevoir/Icon"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Fish Reservoir/Icon"]
 offset_left = -41.0
 offset_top = -46.0
 offset_right = 59.0
@@ -155,19 +170,19 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Fish"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish Resevoir"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish Reservoir"]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_h2yge")
 
-[node name="Area2D" type="Area2D" parent="Fish Resevoir"]
+[node name="Area2D" type="Area2D" parent="Fish Reservoir"]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish Resevoir/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish Reservoir/Area2D"]
 position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_1bvp3")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Fish Resevoir"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Fish Reservoir"]
 visible = false
 offset_left = -37.0
 offset_top = 3.0
@@ -175,6 +190,14 @@ offset_right = 60.0
 offset_bottom = 43.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Grab Fish"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Fish Reservoir"]
+offset_left = 19.0
+offset_top = 36.0
+offset_right = 59.0
+offset_bottom = 76.0
+text = "1"
+horizontal_alignment = 2
 
 [node name="Cutting Board" type="StaticBody2D" parent="."]
 position = Vector2(443, 79)
@@ -244,6 +267,7 @@ offset_bottom = 199.846
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Outline" type="Sprite2D" parent="CanvasLayer/1"]
 visible = false
@@ -264,7 +288,7 @@ offset_right = 73.0337
 offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
-text = "Rice Pot"
+text = "Rice"
 
 [node name="fish" type="Sprite2D" parent="CanvasLayer/1"]
 position = Vector2(-2.15381, -6)
@@ -279,6 +303,23 @@ offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Salmon"
+metadata/_edit_use_anchors_ = true
+
+[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/1"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/cooked rice"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Cooked
+Rice"
+metadata/_edit_use_anchors_ = true
 
 [node name="2" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(413, 556.56)
@@ -313,7 +354,7 @@ offset_right = 73.0337
 offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
-text = "Rice Pot"
+text = "Rice"
 
 [node name="fish" type="Sprite2D" parent="CanvasLayer/2"]
 position = Vector2(-2.15381, -6)
@@ -328,6 +369,22 @@ offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Salmon"
+
+[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/2"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/2/cooked rice"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Cooked
+Rice"
+metadata/_edit_use_anchors_ = true
 
 [node name="3" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(516, 558.56)
@@ -362,7 +419,7 @@ offset_right = 73.0337
 offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
-text = "Rice Pot"
+text = "Rice"
 
 [node name="fish" type="Sprite2D" parent="CanvasLayer/3"]
 position = Vector2(-2.15381, -6)
@@ -377,6 +434,22 @@ offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Salmon"
+
+[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/3"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/3/cooked rice"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Cooked
+Rice"
+metadata/_edit_use_anchors_ = true
 
 [node name="4" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(621, 560)
@@ -411,7 +484,7 @@ offset_right = 73.0337
 offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
-text = "Rice Pot"
+text = "Rice"
 
 [node name="fish" type="Sprite2D" parent="CanvasLayer/4"]
 position = Vector2(-2.15381, -6)
@@ -426,6 +499,22 @@ offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Salmon"
+
+[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/4"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/4/cooked rice"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Cooked
+Rice"
+metadata/_edit_use_anchors_ = true
 
 [node name="5" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(729, 560)
@@ -460,7 +549,7 @@ offset_right = 73.0337
 offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
-text = "Rice Pot"
+text = "Rice"
 
 [node name="fish" type="Sprite2D" parent="CanvasLayer/5"]
 position = Vector2(-2.15381, -6)
@@ -476,11 +565,27 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Salmon"
 
+[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/5"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/5/cooked rice"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Cooked
+Rice"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="area_entered" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_exited"]
-[connection signal="area_entered" from="Rice Resevoir/Area2D" to="Rice Resevoir" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Rice Resevoir/Area2D" to="Rice Resevoir" method="_on_area_2d_area_exited"]
-[connection signal="area_entered" from="Fish Resevoir/Area2D" to="Fish Resevoir" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Fish Resevoir/Area2D" to="Fish Resevoir" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Rice Reservoir/Area2D" to="Rice Reservoir" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Rice Reservoir/Area2D" to="Rice Reservoir" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Fish Reservoir/Area2D" to="Fish Reservoir" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Fish Reservoir/Area2D" to="Fish Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Cutting Board/Area2D" to="Cutting Board" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Cutting Board/Area2D" to="Cutting Board" method="_on_area_2d_area_exited"]

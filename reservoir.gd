@@ -12,6 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$RichTextLabel2.text=str(stock)
 	$RichTextLabel.visible=colliding and len($"..".playerInventory)<=4 and stock>=1
 	if(colliding and Input.is_action_just_pressed("Place") and stock>=1):
 		if(len($"..".playerInventory)<=4):
