@@ -1,11 +1,20 @@
 extends CharacterBody2D
-
+const SPEED = 3
 func _process(delta: float) -> void:
-	if(Input.is_action_just_pressed("Up")):
-		position.y+=1
-	if(Input.is_action_just_pressed("Down")):
-		position.y-=1
-	if(Input.is_action_just_pressed("Left")):
-		position.x-=1
-	if(Input.is_action_just_pressed("Right")):
-		position.x+=1
+	var yChange = 0
+	var xChange = 0
+	if(Input.is_action_pressed("Up")):
+		yChange-=1
+	if(Input.is_action_pressed("Down")):
+		yChange=1
+	if(Input.is_action_pressed("Left")):
+		xChange-=1
+	if(Input.is_action_pressed("Right")):
+		xChange+=1
+	if abs(xChange) == 1 and abs(yChange) == 1:
+		xChange /= sqrt(2)
+		yChange /= sqrt(2)
+	xChange*=SPEED
+	yChange*=SPEED
+	position.x+=xChange
+	position.y+=yChange
