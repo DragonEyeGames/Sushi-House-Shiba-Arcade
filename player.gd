@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED = 3
+const SPEED = 150
 func _process(delta: float) -> void:
 	var yChange = 0
 	var xChange = 0
@@ -16,5 +16,7 @@ func _process(delta: float) -> void:
 		yChange /= sqrt(2)
 	xChange*=SPEED
 	yChange*=SPEED
-	position.x+=xChange
-	position.y+=yChange
+	velocity.x+=xChange
+	velocity.y+=yChange
+	move_and_slide()
+	velocity=Vector2.ZERO

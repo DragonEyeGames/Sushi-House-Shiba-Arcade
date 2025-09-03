@@ -1,15 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=12 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://d3qu1bea31e07" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://c008fxlrk5pjg" path="res://workstation.gd" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://hotbar.png" id="4_1bvp3"]
+[ext_resource type="Shader" uid="uid://day38ouyppi2j" path="res://recolor.gdshader" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(122, 123)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bvp3"]
+radius = 59.0
+height = 180.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(123, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(122, 40)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
+shader = ExtResource("5_lquwl")
+shader_parameter/target_color = Color(1, 1, 1, 1)
+
 [node name="Node2D" type="Node2D"]
+position = Vector2(204, 83)
+script = ExtResource("1_7mycd")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(314, 273)
+position = Vector2(323, 328)
 script = ExtResource("1_0xm2m")
 
 [node name="Icon" type="Sprite2D" parent="Player"]
@@ -18,3 +38,128 @@ texture = ExtResource("1_ig7tw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-2, 0.5)
 shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-1, -7)
+shape = SubResource("CapsuleShape2D_1bvp3")
+
+[node name="Stove" type="StaticBody2D" parent="."]
+position = Vector2(318, 79)
+script = ExtResource("3_h2yge")
+item = "rice"
+
+[node name="Icon" type="Sprite2D" parent="Stove"]
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stove/Icon"]
+offset_left = -41.0
+offset_top = -46.0
+offset_right = 59.0
+offset_bottom = 25.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Stove"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Area2D" type="Area2D" parent="Stove"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/Area2D"]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stove"]
+visible = false
+offset_left = -37.0
+offset_top = 3.0
+offset_right = 60.0
+offset_bottom = 43.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Place Rice"
+
+[node name="Interactable" type="Sprite2D" parent="Stove"]
+visible = false
+position = Vector2(-0.999969, 17)
+scale = Vector2(0.445, 0.445)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stove/Interactable"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Rice Pot"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="1" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(520.56, 555.56)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("4_1bvp3")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/1"]
+offset_left = 105.538
+offset_top = 97.8461
+offset_right = 205.538
+offset_bottom = 199.846
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "1"
+
+[node name="Outline" type="Sprite2D" parent="CanvasLayer/1"]
+visible = false
+z_index = -1
+material = SubResource("ShaderMaterial_7mycd")
+scale = Vector2(1.055, 1.055)
+texture = ExtResource("4_1bvp3")
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/1"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/Icon"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Rice Pot"
+
+[node name="Hotbar" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(304.56, 555.56)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("4_1bvp3")
+
+[node name="Hotbar2" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(413.56, 555.56)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("4_1bvp3")
+
+[node name="Hotbar4" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(631.56, 555.56)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("4_1bvp3")
+
+[node name="Hotbar5" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(740.56, 555.56)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("4_1bvp3")
+
+[connection signal="area_entered" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_exited"]
