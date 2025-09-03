@@ -2,10 +2,11 @@ extends StaticBody2D
 
 var colliding=false
 
-@export var item = "rice"
+@export var item = "seaweed"
 
-var placed=false
-var cooked=false
+var seaweedPlaced=false
+var ricePlaced=false
+var fishPlaced=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,19 +15,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(placed):
-		$Interactable/ProgressBar.value+=.05 * 1000 #TESTING PURPOSE BOOST
-		if($Interactable/ProgressBar.value>=100):
-			cooked=true
-	if(colliding and item==$"..".playerInventorySelect and placed==false):
+	if(colliding and item==$"..".playerInventorySelect and seaweedPlaced==false):
 		$RichTextLabel.visible=true
-		$"..".interactable="rice stove"
+		$"..".interactable="assembly board"
 		$"..".interactiveItem=self
-	elif(cooked and len($"..".playerInventory)<=4):
-		if(colliding):
-			$RichTextLabel.visible=true
-		$"RichTextLabel".text="Grab Pot"
-		$"..".interactable="rice stove"
+	elif(colliding and item==$"..".playerInventorySelect and ricePlaced==false):
+		$RichTextLabel.visible=true
+		$RichTextLabel.text="Place Cooked Rice"
+		$"..".interactable="assembly board"
 		$"..".interactiveItem=self
 	else:
 		$RichTextLabel.visible=false
@@ -37,28 +33,31 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	$RichTextLabel.visible=false
-	$"..".interactable=""
-	$"..".interactiveItem=null
+	if(colliding and item==$"..".playerInventorySelect):
+		$RichTextLabel.visible=false
+		$"..".interactable=""
+		$"..".interactiveItem=null
 	colliding=false
 	
 func interact():
-	if(cooked):
-		$"..".playerInventory.append("cooked rice")
-		$"..".playerInventorySelect=""
-		for i in $"../CanvasLayer".get_children():
-			var outline = i.get_node_or_null("Outline")
-			if outline:
-				outline.visible = false
-		$Interactable.visible=false
-		placed=false
-		cooked=false
-	elif(item==$"..".playerInventorySelect):
+	if(item=="cooked rice"):
 		$"..".playerInventory.erase($"..".playerInventorySelect)
 		$"..".playerInventorySelect=""
 		for i in $"../CanvasLayer".get_children():
 			var outline = i.get_node_or_null("Outline")
 			if outline:
 				outline.visible = false
-		$Interactable.visible=true
-		placed=true
+		$Onigiri.visible=true
+		$Seaweed.visible=false
+		ricePlaced=true
+		item="fish"
+	elif(item=="seaweed"):
+		$"..".playerInventory.erase($"..".playerInventorySelect)
+		$"..".playerInventorySelect=""
+		for i in $"../CanvasLayer".get_children():
+			var outline = i.get_node_or_null("Outline")
+			if outline:
+				outline.visible = false
+		$Seaweed.visible=true
+		seaweedPlaced=true
+		item="cooked rice"
