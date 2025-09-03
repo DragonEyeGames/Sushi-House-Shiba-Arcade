@@ -6,7 +6,7 @@ func _process(delta: float) -> void:
 	if(Input.is_action_pressed("Up")):
 		yChange-=1
 	if(Input.is_action_pressed("Down")):
-		yChange=1
+		yChange+=1
 	if(Input.is_action_pressed("Left")):
 		xChange-=1
 	if(Input.is_action_pressed("Right")):

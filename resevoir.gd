@@ -3,8 +3,7 @@ extends StaticBody2D
 var colliding=false
 
 @export var item = ""
-
-var placed=false
+@export var stock=1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,33 +12,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(colliding and item==$"..".playerInventorySelect and placed==false):
-		$RichTextLabel.visible=true
-		$"..".interactable="rice stove"
-		$"..".interactiveItem=self
-	else:
-		$RichTextLabel.visible=false
-
+	$RichTextLabel.visible=colliding and len($"..".playerInventory)<=4 and stock>=1
+	if(colliding and Input.is_action_just_pressed("Place") and stock>=1):
+		if(len($"..".playerInventory)<=4):
+			$"..".playerInventory.append(item)
+			stock-=1
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	colliding=true
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if(colliding and item==$"..".playerInventorySelect):
-		$RichTextLabel.visible=false
-		$"..".interactable=""
-		$"..".interactiveItem=null
 	colliding=false
 	
 func interact():
-	if(placed):
-		return
 	$"..".playerInventory.erase($"..".playerInventorySelect)
 	$"..".playerInventorySelect=""
-	for i in $"../CanvasLayer".get_children():
-		var outline = i.get_node_or_null("Outline")
-		if outline:
-			outline.visible = false
 	$Interactable.visible=true
-	placed=true
