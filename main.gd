@@ -15,45 +15,25 @@ func _process(delta: float) -> void:
 	for i in range($CanvasLayer.get_child_count()):
 		var child = $CanvasLayer.get_child(i)
 		if i >= playerInventory.size():
-			child.visible=false
+			if(child.name!="Outline"):
+				child.visible=false
 		else:
 			child.visible=true
-			
-	if(len(playerInventory)>=1):
-		$"CanvasLayer/1/rice".visible=false
-		$"CanvasLayer/1/fish".visible=false
-		$"CanvasLayer/1/cooked rice".visible=false
-		$"CanvasLayer/1/seaweed".visible=false
-		var item = $"CanvasLayer/1".get_node(playerInventory[0])
-		item.visible=true
-	if(len(playerInventory)>=2):
-		$"CanvasLayer/2/rice".visible=false
-		$"CanvasLayer/2/fish".visible=false
-		$"CanvasLayer/2/cooked rice".visible=false
-		$"CanvasLayer/2/seaweed".visible=false
-		var item = $"CanvasLayer/2".get_node(playerInventory[1])
-		item.visible=true
-	if(len(playerInventory)>=3):
-		$"CanvasLayer/3/rice".visible=false
-		$"CanvasLayer/3/fish".visible=false
-		$"CanvasLayer/3/cooked rice".visible=false
-		$"CanvasLayer/3/seaweed".visible=false
-		var item = $"CanvasLayer/3".get_node(playerInventory[2])
-		item.visible=true
-	if(len(playerInventory)>=4):
-		$"CanvasLayer/4/rice".visible=false
-		$"CanvasLayer/4/fish".visible=false
-		$"CanvasLayer/4/cooked rice".visible=false
-		$"CanvasLayer/4/seaweed".visible=false
-		var item = $"CanvasLayer/4".get_node(playerInventory[3])
-		item.visible=true
-	if(len(playerInventory)>=5):
-		$"CanvasLayer/5/rice".visible=false
-		$"CanvasLayer/5/fish".visible=false
-		$"CanvasLayer/5/cooked rice".visible=false
-		$"CanvasLayer/5/seaweed".visible=false
-		var item = $"CanvasLayer/5".get_node(playerInventory[4])
-		item.visible=true
+	#Visibility mod
+	for i in range($CanvasLayer.get_child_count()):
+		var slot = $CanvasLayer.get_child(i)
+
+		# Hide everything in this slot first
+		for child in slot.get_children():
+			if(child.name!="Outline" and child.name!="RichTextLabel2"):
+				child.visible = false
+
+		# Show the player's inventory item if it exists for this slot
+		if i < playerInventory.size():
+			var item_name = playerInventory[i]
+			var item_node = slot.get_node_or_null(item_name)
+			if item_node:
+				item_node.visible = true
 		
 	if(Input.is_action_just_pressed("1")):
 		if(len(playerInventory)>=1):
@@ -66,6 +46,11 @@ func _process(delta: float) -> void:
 				$"CanvasLayer/1/Outline".visible=true
 				$"CanvasLayer/1/rice".visible=false
 				$"CanvasLayer/1/fish".visible=false
+				$"CanvasLayer/1/cooked rice".visible=false
+				$"CanvasLayer/1/seaweed".visible=false
+				$"CanvasLayer/1/onigiri".visible=false
+				$"CanvasLayer/1/sushi".visible=false
+				
 				var item = $"CanvasLayer/1".get_node(playerInventorySelect)
 				item.visible=true
 			else:
@@ -82,6 +67,10 @@ func _process(delta: float) -> void:
 				$"CanvasLayer/2/Outline".visible=true
 				$"CanvasLayer/2/rice".visible=false
 				$"CanvasLayer/2/fish".visible=false
+				$"CanvasLayer/2/cooked rice".visible=false
+				$"CanvasLayer/2/seaweed".visible=false
+				$"CanvasLayer/2/onigiri".visible=false
+				$"CanvasLayer/2/sushi".visible=false
 				var item = $"CanvasLayer/2".get_node(playerInventorySelect)
 				item.visible=true
 			else:
@@ -98,6 +87,10 @@ func _process(delta: float) -> void:
 				$"CanvasLayer/3/Outline".visible=true
 				$"CanvasLayer/3/rice".visible=false
 				$"CanvasLayer/3/fish".visible=false
+				$"CanvasLayer/3/cooked rice".visible=false
+				$"CanvasLayer/3/seaweed".visible=false
+				$"CanvasLayer/3/onigiri".visible=false
+				$"CanvasLayer/3/sushi".visible=false
 				var item = $"CanvasLayer/3".get_node(playerInventorySelect)
 				item.visible=true
 			else:
@@ -114,6 +107,10 @@ func _process(delta: float) -> void:
 				$"CanvasLayer/4/Outline".visible=true
 				$"CanvasLayer/4/rice".visible=false
 				$"CanvasLayer/4/fish".visible=false
+				$"CanvasLayer/4/cooked rice".visible=false
+				$"CanvasLayer/4/seaweed".visible=false
+				$"CanvasLayer/4/onigiri".visible=false
+				$"CanvasLayer/4/sushi".visible=false
 				var item = $"CanvasLayer/4".get_node(playerInventorySelect)
 				item.visible=true
 			else:
@@ -130,6 +127,10 @@ func _process(delta: float) -> void:
 				$"CanvasLayer/5/Outline".visible=true
 				$"CanvasLayer/5/rice".visible=false
 				$"CanvasLayer/5/fish".visible=false
+				$"CanvasLayer/5/cooked rice".visible=false
+				$"CanvasLayer/5/seaweed".visible=false
+				$"CanvasLayer/5/onigiri".visible=false
+				$"CanvasLayer/5/sushi".visible=false
 				var item = $"CanvasLayer/5".get_node(playerInventorySelect)
 				item.visible=true
 			else:

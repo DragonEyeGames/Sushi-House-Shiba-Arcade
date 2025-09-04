@@ -367,6 +367,21 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Onigiri"
 
+[node name="Sushi" type="Sprite2D" parent="Assembly Board"]
+visible = false
+position = Vector2(-0.999969, 17)
+scale = Vector2(0.445, 0.445)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board/Sushi"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="1" type="Sprite2D" parent="CanvasLayer"]
@@ -451,6 +466,36 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Seaweed"
 metadata/_edit_use_anchors_ = true
 
+[node name="onigiri" type="Sprite2D" parent="CanvasLayer/1"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/onigiri"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Onigiri"
+metadata/_edit_use_anchors_ = true
+
+[node name="sushi" type="Sprite2D" parent="CanvasLayer/1"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/sushi"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
+metadata/_edit_use_anchors_ = true
+
 [node name="2" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(413, 556.56)
 scale = Vector2(0.26, 0.26)
@@ -529,6 +574,36 @@ offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Seaweed"
+metadata/_edit_use_anchors_ = true
+
+[node name="onigiri" type="Sprite2D" parent="CanvasLayer/2"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/2/onigiri"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Onigiri"
+metadata/_edit_use_anchors_ = true
+
+[node name="sushi" type="Sprite2D" parent="CanvasLayer/2"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/2/sushi"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
 metadata/_edit_use_anchors_ = true
 
 [node name="3" type="Sprite2D" parent="CanvasLayer"]
@@ -611,6 +686,36 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Seaweed"
 metadata/_edit_use_anchors_ = true
 
+[node name="onigiri" type="Sprite2D" parent="CanvasLayer/3"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/3/onigiri"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Onigiri"
+metadata/_edit_use_anchors_ = true
+
+[node name="sushi" type="Sprite2D" parent="CanvasLayer/3"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/3/sushi"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
+metadata/_edit_use_anchors_ = true
+
 [node name="4" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(621, 560)
 scale = Vector2(0.26, 0.26)
@@ -691,6 +796,36 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Seaweed"
 metadata/_edit_use_anchors_ = true
 
+[node name="onigiri" type="Sprite2D" parent="CanvasLayer/4"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/4/onigiri"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Onigiri"
+metadata/_edit_use_anchors_ = true
+
+[node name="sushi" type="Sprite2D" parent="CanvasLayer/4"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/4/sushi"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
+metadata/_edit_use_anchors_ = true
+
 [node name="5" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(729, 560)
 scale = Vector2(0.26, 0.26)
@@ -769,6 +904,36 @@ offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Seaweed"
+metadata/_edit_use_anchors_ = true
+
+[node name="onigiri" type="Sprite2D" parent="CanvasLayer/5"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/5/onigiri"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Onigiri"
+metadata/_edit_use_anchors_ = true
+
+[node name="sushi" type="Sprite2D" parent="CanvasLayer/5"]
+position = Vector2(-2.15381, -6)
+scale = Vector2(1.71154, 1.71154)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/5/sushi"]
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_entered"]
