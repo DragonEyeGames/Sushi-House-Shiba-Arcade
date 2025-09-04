@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bnnpgvncw4ifp"]
+
+[node name="Node2D" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+scale = Vector2(0.89, 0.89)
+color = Color(0, 0, 0, 1)

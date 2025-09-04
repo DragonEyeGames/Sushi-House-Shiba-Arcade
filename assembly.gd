@@ -25,8 +25,8 @@ func _process(delta: float) -> void:
 			_show_prompt("Place Seaweed")
 		elif $"..".playerInventorySelect == "cooked rice" and seaweedPlaced and not ricePlaced and currentItem == "seaweed":
 			_show_prompt("Place Cooked Rice")
-		elif $"..".playerInventorySelect == "fish" and ricePlaced and not fishPlaced and currentItem == "onigiri":
-			_show_prompt("Place Salmon")
+		elif $"..".playerInventorySelect == "sliced fish" and ricePlaced and not fishPlaced and currentItem == "onigiri":
+			_show_prompt("Place Sliced Fish")
 		elif $"..".playerInventorySelect == "onigiri" and currentItem == "":
 			_show_prompt("Place Onigiri")
 		elif $"..".playerInventorySelect == "sushi" and currentItem == "":
@@ -79,8 +79,8 @@ func interact() -> void:
 		currentItem = "onigiri"
 
 	# PLACE FISH
-	elif $"..".playerInventorySelect == "fish" and ricePlaced and not fishPlaced:
-		_consume_item("fish")
+	elif $"..".playerInventorySelect == "sliced fish" and ricePlaced and not fishPlaced:
+		_consume_item("sliced fish")
 		$Sushi.visible = true
 		$Onigiri.visible = false
 		fishPlaced = true

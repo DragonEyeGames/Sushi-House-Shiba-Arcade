@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=20 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://main.gd" id="1_7mycd"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://cuttingMinigame.gd" id="7_efxa6"]
 [ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://assembly.gd" id="7_kek77"]
 [ext_resource type="Script" uid="uid://dvbj345dy3by1" path="res://camera.gd" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://ckbumgkfqrmoy" path="res://inventoryItems.tscn" id="11_dg77c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(122, 123)
@@ -28,7 +29,7 @@ size = Vector2(122, 40)
 size = Vector2(128, 125.843)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dg77c"]
-radius = 2.0
+radius = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
 shader = ExtResource("5_lquwl")
@@ -313,15 +314,14 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutting Board/Interactable/Area2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_efxa6")
 
 [node name="MinigameHolder" type="Node2D" parent="Cutting Board"]
-visible = false
 script = ExtResource("7_efxa6")
 
 [node name="Knife" type="Node2D" parent="Cutting Board/MinigameHolder"]
-position = Vector2(0, 43)
+z_index = 2
+position = Vector2(42, 35)
 rotation = 3.14159
 
 [node name="Blade" type="Sprite2D" parent="Cutting Board/MinigameHolder/Knife"]
@@ -335,12 +335,21 @@ scale = Vector2(0.0844218, 0.228599)
 texture = ExtResource("1_ig7tw")
 
 [node name="Area2D" type="Area2D" parent="Cutting Board/MinigameHolder/Knife"]
+position = Vector2(-0.000114083, 45)
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutting Board/MinigameHolder/Knife/Area2D"]
-position = Vector2(-0.999996, 47)
+position = Vector2(1.07288e-06, 3.8147e-06)
 shape = SubResource("CircleShape2D_dg77c")
+
+[node name="Lines" type="Node2D" parent="Cutting Board/MinigameHolder"]
+
+[node name="Line2D" type="Line2D" parent="Cutting Board/MinigameHolder/Lines"]
+position = Vector2(-1, 7)
+rotation = 3.14159
+width = 0.635
+joint_mode = 2
 
 [node name="Assembly Board" type="StaticBody2D" parent="."]
 position = Vector2(321, 84)
@@ -449,95 +458,7 @@ material = SubResource("ShaderMaterial_7mycd")
 scale = Vector2(1.055, 1.055)
 texture = ExtResource("4_1bvp3")
 
-[node name="rice" type="Sprite2D" parent="CanvasLayer/1"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Rice"
-
-[node name="fish" type="Sprite2D" parent="CanvasLayer/1"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/fish"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Salmon"
-metadata/_edit_use_anchors_ = true
-
-[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/1"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/cooked rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Cooked
-Rice"
-metadata/_edit_use_anchors_ = true
-
-[node name="seaweed" type="Sprite2D" parent="CanvasLayer/1"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/seaweed"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Seaweed"
-metadata/_edit_use_anchors_ = true
-
-[node name="onigiri" type="Sprite2D" parent="CanvasLayer/1"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/onigiri"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Onigiri"
-metadata/_edit_use_anchors_ = true
-
-[node name="sushi" type="Sprite2D" parent="CanvasLayer/1"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/1/sushi"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Sushi"
-metadata/_edit_use_anchors_ = true
+[node name="Items" parent="CanvasLayer/1" instance=ExtResource("11_dg77c")]
 
 [node name="2" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(413, 556.56)
@@ -560,94 +481,7 @@ material = SubResource("ShaderMaterial_7mycd")
 scale = Vector2(1.055, 1.055)
 texture = ExtResource("4_1bvp3")
 
-[node name="rice" type="Sprite2D" parent="CanvasLayer/2"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/2/rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Rice"
-
-[node name="fish" type="Sprite2D" parent="CanvasLayer/2"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/2/fish"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Salmon"
-
-[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/2"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/2/cooked rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Cooked
-Rice"
-metadata/_edit_use_anchors_ = true
-
-[node name="seaweed" type="Sprite2D" parent="CanvasLayer/2"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/2/seaweed"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Seaweed"
-metadata/_edit_use_anchors_ = true
-
-[node name="onigiri" type="Sprite2D" parent="CanvasLayer/2"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/2/onigiri"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Onigiri"
-metadata/_edit_use_anchors_ = true
-
-[node name="sushi" type="Sprite2D" parent="CanvasLayer/2"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/2/sushi"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Sushi"
-metadata/_edit_use_anchors_ = true
+[node name="Items" parent="CanvasLayer/2" instance=ExtResource("11_dg77c")]
 
 [node name="3" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(516, 558.56)
@@ -670,94 +504,7 @@ material = SubResource("ShaderMaterial_7mycd")
 scale = Vector2(1.055, 1.055)
 texture = ExtResource("4_1bvp3")
 
-[node name="rice" type="Sprite2D" parent="CanvasLayer/3"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/3/rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Rice"
-
-[node name="fish" type="Sprite2D" parent="CanvasLayer/3"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/3/fish"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Salmon"
-
-[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/3"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/3/cooked rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Cooked
-Rice"
-metadata/_edit_use_anchors_ = true
-
-[node name="seaweed" type="Sprite2D" parent="CanvasLayer/3"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/3/seaweed"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Seaweed"
-metadata/_edit_use_anchors_ = true
-
-[node name="onigiri" type="Sprite2D" parent="CanvasLayer/3"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/3/onigiri"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Onigiri"
-metadata/_edit_use_anchors_ = true
-
-[node name="sushi" type="Sprite2D" parent="CanvasLayer/3"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/3/sushi"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Sushi"
-metadata/_edit_use_anchors_ = true
+[node name="Items" parent="CanvasLayer/3" instance=ExtResource("11_dg77c")]
 
 [node name="4" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(621, 560)
@@ -780,94 +527,7 @@ material = SubResource("ShaderMaterial_7mycd")
 scale = Vector2(1.055, 1.055)
 texture = ExtResource("4_1bvp3")
 
-[node name="rice" type="Sprite2D" parent="CanvasLayer/4"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/4/rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Rice"
-
-[node name="fish" type="Sprite2D" parent="CanvasLayer/4"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/4/fish"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Salmon"
-
-[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/4"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/4/cooked rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Cooked
-Rice"
-metadata/_edit_use_anchors_ = true
-
-[node name="seaweed" type="Sprite2D" parent="CanvasLayer/4"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/4/seaweed"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Seaweed"
-metadata/_edit_use_anchors_ = true
-
-[node name="onigiri" type="Sprite2D" parent="CanvasLayer/4"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/4/onigiri"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Onigiri"
-metadata/_edit_use_anchors_ = true
-
-[node name="sushi" type="Sprite2D" parent="CanvasLayer/4"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/4/sushi"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Sushi"
-metadata/_edit_use_anchors_ = true
+[node name="Items" parent="CanvasLayer/4" instance=ExtResource("11_dg77c")]
 
 [node name="5" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(729, 560)
@@ -890,94 +550,7 @@ material = SubResource("ShaderMaterial_7mycd")
 scale = Vector2(1.055, 1.055)
 texture = ExtResource("4_1bvp3")
 
-[node name="rice" type="Sprite2D" parent="CanvasLayer/5"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/5/rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Rice"
-
-[node name="fish" type="Sprite2D" parent="CanvasLayer/5"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/5/fish"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Salmon"
-
-[node name="cooked rice" type="Sprite2D" parent="CanvasLayer/5"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/5/cooked rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Cooked
-Rice"
-metadata/_edit_use_anchors_ = true
-
-[node name="seaweed" type="Sprite2D" parent="CanvasLayer/5"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/5/seaweed"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Seaweed"
-metadata/_edit_use_anchors_ = true
-
-[node name="onigiri" type="Sprite2D" parent="CanvasLayer/5"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/5/onigiri"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Onigiri"
-metadata/_edit_use_anchors_ = true
-
-[node name="sushi" type="Sprite2D" parent="CanvasLayer/5"]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_ig7tw")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/5/sushi"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Sushi"
-metadata/_edit_use_anchors_ = true
+[node name="Items" parent="CanvasLayer/5" instance=ExtResource("11_dg77c")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
@@ -998,6 +571,18 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Floor"
 fit_content = true
 
+[node name="MinigameLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Button" type="Button" parent="MinigameLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 234.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 22
+text = "Finish Cutting"
+
 [connection signal="area_entered" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Rice Reservoir/Area2D" to="Rice Reservoir" method="_on_area_2d_area_entered"]
@@ -1008,7 +593,8 @@ fit_content = true
 [connection signal="area_exited" from="Seaweed Reservoir/Area2D" to="Seaweed Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Cutting Board/Area2D" to="Cutting Board" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Cutting Board/Area2D" to="Cutting Board" method="_on_area_2d_area_exited"]
-[connection signal="area_entered" from="Cutting Board/MinigameHolder/Knife/Area2D" to="Cutting Board/MinigameHolder" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Cutting Board/MinigameHolder/Knife/Area2D" to="Cutting Board/MinigameHolder" method="_on_area_2d_area_exited"]
+[connection signal="area_shape_entered" from="Cutting Board/MinigameHolder/Knife/Area2D" to="Cutting Board/MinigameHolder" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="Cutting Board/MinigameHolder/Knife/Area2D" to="Cutting Board/MinigameHolder" method="_on_area_2d_area_shape_exited"]
 [connection signal="area_entered" from="Assembly Board/Area2D" to="Assembly Board" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Assembly Board/Area2D" to="Assembly Board" method="_on_area_2d_area_exited"]
+[connection signal="pressed" from="MinigameLayer/Button" to="Cutting Board" method="_on_button_pressed"]

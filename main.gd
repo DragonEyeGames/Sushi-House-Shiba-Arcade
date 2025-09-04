@@ -21,12 +21,11 @@ func _process(delta: float) -> void:
 			child.visible=true
 	#Visibility mod
 	for i in range($CanvasLayer.get_child_count()):
-		var slot = $CanvasLayer.get_child(i)
+		var slot = $CanvasLayer.get_child(i).get_child(2)
 
 		# Hide everything in this slot first
 		for child in slot.get_children():
-			if(child.name!="Outline" and child.name!="RichTextLabel2"):
-				child.visible = false
+			child.visible = false
 
 		# Show the player's inventory item if it exists for this slot
 		if i < playerInventory.size():
@@ -44,14 +43,9 @@ func _process(delta: float) -> void:
 						outline.visible = false
 				playerInventorySelect=playerInventory[0]
 				$"CanvasLayer/1/Outline".visible=true
-				$"CanvasLayer/1/rice".visible=false
-				$"CanvasLayer/1/fish".visible=false
-				$"CanvasLayer/1/cooked rice".visible=false
-				$"CanvasLayer/1/seaweed".visible=false
-				$"CanvasLayer/1/onigiri".visible=false
-				$"CanvasLayer/1/sushi".visible=false
-				
-				var item = $"CanvasLayer/1".get_node(playerInventorySelect)
+				for child in $"CanvasLayer/1/Items".get_children():
+					child.visible=false
+				var item = $"CanvasLayer/1/Items".get_node(playerInventorySelect)
 				item.visible=true
 			else:
 				playerInventorySelect=""
@@ -65,13 +59,9 @@ func _process(delta: float) -> void:
 						outline.visible = false
 				playerInventorySelect=playerInventory[1]
 				$"CanvasLayer/2/Outline".visible=true
-				$"CanvasLayer/2/rice".visible=false
-				$"CanvasLayer/2/fish".visible=false
-				$"CanvasLayer/2/cooked rice".visible=false
-				$"CanvasLayer/2/seaweed".visible=false
-				$"CanvasLayer/2/onigiri".visible=false
-				$"CanvasLayer/2/sushi".visible=false
-				var item = $"CanvasLayer/2".get_node(playerInventorySelect)
+				for child in $"CanvasLayer/2/Items".get_children():
+					child.visible=false
+				var item = $"CanvasLayer/2/Items".get_node(playerInventorySelect)
 				item.visible=true
 			else:
 				playerInventorySelect=""
@@ -85,13 +75,9 @@ func _process(delta: float) -> void:
 						outline.visible = false
 				playerInventorySelect=playerInventory[2]
 				$"CanvasLayer/3/Outline".visible=true
-				$"CanvasLayer/3/rice".visible=false
-				$"CanvasLayer/3/fish".visible=false
-				$"CanvasLayer/3/cooked rice".visible=false
-				$"CanvasLayer/3/seaweed".visible=false
-				$"CanvasLayer/3/onigiri".visible=false
-				$"CanvasLayer/3/sushi".visible=false
-				var item = $"CanvasLayer/3".get_node(playerInventorySelect)
+				for child in $"CanvasLayer/3/Items".get_children():
+					child.visible=false
+				var item = $"CanvasLayer/3/Items".get_node(playerInventorySelect)
 				item.visible=true
 			else:
 				playerInventorySelect=""
@@ -105,13 +91,9 @@ func _process(delta: float) -> void:
 						outline.visible = false
 				playerInventorySelect=playerInventory[3]
 				$"CanvasLayer/4/Outline".visible=true
-				$"CanvasLayer/4/rice".visible=false
-				$"CanvasLayer/4/fish".visible=false
-				$"CanvasLayer/4/cooked rice".visible=false
-				$"CanvasLayer/4/seaweed".visible=false
-				$"CanvasLayer/4/onigiri".visible=false
-				$"CanvasLayer/4/sushi".visible=false
-				var item = $"CanvasLayer/4".get_node(playerInventorySelect)
+				for child in $"CanvasLayer/4/Items".get_children():
+					child.visible=false
+				var item = $"CanvasLayer/4/Items".get_node(playerInventorySelect)
 				item.visible=true
 			else:
 				playerInventorySelect=""
@@ -125,13 +107,9 @@ func _process(delta: float) -> void:
 						outline.visible = false
 				playerInventorySelect=playerInventory[4]
 				$"CanvasLayer/5/Outline".visible=true
-				$"CanvasLayer/5/rice".visible=false
-				$"CanvasLayer/5/fish".visible=false
-				$"CanvasLayer/5/cooked rice".visible=false
-				$"CanvasLayer/5/seaweed".visible=false
-				$"CanvasLayer/5/onigiri".visible=false
-				$"CanvasLayer/5/sushi".visible=false
-				var item = $"CanvasLayer/5".get_node(playerInventorySelect)
+				for child in $"CanvasLayer/5/Items".get_children():
+					child.visible=false
+				var item = $"CanvasLayer/5/Items".get_node(playerInventorySelect)
 				item.visible=true
 			else:
 				playerInventorySelect=""
