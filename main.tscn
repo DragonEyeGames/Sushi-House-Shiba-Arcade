@@ -1,14 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=19 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://d3qu1bea31e07" path="res://icon.svg" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://c008fxlrk5pjg" path="res://workstation.gd" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://hotbar.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://cngg15t1lim6i" path="res://stove.gd" id="4_5vw27"]
 [ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://reservoir.gd" id="5_272bh"]
 [ext_resource type="Shader" uid="uid://day38ouyppi2j" path="res://recolor.gdshader" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://ccjws5hie7otm" path="res://cuttingBoard.gd" id="6_4c57u"]
+[ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://cuttingMinigame.gd" id="7_efxa6"]
 [ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://assembly.gd" id="7_kek77"]
+[ext_resource type="Script" uid="uid://dvbj345dy3by1" path="res://camera.gd" id="10_4c57u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(122, 123)
@@ -21,6 +23,12 @@ size = Vector2(123, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(122, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efxa6"]
+size = Vector2(128, 125.843)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dg77c"]
+radius = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
 shader = ExtResource("5_lquwl")
@@ -249,7 +257,7 @@ horizontal_alignment = 2
 
 [node name="Cutting Board" type="StaticBody2D" parent="."]
 position = Vector2(489, 82)
-script = ExtResource("3_h2yge")
+script = ExtResource("6_4c57u")
 item = "fish"
 
 [node name="Icon" type="Sprite2D" parent="Cutting Board"]
@@ -287,8 +295,8 @@ text = "Place Fish"
 
 [node name="Interactable" type="Sprite2D" parent="Cutting Board"]
 visible = false
-position = Vector2(-0.999969, 17)
-scale = Vector2(0.445, 0.445)
+position = Vector2(-4.99997, -6)
+scale = Vector2(0.21875, 0.445)
 texture = ExtResource("1_ig7tw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cutting Board/Interactable"]
@@ -299,6 +307,40 @@ offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Fish"
+
+[node name="Area2D" type="Area2D" parent="Cutting Board/Interactable"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutting Board/Interactable/Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_efxa6")
+
+[node name="MinigameHolder" type="Node2D" parent="Cutting Board"]
+visible = false
+script = ExtResource("7_efxa6")
+
+[node name="Knife" type="Node2D" parent="Cutting Board/MinigameHolder"]
+position = Vector2(0, 43)
+rotation = 3.14159
+
+[node name="Blade" type="Sprite2D" parent="Cutting Board/MinigameHolder/Knife"]
+position = Vector2(-0.771545, 30.1758)
+scale = Vector2(0.0624997, 0.294128)
+texture = ExtResource("1_ig7tw")
+
+[node name="Handle" type="Sprite2D" parent="Cutting Board/MinigameHolder/Knife"]
+position = Vector2(-0.403013, 6.7212)
+scale = Vector2(0.0844218, 0.228599)
+texture = ExtResource("1_ig7tw")
+
+[node name="Area2D" type="Area2D" parent="Cutting Board/MinigameHolder/Knife"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutting Board/MinigameHolder/Knife/Area2D"]
+position = Vector2(-0.999996, 47)
+shape = SubResource("CircleShape2D_dg77c")
 
 [node name="Assembly Board" type="StaticBody2D" parent="."]
 position = Vector2(321, 84)
@@ -330,11 +372,12 @@ shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board"]
 visible = false
+z_index = 7
 offset_left = -37.0
 offset_top = 3.0
 offset_right = 60.0
-offset_bottom = 43.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_bottom = 51.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "Place Seaweed"
 
 [node name="Seaweed" type="Sprite2D" parent="Assembly Board"]
@@ -936,6 +979,25 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Sushi"
 metadata/_edit_use_anchors_ = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("10_4c57u")
+
+[node name="Icon" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(359, 283)
+scale = Vector2(16.1719, 12.75)
+texture = ExtResource("1_ig7tw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Icon"]
+offset_left = -19.6638
+offset_top = -9.72549
+offset_right = 56.3362
+offset_bottom = 48.2745
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Floor"
+fit_content = true
+
 [connection signal="area_entered" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Rice Reservoir/Area2D" to="Rice Reservoir" method="_on_area_2d_area_entered"]
@@ -946,5 +1008,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="area_exited" from="Seaweed Reservoir/Area2D" to="Seaweed Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Cutting Board/Area2D" to="Cutting Board" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Cutting Board/Area2D" to="Cutting Board" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Cutting Board/MinigameHolder/Knife/Area2D" to="Cutting Board/MinigameHolder" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Cutting Board/MinigameHolder/Knife/Area2D" to="Cutting Board/MinigameHolder" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Assembly Board/Area2D" to="Assembly Board" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Assembly Board/Area2D" to="Assembly Board" method="_on_area_2d_area_exited"]

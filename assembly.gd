@@ -1,100 +1,127 @@
 extends StaticBody2D
 
-var colliding=false
+var colliding = false
 
-@export var item = "seaweed"
+@export var item = ["seaweed", "onigiri", "sushi", "cooked rice", "fish"]
 
-var seaweedPlaced=false
-var ricePlaced=false
-var fishPlaced=false
+var seaweedPlaced = false
+var ricePlaced = false
+var fishPlaced = false
 
-var currentItem=""
+var currentItem = ""
+var itemMatching = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(colliding and item==$"..".playerInventorySelect and seaweedPlaced==false):
-		$RichTextLabel.visible=true
-		$"..".interactable="assembly board"
-		$"..".interactiveItem=self
-	elif(colliding and item==$"..".playerInventorySelect and ricePlaced==false):
-		$RichTextLabel.visible=true
-		$RichTextLabel.text="Place Cooked Rice"
-		$"..".interactable="assembly board"
-		$"..".interactiveItem=self
-	elif(colliding and item==$"..".playerInventorySelect and fishPlaced==false):
-		$RichTextLabel.visible=true
-		$RichTextLabel.text="Place Salmon"
-		$"..".interactable="assembly board"
-		$"..".interactiveItem=self
-	elif(colliding and item!=$"..".playerInventorySelect and len($"..".playerInventory)<=4 and currentItem!=""):
-		$RichTextLabel.visible=true
-		$RichTextLabel.text="Pickup " + str(currentItem)
-		$"..".interactable="assembly board"
-		$"..".interactiveItem=self
+	# Check if the player's selected item is one we accept
+	itemMatching = $"..".playerInventorySelect in item
+
+	# Show prompts based on state
+	if colliding:
+		if $"..".playerInventorySelect == "seaweed" and not seaweedPlaced and currentItem == "":
+			_show_prompt("Place Seaweed")
+		elif $"..".playerInventorySelect == "cooked rice" and seaweedPlaced and not ricePlaced and currentItem == "seaweed":
+			_show_prompt("Place Cooked Rice")
+		elif $"..".playerInventorySelect == "fish" and ricePlaced and not fishPlaced and currentItem == "onigiri":
+			_show_prompt("Place Salmon")
+		elif $"..".playerInventorySelect == "onigiri" and currentItem == "":
+			_show_prompt("Place Onigiri")
+		elif $"..".playerInventorySelect == "sushi" and currentItem == "":
+			_show_prompt("Place Sushi")
+		elif currentItem != "":
+			if(len($"..".playerInventory) <= 4):
+				_show_prompt("Pickup " + str(currentItem))
+			else:
+				$RichTextLabel.visible = false
+		else:
+			$RichTextLabel.visible = false
 	else:
-		$RichTextLabel.visible=false
+		$RichTextLabel.visible = false
+
+
+func _show_prompt(text: String) -> void:
+	$RichTextLabel.visible = true
+	$RichTextLabel.text = text
+	$"..".interactable = "assembly board"
+	$"..".interactiveItem = self
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	colliding=true
+	colliding = true
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if(colliding and item==$"..".playerInventorySelect):
-		$RichTextLabel.visible=false
-		$"..".interactable=""
-		$"..".interactiveItem=null
-	colliding=false
-	
-func interact():
-	if(item!=$"..".playerInventorySelect):
-		if(colliding and item!=$"..".playerInventorySelect and len($"..".playerInventory)<=4 and currentItem!=""):
-			if(len($"..".playerInventory)<=4):
-				$"..".playerInventory.append(currentItem)
-				currentItem=""
-				$Seaweed.visible=false
-				$Onigiri.visible=false
-				$Sushi.visible=false
-				seaweedPlaced=false
-				ricePlaced=false
-				fishPlaced=false
-	if(item=="cooked rice"):
-		$"..".playerInventory.erase($"..".playerInventorySelect)
-		$"..".playerInventorySelect=""
-		for i in $"../CanvasLayer".get_children():
-			var outline = i.get_node_or_null("Outline")
-			if outline:
-				outline.visible = false
-		$Onigiri.visible=true
-		$Seaweed.visible=false
-		ricePlaced=true
-		item="fish"
-		currentItem="onigiri"
-	elif(item=="fish"):
-		$"..".playerInventory.erase($"..".playerInventorySelect)
-		$"..".playerInventorySelect=""
-		for i in $"../CanvasLayer".get_children():
-			var outline = i.get_node_or_null("Outline")
-			if outline:
-				outline.visible = false
-		$Sushi.visible=true
-		$Onigiri.visible=false
-		fishPlaced=true
-		item="seaweed"
-		currentItem="sushi"
-	elif(item=="seaweed"):
-		$"..".playerInventory.erase($"..".playerInventorySelect)
-		$"..".playerInventorySelect=""
-		for i in $"../CanvasLayer".get_children():
-			var outline = i.get_node_or_null("Outline")
-			if outline:
-				outline.visible = false
-		$Seaweed.visible=true
+	if colliding and itemMatching:
+		$RichTextLabel.visible = false
+		$"..".interactable = ""
+		$"..".interactiveItem = null
+	colliding = false
+
+
+func interact() -> void:
+
+	# PLACE SEAWEED
+	if $"..".playerInventorySelect == "seaweed" and not seaweedPlaced:
+		_consume_item("seaweed")
+		$Seaweed.visible = true
+		seaweedPlaced = true
+		currentItem = "seaweed"
+
+	# PLACE COOKED RICE
+	elif $"..".playerInventorySelect == "cooked rice" and seaweedPlaced and not ricePlaced:
+		_consume_item("cooked rice")
+		$Onigiri.visible = true
+		$Seaweed.visible = false
+		ricePlaced = true
+		currentItem = "onigiri"
+
+	# PLACE FISH
+	elif $"..".playerInventorySelect == "fish" and ricePlaced and not fishPlaced:
+		_consume_item("fish")
+		$Sushi.visible = true
+		$Onigiri.visible = false
+		fishPlaced = true
+		currentItem = "sushi"
+		
+	# PLACE ONIGIRI
+	elif $"..".playerInventorySelect == "onigiri" and currentItem=="":
+		_consume_item("onigiri")
+		$Onigiri.visible = true
 		seaweedPlaced=true
-		currentItem="seaweed"
-		item="cooked rice"
+		ricePlaced = true
+		currentItem = "onigiri"
+		
+	# PLACE SUSHI
+	elif $"..".playerInventorySelect == "sushi" and currentItem=="":
+		_consume_item("sushi")
+		$Sushi.visible = true
+		seaweedPlaced=true
+		ricePlaced = true
+		fishPlaced=true
+		currentItem = "sushi"
+	
+	elif colliding and currentItem != "" and len($"..".playerInventory) <= 4:
+		$"..".playerInventory.append(currentItem)
+		currentItem = ""
+		_reset_visuals()
+
+
+func _consume_item(item_name: String) -> void:
+	$"..".playerInventory.erase(item_name)
+	$"..".playerInventorySelect = ""
+	for i in $"../CanvasLayer".get_children():
+		var outline = i.get_node_or_null("Outline")
+		if outline:
+			outline.visible = false
+
+
+func _reset_visuals() -> void:
+	$Seaweed.visible = false
+	$Onigiri.visible = false
+	$Sushi.visible = false
+	seaweedPlaced = false
+	ricePlaced = false
+	fishPlaced = false
