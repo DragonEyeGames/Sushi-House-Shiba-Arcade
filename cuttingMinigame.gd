@@ -41,12 +41,36 @@ func _physics_process(delta: float) -> void:
 				var last_point = currentLine.points[-2]
 				var new_point = currentLine.points[-1]
 				cutAmount += last_point.distance_to(new_point)
-				if(cutAmount<150):
-					$"../Interactable/RichTextLabel".text="Fish"
-				elif(cutAmount<=300):
-					$"../Interactable/RichTextLabel".text="Sliced Fish"
+				if(cutAmount<80):
+					$"../Fish".visible=true
+				elif(cutAmount<=140):
+					if($"../Fish".visible):
+						for child in $Lines.get_children():
+							child.queue_free()
+						var line := Line2D.new()               # Make a new Line2D
+						line.width = 0.635                        # Set line thickness
+						line.default_color = Color.BLACK       # Set color
+						line.z_index = 1    
+						currentLine=line                 # Make sure it's on top
+						$Lines.add_child(line)  
+						line.global_position=$Knife/Area2D.global_position
+						currentLine.add_point(currentLine.to_local($Knife/Area2D/CollisionShape2D.global_position))
+					$"../Fish".visible=false
+					$"../Sliced Fish".visible=true
 				else:
-					$"../Interactable/RichTextLabel".text="Obliterated Fish"
+					if($"../Sliced Fish".visible):
+						for child in $Lines.get_children():
+							child.queue_free()
+						var line := Line2D.new()               # Make a new Line2D
+						line.width = 0.635                        # Set line thickness
+						line.default_color = Color.BLACK       # Set color
+						line.z_index = 1    
+						currentLine=line                 # Make sure it's on top
+						$Lines.add_child(line)  
+						line.global_position=$Knife/Area2D.global_position
+						currentLine.add_point(currentLine.to_local($Knife/Area2D/CollisionShape2D.global_position))
+					$"../Sliced Fish".visible=false
+					$"../Obliterated Fish".visible=true
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -77,6 +101,6 @@ func is_point_inside(point: Vector2) -> bool:
 	
 	var result = space_state.intersect_point(query)
 	for item in result:
-		if item.collider == $"../Interactable/Area2D":
+		if item.collider == $"../Area2D2":
 			return true
 	return false

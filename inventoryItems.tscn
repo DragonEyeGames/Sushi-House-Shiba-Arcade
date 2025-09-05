@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckbumgkfqrmoy"]
+[gd_scene load_steps=5 format=3 uid="uid://ckbumgkfqrmoy"]
 
 [ext_resource type="Texture2D" uid="uid://d3qu1bea31e07" path="res://icon.svg" id="1_sditr"]
+[ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="2_ri7ka"]
+[ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="3_o85l3"]
+[ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="4_wvdm6"]
 
 [node name="Items" type="Node2D"]
 
 [node name="rice" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2.15381, -6)
 scale = Vector2(1.71154, 1.71154)
 texture = ExtResource("1_sditr")
@@ -19,20 +23,54 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Rice"
 
 [node name="fish" type="Sprite2D" parent="."]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_sditr")
+visible = false
+position = Vector2(-5, 16)
+scale = Vector2(1.38281, 1.07813)
+texture = ExtResource("2_ri7ka")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="fish"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
+offset_left = -78.8249
+offset_top = -150.794
+offset_right = 102.175
+offset_bottom = -48.7945
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+text = "Fish"
+horizontal_alignment = 1
+
+[node name="sliced fish" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-5, 16)
+scale = Vector2(1.38281, 1.07813)
+texture = ExtResource("3_o85l3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="sliced fish"]
+offset_left = -78.8249
+offset_top = -150.794
+offset_right = 102.175
+offset_bottom = -48.7945
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+text = "Sliced Fish"
+horizontal_alignment = 1
+
+[node name="obliterated fish" type="Sprite2D" parent="."]
+position = Vector2(-4, 25)
+scale = Vector2(1.38281, 1.01953)
+texture = ExtResource("4_wvdm6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="obliterated fish"]
+offset_left = -80.2712
+offset_top = -176.552
+offset_right = 100.729
+offset_bottom = -74.5517
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
-text = "Salmon"
+text = "Obliterated Fish"
+horizontal_alignment = 1
 
 [node name="cooked rice" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2.15381, -6)
 scale = Vector2(1.71154, 1.71154)
 texture = ExtResource("1_sditr")
@@ -49,6 +87,7 @@ Rice"
 metadata/_edit_use_anchors_ = true
 
 [node name="seaweed" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2.15381, -6)
 scale = Vector2(1.71154, 1.71154)
 texture = ExtResource("1_sditr")
@@ -64,6 +103,7 @@ text = "Seaweed"
 metadata/_edit_use_anchors_ = true
 
 [node name="onigiri" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2.15381, -6)
 scale = Vector2(1.71154, 1.71154)
 texture = ExtResource("1_sditr")
@@ -79,6 +119,7 @@ text = "Onigiri"
 metadata/_edit_use_anchors_ = true
 
 [node name="sushi" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2.15381, -6)
 scale = Vector2(1.71154, 1.71154)
 texture = ExtResource("1_sditr")
@@ -91,34 +132,4 @@ offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Sushi"
-metadata/_edit_use_anchors_ = true
-
-[node name="sliced fish" type="Sprite2D" parent="."]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_sditr")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="sliced fish"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Sliced Fish"
-metadata/_edit_use_anchors_ = true
-
-[node name="obliterated fish" type="Sprite2D" parent="."]
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_sditr")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="obliterated fish"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Obliterated Fish"
 metadata/_edit_use_anchors_ = true
