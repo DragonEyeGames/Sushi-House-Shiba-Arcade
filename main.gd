@@ -3,7 +3,7 @@ extends Node2D
 var playerInventorySelect=""
 var interactable=""
 var interactiveItem
-var playerInventory=["seaweed", "cooked rice", "sliced fish"]
+var playerInventory=[]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

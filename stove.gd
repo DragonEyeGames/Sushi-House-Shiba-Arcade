@@ -15,7 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(placed):
-		$Icon2/ProgressBar.value+=.05#TESTING PURPOSE BOOST
+		$Icon2/ProgressBar.value+=.08#TESTING PURPOSE BOOST
 		if($Icon2/ProgressBar.value>=100):
 			cooked=true
 	if(colliding and item==$"..".playerInventorySelect and placed==false):

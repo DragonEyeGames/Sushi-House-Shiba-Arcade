@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="8_isl6y"]
 
 [node name="Items" type="Node2D"]
+scale = Vector2(0.72, 0.72)
 
 [node name="rice" type="Sprite2D" parent="."]
 visible = false
