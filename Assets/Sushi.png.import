@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c788mt3wijsi7"
-path="res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"
+uid="uid://cg6wd6etney0i"
+path="res://.godot/imported/Sushi.png-0b43b58c71551f365ef0a4115dff7517.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obliterated.png"
-dest_files=["res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"]
+source_file="res://Assets/Sushi.png"
+dest_files=["res://.godot/imported/Sushi.png-0b43b58c71551f365ef0a4115dff7517.ctex"]
 
 [params]
 

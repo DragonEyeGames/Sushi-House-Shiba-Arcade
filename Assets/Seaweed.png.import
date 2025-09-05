@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c788mt3wijsi7"
-path="res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"
+uid="uid://b3bkr5gdrogfa"
+path="res://.godot/imported/Seaweed.png-1a649750d2485cc8e5e832c2ebeb7adb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obliterated.png"
-dest_files=["res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"]
+source_file="res://Assets/Seaweed.png"
+dest_files=["res://.godot/imported/Seaweed.png-1a649750d2485cc8e5e832c2ebeb7adb.ctex"]
 
 [params]
 

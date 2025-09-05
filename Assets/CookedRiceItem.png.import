@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c788mt3wijsi7"
-path="res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"
+uid="uid://ci6s8w4fd7grx"
+path="res://.godot/imported/CookedRiceItem.png-089c7aa3e779586235834dfb8932706f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obliterated.png"
-dest_files=["res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"]
+source_file="res://Assets/CookedRiceItem.png"
+dest_files=["res://.godot/imported/CookedRiceItem.png-089c7aa3e779586235834dfb8932706f.ctex"]
 
 [params]
 

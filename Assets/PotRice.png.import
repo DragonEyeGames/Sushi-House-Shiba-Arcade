@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c788mt3wijsi7"
-path="res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"
+uid="uid://c6e40ojmlanye"
+path="res://.godot/imported/PotRice.png-0ffba64267f5026a1dcb802e5a45ea1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obliterated.png"
-dest_files=["res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"]
+source_file="res://Assets/PotRice.png"
+dest_files=["res://.godot/imported/PotRice.png-0ffba64267f5026a1dcb802e5a45ea1c.ctex"]
 
 [params]
 

@@ -15,8 +15,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(placed):
-		$Interactable/ProgressBar.value+=.05 * 1000#TESTING PURPOSE BOOST
-		if($Interactable/ProgressBar.value>=100):
+		$Icon2/ProgressBar.value+=.05#TESTING PURPOSE BOOST
+		if($Icon2/ProgressBar.value>=100):
 			cooked=true
 	if(colliding and item==$"..".playerInventorySelect and placed==false):
 		$RichTextLabel.visible=true
@@ -38,13 +38,19 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	$RichTextLabel.visible=false
-	$"..".interactable=""
-	$"..".interactiveItem=null
+	if($"..".interactiveItem==self):
+		$"..".interactable=""
+		$"..".interactiveItem=null
 	colliding=false
 	
 func interact():
+	if(not $"..".interactiveItem==self):
+		return
 	if(cooked):
 		$"..".playerInventory.append("cooked rice")
+		$Icon2.visible=false
+		$Icon.visible=true
+		$Icon2/ProgressBar.value=0
 		$"..".playerInventorySelect=""
 		for i in $"../CanvasLayer".get_children():
 			var outline = i.get_node_or_null("Outline")
@@ -54,11 +60,12 @@ func interact():
 		placed=false
 		cooked=false
 	elif(item==$"..".playerInventorySelect):
+		$Icon2.visible=true
+		$Icon.visible=false
 		$"..".playerInventory.erase($"..".playerInventorySelect)
 		$"..".playerInventorySelect=""
 		for i in $"../CanvasLayer".get_children():
 			var outline = i.get_node_or_null("Outline")
 			if outline:
 				outline.visible = false
-		$Interactable.visible=true
 		placed=true

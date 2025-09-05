@@ -1,26 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckbumgkfqrmoy"]
+[gd_scene load_steps=9 format=3 uid="uid://ckbumgkfqrmoy"]
 
-[ext_resource type="Texture2D" uid="uid://d3qu1bea31e07" path="res://icon.svg" id="1_sditr"]
+[ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="1_7on13"]
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="2_ri7ka"]
+[ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="2_vb3cu"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="3_o85l3"]
 [ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="4_wvdm6"]
+[ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="6_3pwg7"]
+[ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="7_isl6y"]
+[ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="8_isl6y"]
 
 [node name="Items" type="Node2D"]
 
 [node name="rice" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_sditr")
+position = Vector2(11, 159)
+scale = Vector2(2.34585, 2.16421)
+texture = ExtResource("1_7on13")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
+offset_left = -34.9663
+offset_top = -137.888
+offset_right = 65.0337
+offset_bottom = -35.8875
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Rice"
+
+[node name="cooked rice" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(10, 193)
+scale = Vector2(2.34585, 2.16421)
+texture = ExtResource("2_vb3cu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="cooked rice"]
+offset_left = -67.3529
+offset_top = -165.418
+offset_right = 60.6471
+offset_bottom = -58.4181
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 26
+text = "Cooked Rice"
+horizontal_alignment = 1
 
 [node name="fish" type="Sprite2D" parent="."]
 visible = false
@@ -55,6 +75,7 @@ text = "Sliced Fish"
 horizontal_alignment = 1
 
 [node name="obliterated fish" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-4, 25)
 scale = Vector2(1.38281, 1.01953)
 texture = ExtResource("4_wvdm6")
@@ -69,30 +90,18 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Obliterated Fish"
 horizontal_alignment = 1
 
-[node name="cooked rice" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_sditr")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="cooked rice"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "Cooked
-Rice"
-metadata/_edit_use_anchors_ = true
-
 [node name="seaweed" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_sditr")
+position = Vector2(2, 39)
+scale = Vector2(1.557, 1.557)
+texture = ExtResource("6_3pwg7")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="seaweed"]
+anchors_preset = -1
+anchor_left = -0.148569
+anchor_top = -0.292222
+anchor_right = 0.0193996
+anchor_bottom = 0.000746489
 offset_left = -26.9663
 offset_top = -47.1911
 offset_right = 73.0337
@@ -104,32 +113,44 @@ metadata/_edit_use_anchors_ = true
 
 [node name="onigiri" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_sditr")
+position = Vector2(30, -16)
+scale = Vector2(1.46124, 1.30108)
+texture = ExtResource("7_isl6y")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="onigiri"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
+anchors_preset = -1
+anchor_left = -0.0726326
+anchor_top = -0.00187692
+anchor_right = 0.360961
+anchor_bottom = -0.00187692
+offset_left = -105.958
+offset_top = -100.205
+offset_right = -5.95792
+offset_bottom = 1.7951
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
+theme_override_font_sizes/normal_font_size = 43
 text = "Onigiri"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="sushi" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-2.15381, -6)
-scale = Vector2(1.71154, 1.71154)
-texture = ExtResource("1_sditr")
+position = Vector2(30, -16)
+scale = Vector2(1.46124, 1.30108)
+texture = ExtResource("8_isl6y")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="sushi"]
-offset_left = -26.9663
-offset_top = -47.1911
-offset_right = 73.0337
-offset_bottom = 54.8089
+anchors_preset = -1
+anchor_left = -0.0726326
+anchor_top = -0.00187692
+anchor_right = 0.360961
+anchor_bottom = -0.00187692
+offset_left = -105.958
+offset_top = -100.205
+offset_right = -5.95792
+offset_bottom = 1.7951
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
+theme_override_font_sizes/normal_font_size = 43
 text = "Sushi"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

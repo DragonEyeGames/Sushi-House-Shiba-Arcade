@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c788mt3wijsi7"
-path="res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"
+uid="uid://c14luojaevyld"
+path="res://.godot/imported/FishCooler.png-17ac286f980b5e2b77ce6c9552815e5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obliterated.png"
-dest_files=["res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"]
+source_file="res://Assets/FishCooler.png"
+dest_files=["res://.godot/imported/FishCooler.png-17ac286f980b5e2b77ce6c9552815e5a.ctex"]
 
 [params]
 

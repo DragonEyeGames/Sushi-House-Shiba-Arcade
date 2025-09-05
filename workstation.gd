@@ -26,13 +26,15 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if(colliding and item==$"..".playerInventorySelect):
-		$RichTextLabel.visible=false
+	$RichTextLabel.visible=false
+	if($"..".interactiveItem==self):
 		$"..".interactable=""
 		$"..".interactiveItem=null
 	colliding=false
 	
 func interact():
+	if(not $"..".interactiveItem==self):
+		return
 	if(placed):
 		return
 	$"..".playerInventory.erase($"..".playerInventorySelect)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c788mt3wijsi7"
-path="res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"
+uid="uid://5pygkcvi0esp"
+path="res://.godot/imported/AssemblyStation.png-c0d1b5561d5fd4778f7fe3aa68e8cab3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obliterated.png"
-dest_files=["res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"]
+source_file="res://Assets/AssemblyStation.png"
+dest_files=["res://.godot/imported/AssemblyStation.png-c0d1b5561d5fd4778f7fe3aa68e8cab3.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=34 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://main.gd" id="1_7mycd"]
@@ -6,17 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://hotbar.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://cngg15t1lim6i" path="res://stove.gd" id="4_5vw27"]
 [ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://reservoir.gd" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://c6e40ojmlanye" path="res://Assets/PotRice.png" id="5_getpj"]
 [ext_resource type="Shader" uid="uid://day38ouyppi2j" path="res://recolor.gdshader" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://ccjws5hie7otm" path="res://cuttingBoard.gd" id="6_4c57u"]
+[ext_resource type="Texture2D" uid="uid://bwwfets07ip47" path="res://Assets/ClosedRice.png" id="6_ryguw"]
 [ext_resource type="Texture2D" uid="uid://ddm5dgso2owdt" path="res://Assets/RiceReservoir.png" id="6_w48qg"]
+[ext_resource type="Texture2D" uid="uid://cogbwe1rhmfmf" path="res://Assets/SeaweedHolder.png" id="7_cegan"]
 [ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://cuttingMinigame.gd" id="7_efxa6"]
 [ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://assembly.gd" id="7_kek77"]
 [ext_resource type="Texture2D" uid="uid://doq02n40iwio7" path="res://Assets/CuttingBoardTable.png" id="7_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://c14luojaevyld" path="res://Assets/FishCooler.png" id="9_d13ii"]
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="9_yaehf"]
 [ext_resource type="Script" uid="uid://dvbj345dy3by1" path="res://camera.gd" id="10_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="10_074og"]
 [ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="11_cegan"]
 [ext_resource type="PackedScene" uid="uid://ckbumgkfqrmoy" path="res://inventoryItems.tscn" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://5pygkcvi0esp" path="res://Assets/AssemblyStation.png" id="14_074og"]
+[ext_resource type="Texture2D" uid="uid://dxx1wx6tyv6tt" path="res://Assets/Knife.png" id="17_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="18_ryguw"]
+[ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="21_lswn8"]
+[ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="22_a6jrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(122, 123)
@@ -68,9 +77,11 @@ position = Vector2(141, 78)
 script = ExtResource("4_5vw27")
 
 [node name="Icon" type="Sprite2D" parent="Stove"]
-texture = ExtResource("1_ig7tw")
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("5_getpj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stove/Icon"]
+visible = false
 offset_left = -41.0
 offset_top = -46.0
 offset_right = 59.0
@@ -78,6 +89,28 @@ offset_bottom = 25.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Stove"
+
+[node name="Icon2" type="Sprite2D" parent="Stove"]
+visible = false
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("6_ryguw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stove/Icon2"]
+visible = false
+offset_left = -41.0
+offset_top = -46.0
+offset_right = 59.0
+offset_bottom = 25.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Stove"
+
+[node name="ProgressBar" type="ProgressBar" parent="Stove/Icon2"]
+offset_left = -118.0
+offset_top = 24.0
+offset_right = 117.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 26
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stove"]
 position = Vector2(-0.5, -0.5)
@@ -92,13 +125,13 @@ position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stove"]
-visible = false
-offset_left = -37.0
-offset_top = 3.0
-offset_right = 60.0
-offset_bottom = 43.0
+offset_left = -58.0
+offset_top = 29.0
+offset_right = 59.0
+offset_bottom = 59.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Place Rice"
+horizontal_alignment = 1
 
 [node name="Interactable" type="Sprite2D" parent="Stove"]
 visible = false
@@ -114,13 +147,6 @@ offset_bottom = 54.8089
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Rice Pot"
-
-[node name="ProgressBar" type="ProgressBar" parent="Stove/Interactable"]
-offset_left = -112.0
-offset_top = 40.0
-offset_right = 126.0
-offset_bottom = 88.0
-theme_override_font_sizes/font_size = 26
 
 [node name="Rice Reservoir" type="StaticBody2D" parent="."]
 position = Vector2(-42, 76)
@@ -176,9 +202,11 @@ script = ExtResource("5_272bh")
 item = "fish"
 
 [node name="Icon" type="Sprite2D" parent="Fish Reservoir"]
-texture = ExtResource("1_ig7tw")
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("9_d13ii")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Fish Reservoir/Icon"]
+visible = false
 offset_left = -41.0
 offset_top = -46.0
 offset_right = 59.0
@@ -201,18 +229,19 @@ shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Fish Reservoir"]
 visible = false
-offset_left = -37.0
-offset_top = 3.0
-offset_right = 60.0
-offset_bottom = 43.0
+offset_left = -62.0
+offset_top = 12.0
+offset_right = 61.0
+offset_bottom = 61.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Grab Fish"
+horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Fish Reservoir"]
-offset_left = 19.0
-offset_top = 36.0
-offset_right = 59.0
-offset_bottom = 76.0
+offset_left = 21.0
+offset_top = 40.0
+offset_right = 61.0
+offset_bottom = 80.0
 text = "1"
 horizontal_alignment = 2
 
@@ -223,9 +252,11 @@ item = "seaweed"
 stock = 3
 
 [node name="Icon" type="Sprite2D" parent="Seaweed Reservoir"]
-texture = ExtResource("1_ig7tw")
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("7_cegan")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Seaweed Reservoir/Icon"]
+visible = false
 offset_left = -58.0
 offset_top = -46.0
 offset_right = 66.0
@@ -248,22 +279,24 @@ shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Seaweed Reservoir"]
 visible = false
-offset_left = -37.0
-offset_top = 3.0
-offset_right = 60.0
-offset_bottom = 43.0
+offset_left = -59.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 60.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Grab Seaweed"
+horizontal_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Seaweed Reservoir"]
-offset_left = 19.0
-offset_top = 36.0
-offset_right = 59.0
-offset_bottom = 76.0
+offset_left = 17.0
+offset_top = -14.0
+offset_right = 57.0
+offset_bottom = 26.0
 text = "1"
 horizontal_alignment = 2
 
 [node name="Cutting Board" type="StaticBody2D" parent="."]
+texture_filter = 6
 position = Vector2(489, 82)
 script = ExtResource("6_4c57u")
 item = "fish"
@@ -295,10 +328,10 @@ position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cutting Board"]
-offset_left = -46.0
-offset_top = 13.0
-offset_right = 51.0
-offset_bottom = 53.0
+offset_left = -58.0
+offset_top = 11.0
+offset_right = 58.0
+offset_bottom = 59.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Place Fish"
 horizontal_alignment = 1
@@ -366,21 +399,17 @@ script = ExtResource("7_efxa6")
 
 [node name="Knife" type="Node2D" parent="Cutting Board/MinigameHolder"]
 z_index = 2
-position = Vector2(45, -4)
+position = Vector2(47, -18)
 rotation = 3.14159
 
-[node name="Blade" type="Sprite2D" parent="Cutting Board/MinigameHolder/Knife"]
-position = Vector2(-0.771545, 30.1758)
-scale = Vector2(0.0624997, 0.294128)
-texture = ExtResource("1_ig7tw")
-
 [node name="Handle" type="Sprite2D" parent="Cutting Board/MinigameHolder/Knife"]
-position = Vector2(-0.403013, 6.7212)
-scale = Vector2(0.0844218, 0.228599)
-texture = ExtResource("1_ig7tw")
+position = Vector2(0.345917, 6.00001)
+rotation = 3.14159
+scale = Vector2(0.146243, 0.228599)
+texture = ExtResource("17_1u8w0")
 
 [node name="Area2D" type="Area2D" parent="Cutting Board/MinigameHolder/Knife"]
-position = Vector2(-0.000114083, 45)
+position = Vector2(-6.59145e-05, 26)
 collision_layer = 0
 collision_mask = 4
 
@@ -401,9 +430,11 @@ position = Vector2(321, 84)
 script = ExtResource("7_kek77")
 
 [node name="Icon" type="Sprite2D" parent="Assembly Board"]
-texture = ExtResource("1_ig7tw")
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("14_074og")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board/Icon"]
+visible = false
 offset_left = -62.0
 offset_top = -46.0
 offset_right = 59.0
@@ -427,20 +458,23 @@ shape = SubResource("RectangleShape2D_1bvp3")
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board"]
 visible = false
 z_index = 7
-offset_left = -37.0
-offset_top = 3.0
-offset_right = 60.0
-offset_bottom = 51.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
+offset_left = -59.0
+offset_top = 11.0
+offset_right = 59.0
+offset_bottom = 59.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Place Seaweed"
+horizontal_alignment = 1
 
 [node name="Seaweed" type="Sprite2D" parent="Assembly Board"]
 visible = false
-position = Vector2(-0.999969, 17)
-scale = Vector2(0.445, 0.445)
-texture = ExtResource("1_ig7tw")
+position = Vector2(-0.500013, -25.5)
+rotation = -0.120428
+scale = Vector2(0.292969, 0.269531)
+texture = ExtResource("18_ryguw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board/Seaweed"]
+visible = false
 offset_left = -26.9663
 offset_top = -47.1911
 offset_right = 73.0337
@@ -451,11 +485,12 @@ text = "Seaweed"
 
 [node name="Onigiri" type="Sprite2D" parent="Assembly Board"]
 visible = false
-position = Vector2(-0.999969, 17)
-scale = Vector2(0.445, 0.445)
-texture = ExtResource("1_ig7tw")
+position = Vector2(2.99997, -41)
+scale = Vector2(0.21875, 0.207031)
+texture = ExtResource("21_lswn8")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board/Onigiri"]
+visible = false
 offset_left = -26.9663
 offset_top = -47.1911
 offset_right = 73.0337
@@ -466,11 +501,12 @@ text = "Onigiri"
 
 [node name="Sushi" type="Sprite2D" parent="Assembly Board"]
 visible = false
-position = Vector2(-0.999969, 17)
-scale = Vector2(0.445, 0.445)
-texture = ExtResource("1_ig7tw")
+position = Vector2(4.49998, -38.5)
+scale = Vector2(0.269531, 0.207031)
+texture = ExtResource("22_a6jrf")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board/Sushi"]
+visible = false
 offset_left = -26.9663
 offset_top = -47.1911
 offset_right = 73.0337
@@ -603,7 +639,7 @@ script = ExtResource("10_4c57u")
 
 [node name="Icon" type="Sprite2D" parent="."]
 z_index = -4
-position = Vector2(361, 272)
+position = Vector2(362, 267)
 scale = Vector2(16.1719, 12.75)
 texture = ExtResource("1_ig7tw")
 

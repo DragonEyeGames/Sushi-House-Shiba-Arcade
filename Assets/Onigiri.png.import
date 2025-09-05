@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c788mt3wijsi7"
-path="res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"
+uid="uid://cb7rrbaf4c4h4"
+path="res://.godot/imported/Onigiri.png-6c935092afdf8f78dbe4e3b97b7c80f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obliterated.png"
-dest_files=["res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"]
+source_file="res://Assets/Onigiri.png"
+dest_files=["res://.godot/imported/Onigiri.png-6c935092afdf8f78dbe4e3b97b7c80f4.ctex"]
 
 [params]
 

@@ -54,15 +54,16 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if colliding and itemMatching:
-		$RichTextLabel.visible = false
-		$"..".interactable = ""
-		$"..".interactiveItem = null
+	$RichTextLabel.visible = false
+	if($"..".interactiveItem==self):
+		$"..".interactable=""
+		$"..".interactiveItem=null
 	colliding = false
 
 
 func interact() -> void:
-
+	if(not $"..".interactiveItem==self):
+		return
 	# PLACE SEAWEED
 	if $"..".playerInventorySelect == "seaweed" and not seaweedPlaced:
 		_consume_item("seaweed")

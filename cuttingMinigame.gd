@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 						$Lines.add_child(line)  
 						line.global_position=$Knife/Area2D.global_position
 						currentLine.add_point(currentLine.to_local($Knife/Area2D/CollisionShape2D.global_position))
+						$"..".placedItem="Sliced Fish"
 					$"../Fish".visible=false
 					$"../Sliced Fish".visible=true
 				else:
@@ -69,6 +70,7 @@ func _physics_process(delta: float) -> void:
 						$Lines.add_child(line)  
 						line.global_position=$Knife/Area2D.global_position
 						currentLine.add_point(currentLine.to_local($Knife/Area2D/CollisionShape2D.global_position))
+						$"..".placedItem="Obliterated Fish"
 					$"../Sliced Fish".visible=false
 					$"../Obliterated Fish".visible=true
 

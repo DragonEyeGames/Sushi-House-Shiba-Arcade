@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c788mt3wijsi7"
-path="res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"
+uid="uid://bwwfets07ip47"
+path="res://.godot/imported/ClosedRice.png-d9be40e71ece03c05827b82d1fac0d60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obliterated.png"
-dest_files=["res://.godot/imported/Obliterated.png-ac3236beff5345d2c7feea3ce1049f1b.ctex"]
+source_file="res://Assets/ClosedRice.png"
+dest_files=["res://.godot/imported/ClosedRice.png-d9be40e71ece03c05827b82d1fac0d60.ctex"]
 
 [params]
 
