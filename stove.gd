@@ -25,9 +25,9 @@ func _process(delta: float) -> void:
 	elif(cooked and len($"..".playerInventory)<=4):
 		if(colliding):
 			$RichTextLabel.visible=true
-		$"RichTextLabel".text="Grab Pot"
-		$"..".interactable="rice stove"
-		$"..".interactiveItem=self
+			$"..".interactable="rice stove"
+			$"..".interactiveItem=self
+			$"RichTextLabel".text="Grab Pot"
 	else:
 		$RichTextLabel.visible=false
 

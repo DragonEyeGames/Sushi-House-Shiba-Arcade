@@ -1,7 +1,7 @@
 extends CharacterBody2D
-const SPEED = 175
+const SPEED = 225
 var canMove=true
-var _dir = "up"
+var _dir = "down"
 var walking=false
 
 func _process(delta: float) -> void:
@@ -58,3 +58,7 @@ func _process(delta: float) -> void:
 		if(_dir=="up" and $Sprite.animation!="back idle"):
 			$Sprite.play("back idle")
 	velocity=Vector2.ZERO
+	if(position.y>50):
+		z_index=15
+	else:
+		z_index=-1
