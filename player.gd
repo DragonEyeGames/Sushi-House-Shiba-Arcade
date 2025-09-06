@@ -55,8 +55,9 @@ func _process(delta: float) -> void:
 			elif(_dir=="up" and $Sprite.animation!="back idle"):
 				$Sprite.play("back idle")
 	else:
-		if(_dir=="up" and $Sprite.animation!="back idle"):
-			$Sprite.play("back idle")
+		_dir="down"
+		if($Sprite.animation!="idle"):
+			$Sprite.play("idle")
 	velocity=Vector2.ZERO
 	if(position.y>50):
 		z_index=15

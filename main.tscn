@@ -1,38 +1,57 @@
-[gd_scene load_steps=134 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=121 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://d3qu1bea31e07" path="res://icon.svg" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://doejrtv0x03ee" path="res://Character/Idle/BackIdle.png" id="3_come4"]
+[ext_resource type="Texture2D" uid="uid://ejsccb768v8q" path="res://Assets/Character/Back-Idle-1.png" id="3_uit24"]
 [ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://Assets/hotbar.png" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://cngg15t1lim6i" path="res://stove.gd" id="4_5vw27"]
 [ext_resource type="Texture2D" uid="uid://cx3d27yh77qkk" path="res://Character/Run/Back-Run.png" id="4_h8e4i"]
-[ext_resource type="Texture2D" uid="uid://1ecancubpyki" path="res://Character/Idle/Front-Idle.png" id="5_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://cidk7fqepd8oa" path="res://Assets/Character/Back-Idle-2.png" id="4_ruth0"]
+[ext_resource type="Texture2D" uid="uid://dj87k30piboto" path="res://Assets/Character/Front-Idle-2.png" id="5_4w656"]
 [ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://reservoir.gd" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://c6e40ojmlanye" path="res://Assets/PotRice.png" id="5_getpj"]
-[ext_resource type="Texture2D" uid="uid://tx8mijm7h0ff" path="res://Character/Idle/Left-Idle.png" id="6_0cp0l"]
+[ext_resource type="Texture2D" uid="uid://bp7upyj17ut0x" path="res://Assets/Character/Back-Idle-3.png" id="5_rm4vd"]
 [ext_resource type="Script" uid="uid://ccjws5hie7otm" path="res://cuttingBoard.gd" id="6_4c57u"]
+[ext_resource type="Texture2D" uid="uid://bqttllph587p8" path="res://Assets/Character/Front-Idle-3.png" id="6_e71vb"]
+[ext_resource type="Texture2D" uid="uid://cwkumxma4jfhh" path="res://Assets/Character/Back-Idle-4.png" id="6_pjyto"]
 [ext_resource type="Texture2D" uid="uid://bwwfets07ip47" path="res://Assets/ClosedRice.png" id="6_ryguw"]
 [ext_resource type="Texture2D" uid="uid://ddm5dgso2owdt" path="res://Assets/RiceReservoir.png" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://cogbwe1rhmfmf" path="res://Assets/SeaweedHolder.png" id="7_cegan"]
-[ext_resource type="Texture2D" uid="uid://bmddwkboqujb5" path="res://Character/Idle/Right-Idle.png" id="7_d2t1y"]
 [ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://cuttingMinigame.gd" id="7_efxa6"]
 [ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://assembly.gd" id="7_kek77"]
+[ext_resource type="Texture2D" uid="uid://0xss7lhx510r" path="res://Assets/Character/Front-Idle-4.png" id="7_rnkwl"]
+[ext_resource type="Texture2D" uid="uid://dua3yifkg7ji4" path="res://Assets/Character/Back-Idle-5.png" id="7_sm6fg"]
 [ext_resource type="Texture2D" uid="uid://doq02n40iwio7" path="res://Assets/CuttingBoardTable.png" id="7_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://d17stnb18l28a" path="res://Character/Run/Left-Run.png" id="8_gngh3"]
+[ext_resource type="Texture2D" uid="uid://cjbhspn8r7aiq" path="res://Assets/Character/Front-Idle-5.png" id="8_vke2r"]
 [ext_resource type="Texture2D" uid="uid://o8jl1vhlvy4m" path="res://Character/Run/Right-Run.png" id="9_0n3wm"]
 [ext_resource type="Texture2D" uid="uid://c14luojaevyld" path="res://Assets/FishCooler.png" id="9_d13ii"]
+[ext_resource type="Texture2D" uid="uid://da6dmqo48pqux" path="res://Assets/Character/Front-Idle-6.png" id="9_uit24"]
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="9_yaehf"]
 [ext_resource type="Script" uid="uid://dvbj345dy3by1" path="res://camera.gd" id="10_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="10_074og"]
 [ext_resource type="Texture2D" uid="uid://cuwamehtw4lyy" path="res://Character/Run/Front-Run.png" id="10_qnost"]
+[ext_resource type="Texture2D" uid="uid://3bwdonr11pkn" path="res://Assets/Character/Front-Idle-1.png" id="10_ruth0"]
 [ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="11_cegan"]
 [ext_resource type="PackedScene" uid="uid://ckbumgkfqrmoy" path="res://inventoryItems.tscn" id="11_dg77c"]
 [ext_resource type="Script" uid="uid://bceijafr0j870" path="res://trash.gd" id="11_seu75"]
 [ext_resource type="Texture2D" uid="uid://dqcu3dgl835jj" path="res://Assets/Trash.png" id="12_htxhm"]
 [ext_resource type="Texture2D" uid="uid://5pygkcvi0esp" path="res://Assets/AssemblyStation.png" id="14_074og"]
+[ext_resource type="Texture2D" uid="uid://jq5igtc5hamb" path="res://Assets/Character/Right-Idle-1.png" id="15_sm6fg"]
+[ext_resource type="Texture2D" uid="uid://6uwxffky0bqp" path="res://Assets/Character/Left-Idle-1.png" id="15_wu3dr"]
+[ext_resource type="Texture2D" uid="uid://0h6xf3r6a5np" path="res://Assets/Character/Right-Idle-2.png" id="16_b17eg"]
+[ext_resource type="Texture2D" uid="uid://dvdj145rnvdsr" path="res://Assets/Character/Left-Idle-2.png" id="16_cyx1q"]
+[ext_resource type="Texture2D" uid="uid://cl5pdfc1yd7if" path="res://Assets/Character/Left-Idle-3.png" id="17_0dhbp"]
 [ext_resource type="Texture2D" uid="uid://dxx1wx6tyv6tt" path="res://Assets/Knife.png" id="17_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://ptji7rpl6kyr" path="res://Assets/Character/Right-Idle-3.png" id="17_ntx8l"]
+[ext_resource type="Texture2D" uid="uid://bdmmwjkxvnf1j" path="res://Assets/Character/Left-Idle-4.png" id="18_jx0wj"]
 [ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="18_ryguw"]
+[ext_resource type="Texture2D" uid="uid://bhogipvs045j3" path="res://Assets/Character/Right-Idle-4.png" id="18_uatky"]
+[ext_resource type="Texture2D" uid="uid://b220newan6k86" path="res://Assets/Character/Left-Idle-5.png" id="19_kkkcx"]
+[ext_resource type="Texture2D" uid="uid://tn21ighnyvfs" path="res://Assets/Character/Right-Idle-5.png" id="19_rqtf5"]
+[ext_resource type="Texture2D" uid="uid://dohuvkmk4ha3d" path="res://Assets/Character/Right-Idle-6.png" id="20_1vm84"]
+[ext_resource type="Texture2D" uid="uid://bo3ht50jfheg7" path="res://Assets/Character/Left-Idle-6.png" id="20_34ol3"]
 [ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="21_lswn8"]
 [ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="22_a6jrf"]
 [ext_resource type="Texture2D" uid="uid://b44wrkr6d7pxe" path="res://Assets/Outline.png" id="24_lswn8"]
@@ -50,38 +69,6 @@
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="48_f6a44"]
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="49_hrvbo"]
 [ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="50_uypp3"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wnkbs"]
-atlas = ExtResource("3_come4")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f6a44"]
-atlas = ExtResource("3_come4")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0cbny"]
-atlas = ExtResource("3_come4")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hrvbo"]
-atlas = ExtResource("3_come4")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uypp3"]
-atlas = ExtResource("3_come4")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_blkrb"]
-atlas = ExtResource("3_come4")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_abqjc"]
-atlas = ExtResource("3_come4")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6iyjs"]
-atlas = ExtResource("3_come4")
-region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4w656"]
 atlas = ExtResource("4_h8e4i")
@@ -113,102 +100,6 @@ region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjyto"]
 atlas = ExtResource("4_h8e4i")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sm6fg"]
-atlas = ExtResource("5_4lmeg")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b17eg"]
-atlas = ExtResource("5_4lmeg")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ntx8l"]
-atlas = ExtResource("5_4lmeg")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uatky"]
-atlas = ExtResource("5_4lmeg")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rqtf5"]
-atlas = ExtResource("5_4lmeg")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1vm84"]
-atlas = ExtResource("5_4lmeg")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wu3dr"]
-atlas = ExtResource("5_4lmeg")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cyx1q"]
-atlas = ExtResource("5_4lmeg")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0dhbp"]
-atlas = ExtResource("6_0cp0l")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jx0wj"]
-atlas = ExtResource("6_0cp0l")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kkkcx"]
-atlas = ExtResource("6_0cp0l")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_34ol3"]
-atlas = ExtResource("6_0cp0l")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c2n8d"]
-atlas = ExtResource("6_0cp0l")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wy5fy"]
-atlas = ExtResource("6_0cp0l")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gx4rg"]
-atlas = ExtResource("6_0cp0l")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5dllo"]
-atlas = ExtResource("6_0cp0l")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phcyf"]
-atlas = ExtResource("7_d2t1y")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_birbe"]
-atlas = ExtResource("7_d2t1y")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1p13"]
-atlas = ExtResource("7_d2t1y")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4obbf"]
-atlas = ExtResource("7_d2t1y")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ovcoh"]
-atlas = ExtResource("7_d2t1y")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ppx11"]
-atlas = ExtResource("7_d2t1y")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1yv1y"]
-atlas = ExtResource("7_d2t1y")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5yh34"]
-atlas = ExtResource("7_d2t1y")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjuso"]
@@ -311,28 +202,22 @@ region = Rect2(224, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wnkbs")
+"texture": ExtResource("3_uit24")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f6a44")
+"texture": ExtResource("4_ruth0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0cbny")
+"texture": ExtResource("5_rm4vd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hrvbo")
+"texture": ExtResource("6_pjyto")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uypp3")
+"texture": ExtResource("6_pjyto")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_blkrb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_abqjc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6iyjs")
+"texture": ExtResource("7_sm6fg")
 }],
 "loop": true,
 "name": &"back idle",
@@ -369,28 +254,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sm6fg")
+"texture": ExtResource("5_4w656")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b17eg")
+"texture": ExtResource("6_e71vb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ntx8l")
+"texture": ExtResource("7_rnkwl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uatky")
+"texture": ExtResource("8_vke2r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rqtf5")
+"texture": ExtResource("9_uit24")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1vm84")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wu3dr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cyx1q")
+"texture": ExtResource("10_ruth0")
 }],
 "loop": true,
 "name": &"idle",
@@ -398,28 +277,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0dhbp")
+"texture": ExtResource("15_wu3dr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jx0wj")
+"texture": ExtResource("16_cyx1q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kkkcx")
+"texture": ExtResource("17_0dhbp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_34ol3")
+"texture": ExtResource("18_jx0wj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c2n8d")
+"texture": ExtResource("19_kkkcx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wy5fy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gx4rg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5dllo")
+"texture": ExtResource("20_34ol3")
 }],
 "loop": true,
 "name": &"idle left",
@@ -427,28 +300,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_phcyf")
+"texture": ExtResource("15_sm6fg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_birbe")
+"texture": ExtResource("16_b17eg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f1p13")
+"texture": ExtResource("17_ntx8l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4obbf")
+"texture": ExtResource("18_uatky")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ovcoh")
+"texture": ExtResource("19_rqtf5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ppx11")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1yv1y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5yh34")
+"texture": ExtResource("20_1vm84")
 }],
 "loop": true,
 "name": &"idle right",
@@ -607,10 +474,9 @@ position = Vector2(408, -37)
 script = ExtResource("1_0xm2m")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Player"]
-scale = Vector2(5.54, 5.54)
+scale = Vector2(0.715, 0.715)
 sprite_frames = SubResource("SpriteFrames_am8a1")
 animation = &"back idle"
-frame_progress = 0.727654
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1, 30)
@@ -2289,12 +2155,12 @@ position = Vector2(334, 694)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_qsp4k")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="TV" type="StaticBody2D" parent="."]
 z_index = -7
 position = Vector2(1, 17)
 script = ExtResource("40_4lmeg")
 
-[node name="Wall" type="ColorRect" parent="StaticBody2D2"]
+[node name="Wall" type="ColorRect" parent="TV"]
 z_index = -3
 offset_left = -544.0
 offset_top = -419.0
@@ -2302,18 +2168,18 @@ offset_right = 1272.0
 offset_bottom = -75.0
 color = Color(0.705882, 0.682353, 0.643137, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TV"]
 position = Vector2(333.5, -123.5)
 shape = SubResource("RectangleShape2D_come4")
 
-[node name="Tv Boarder" type="ColorRect" parent="StaticBody2D2"]
+[node name="Tv Boarder" type="ColorRect" parent="TV"]
 offset_left = 194.0
 offset_top = -373.0
 offset_right = 582.0
 offset_bottom = -153.0
 color = Color(0, 0, 0, 1)
 
-[node name="TV Screen" type="ColorRect" parent="StaticBody2D2"]
+[node name="TV Screen" type="ColorRect" parent="TV"]
 z_index = 2
 material = SubResource("ShaderMaterial_4lmeg")
 offset_left = 205.0
@@ -2322,7 +2188,7 @@ offset_right = 571.0
 offset_bottom = -164.0
 color = Color(0.152941, 0.152941, 0.152941, 1)
 
-[node name="TV Screen2" type="ColorRect" parent="StaticBody2D2"]
+[node name="TV Screen2" type="ColorRect" parent="TV"]
 z_index = 1
 offset_left = 205.0
 offset_top = -364.0
@@ -2330,7 +2196,7 @@ offset_right = 571.0
 offset_bottom = -164.0
 color = Color(0.151276, 0.151276, 0.151276, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="StaticBody2D2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TV"]
 z_index = 1
 offset_left = 262.0
 offset_top = -369.0
@@ -2340,11 +2206,11 @@ theme_override_font_sizes/normal_font_size = 29
 text = "Orders"
 horizontal_alignment = 1
 
-[node name="Order 1" type="Node2D" parent="StaticBody2D2"]
+[node name="Order 1" type="Node2D" parent="TV"]
 z_index = 1
 position = Vector2(-6, -3)
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D2/Order 1"]
+[node name="ColorRect" type="ColorRect" parent="TV/Order 1"]
 offset_left = 218.0
 offset_top = -320.0
 offset_right = 386.0
@@ -2352,12 +2218,17 @@ offset_bottom = -249.0
 color = Color(0.712129, 0.712129, 0.712129, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Sushi" type="Sprite2D" parent="StaticBody2D2/Order 1"]
+[node name="Sushi" type="Sprite2D" parent="TV/Order 1"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("22_a6jrf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="StaticBody2D2/Order 1"]
+[node name="Onigiri" type="Sprite2D" parent="TV/Order 1"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("21_lswn8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 1"]
 offset_left = 287.0
 offset_top = -321.0
 offset_right = 386.0
@@ -2367,7 +2238,7 @@ theme_override_font_sizes/normal_font_size = 17
 text = "1x Sushi With Fish"
 metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="StaticBody2D2/Order 1"]
+[node name="ProgressBar" type="ProgressBar" parent="TV/Order 1"]
 offset_left = 302.0
 offset_top = -272.0
 offset_right = 417.0
@@ -2379,7 +2250,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_4lmeg")
 value = 100.0
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="StaticBody2D2/Order 1"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="TV/Order 1"]
 offset_left = 221.0
 offset_top = -275.0
 offset_right = 315.0
@@ -2389,23 +2260,28 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
 metadata/_edit_use_anchors_ = true
 
-[node name="Order 2" type="Node2D" parent="StaticBody2D2"]
+[node name="Order 2" type="Node2D" parent="TV"]
 z_index = 1
 position = Vector2(177, -3)
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D2/Order 2"]
+[node name="ColorRect" type="ColorRect" parent="TV/Order 2"]
 offset_left = 218.0
 offset_top = -320.0
 offset_right = 386.0
 offset_bottom = -249.0
 color = Color(0.712129, 0.712129, 0.712129, 1)
 
-[node name="Sushi" type="Sprite2D" parent="StaticBody2D2/Order 2"]
+[node name="Sushi" type="Sprite2D" parent="TV/Order 2"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("22_a6jrf")
+
+[node name="Onigiri" type="Sprite2D" parent="TV/Order 2"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("21_lswn8")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="StaticBody2D2/Order 2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 2"]
 offset_left = 287.0
 offset_top = -321.0
 offset_right = 386.0
@@ -2414,7 +2290,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 17
 text = "1x Onigiri Plain"
 
-[node name="ProgressBar" type="ProgressBar" parent="StaticBody2D2/Order 2"]
+[node name="ProgressBar" type="ProgressBar" parent="TV/Order 2"]
 offset_left = 302.0
 offset_top = -272.0
 offset_right = 417.0
@@ -2425,7 +2301,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_h8e4i")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4lmeg")
 value = 100.0
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="StaticBody2D2/Order 2"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="TV/Order 2"]
 offset_left = 221.0
 offset_top = -275.0
 offset_right = 315.0
@@ -2434,11 +2310,11 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
 
-[node name="Order 3" type="Node2D" parent="StaticBody2D2"]
+[node name="Order 3" type="Node2D" parent="TV"]
 z_index = 1
 position = Vector2(-6, 76)
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D2/Order 3"]
+[node name="ColorRect" type="ColorRect" parent="TV/Order 3"]
 offset_left = 218.0
 offset_top = -320.0
 offset_right = 386.0
@@ -2446,12 +2322,17 @@ offset_bottom = -249.0
 color = Color(0.712129, 0.712129, 0.712129, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Sushi" type="Sprite2D" parent="StaticBody2D2/Order 3"]
+[node name="Sushi" type="Sprite2D" parent="TV/Order 3"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("22_a6jrf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="StaticBody2D2/Order 3"]
+[node name="Onigiri" type="Sprite2D" parent="TV/Order 3"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("21_lswn8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 3"]
 offset_left = 287.0
 offset_top = -321.0
 offset_right = 386.0
@@ -2461,7 +2342,7 @@ theme_override_font_sizes/normal_font_size = 17
 text = "1x Sushi With Fish"
 metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="StaticBody2D2/Order 3"]
+[node name="ProgressBar" type="ProgressBar" parent="TV/Order 3"]
 offset_left = 302.0
 offset_top = -272.0
 offset_right = 417.0
@@ -2473,7 +2354,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_4lmeg")
 value = 100.0
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="StaticBody2D2/Order 3"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="TV/Order 3"]
 offset_left = 221.0
 offset_top = -275.0
 offset_right = 315.0
@@ -2483,23 +2364,29 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
 metadata/_edit_use_anchors_ = true
 
-[node name="Order 4" type="Node2D" parent="StaticBody2D2"]
+[node name="Order 4" type="Node2D" parent="TV"]
 z_index = 1
 position = Vector2(177, 76)
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D2/Order 4"]
+[node name="ColorRect" type="ColorRect" parent="TV/Order 4"]
 offset_left = 218.0
 offset_top = -320.0
 offset_right = 386.0
 offset_bottom = -249.0
 color = Color(0.712129, 0.712129, 0.712129, 1)
 
-[node name="Sushi" type="Sprite2D" parent="StaticBody2D2/Order 4"]
+[node name="Sushi" type="Sprite2D" parent="TV/Order 4"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("22_a6jrf")
+
+[node name="Onigiri" type="Sprite2D" parent="TV/Order 4"]
+visible = false
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("21_lswn8")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="StaticBody2D2/Order 4"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 4"]
 offset_left = 287.0
 offset_top = -321.0
 offset_right = 386.0
@@ -2508,7 +2395,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 17
 text = "1x Onigiri Plain"
 
-[node name="ProgressBar" type="ProgressBar" parent="StaticBody2D2/Order 4"]
+[node name="ProgressBar" type="ProgressBar" parent="TV/Order 4"]
 offset_left = 302.0
 offset_top = -272.0
 offset_right = 417.0
@@ -2519,7 +2406,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_h8e4i")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4lmeg")
 value = 100.0
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="StaticBody2D2/Order 4"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="TV/Order 4"]
 offset_left = 221.0
 offset_top = -275.0
 offset_right = 315.0
@@ -2841,6 +2728,6 @@ color = Color(0.705882, 0.682353, 0.643137, 1)
 [connection signal="area_entered" from="Assembly Board/Area2D" to="Assembly Board" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Assembly Board/Area2D" to="Assembly Board" method="_on_area_2d_area_exited"]
 [connection signal="pressed" from="MinigameLayer/Button" to="Cutting Board" method="_on_button_pressed"]
-[connection signal="timeout" from="Sushi Rollers/Timer" to="StaticBody2D2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Sushi Rollers/Timer" to="TV" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_exited"]

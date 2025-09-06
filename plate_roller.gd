@@ -23,8 +23,13 @@ func _process(delta: float) -> void:
 		print("si")
 		if($"..".playerInventorySelect!=""):
 			$Rollers/RichTextLabel.text="Place " + $"..".playerInventorySelect
+				
 			$Rollers/RichTextLabel.visible=true
 			if(Input.is_action_just_pressed("Place")):
+				if($"..".playerInventorySelect in $"../TV".orders):
+					var index=$"../TV".orders.find($"..".playerInventorySelect)
+					$"../TV".orders.remove_at(index)
+					$"../TV".orderTimeRemaining.remove_at(index)
 				var item_node = settingPlate.get_node_or_null($"..".playerInventorySelect)
 				if item_node:
 					item_node.visible = true
