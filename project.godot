@@ -93,6 +93,7 @@ Place={
 2d_physics/layer_1="Collisions"
 2d_physics/layer_2="Interactables"
 2d_physics/layer_3="Minigame"
+2d_physics/layer_4="Plate Shipper"
 
 [rendering]
 

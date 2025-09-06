@@ -3,7 +3,7 @@ extends StaticBody2D
 var copies = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var original = $"../SushiConveyer"
+	var original = $"../Sushi Rollers/SushiConveyer"
 	for i in range(11):
 		var copy = original.duplicate()  # deep copy if needed: duplicate(true)
 		add_child(copy)
