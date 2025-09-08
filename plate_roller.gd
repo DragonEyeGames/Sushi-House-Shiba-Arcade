@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 				
 			$Rollers/RichTextLabel.visible=true
 			if(Input.is_action_just_pressed("Place")):
+				$"../AudioStreamPlayer2D2".playing=true
 				if($"..".playerInventorySelect in $"../TV".orders):
 					var index=$"../TV".orders.find($"..".playerInventorySelect)
 					$"../TV".orders.remove_at(index)

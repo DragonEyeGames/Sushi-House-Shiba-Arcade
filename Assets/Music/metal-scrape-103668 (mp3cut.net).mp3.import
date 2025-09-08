@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8v1navfxknan"
+path="res://.godot/imported/metal-scrape-103668 (mp3cut.net).mp3-7c2b6f824f4f91d7ba742a3e4cc5b15f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/metal-scrape-103668 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/metal-scrape-103668 (mp3cut.net).mp3-7c2b6f824f4f91d7ba742a3e4cc5b15f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

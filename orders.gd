@@ -11,7 +11,7 @@ func _ready() -> void:
 	var original = $"../Sushi Rollers/SushiConveyer"
 	for i in range(11):
 		var copy = original.duplicate()
-		add_child(copy)
+		$"../Sushi Rollers".add_child(copy)
 		copy.global_position = Vector2(original.global_position.x, original.global_position.y + (i * 90))
 		copy.z_index = 10
 		copies.append(copy)
