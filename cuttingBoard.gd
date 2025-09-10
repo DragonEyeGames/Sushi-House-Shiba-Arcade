@@ -66,6 +66,7 @@ func interact():
 		return
 	elif(placed and not $MinigameHolder.running and $Fish.visible==false):
 		if(len($"..".playerInventory)<=4):
+			$"../Player/PickingUp".play()
 			if($"Sliced Fish".visible):
 				$"Sliced Fish".visible=false
 				$"..".playerInventory.append("sliced fish")

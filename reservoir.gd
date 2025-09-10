@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 			return
 		if(len($"..".playerInventory)<=4):
 			$"..".playerInventory.append(item)
+			$"../Player/PickingUp".play()
 			stock-=1
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

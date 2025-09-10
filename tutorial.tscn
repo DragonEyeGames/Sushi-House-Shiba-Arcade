@@ -1,153 +1,154 @@
-[gd_scene load_steps=147 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=148 format=3 uid="uid://bya7ucb53a5io"]
 
-[ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://main.gd" id="1_7mycd"]
-[ext_resource type="Texture2D" uid="uid://d3qu1bea31e07" path="res://icon.svg" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://ejsccb768v8q" path="res://Assets/Character/Back-Idle-1.png" id="3_uit24"]
-[ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://Assets/hotbar.png" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://cngg15t1lim6i" path="res://stove.gd" id="4_5vw27"]
-[ext_resource type="Texture2D" uid="uid://cidk7fqepd8oa" path="res://Assets/Character/Back-Idle-2.png" id="4_ruth0"]
-[ext_resource type="Texture2D" uid="uid://dj87k30piboto" path="res://Assets/Character/Front-Idle-2.png" id="5_4w656"]
-[ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://reservoir.gd" id="5_272bh"]
-[ext_resource type="Texture2D" uid="uid://c6e40ojmlanye" path="res://Assets/PotRice.png" id="5_getpj"]
-[ext_resource type="Texture2D" uid="uid://bp7upyj17ut0x" path="res://Assets/Character/Back-Idle-3.png" id="5_rm4vd"]
-[ext_resource type="Script" uid="uid://ccjws5hie7otm" path="res://cuttingBoard.gd" id="6_4c57u"]
-[ext_resource type="Texture2D" uid="uid://bqttllph587p8" path="res://Assets/Character/Front-Idle-3.png" id="6_e71vb"]
-[ext_resource type="Texture2D" uid="uid://cwkumxma4jfhh" path="res://Assets/Character/Back-Idle-4.png" id="6_pjyto"]
-[ext_resource type="Texture2D" uid="uid://bwwfets07ip47" path="res://Assets/ClosedRice.png" id="6_ryguw"]
-[ext_resource type="Texture2D" uid="uid://ddm5dgso2owdt" path="res://Assets/RiceReservoir.png" id="6_w48qg"]
-[ext_resource type="Texture2D" uid="uid://cogbwe1rhmfmf" path="res://Assets/SeaweedHolder.png" id="7_cegan"]
-[ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://cuttingMinigame.gd" id="7_efxa6"]
-[ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://assembly.gd" id="7_kek77"]
-[ext_resource type="Texture2D" uid="uid://0xss7lhx510r" path="res://Assets/Character/Front-Idle-4.png" id="7_rnkwl"]
-[ext_resource type="Texture2D" uid="uid://dua3yifkg7ji4" path="res://Assets/Character/Back-Idle-5.png" id="7_sm6fg"]
-[ext_resource type="Texture2D" uid="uid://doq02n40iwio7" path="res://Assets/CuttingBoardTable.png" id="7_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://dsmrypy8yte13" path="res://Assets/Character/Back-Walk-1.png" id="8_4obbf"]
-[ext_resource type="Texture2D" uid="uid://cjbhspn8r7aiq" path="res://Assets/Character/Front-Idle-5.png" id="8_vke2r"]
-[ext_resource type="Texture2D" uid="uid://c14luojaevyld" path="res://Assets/FishCooler.png" id="9_d13ii"]
-[ext_resource type="Texture2D" uid="uid://brd8bkdmpbsq5" path="res://Assets/Character/Back-Walk-2.png" id="9_ovcoh"]
-[ext_resource type="Texture2D" uid="uid://da6dmqo48pqux" path="res://Assets/Character/Front-Idle-6.png" id="9_uit24"]
-[ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="9_yaehf"]
-[ext_resource type="Script" uid="uid://dvbj345dy3by1" path="res://camera.gd" id="10_4c57u"]
-[ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="10_074og"]
-[ext_resource type="Texture2D" uid="uid://ctdkhk1uxgh32" path="res://Assets/Character/Back-Walk-3.png" id="10_ppx11"]
-[ext_resource type="Texture2D" uid="uid://3bwdonr11pkn" path="res://Assets/Character/Front-Idle-1.png" id="10_ruth0"]
-[ext_resource type="Texture2D" uid="uid://6b44ggvnveoo" path="res://Assets/Character/Back-Walk-4.png" id="11_1yv1y"]
-[ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="11_cegan"]
-[ext_resource type="PackedScene" uid="uid://ckbumgkfqrmoy" path="res://inventoryItems.tscn" id="11_dg77c"]
-[ext_resource type="Script" uid="uid://bceijafr0j870" path="res://trash.gd" id="11_seu75"]
-[ext_resource type="Texture2D" uid="uid://d1v1dmd5x8wa8" path="res://Assets/Character/Back-Walk-5.png" id="12_5yh34"]
-[ext_resource type="Texture2D" uid="uid://dqcu3dgl835jj" path="res://Assets/Trash.png" id="12_htxhm"]
-[ext_resource type="Texture2D" uid="uid://de65xl7svicuw" path="res://Assets/Character/Back-Walk-6.png" id="13_pjuso"]
-[ext_resource type="Texture2D" uid="uid://bopot3h8ho77d" path="res://Assets/Character/Back-Walk-7.png" id="14_23xmf"]
-[ext_resource type="Texture2D" uid="uid://5pygkcvi0esp" path="res://Assets/AssemblyStation.png" id="14_074og"]
-[ext_resource type="Texture2D" uid="uid://jq5igtc5hamb" path="res://Assets/Character/Right-Idle-1.png" id="15_sm6fg"]
-[ext_resource type="Texture2D" uid="uid://nrhxqb8op6b8" path="res://Assets/Character/Back-Walk-8.png" id="15_swlj1"]
-[ext_resource type="Texture2D" uid="uid://6uwxffky0bqp" path="res://Assets/Character/Left-Idle-1.png" id="15_wu3dr"]
-[ext_resource type="Texture2D" uid="uid://0h6xf3r6a5np" path="res://Assets/Character/Right-Idle-2.png" id="16_b17eg"]
-[ext_resource type="Texture2D" uid="uid://dvdj145rnvdsr" path="res://Assets/Character/Left-Idle-2.png" id="16_cyx1q"]
-[ext_resource type="Texture2D" uid="uid://cch25bap77pyp" path="res://Assets/Character/Back-Walk-9.png" id="16_yysqy"]
-[ext_resource type="Texture2D" uid="uid://cl5pdfc1yd7if" path="res://Assets/Character/Left-Idle-3.png" id="17_0dhbp"]
-[ext_resource type="Texture2D" uid="uid://dxx1wx6tyv6tt" path="res://Assets/Knife.png" id="17_1u8w0"]
-[ext_resource type="Texture2D" uid="uid://jyt0xa78bbbw" path="res://Assets/Character/Back-Walk-1-2.png" id="17_n5t1e"]
-[ext_resource type="Texture2D" uid="uid://ptji7rpl6kyr" path="res://Assets/Character/Right-Idle-3.png" id="17_ntx8l"]
-[ext_resource type="Texture2D" uid="uid://cupsuafprtj5l" path="res://Assets/Character/Back-Walk-2-2.png" id="18_h6isl"]
-[ext_resource type="Texture2D" uid="uid://bdmmwjkxvnf1j" path="res://Assets/Character/Left-Idle-4.png" id="18_jx0wj"]
-[ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="18_ryguw"]
-[ext_resource type="Texture2D" uid="uid://bhogipvs045j3" path="res://Assets/Character/Right-Idle-4.png" id="18_uatky"]
-[ext_resource type="Texture2D" uid="uid://bkl4larsa5636" path="res://Assets/Character/Back-Walk-3-2.png" id="19_53bls"]
-[ext_resource type="Texture2D" uid="uid://b220newan6k86" path="res://Assets/Character/Left-Idle-5.png" id="19_kkkcx"]
-[ext_resource type="Texture2D" uid="uid://tn21ighnyvfs" path="res://Assets/Character/Right-Idle-5.png" id="19_rqtf5"]
-[ext_resource type="Texture2D" uid="uid://dohuvkmk4ha3d" path="res://Assets/Character/Right-Idle-6.png" id="20_1vm84"]
-[ext_resource type="Texture2D" uid="uid://bo3ht50jfheg7" path="res://Assets/Character/Left-Idle-6.png" id="20_34ol3"]
-[ext_resource type="Texture2D" uid="uid://u1fchjxskxn6" path="res://Assets/Character/Back-Walk-4-2.png" id="20_lwnsi"]
-[ext_resource type="Texture2D" uid="uid://bha4ostnkxxc0" path="res://Assets/Character/Back-Walk-5-2.png" id="21_41lik"]
-[ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="21_lswn8"]
-[ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="22_a6jrf"]
-[ext_resource type="Texture2D" uid="uid://b44wrkr6d7pxe" path="res://Assets/Outline.png" id="24_lswn8"]
-[ext_resource type="Texture2D" uid="uid://di2ufu5v0ebq3" path="res://Assets/Wood1.png" id="27_qsp4k"]
-[ext_resource type="Texture2D" uid="uid://bw8myrpkcf5g3" path="res://Assets/Wood2.png" id="28_kq58d"]
-[ext_resource type="Texture2D" uid="uid://bnigbowjs4dp2" path="res://Assets/Wood3.png" id="29_seu75"]
-[ext_resource type="Script" uid="uid://dac8gpkcvujsu" path="res://orders.gd" id="40_4lmeg"]
-[ext_resource type="Shader" uid="uid://cdwoss15yri8m" path="res://tv.gdshader" id="40_h8e4i"]
-[ext_resource type="Texture2D" uid="uid://cd1kfat1csj66" path="res://Assets/Character/Left-Walk-1.png" id="40_ywjan"]
-[ext_resource type="Texture2D" uid="uid://b3c2xuhutij74" path="res://Assets/Character/Left-Walk-2.png" id="41_m74q3"]
-[ext_resource type="Texture2D" uid="uid://bew43yfuvkv2o" path="res://Assets/SushiRollerStand.png" id="42_0cp0l"]
-[ext_resource type="Texture2D" uid="uid://3po4etr1y6p6" path="res://Assets/Character/Left-Walk-3.png" id="42_tko6h"]
-[ext_resource type="Texture2D" uid="uid://depye3p8fv2o" path="res://Assets/Character/Left-Walk-4.png" id="43_am8a1"]
-[ext_resource type="Texture2D" uid="uid://dhxsbkvy7xkrl" path="res://Assets/SushiConveyer.png" id="43_d2t1y"]
-[ext_resource type="Texture2D" uid="uid://dutron0v0tish" path="res://Assets/Character/Left-Walk-5.png" id="44_8dc3g"]
-[ext_resource type="Script" uid="uid://ch10s3ken56ee" path="res://sushi_conveyer.gd" id="44_gngh3"]
-[ext_resource type="Texture2D" uid="uid://c043i6kvm2eg" path="res://Assets/Rollers.png" id="45_0n3wm"]
-[ext_resource type="Texture2D" uid="uid://w6n6ypfom4ka" path="res://Assets/Character/Left-Walk-6.png" id="45_htgcl"]
-[ext_resource type="Texture2D" uid="uid://c8rt7xd0x30bs" path="res://Assets/RollBars.png" id="45_qnost"]
-[ext_resource type="Script" uid="uid://d3a6krp7r1x2g" path="res://plate_roller.gd" id="45_wnkbs"]
-[ext_resource type="Texture2D" uid="uid://cs025we5xwen2" path="res://Assets/Character/Left-Walk-7.png" id="46_smeu8"]
-[ext_resource type="Texture2D" uid="uid://c12qvrmo3ttk8" path="res://Assets/Character/Left-Walk-8.png" id="47_f3y11"]
-[ext_resource type="Texture2D" uid="uid://b02oa3ngfdgk7" path="res://Assets/Character/Left-Walk-9.png" id="48_cpm2s"]
-[ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="48_f6a44"]
-[ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="49_hrvbo"]
-[ext_resource type="Texture2D" uid="uid://b7r0ibs2748tt" path="res://Assets/Character/Left-Walk-1-2.png" id="49_u81y6"]
-[ext_resource type="Texture2D" uid="uid://0nxrrqinynri" path="res://Assets/Character/Left-Walk-2-2.png" id="50_rt5wr"]
-[ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="50_uypp3"]
-[ext_resource type="Texture2D" uid="uid://ccvfekotdbkbu" path="res://Assets/Character/Left-Walk-3-2.png" id="51_mnw77"]
-[ext_resource type="Texture2D" uid="uid://d0ws4trer64dp" path="res://Assets/Character/Left-Walk-4-2.png" id="52_vjgyh"]
-[ext_resource type="Texture2D" uid="uid://fsof8oce4ivm" path="res://Assets/Character/Left-Walk-5-2.png" id="53_d5iia"]
-[ext_resource type="Texture2D" uid="uid://1hmc58fi86iy" path="res://Assets/Character/Right-Walk-1.png" id="54_asu84"]
-[ext_resource type="Texture2D" uid="uid://dsad1b6f3pnfn" path="res://Assets/Character/Right-Walk-2.png" id="55_qwt6e"]
-[ext_resource type="Texture2D" uid="uid://co3fh5klej22h" path="res://Assets/Character/Right-Walk-3.png" id="56_off2o"]
-[ext_resource type="Texture2D" uid="uid://ba0w0gp2r3a6x" path="res://Assets/Character/Right-Walk-4.png" id="57_tttfs"]
-[ext_resource type="Texture2D" uid="uid://batfsg0qetama" path="res://Assets/Character/Right-Walk-5.png" id="58_1iygd"]
-[ext_resource type="Texture2D" uid="uid://7fd0kvgbj3od" path="res://Assets/Character/Right-Walk-6.png" id="59_g5xqc"]
-[ext_resource type="Texture2D" uid="uid://b4e3kde23y52e" path="res://Assets/Character/Right-Walk-7.png" id="60_s4o1y"]
-[ext_resource type="Texture2D" uid="uid://j5yjiyp1jwm8" path="res://Assets/Character/Right-Walk-8.png" id="61_7mmqq"]
-[ext_resource type="Texture2D" uid="uid://bo6r5hx7edewp" path="res://Assets/Character/Right-Walk-9.png" id="62_3exxq"]
-[ext_resource type="Texture2D" uid="uid://bwf3ch52g05i8" path="res://Assets/Character/Right-Walk-1-2.png" id="63_5aa3q"]
-[ext_resource type="Texture2D" uid="uid://fscxr0xhopif" path="res://Assets/Character/Right-Walk-2-2.png" id="64_bmvma"]
-[ext_resource type="Texture2D" uid="uid://gk5kayybmde6" path="res://Assets/Character/Right-Walk-3-2.png" id="65_shlp4"]
-[ext_resource type="Texture2D" uid="uid://d3trpourwcsvm" path="res://Assets/Character/Right-Walk-4-2.png" id="66_2n44k"]
-[ext_resource type="Texture2D" uid="uid://c87wn0sy6vn8k" path="res://Assets/Character/Right-Walk-5-2.png" id="67_86lig"]
-[ext_resource type="Texture2D" uid="uid://ck0jrtgawruy0" path="res://Assets/Character/Front-Walk-1.png" id="68_d5iia"]
-[ext_resource type="Texture2D" uid="uid://b56cnkeolrpuo" path="res://Assets/Character/Front-Walk-2.png" id="69_asu84"]
-[ext_resource type="Texture2D" uid="uid://d0c01prwydvoq" path="res://Assets/Character/Front-Walk-3.png" id="70_qwt6e"]
-[ext_resource type="Texture2D" uid="uid://bje4mskt1iqw2" path="res://Assets/Character/Front-Walk-4.png" id="71_off2o"]
-[ext_resource type="Texture2D" uid="uid://dm4flsw1ngn47" path="res://Assets/Character/Front-Walk-5.png" id="72_tttfs"]
-[ext_resource type="Texture2D" uid="uid://sycy7gfpfvdu" path="res://Assets/Character/Front-Walk-6.png" id="73_1iygd"]
-[ext_resource type="Texture2D" uid="uid://detadgl7ltrcl" path="res://Assets/Character/Front-Walk-7.png" id="74_g5xqc"]
-[ext_resource type="Texture2D" uid="uid://dpbng50f0wym8" path="res://Assets/Character/Front-Walk-8.png" id="75_s4o1y"]
-[ext_resource type="Texture2D" uid="uid://ce27kru53auo3" path="res://Assets/Character/Front-Walk-9.png" id="76_7mmqq"]
-[ext_resource type="Texture2D" uid="uid://dhxbk50o4vfok" path="res://Assets/Character/Front-Walk-1-2.png" id="77_3exxq"]
-[ext_resource type="Texture2D" uid="uid://osup2mxyg7hg" path="res://Assets/Character/Front-Walk-2-2.png" id="78_5aa3q"]
-[ext_resource type="Texture2D" uid="uid://b6137wx3bpmo6" path="res://Assets/Character/Front-Walk-3-2.png" id="79_bmvma"]
-[ext_resource type="Texture2D" uid="uid://dr5ux7wea1ah" path="res://Assets/Character/Front-Walk-4-2.png" id="80_shlp4"]
-[ext_resource type="Texture2D" uid="uid://b8gsdn3mysw2w" path="res://Assets/Character/Front-Walk-5-2.png" id="81_2n44k"]
-[ext_resource type="AudioStream" uid="uid://b61e5drkiwvus" path="res://Assets/Music/PickUp.mp3" id="83_g5xqc"]
-[ext_resource type="AudioStream" uid="uid://74vrm5kgybho" path="res://Assets/Music/Beep.mp3" id="87_tttfs"]
-[ext_resource type="AudioStream" uid="uid://hucqmerp468e" path="res://Assets/Music/TimerEnd.mp3" id="88_1iygd"]
-[ext_resource type="AudioStream" uid="uid://p0ghh3yryvak" path="res://Assets/Music/Conveyer.mp3" id="122_asu84"]
-[ext_resource type="AudioStream" uid="uid://bt6jub4kssg6r" path="res://Assets/Music/Ninja Run.mp3" id="123_off2o"]
-[ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Assets/Music/Roller.mp3" id="123_qwt6e"]
+[ext_resource type="Script" uid="uid://doimjnvwjtf08" path="res://tutorial.gd" id="1_c1b2g"]
+[ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="2_gofs2"]
+[ext_resource type="Texture2D" uid="uid://ejsccb768v8q" path="res://Assets/Character/Back-Idle-1.png" id="3_jejqe"]
+[ext_resource type="Texture2D" uid="uid://cidk7fqepd8oa" path="res://Assets/Character/Back-Idle-2.png" id="4_ce7cc"]
+[ext_resource type="Texture2D" uid="uid://bp7upyj17ut0x" path="res://Assets/Character/Back-Idle-3.png" id="5_prggx"]
+[ext_resource type="Texture2D" uid="uid://cwkumxma4jfhh" path="res://Assets/Character/Back-Idle-4.png" id="6_mr4bk"]
+[ext_resource type="Texture2D" uid="uid://dua3yifkg7ji4" path="res://Assets/Character/Back-Idle-5.png" id="7_vvpdx"]
+[ext_resource type="Texture2D" uid="uid://dsmrypy8yte13" path="res://Assets/Character/Back-Walk-1.png" id="8_dvo4k"]
+[ext_resource type="Texture2D" uid="uid://brd8bkdmpbsq5" path="res://Assets/Character/Back-Walk-2.png" id="9_u437x"]
+[ext_resource type="Texture2D" uid="uid://ctdkhk1uxgh32" path="res://Assets/Character/Back-Walk-3.png" id="10_8ovj2"]
+[ext_resource type="Texture2D" uid="uid://6b44ggvnveoo" path="res://Assets/Character/Back-Walk-4.png" id="11_68qwq"]
+[ext_resource type="Texture2D" uid="uid://d1v1dmd5x8wa8" path="res://Assets/Character/Back-Walk-5.png" id="12_sd26f"]
+[ext_resource type="Texture2D" uid="uid://de65xl7svicuw" path="res://Assets/Character/Back-Walk-6.png" id="13_6p6yi"]
+[ext_resource type="Texture2D" uid="uid://bopot3h8ho77d" path="res://Assets/Character/Back-Walk-7.png" id="14_6gasr"]
+[ext_resource type="Texture2D" uid="uid://nrhxqb8op6b8" path="res://Assets/Character/Back-Walk-8.png" id="15_myaqr"]
+[ext_resource type="Texture2D" uid="uid://cch25bap77pyp" path="res://Assets/Character/Back-Walk-9.png" id="16_w483q"]
+[ext_resource type="Texture2D" uid="uid://jyt0xa78bbbw" path="res://Assets/Character/Back-Walk-1-2.png" id="17_oh48a"]
+[ext_resource type="Texture2D" uid="uid://cupsuafprtj5l" path="res://Assets/Character/Back-Walk-2-2.png" id="18_2wf0n"]
+[ext_resource type="Texture2D" uid="uid://bkl4larsa5636" path="res://Assets/Character/Back-Walk-3-2.png" id="19_83iuy"]
+[ext_resource type="Texture2D" uid="uid://u1fchjxskxn6" path="res://Assets/Character/Back-Walk-4-2.png" id="20_w3ruh"]
+[ext_resource type="Texture2D" uid="uid://bha4ostnkxxc0" path="res://Assets/Character/Back-Walk-5-2.png" id="21_70atk"]
+[ext_resource type="Texture2D" uid="uid://dj87k30piboto" path="res://Assets/Character/Front-Idle-2.png" id="22_60j8o"]
+[ext_resource type="Texture2D" uid="uid://bqttllph587p8" path="res://Assets/Character/Front-Idle-3.png" id="23_bnmcd"]
+[ext_resource type="Texture2D" uid="uid://0xss7lhx510r" path="res://Assets/Character/Front-Idle-4.png" id="24_dla0y"]
+[ext_resource type="Texture2D" uid="uid://cjbhspn8r7aiq" path="res://Assets/Character/Front-Idle-5.png" id="25_d06ht"]
+[ext_resource type="Texture2D" uid="uid://da6dmqo48pqux" path="res://Assets/Character/Front-Idle-6.png" id="26_p2t2n"]
+[ext_resource type="Texture2D" uid="uid://3bwdonr11pkn" path="res://Assets/Character/Front-Idle-1.png" id="27_5pg5o"]
+[ext_resource type="Texture2D" uid="uid://6uwxffky0bqp" path="res://Assets/Character/Left-Idle-1.png" id="28_vkfbr"]
+[ext_resource type="Texture2D" uid="uid://dvdj145rnvdsr" path="res://Assets/Character/Left-Idle-2.png" id="29_8v42x"]
+[ext_resource type="Texture2D" uid="uid://cl5pdfc1yd7if" path="res://Assets/Character/Left-Idle-3.png" id="30_b0nei"]
+[ext_resource type="Texture2D" uid="uid://bdmmwjkxvnf1j" path="res://Assets/Character/Left-Idle-4.png" id="31_bp5kj"]
+[ext_resource type="Texture2D" uid="uid://b220newan6k86" path="res://Assets/Character/Left-Idle-5.png" id="32_6pxy2"]
+[ext_resource type="Texture2D" uid="uid://bo3ht50jfheg7" path="res://Assets/Character/Left-Idle-6.png" id="33_56iiq"]
+[ext_resource type="Texture2D" uid="uid://jq5igtc5hamb" path="res://Assets/Character/Right-Idle-1.png" id="34_ab42e"]
+[ext_resource type="Texture2D" uid="uid://0h6xf3r6a5np" path="res://Assets/Character/Right-Idle-2.png" id="35_ci3ay"]
+[ext_resource type="Texture2D" uid="uid://ptji7rpl6kyr" path="res://Assets/Character/Right-Idle-3.png" id="36_u24q8"]
+[ext_resource type="Texture2D" uid="uid://bhogipvs045j3" path="res://Assets/Character/Right-Idle-4.png" id="37_dhr0i"]
+[ext_resource type="Texture2D" uid="uid://tn21ighnyvfs" path="res://Assets/Character/Right-Idle-5.png" id="38_h4nwj"]
+[ext_resource type="Texture2D" uid="uid://dohuvkmk4ha3d" path="res://Assets/Character/Right-Idle-6.png" id="39_rpnrg"]
+[ext_resource type="Texture2D" uid="uid://cd1kfat1csj66" path="res://Assets/Character/Left-Walk-1.png" id="40_cld1v"]
+[ext_resource type="Texture2D" uid="uid://b3c2xuhutij74" path="res://Assets/Character/Left-Walk-2.png" id="41_kqx7g"]
+[ext_resource type="Texture2D" uid="uid://3po4etr1y6p6" path="res://Assets/Character/Left-Walk-3.png" id="42_l1k04"]
+[ext_resource type="Texture2D" uid="uid://depye3p8fv2o" path="res://Assets/Character/Left-Walk-4.png" id="43_3h5gk"]
+[ext_resource type="Texture2D" uid="uid://dutron0v0tish" path="res://Assets/Character/Left-Walk-5.png" id="44_6u3o5"]
+[ext_resource type="Texture2D" uid="uid://w6n6ypfom4ka" path="res://Assets/Character/Left-Walk-6.png" id="45_chq7d"]
+[ext_resource type="Texture2D" uid="uid://cs025we5xwen2" path="res://Assets/Character/Left-Walk-7.png" id="46_sso43"]
+[ext_resource type="Texture2D" uid="uid://c12qvrmo3ttk8" path="res://Assets/Character/Left-Walk-8.png" id="47_e5c6a"]
+[ext_resource type="Texture2D" uid="uid://b02oa3ngfdgk7" path="res://Assets/Character/Left-Walk-9.png" id="48_xsbx3"]
+[ext_resource type="Texture2D" uid="uid://b7r0ibs2748tt" path="res://Assets/Character/Left-Walk-1-2.png" id="49_12vdb"]
+[ext_resource type="Texture2D" uid="uid://0nxrrqinynri" path="res://Assets/Character/Left-Walk-2-2.png" id="50_dfn23"]
+[ext_resource type="Texture2D" uid="uid://ccvfekotdbkbu" path="res://Assets/Character/Left-Walk-3-2.png" id="51_t7lqh"]
+[ext_resource type="Texture2D" uid="uid://d0ws4trer64dp" path="res://Assets/Character/Left-Walk-4-2.png" id="52_re0sw"]
+[ext_resource type="Texture2D" uid="uid://fsof8oce4ivm" path="res://Assets/Character/Left-Walk-5-2.png" id="53_tysim"]
+[ext_resource type="Texture2D" uid="uid://1hmc58fi86iy" path="res://Assets/Character/Right-Walk-1.png" id="54_keb6a"]
+[ext_resource type="Texture2D" uid="uid://dsad1b6f3pnfn" path="res://Assets/Character/Right-Walk-2.png" id="55_vnpcn"]
+[ext_resource type="Texture2D" uid="uid://co3fh5klej22h" path="res://Assets/Character/Right-Walk-3.png" id="56_sg1rf"]
+[ext_resource type="Texture2D" uid="uid://ba0w0gp2r3a6x" path="res://Assets/Character/Right-Walk-4.png" id="57_q5dhn"]
+[ext_resource type="Texture2D" uid="uid://batfsg0qetama" path="res://Assets/Character/Right-Walk-5.png" id="58_wkaiu"]
+[ext_resource type="Texture2D" uid="uid://7fd0kvgbj3od" path="res://Assets/Character/Right-Walk-6.png" id="59_tyd7t"]
+[ext_resource type="Texture2D" uid="uid://b4e3kde23y52e" path="res://Assets/Character/Right-Walk-7.png" id="60_7rsqh"]
+[ext_resource type="Texture2D" uid="uid://j5yjiyp1jwm8" path="res://Assets/Character/Right-Walk-8.png" id="61_e1d06"]
+[ext_resource type="Texture2D" uid="uid://bo6r5hx7edewp" path="res://Assets/Character/Right-Walk-9.png" id="62_ae42g"]
+[ext_resource type="Texture2D" uid="uid://bwf3ch52g05i8" path="res://Assets/Character/Right-Walk-1-2.png" id="63_42ig0"]
+[ext_resource type="Texture2D" uid="uid://fscxr0xhopif" path="res://Assets/Character/Right-Walk-2-2.png" id="64_rvhlx"]
+[ext_resource type="Texture2D" uid="uid://gk5kayybmde6" path="res://Assets/Character/Right-Walk-3-2.png" id="65_2kce5"]
+[ext_resource type="Texture2D" uid="uid://d3trpourwcsvm" path="res://Assets/Character/Right-Walk-4-2.png" id="66_1s2oq"]
+[ext_resource type="Texture2D" uid="uid://c87wn0sy6vn8k" path="res://Assets/Character/Right-Walk-5-2.png" id="67_b8w7g"]
+[ext_resource type="Texture2D" uid="uid://ck0jrtgawruy0" path="res://Assets/Character/Front-Walk-1.png" id="68_a1lam"]
+[ext_resource type="Texture2D" uid="uid://b56cnkeolrpuo" path="res://Assets/Character/Front-Walk-2.png" id="69_hs2pn"]
+[ext_resource type="Texture2D" uid="uid://d0c01prwydvoq" path="res://Assets/Character/Front-Walk-3.png" id="70_102oj"]
+[ext_resource type="Texture2D" uid="uid://bje4mskt1iqw2" path="res://Assets/Character/Front-Walk-4.png" id="71_ni2m1"]
+[ext_resource type="Texture2D" uid="uid://dm4flsw1ngn47" path="res://Assets/Character/Front-Walk-5.png" id="72_v7kcp"]
+[ext_resource type="Texture2D" uid="uid://sycy7gfpfvdu" path="res://Assets/Character/Front-Walk-6.png" id="73_1m1cl"]
+[ext_resource type="Texture2D" uid="uid://detadgl7ltrcl" path="res://Assets/Character/Front-Walk-7.png" id="74_bcq02"]
+[ext_resource type="Texture2D" uid="uid://dpbng50f0wym8" path="res://Assets/Character/Front-Walk-8.png" id="75_3cgk2"]
+[ext_resource type="Texture2D" uid="uid://ce27kru53auo3" path="res://Assets/Character/Front-Walk-9.png" id="76_ol2nx"]
+[ext_resource type="Texture2D" uid="uid://dhxbk50o4vfok" path="res://Assets/Character/Front-Walk-1-2.png" id="77_38u6h"]
+[ext_resource type="Texture2D" uid="uid://osup2mxyg7hg" path="res://Assets/Character/Front-Walk-2-2.png" id="78_x6f1y"]
+[ext_resource type="Texture2D" uid="uid://b6137wx3bpmo6" path="res://Assets/Character/Front-Walk-3-2.png" id="79_5yxyn"]
+[ext_resource type="Texture2D" uid="uid://dr5ux7wea1ah" path="res://Assets/Character/Front-Walk-4-2.png" id="80_26h0h"]
+[ext_resource type="Texture2D" uid="uid://b8gsdn3mysw2w" path="res://Assets/Character/Front-Walk-5-2.png" id="81_s1ahp"]
+[ext_resource type="AudioStream" uid="uid://bt6jub4kssg6r" path="res://Assets/Music/Ninja Run.mp3" id="82_1ux45"]
+[ext_resource type="AudioStream" uid="uid://b61e5drkiwvus" path="res://Assets/Music/PickUp.mp3" id="83_rrfi1"]
+[ext_resource type="Script" uid="uid://cngg15t1lim6i" path="res://stove.gd" id="84_w14sa"]
+[ext_resource type="Texture2D" uid="uid://c6e40ojmlanye" path="res://Assets/PotRice.png" id="85_s8gjy"]
+[ext_resource type="Texture2D" uid="uid://bwwfets07ip47" path="res://Assets/ClosedRice.png" id="86_ybsv8"]
+[ext_resource type="Texture2D" uid="uid://d3qu1bea31e07" path="res://icon.svg" id="87_ogvm4"]
+[ext_resource type="AudioStream" uid="uid://74vrm5kgybho" path="res://Assets/Music/Beep.mp3" id="88_apoeb"]
+[ext_resource type="AudioStream" uid="uid://hucqmerp468e" path="res://Assets/Music/TimerEnd.mp3" id="89_haod1"]
+[ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://reservoir.gd" id="90_vd0ft"]
+[ext_resource type="Texture2D" uid="uid://ddm5dgso2owdt" path="res://Assets/RiceReservoir.png" id="91_7slr8"]
+[ext_resource type="Texture2D" uid="uid://c14luojaevyld" path="res://Assets/FishCooler.png" id="92_iyqdl"]
+[ext_resource type="Texture2D" uid="uid://cogbwe1rhmfmf" path="res://Assets/SeaweedHolder.png" id="93_wdtwh"]
+[ext_resource type="Script" uid="uid://bceijafr0j870" path="res://trash.gd" id="94_g463j"]
+[ext_resource type="Texture2D" uid="uid://dqcu3dgl835jj" path="res://Assets/Trash.png" id="95_elkwf"]
+[ext_resource type="Script" uid="uid://ccjws5hie7otm" path="res://cuttingBoard.gd" id="96_30388"]
+[ext_resource type="Texture2D" uid="uid://doq02n40iwio7" path="res://Assets/CuttingBoardTable.png" id="97_78ntn"]
+[ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="98_pl044"]
+[ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="99_fqpck"]
+[ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="100_kltjy"]
+[ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://cuttingMinigame.gd" id="101_3oip6"]
+[ext_resource type="Texture2D" uid="uid://dxx1wx6tyv6tt" path="res://Assets/Knife.png" id="102_ox0ya"]
+[ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://assembly.gd" id="103_u1a7u"]
+[ext_resource type="Texture2D" uid="uid://5pygkcvi0esp" path="res://Assets/AssemblyStation.png" id="104_biydo"]
+[ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="105_d5wr7"]
+[ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="106_wkq15"]
+[ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="107_1ch4k"]
+[ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://Assets/hotbar.png" id="108_6gn6q"]
+[ext_resource type="Texture2D" uid="uid://b44wrkr6d7pxe" path="res://Assets/Outline.png" id="109_vfr4k"]
+[ext_resource type="PackedScene" uid="uid://ckbumgkfqrmoy" path="res://inventoryItems.tscn" id="110_vhiru"]
+[ext_resource type="Script" uid="uid://dvbj345dy3by1" path="res://camera.gd" id="111_c3m87"]
+[ext_resource type="Texture2D" uid="uid://di2ufu5v0ebq3" path="res://Assets/Wood1.png" id="112_xwbum"]
+[ext_resource type="Texture2D" uid="uid://bw8myrpkcf5g3" path="res://Assets/Wood2.png" id="113_jcyxv"]
+[ext_resource type="Texture2D" uid="uid://bnigbowjs4dp2" path="res://Assets/Wood3.png" id="114_wggde"]
+[ext_resource type="Script" uid="uid://dywy05mkgjk8e" path="res://tutorialSushi.gd" id="115_gofs2"]
+[ext_resource type="Shader" uid="uid://cdwoss15yri8m" path="res://tv.gdshader" id="116_cqgig"]
+[ext_resource type="Texture2D" uid="uid://bew43yfuvkv2o" path="res://Assets/SushiRollerStand.png" id="117_2c0v7"]
+[ext_resource type="Texture2D" uid="uid://dhxsbkvy7xkrl" path="res://Assets/SushiConveyer.png" id="118_msq51"]
+[ext_resource type="Script" uid="uid://ch10s3ken56ee" path="res://sushi_conveyer.gd" id="119_du1qf"]
+[ext_resource type="Script" uid="uid://d3a6krp7r1x2g" path="res://plate_roller.gd" id="120_kuio6"]
+[ext_resource type="Texture2D" uid="uid://c8rt7xd0x30bs" path="res://Assets/RollBars.png" id="121_7w0ji"]
+[ext_resource type="Texture2D" uid="uid://c043i6kvm2eg" path="res://Assets/Rollers.png" id="122_tt7hw"]
+[ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="123_ndey4"]
+[ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="124_b82j6"]
+[ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="125_efkgy"]
+[ext_resource type="AudioStream" uid="uid://p0ghh3yryvak" path="res://Assets/Music/Conveyer.mp3" id="126_jhhba"]
+[ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Assets/Music/Roller.mp3" id="127_bdtu1"]
+[ext_resource type="Texture2D" uid="uid://2etdu3osoekr" path="res://Assets/arrow.png" id="127_c1b2g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am8a1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_uit24")
+"texture": ExtResource("3_jejqe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ruth0")
+"texture": ExtResource("4_ce7cc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rm4vd")
+"texture": ExtResource("5_prggx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_pjyto")
+"texture": ExtResource("6_mr4bk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_pjyto")
+"texture": ExtResource("6_mr4bk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_sm6fg")
+"texture": ExtResource("7_vvpdx")
 }],
 "loop": true,
 "name": &"back idle",
@@ -155,46 +156,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_4obbf")
+"texture": ExtResource("8_dvo4k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ovcoh")
+"texture": ExtResource("9_u437x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_ppx11")
+"texture": ExtResource("10_8ovj2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_1yv1y")
+"texture": ExtResource("11_68qwq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_5yh34")
+"texture": ExtResource("12_sd26f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_pjuso")
+"texture": ExtResource("13_6p6yi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_23xmf")
+"texture": ExtResource("14_6gasr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_swlj1")
+"texture": ExtResource("15_myaqr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_yysqy")
+"texture": ExtResource("16_w483q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_n5t1e")
+"texture": ExtResource("17_oh48a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_h6isl")
+"texture": ExtResource("18_2wf0n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_53bls")
+"texture": ExtResource("19_83iuy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_lwnsi")
+"texture": ExtResource("20_w3ruh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_41lik")
+"texture": ExtResource("21_70atk")
 }],
 "loop": true,
 "name": &"back walk",
@@ -202,22 +203,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_4w656")
+"texture": ExtResource("22_60j8o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_e71vb")
+"texture": ExtResource("23_bnmcd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_rnkwl")
+"texture": ExtResource("24_dla0y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_vke2r")
+"texture": ExtResource("25_d06ht")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_uit24")
+"texture": ExtResource("26_p2t2n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_ruth0")
+"texture": ExtResource("27_5pg5o")
 }],
 "loop": true,
 "name": &"idle",
@@ -225,22 +226,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_wu3dr")
+"texture": ExtResource("28_vkfbr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_cyx1q")
+"texture": ExtResource("29_8v42x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_0dhbp")
+"texture": ExtResource("30_b0nei")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_jx0wj")
+"texture": ExtResource("31_bp5kj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_kkkcx")
+"texture": ExtResource("32_6pxy2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_34ol3")
+"texture": ExtResource("33_56iiq")
 }],
 "loop": true,
 "name": &"idle left",
@@ -248,22 +249,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_sm6fg")
+"texture": ExtResource("34_ab42e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_b17eg")
+"texture": ExtResource("35_ci3ay")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_ntx8l")
+"texture": ExtResource("36_u24q8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_uatky")
+"texture": ExtResource("37_dhr0i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_rqtf5")
+"texture": ExtResource("38_h4nwj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_1vm84")
+"texture": ExtResource("39_rpnrg")
 }],
 "loop": true,
 "name": &"idle right",
@@ -271,46 +272,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("40_ywjan")
+"texture": ExtResource("40_cld1v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_m74q3")
+"texture": ExtResource("41_kqx7g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_tko6h")
+"texture": ExtResource("42_l1k04")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_am8a1")
+"texture": ExtResource("43_3h5gk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_8dc3g")
+"texture": ExtResource("44_6u3o5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_htgcl")
+"texture": ExtResource("45_chq7d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_smeu8")
+"texture": ExtResource("46_sso43")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_f3y11")
+"texture": ExtResource("47_e5c6a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_cpm2s")
+"texture": ExtResource("48_xsbx3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_u81y6")
+"texture": ExtResource("49_12vdb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_rt5wr")
+"texture": ExtResource("50_dfn23")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_mnw77")
+"texture": ExtResource("51_t7lqh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_vjgyh")
+"texture": ExtResource("52_re0sw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("53_d5iia")
+"texture": ExtResource("53_tysim")
 }],
 "loop": true,
 "name": &"left walk",
@@ -318,46 +319,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("54_asu84")
+"texture": ExtResource("54_keb6a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("55_qwt6e")
+"texture": ExtResource("55_vnpcn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("56_off2o")
+"texture": ExtResource("56_sg1rf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("57_tttfs")
+"texture": ExtResource("57_q5dhn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("58_1iygd")
+"texture": ExtResource("58_wkaiu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("59_g5xqc")
+"texture": ExtResource("59_tyd7t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("60_s4o1y")
+"texture": ExtResource("60_7rsqh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("61_7mmqq")
+"texture": ExtResource("61_e1d06")
 }, {
 "duration": 1.0,
-"texture": ExtResource("62_3exxq")
+"texture": ExtResource("62_ae42g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("63_5aa3q")
+"texture": ExtResource("63_42ig0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("64_bmvma")
+"texture": ExtResource("64_rvhlx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("65_shlp4")
+"texture": ExtResource("65_2kce5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("66_2n44k")
+"texture": ExtResource("66_1s2oq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("67_86lig")
+"texture": ExtResource("67_b8w7g")
 }],
 "loop": true,
 "name": &"right walk",
@@ -365,46 +366,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("68_d5iia")
+"texture": ExtResource("68_a1lam")
 }, {
 "duration": 1.0,
-"texture": ExtResource("69_asu84")
+"texture": ExtResource("69_hs2pn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("70_qwt6e")
+"texture": ExtResource("70_102oj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("71_off2o")
+"texture": ExtResource("71_ni2m1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("72_tttfs")
+"texture": ExtResource("72_v7kcp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("73_1iygd")
+"texture": ExtResource("73_1m1cl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("74_g5xqc")
+"texture": ExtResource("74_bcq02")
 }, {
 "duration": 1.0,
-"texture": ExtResource("75_s4o1y")
+"texture": ExtResource("75_3cgk2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("76_7mmqq")
+"texture": ExtResource("76_ol2nx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("77_3exxq")
+"texture": ExtResource("77_38u6h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("78_5aa3q")
+"texture": ExtResource("78_x6f1y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("79_bmvma")
+"texture": ExtResource("79_5yxyn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("80_shlp4")
+"texture": ExtResource("80_26h0h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("81_2n44k")
+"texture": ExtResource("81_s1ahp")
 }],
 "loop": true,
 "name": &"walk",
@@ -445,7 +446,7 @@ size = Vector2(188, 1795)
 size = Vector2(1819, 24)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lmeg"]
-shader = ExtResource("40_h8e4i")
+shader = ExtResource("116_cqgig")
 shader_parameter/overlay_color = Color(0.215686, 0.215686, 0.215686, 0.384314)
 shader_parameter/flicker_strength = 0.415
 shader_parameter/time_speed = 0.101
@@ -468,11 +469,11 @@ size = Vector2(256, 256)
 size = Vector2(108, 292)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_7mycd")
+script = ExtResource("1_c1b2g")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(408, -37)
-script = ExtResource("1_0xm2m")
+script = ExtResource("2_gofs2")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Player"]
 scale = Vector2(0.715, 0.715)
@@ -501,23 +502,23 @@ shape = SubResource("RectangleShape2D_0cbny")
 
 [node name="MainMusic" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2(-408, 37)
-stream = ExtResource("123_off2o")
+stream = ExtResource("82_1ux45")
 volume_db = -4.471
 autoplay = true
 parameters/looping = true
 
 [node name="PickingUp" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource("83_g5xqc")
+stream = ExtResource("83_rrfi1")
 volume_db = 1.0
 autoplay = true
 
 [node name="Stove" type="StaticBody2D" parent="."]
 position = Vector2(140, 80)
-script = ExtResource("4_5vw27")
+script = ExtResource("84_w14sa")
 
 [node name="Icon" type="Sprite2D" parent="Stove"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_getpj")
+texture = ExtResource("85_s8gjy")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stove/Icon"]
 visible = false
@@ -532,7 +533,7 @@ text = "Stove"
 [node name="Icon2" type="Sprite2D" parent="Stove"]
 visible = false
 scale = Vector2(0.49, 0.49)
-texture = ExtResource("6_ryguw")
+texture = ExtResource("86_ybsv8")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stove/Icon2"]
 visible = false
@@ -576,7 +577,7 @@ horizontal_alignment = 1
 visible = false
 position = Vector2(-0.999969, 17)
 scale = Vector2(0.445, 0.445)
-texture = ExtResource("1_ig7tw")
+texture = ExtResource("87_ogvm4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stove/Interactable"]
 offset_left = -26.9663
@@ -588,21 +589,21 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Rice Pot"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Stove"]
-stream = ExtResource("87_tttfs")
+stream = ExtResource("88_apoeb")
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Stove"]
-stream = ExtResource("88_1iygd")
+stream = ExtResource("89_haod1")
 volume_db = -5.0
 
 [node name="Rice Reservoir" type="StaticBody2D" parent="."]
 position = Vector2(-42, 80)
-script = ExtResource("5_272bh")
+script = ExtResource("90_vd0ft")
 item = "rice"
 stock = 5
 
 [node name="Icon" type="Sprite2D" parent="Rice Reservoir"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_w48qg")
+texture = ExtResource("91_7slr8")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rice Reservoir/Icon"]
 visible = false
@@ -645,13 +646,13 @@ horizontal_alignment = 2
 
 [node name="Fish Reservoir" type="StaticBody2D" parent="."]
 position = Vector2(655, 80)
-script = ExtResource("5_272bh")
+script = ExtResource("90_vd0ft")
 item = "fish"
 stock = 5
 
 [node name="Icon" type="Sprite2D" parent="Fish Reservoir"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_d13ii")
+texture = ExtResource("92_iyqdl")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Fish Reservoir/Icon"]
 visible = false
@@ -695,13 +696,13 @@ horizontal_alignment = 2
 
 [node name="Seaweed Reservoir" type="StaticBody2D" parent="."]
 position = Vector2(818, 80)
-script = ExtResource("5_272bh")
+script = ExtResource("90_vd0ft")
 item = "seaweed"
 stock = 5
 
 [node name="Icon" type="Sprite2D" parent="Seaweed Reservoir"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_cegan")
+texture = ExtResource("93_wdtwh")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Seaweed Reservoir/Icon"]
 visible = false
@@ -745,11 +746,11 @@ horizontal_alignment = 2
 
 [node name="Trash" type="StaticBody2D" parent="."]
 position = Vector2(959, 93)
-script = ExtResource("11_seu75")
+script = ExtResource("94_g463j")
 
 [node name="Icon" type="Sprite2D" parent="Trash"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_htxhm")
+texture = ExtResource("95_elkwf")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Trash/Icon"]
 visible = false
@@ -787,12 +788,12 @@ horizontal_alignment = 1
 [node name="Cutting Board" type="StaticBody2D" parent="."]
 texture_filter = 6
 position = Vector2(489, 80)
-script = ExtResource("6_4c57u")
+script = ExtResource("96_30388")
 item = "fish"
 
 [node name="Icon" type="Sprite2D" parent="Cutting Board"]
 scale = Vector2(0.49, 0.49)
-texture = ExtResource("7_ycdy4")
+texture = ExtResource("97_78ntn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cutting Board/Icon"]
 visible = false
@@ -839,7 +840,7 @@ shape = SubResource("RectangleShape2D_efxa6")
 visible = false
 position = Vector2(-0.99997, -29)
 scale = Vector2(0.21875, 0.210937)
-texture = ExtResource("9_yaehf")
+texture = ExtResource("98_pl044")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cutting Board/Fish"]
 visible = false
@@ -855,7 +856,7 @@ text = "Fish"
 visible = false
 position = Vector2(-0.99997, -29)
 scale = Vector2(0.21875, 0.210937)
-texture = ExtResource("10_074og")
+texture = ExtResource("99_fqpck")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cutting Board/Sliced Fish"]
 visible = false
@@ -871,7 +872,7 @@ text = "Fish"
 visible = false
 position = Vector2(-0.99997, -29)
 scale = Vector2(0.21875, 0.210937)
-texture = ExtResource("11_cegan")
+texture = ExtResource("100_kltjy")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cutting Board/Obliterated Fish"]
 visible = false
@@ -884,7 +885,7 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Fish"
 
 [node name="MinigameHolder" type="Node2D" parent="Cutting Board"]
-script = ExtResource("7_efxa6")
+script = ExtResource("101_3oip6")
 
 [node name="Knife" type="Node2D" parent="Cutting Board/MinigameHolder"]
 z_index = 2
@@ -895,7 +896,7 @@ rotation = 3.14159
 position = Vector2(0.345917, 6.00001)
 rotation = 3.14159
 scale = Vector2(0.146243, 0.228599)
-texture = ExtResource("17_1u8w0")
+texture = ExtResource("102_ox0ya")
 
 [node name="Area2D" type="Area2D" parent="Cutting Board/MinigameHolder/Knife"]
 position = Vector2(-6.59145e-05, 26)
@@ -916,11 +917,11 @@ joint_mode = 2
 
 [node name="Assembly Board" type="StaticBody2D" parent="."]
 position = Vector2(321, 80)
-script = ExtResource("7_kek77")
+script = ExtResource("103_u1a7u")
 
 [node name="Icon" type="Sprite2D" parent="Assembly Board"]
 scale = Vector2(0.495, 0.495)
-texture = ExtResource("14_074og")
+texture = ExtResource("104_biydo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board/Icon"]
 visible = false
@@ -960,7 +961,7 @@ visible = false
 position = Vector2(-0.500013, -25.5)
 rotation = -0.120428
 scale = Vector2(0.292969, 0.269531)
-texture = ExtResource("18_ryguw")
+texture = ExtResource("105_d5wr7")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board/Seaweed"]
 visible = false
@@ -976,7 +977,7 @@ text = "Seaweed"
 visible = false
 position = Vector2(2.99997, -41)
 scale = Vector2(0.21875, 0.207031)
-texture = ExtResource("21_lswn8")
+texture = ExtResource("106_wkq15")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board/Onigiri"]
 visible = false
@@ -992,7 +993,7 @@ text = "Onigiri"
 visible = false
 position = Vector2(4.49998, -38.5)
 scale = Vector2(0.269531, 0.207031)
-texture = ExtResource("22_a6jrf")
+texture = ExtResource("107_1ch4k")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Assembly Board/Sushi"]
 visible = false
@@ -1009,7 +1010,7 @@ text = "Sushi"
 [node name="1" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(541.24, 773.24)
 scale = Vector2(0.455, 0.455)
-texture = ExtResource("4_1bvp3")
+texture = ExtResource("108_6gn6q")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/1"]
 offset_left = 94.0
@@ -1025,9 +1026,9 @@ metadata/_edit_use_anchors_ = true
 visible = false
 z_index = -1
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("24_lswn8")
+texture = ExtResource("109_vfr4k")
 
-[node name="Items" parent="CanvasLayer/1" instance=ExtResource("11_dg77c")]
+[node name="Items" parent="CanvasLayer/1" instance=ExtResource("110_vhiru")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/1"]
 z_index = -1
@@ -1040,7 +1041,7 @@ color = Color(1, 1, 1, 0.337255)
 [node name="2" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(675.24, 772.24)
 scale = Vector2(0.455, 0.455)
-texture = ExtResource("4_1bvp3")
+texture = ExtResource("108_6gn6q")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/2"]
 offset_left = 88.4615
@@ -1055,9 +1056,9 @@ text = "2"
 visible = false
 z_index = -1
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("24_lswn8")
+texture = ExtResource("109_vfr4k")
 
-[node name="Items" parent="CanvasLayer/2" instance=ExtResource("11_dg77c")]
+[node name="Items" parent="CanvasLayer/2" instance=ExtResource("110_vhiru")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/2"]
 z_index = -1
@@ -1070,7 +1071,7 @@ color = Color(1, 1, 1, 0.337255)
 [node name="3" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(808.24, 774.24)
 scale = Vector2(0.455, 0.455)
-texture = ExtResource("4_1bvp3")
+texture = ExtResource("108_6gn6q")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/3"]
 offset_left = 96.1538
@@ -1085,9 +1086,9 @@ text = "3"
 visible = false
 z_index = -1
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("24_lswn8")
+texture = ExtResource("109_vfr4k")
 
-[node name="Items" parent="CanvasLayer/3" instance=ExtResource("11_dg77c")]
+[node name="Items" parent="CanvasLayer/3" instance=ExtResource("110_vhiru")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/3"]
 z_index = -1
@@ -1100,7 +1101,7 @@ color = Color(1, 1, 1, 0.337255)
 [node name="4" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(943.92, 774.92)
 scale = Vector2(0.455, 0.455)
-texture = ExtResource("4_1bvp3")
+texture = ExtResource("108_6gn6q")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/4"]
 offset_left = 88.4615
@@ -1115,9 +1116,9 @@ text = "4"
 visible = false
 z_index = -1
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("24_lswn8")
+texture = ExtResource("109_vfr4k")
 
-[node name="Items" parent="CanvasLayer/4" instance=ExtResource("11_dg77c")]
+[node name="Items" parent="CanvasLayer/4" instance=ExtResource("110_vhiru")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/4"]
 z_index = -1
@@ -1130,7 +1131,7 @@ color = Color(1, 1, 1, 0.337255)
 [node name="5" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(1098.24, 774.24)
 scale = Vector2(0.455, 0.455)
-texture = ExtResource("4_1bvp3")
+texture = ExtResource("108_6gn6q")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/5"]
 offset_left = 92.3077
@@ -1145,9 +1146,9 @@ text = "5"
 visible = false
 z_index = -1
 scale = Vector2(1.025, 1.025)
-texture = ExtResource("24_lswn8")
+texture = ExtResource("109_vfr4k")
 
-[node name="Items" parent="CanvasLayer/5" instance=ExtResource("11_dg77c")]
+[node name="Items" parent="CanvasLayer/5" instance=ExtResource("110_vhiru")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/5"]
 z_index = -1
@@ -1163,7 +1164,7 @@ limit_top = -320
 limit_right = 1235
 limit_bottom = 625
 position_smoothing_enabled = true
-script = ExtResource("10_4c57u")
+script = ExtResource("111_c3m87")
 
 [node name="MinigameLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -1186,17 +1187,17 @@ position = Vector2(938, 144)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row27" type="Node2D" parent="Floor"]
 position = Vector2(-1625, 0)
@@ -1204,17 +1205,17 @@ position = Vector2(-1625, 0)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row27"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row27"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row27"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row2" type="Node2D" parent="Floor"]
 position = Vector2(-229, 81)
@@ -1222,17 +1223,17 @@ position = Vector2(-229, 81)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row2"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row2"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row2"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row14" type="Node2D" parent="Floor"]
 position = Vector2(-1852, 81)
@@ -1240,17 +1241,17 @@ position = Vector2(-1852, 81)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row14"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row14"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row14"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row3" type="Node2D" parent="Floor"]
 position = Vector2(-100, 163)
@@ -1258,17 +1259,17 @@ position = Vector2(-100, 163)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row3"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row3"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row3"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row15" type="Node2D" parent="Floor"]
 position = Vector2(-1723, 163)
@@ -1276,17 +1277,17 @@ position = Vector2(-1723, 163)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row15"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row15"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row15"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row4" type="Node2D" parent="Floor"]
 position = Vector2(-313, 244)
@@ -1294,17 +1295,17 @@ position = Vector2(-313, 244)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row4"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row4"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row4"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row16" type="Node2D" parent="Floor"]
 position = Vector2(-1936, 244)
@@ -1312,17 +1313,17 @@ position = Vector2(-1936, 244)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row16"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row16"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row16"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row17" type="Node2D" parent="Floor"]
 position = Vector2(1299, 244)
@@ -1330,17 +1331,17 @@ position = Vector2(1299, 244)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row17"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row17"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row17"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row5" type="Node2D" parent="Floor"]
 position = Vector2(-69, 317)
@@ -1348,17 +1349,17 @@ position = Vector2(-69, 317)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row5"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row5"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row5"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row18" type="Node2D" parent="Floor"]
 position = Vector2(-1664, 317)
@@ -1366,17 +1367,17 @@ position = Vector2(-1664, 317)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row18"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row18"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row18"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row6" type="Node2D" parent="Floor"]
 position = Vector2(-231, 400)
@@ -1384,17 +1385,17 @@ position = Vector2(-231, 400)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row6"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row6"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row6"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row19" type="Node2D" parent="Floor"]
 position = Vector2(-1841, 400)
@@ -1402,17 +1403,17 @@ position = Vector2(-1841, 400)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row19"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row19"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row19"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row7" type="Node2D" parent="Floor"]
 position = Vector2(-190, -83)
@@ -1420,17 +1421,17 @@ position = Vector2(-190, -83)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row7"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row7"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row7"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row20" type="Node2D" parent="Floor"]
 position = Vector2(-1800, -83)
@@ -1438,17 +1439,17 @@ position = Vector2(-1800, -83)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row20"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row20"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row20"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row8" type="Node2D" parent="Floor"]
 position = Vector2(-73, -166)
@@ -1456,17 +1457,17 @@ position = Vector2(-73, -166)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row8"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row8"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row8"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row21" type="Node2D" parent="Floor"]
 position = Vector2(-1691, -166)
@@ -1474,17 +1475,17 @@ position = Vector2(-1691, -166)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row21"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row21"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row21"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row9" type="Node2D" parent="Floor"]
 position = Vector2(-345, -249)
@@ -1492,17 +1493,17 @@ position = Vector2(-345, -249)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row9"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row9"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row9"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row22" type="Node2D" parent="Floor"]
 position = Vector2(-1970, -249)
@@ -1510,17 +1511,17 @@ position = Vector2(-1970, -249)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row22"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row22"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row22"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row10" type="Node2D" parent="Floor"]
 position = Vector2(-27, -332)
@@ -1528,17 +1529,17 @@ position = Vector2(-27, -332)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row10"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row10"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row10"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row23" type="Node2D" parent="Floor"]
 position = Vector2(-1645, -332)
@@ -1546,17 +1547,17 @@ position = Vector2(-1645, -332)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row23"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row23"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row23"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row11" type="Node2D" parent="Floor"]
 position = Vector2(-289, -414)
@@ -1564,17 +1565,17 @@ position = Vector2(-289, -414)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row11"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row11"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row11"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row24" type="Node2D" parent="Floor"]
 position = Vector2(-1903, -414)
@@ -1582,17 +1583,17 @@ position = Vector2(-1903, -414)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row24"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row24"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row24"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row12" type="Node2D" parent="Floor"]
 position = Vector2(-91, 483)
@@ -1600,17 +1601,17 @@ position = Vector2(-91, 483)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row12"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row12"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row12"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row25" type="Node2D" parent="Floor"]
 position = Vector2(-1705, 483)
@@ -1618,17 +1619,17 @@ position = Vector2(-1705, 483)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row25"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row25"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row25"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row13" type="Node2D" parent="Floor"]
 position = Vector2(-91, 483)
@@ -1636,17 +1637,17 @@ position = Vector2(-91, 483)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row13"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row13"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row13"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row26" type="Node2D" parent="Floor"]
 position = Vector2(-91, 483)
@@ -1654,17 +1655,17 @@ position = Vector2(-91, 483)
 [node name="Wood1" type="Sprite2D" parent="Floor/Row26"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor/Row26"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor/Row26"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Floor2" type="Node2D" parent="."]
 z_index = -10
@@ -1675,17 +1676,17 @@ position = Vector2(800, -836)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row27" type="Node2D" parent="Floor2"]
 position = Vector2(-1625, 0)
@@ -1693,17 +1694,17 @@ position = Vector2(-1625, 0)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row27"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row27"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row27"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row2" type="Node2D" parent="Floor2"]
 position = Vector2(-229, 81)
@@ -1711,17 +1712,17 @@ position = Vector2(-229, 81)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row2"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row2"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row2"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row14" type="Node2D" parent="Floor2"]
 position = Vector2(-1852, 81)
@@ -1729,17 +1730,17 @@ position = Vector2(-1852, 81)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row14"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row14"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row14"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row3" type="Node2D" parent="Floor2"]
 position = Vector2(-100, 163)
@@ -1747,17 +1748,17 @@ position = Vector2(-100, 163)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row3"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row3"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row3"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row15" type="Node2D" parent="Floor2"]
 position = Vector2(-1723, 163)
@@ -1765,17 +1766,17 @@ position = Vector2(-1723, 163)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row15"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row15"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row15"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row4" type="Node2D" parent="Floor2"]
 position = Vector2(-313, 244)
@@ -1783,17 +1784,17 @@ position = Vector2(-313, 244)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row4"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row4"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row4"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row16" type="Node2D" parent="Floor2"]
 position = Vector2(-1936, 244)
@@ -1801,17 +1802,17 @@ position = Vector2(-1936, 244)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row16"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row16"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row16"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row17" type="Node2D" parent="Floor2"]
 position = Vector2(1299, 244)
@@ -1819,17 +1820,17 @@ position = Vector2(1299, 244)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row17"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row17"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row17"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row5" type="Node2D" parent="Floor2"]
 position = Vector2(-69, 317)
@@ -1837,17 +1838,17 @@ position = Vector2(-69, 317)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row5"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row5"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row5"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row18" type="Node2D" parent="Floor2"]
 position = Vector2(-1664, 317)
@@ -1855,17 +1856,17 @@ position = Vector2(-1664, 317)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row18"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row18"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row18"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row6" type="Node2D" parent="Floor2"]
 position = Vector2(-231, 400)
@@ -1873,17 +1874,17 @@ position = Vector2(-231, 400)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row6"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row6"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row6"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row19" type="Node2D" parent="Floor2"]
 position = Vector2(-1841, 400)
@@ -1891,17 +1892,17 @@ position = Vector2(-1841, 400)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row19"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row19"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row19"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row7" type="Node2D" parent="Floor2"]
 position = Vector2(-190, -83)
@@ -1909,17 +1910,17 @@ position = Vector2(-190, -83)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row7"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row7"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row7"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row20" type="Node2D" parent="Floor2"]
 position = Vector2(-1800, -83)
@@ -1927,17 +1928,17 @@ position = Vector2(-1800, -83)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row20"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row20"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row20"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row8" type="Node2D" parent="Floor2"]
 position = Vector2(-73, -166)
@@ -1945,17 +1946,17 @@ position = Vector2(-73, -166)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row8"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row8"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row8"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row21" type="Node2D" parent="Floor2"]
 position = Vector2(-1691, -166)
@@ -1963,17 +1964,17 @@ position = Vector2(-1691, -166)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row21"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row21"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row21"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row9" type="Node2D" parent="Floor2"]
 position = Vector2(-345, -249)
@@ -1981,17 +1982,17 @@ position = Vector2(-345, -249)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row9"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row9"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row9"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row22" type="Node2D" parent="Floor2"]
 position = Vector2(-1970, -249)
@@ -1999,17 +2000,17 @@ position = Vector2(-1970, -249)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row22"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row22"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row22"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row10" type="Node2D" parent="Floor2"]
 position = Vector2(-27, -332)
@@ -2017,17 +2018,17 @@ position = Vector2(-27, -332)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row10"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row10"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row10"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row23" type="Node2D" parent="Floor2"]
 position = Vector2(-1645, -332)
@@ -2035,17 +2036,17 @@ position = Vector2(-1645, -332)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row23"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row23"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row23"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row11" type="Node2D" parent="Floor2"]
 position = Vector2(-289, -414)
@@ -2053,17 +2054,17 @@ position = Vector2(-289, -414)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row11"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row11"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row11"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row24" type="Node2D" parent="Floor2"]
 position = Vector2(-1903, -414)
@@ -2071,17 +2072,17 @@ position = Vector2(-1903, -414)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row24"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row24"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row24"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row12" type="Node2D" parent="Floor2"]
 position = Vector2(-91, 483)
@@ -2089,17 +2090,17 @@ position = Vector2(-91, 483)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row12"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row12"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row12"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row25" type="Node2D" parent="Floor2"]
 position = Vector2(-1705, 483)
@@ -2107,17 +2108,17 @@ position = Vector2(-1705, 483)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row25"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row25"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row25"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row13" type="Node2D" parent="Floor2"]
 position = Vector2(-91, 483)
@@ -2125,17 +2126,17 @@ position = Vector2(-91, 483)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row13"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row13"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row13"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="Row26" type="Node2D" parent="Floor2"]
 position = Vector2(-91, 483)
@@ -2143,17 +2144,17 @@ position = Vector2(-91, 483)
 [node name="Wood1" type="Sprite2D" parent="Floor2/Row26"]
 position = Vector2(-14, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_qsp4k")
+texture = ExtResource("112_xwbum")
 
 [node name="Wood2" type="Sprite2D" parent="Floor2/Row26"]
 position = Vector2(527, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_kq58d")
+texture = ExtResource("113_jcyxv")
 
 [node name="Wood3" type="Sprite2D" parent="Floor2/Row26"]
 position = Vector2(1067, 188)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("29_seu75")
+texture = ExtResource("114_wggde")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -2187,7 +2188,7 @@ color = Color(0.705882, 0.682353, 0.643137, 1)
 z_index = -7
 position = Vector2(113, 40)
 scale = Vector2(0.91, 0.91)
-script = ExtResource("40_4lmeg")
+script = ExtResource("115_gofs2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TV"]
 position = Vector2(333.5, -147)
@@ -2228,6 +2229,7 @@ text = "Orders"
 horizontal_alignment = 1
 
 [node name="Order 1" type="Node2D" parent="TV"]
+visible = false
 z_index = 1
 position = Vector2(-6, -3)
 
@@ -2242,12 +2244,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Sushi" type="Sprite2D" parent="TV/Order 1"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("22_a6jrf")
+texture = ExtResource("107_1ch4k")
 
 [node name="Onigiri" type="Sprite2D" parent="TV/Order 1"]
+visible = false
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("21_lswn8")
+texture = ExtResource("106_wkq15")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 1"]
 offset_left = 287.0
@@ -2256,7 +2259,7 @@ offset_right = 386.0
 offset_bottom = -250.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 17
-text = "1x Sushi With Fish"
+text = "1x Sushi"
 metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="TV/Order 1"]
@@ -2282,6 +2285,7 @@ text = "Time Left:"
 metadata/_edit_use_anchors_ = true
 
 [node name="Order 2" type="Node2D" parent="TV"]
+visible = false
 z_index = 1
 position = Vector2(177, -3)
 
@@ -2295,12 +2299,12 @@ color = Color(0.712129, 0.712129, 0.712129, 1)
 [node name="Sushi" type="Sprite2D" parent="TV/Order 2"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("22_a6jrf")
+texture = ExtResource("107_1ch4k")
 
 [node name="Onigiri" type="Sprite2D" parent="TV/Order 2"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("21_lswn8")
+texture = ExtResource("106_wkq15")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 2"]
 offset_left = 287.0
@@ -2332,6 +2336,7 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
 
 [node name="Order 3" type="Node2D" parent="TV"]
+visible = false
 z_index = 1
 position = Vector2(-6, 76)
 
@@ -2346,12 +2351,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Sushi" type="Sprite2D" parent="TV/Order 3"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("22_a6jrf")
+texture = ExtResource("107_1ch4k")
 
 [node name="Onigiri" type="Sprite2D" parent="TV/Order 3"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("21_lswn8")
+texture = ExtResource("106_wkq15")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 3"]
 offset_left = 287.0
@@ -2386,6 +2391,7 @@ text = "Time Left:"
 metadata/_edit_use_anchors_ = true
 
 [node name="Order 4" type="Node2D" parent="TV"]
+visible = false
 z_index = 1
 position = Vector2(177, 76)
 
@@ -2399,13 +2405,13 @@ color = Color(0.712129, 0.712129, 0.712129, 1)
 [node name="Sushi" type="Sprite2D" parent="TV/Order 4"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("22_a6jrf")
+texture = ExtResource("107_1ch4k")
 
 [node name="Onigiri" type="Sprite2D" parent="TV/Order 4"]
 visible = false
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("21_lswn8")
+texture = ExtResource("106_wkq15")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 4"]
 offset_left = 287.0
@@ -2443,42 +2449,42 @@ position = Vector2(-103, 5)
 [node name="SushiRollerStand" type="Sprite2D" parent="Sushi Rollers"]
 position = Vector2(-192, 65)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("42_0cp0l")
+texture = ExtResource("117_2c0v7")
 
 [node name="SushiRollerStand2" type="Sprite2D" parent="Sushi Rollers"]
 position = Vector2(-192, 193)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("42_0cp0l")
+texture = ExtResource("117_2c0v7")
 
 [node name="SushiRollerStand3" type="Sprite2D" parent="Sushi Rollers"]
 position = Vector2(-192, 320)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("42_0cp0l")
+texture = ExtResource("117_2c0v7")
 
 [node name="SushiRollerStand4" type="Sprite2D" parent="Sushi Rollers"]
 position = Vector2(-192, 445)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("42_0cp0l")
+texture = ExtResource("117_2c0v7")
 
 [node name="SushiRollerStand5" type="Sprite2D" parent="Sushi Rollers"]
 position = Vector2(-192, 572)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("42_0cp0l")
+texture = ExtResource("117_2c0v7")
 
 [node name="SushiRollerStand6" type="Sprite2D" parent="Sushi Rollers"]
 position = Vector2(-192, 693)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("42_0cp0l")
+texture = ExtResource("117_2c0v7")
 
 [node name="SushiRollerStand7" type="Sprite2D" parent="Sushi Rollers"]
 position = Vector2(-192, -62)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("42_0cp0l")
+texture = ExtResource("117_2c0v7")
 
 [node name="SushiRollerStand8" type="Sprite2D" parent="Sushi Rollers"]
 position = Vector2(-192, -179)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("42_0cp0l")
+texture = ExtResource("117_2c0v7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sushi Rollers"]
 position = Vector2(-192, 335.5)
@@ -2508,8 +2514,8 @@ autostart = true
 z_index = 1
 position = Vector2(-198, -167)
 scale = Vector2(0.79, 0.79)
-texture = ExtResource("43_d2t1y")
-script = ExtResource("44_gngh3")
+texture = ExtResource("118_msq51")
+script = ExtResource("119_du1qf")
 
 [node name="Plate Roller" type="Control" parent="."]
 clip_children = 2
@@ -2521,7 +2527,7 @@ offset_left = -235.0
 offset_top = -142.0
 offset_right = -107.0
 offset_bottom = -16.0
-script = ExtResource("45_wnkbs")
+script = ExtResource("120_kuio6")
 
 [node name="RollBars" type="Sprite2D" parent="Plate Roller"]
 clip_children = 2
@@ -2529,7 +2535,7 @@ z_index = -1
 material = SubResource("CanvasItemMaterial_wnkbs")
 position = Vector2(243, 89)
 scale = Vector2(1.3, 1)
-texture = ExtResource("45_qnost")
+texture = ExtResource("121_7w0ji")
 
 [node name="ColorRect" type="ColorRect" parent="Plate Roller/RollBars"]
 z_index = -1
@@ -2547,7 +2553,7 @@ z_index = -1
 material = SubResource("CanvasItemMaterial_wnkbs")
 position = Vector2(86, 54)
 scale = Vector2(1.3, 1)
-texture = ExtResource("45_qnost")
+texture = ExtResource("121_7w0ji")
 
 [node name="ColorRect" type="ColorRect" parent="Plate Roller/RollBars3"]
 z_index = -1
@@ -2565,7 +2571,7 @@ z_index = -1
 material = SubResource("CanvasItemMaterial_wnkbs")
 position = Vector2(-98, 82)
 scale = Vector2(1.3, 1)
-texture = ExtResource("45_qnost")
+texture = ExtResource("121_7w0ji")
 
 [node name="ColorRect" type="ColorRect" parent="Plate Roller/RollBars2"]
 z_index = -1
@@ -2581,7 +2587,7 @@ clip_children = 2
 z_index = -2
 position = Vector2(-171, -79)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("45_0n3wm")
+texture = ExtResource("122_tt7hw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Plate Roller/Rollers"]
 
@@ -2613,109 +2619,109 @@ horizontal_alignment = 1
 z_index = 15
 position = Vector2(-176, -195)
 scale = Vector2(0.355, 0.355)
-texture = ExtResource("48_f6a44")
+texture = ExtResource("123_ndey4")
 
 [node name="rice" type="Sprite2D" parent="Plates/Plate"]
 visible = false
 position = Vector2(14.0845, 70.4225)
 scale = Vector2(1.061, 0.979)
-texture = ExtResource("49_hrvbo")
+texture = ExtResource("124_b82j6")
 
 [node name="cooked rice" type="Sprite2D" parent="Plates/Plate"]
 visible = false
 position = Vector2(14.0845, 70.4225)
 scale = Vector2(1.051, 0.969)
-texture = ExtResource("50_uypp3")
+texture = ExtResource("125_efkgy")
 
 [node name="fish" type="Sprite2D" parent="Plates/Plate"]
 visible = false
 position = Vector2(2.8169, 2.8169)
 scale = Vector2(0.568, 0.443)
-texture = ExtResource("9_yaehf")
+texture = ExtResource("98_pl044")
 
 [node name="sliced fish" type="Sprite2D" parent="Plates/Plate"]
 visible = false
 position = Vector2(2.8169, 5.6338)
 scale = Vector2(0.528, 0.412)
-texture = ExtResource("10_074og")
+texture = ExtResource("99_fqpck")
 
 [node name="obliterated fish" type="Sprite2D" parent="Plates/Plate"]
 visible = false
 position = Vector2(5.6338, 2.8169)
 scale = Vector2(0.573, 0.423)
-texture = ExtResource("11_cegan")
+texture = ExtResource("100_kltjy")
 
 [node name="seaweed" type="Sprite2D" parent="Plates/Plate"]
 visible = false
 position = Vector2(11.2676, 16.9014)
 scale = Vector2(0.567, 0.567)
-texture = ExtResource("18_ryguw")
+texture = ExtResource("105_d5wr7")
 
 [node name="onigiri" type="Sprite2D" parent="Plates/Plate"]
 visible = false
 position = Vector2(22.5352, -14.0845)
 scale = Vector2(0.556, 0.495)
-texture = ExtResource("21_lswn8")
+texture = ExtResource("106_wkq15")
 
 [node name="sushi" type="Sprite2D" parent="Plates/Plate"]
 visible = false
 position = Vector2(19.7183, -14.0845)
 scale = Vector2(0.586, 0.522)
-texture = ExtResource("22_a6jrf")
+texture = ExtResource("107_1ch4k")
 
 [node name="Plate2" type="Sprite2D" parent="Plates"]
 z_index = 15
 position = Vector2(-176, -120)
 scale = Vector2(0.355, 0.355)
-texture = ExtResource("48_f6a44")
+texture = ExtResource("123_ndey4")
 
 [node name="rice" type="Sprite2D" parent="Plates/Plate2"]
 visible = false
 position = Vector2(14.0845, 70.4225)
 scale = Vector2(1.061, 0.979)
-texture = ExtResource("49_hrvbo")
+texture = ExtResource("124_b82j6")
 
 [node name="cooked rice" type="Sprite2D" parent="Plates/Plate2"]
 visible = false
 position = Vector2(14.0845, 70.4225)
 scale = Vector2(1.051, 0.969)
-texture = ExtResource("50_uypp3")
+texture = ExtResource("125_efkgy")
 
 [node name="fish" type="Sprite2D" parent="Plates/Plate2"]
 visible = false
 position = Vector2(2.8169, 2.8169)
 scale = Vector2(0.568, 0.443)
-texture = ExtResource("9_yaehf")
+texture = ExtResource("98_pl044")
 
 [node name="sliced fish" type="Sprite2D" parent="Plates/Plate2"]
 visible = false
 position = Vector2(2.8169, 5.6338)
 scale = Vector2(0.528, 0.412)
-texture = ExtResource("10_074og")
+texture = ExtResource("99_fqpck")
 
 [node name="obliterated fish" type="Sprite2D" parent="Plates/Plate2"]
 visible = false
 position = Vector2(5.6338, 2.8169)
 scale = Vector2(0.573, 0.423)
-texture = ExtResource("11_cegan")
+texture = ExtResource("100_kltjy")
 
 [node name="seaweed" type="Sprite2D" parent="Plates/Plate2"]
 visible = false
 position = Vector2(11.2676, 16.9014)
 scale = Vector2(0.567, 0.567)
-texture = ExtResource("18_ryguw")
+texture = ExtResource("105_d5wr7")
 
 [node name="onigiri" type="Sprite2D" parent="Plates/Plate2"]
 visible = false
 position = Vector2(22.5352, -14.0845)
 scale = Vector2(0.556, 0.495)
-texture = ExtResource("21_lswn8")
+texture = ExtResource("106_wkq15")
 
 [node name="sushi" type="Sprite2D" parent="Plates/Plate2"]
 visible = false
 position = Vector2(19.7183, -14.0845)
 scale = Vector2(0.586, 0.522)
-texture = ExtResource("22_a6jrf")
+texture = ExtResource("107_1ch4k")
 
 [node name="ColorRect" type="ColorRect" parent="Plates"]
 offset_left = -210.0
@@ -2733,14 +2739,64 @@ offset_bottom = -163.0
 color = Color(0.705882, 0.682353, 0.643137, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("122_asu84")
+stream = ExtResource("126_jhhba")
 volume_db = -0.99
 autoplay = true
 parameters/looping = true
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("123_qwt6e")
+stream = ExtResource("127_bdtu1")
 volume_db = 7.923
+
+[node name="Tutorial" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial"]
+offset_left = 475.0
+offset_top = 520.0
+offset_right = 1331.0
+offset_bottom = 893.0
+scale = Vector2(0.834101, 0.852535)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Tutorial"]
+offset_left = 495.0
+offset_top = 527.0
+offset_right = 1351.0
+offset_bottom = 900.0
+scale = Vector2(0.800737, 0.818433)
+color = Color(0.992675, 1, 0.86778, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/ColorRect2"]
+layout_mode = 0
+offset_top = 17.7083
+offset_right = 857.0
+offset_bottom = 389.708
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Hello and welcome to the kitchen! This is where you will make all of your sushi and keep your restraunt afloat! Click next to continue or quit to end the tutorial!"
+horizontal_alignment = 1
+
+[node name="Next" type="Button" parent="Tutorial"]
+offset_left = 913.0
+offset_top = 756.0
+offset_right = 996.0
+offset_bottom = 787.0
+scale = Vector2(1.81, 1.85)
+text = "Next"
+
+[node name="Quit" type="Button" parent="Tutorial"]
+offset_left = 637.0
+offset_top = 756.0
+offset_right = 720.0
+offset_bottom = 787.0
+scale = Vector2(1.81, 1.85)
+text = "Quit"
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(215, -209)
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("127_c1b2g")
 
 [connection signal="area_entered" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_exited"]
@@ -2762,3 +2818,5 @@ volume_db = 7.923
 [connection signal="timeout" from="Sushi Rollers/Timer" to="TV" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_exited"]
+[connection signal="pressed" from="Tutorial/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Tutorial/Quit" to="." method="_on_quit_pressed"]

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED = 250
+const SPEED = 300
 var canMove=true
 var _dir = "down"
 var walking=false

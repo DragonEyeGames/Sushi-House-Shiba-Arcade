@@ -16,14 +16,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(placed):
 		$Icon2/ProgressBar.value+=.08#TESTING PURPOSE BOOST
-		if($Icon2/ProgressBar.value>=100):
+		if($Icon2/ProgressBar.value>=100 and cooked==false):
 			cooked=true
+			$AudioStreamPlayer2D2.play()
 	if(colliding and item==$"..".playerInventorySelect and placed==false):
 		$RichTextLabel.visible=true
 		$"..".interactable="rice stove"
 		$"..".interactiveItem=self
 	elif(cooked and len($"..".playerInventory)<=4):
 		if(colliding):
+			$"../Player/PickingUp".play()
 			$RichTextLabel.visible=true
 			$"..".interactable="rice stove"
 			$"..".interactiveItem=self
@@ -60,6 +62,7 @@ func interact():
 		placed=false
 		cooked=false
 	elif(item==$"..".playerInventorySelect):
+		$AudioStreamPlayer2D.play()
 		$Icon2.visible=true
 		$Icon.visible=false
 		$"..".playerInventory.erase($"..".playerInventorySelect)

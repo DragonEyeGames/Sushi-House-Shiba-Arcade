@@ -106,6 +106,7 @@ func interact() -> void:
 	
 	elif colliding and currentItem != "" and len($"..".playerInventory) <= 4:
 		$"..".playerInventory.append(currentItem)
+		$"../Player/PickingUp".play()
 		currentItem = ""
 		_reset_visuals()
 

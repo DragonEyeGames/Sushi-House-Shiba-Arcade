@@ -61,7 +61,7 @@ func _on_timer_timeout() -> void:
 
 
 func orderCycle():
-	await get_tree().create_timer(randi_range(15, 25)).timeout
+	await get_tree().create_timer(randi_range(25, 35)).timeout
 	add_order()
 	orderCycle()
 
