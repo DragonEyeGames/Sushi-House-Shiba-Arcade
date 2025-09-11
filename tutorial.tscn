@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://bya7ucb53a5io"]
+[gd_scene load_steps=149 format=3 uid="uid://bya7ucb53a5io"]
 
 [ext_resource type="Script" uid="uid://doimjnvwjtf08" path="res://tutorial.gd" id="1_c1b2g"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="2_gofs2"]
@@ -95,14 +95,15 @@
 [ext_resource type="Texture2D" uid="uid://cogbwe1rhmfmf" path="res://Assets/SeaweedHolder.png" id="93_wdtwh"]
 [ext_resource type="Script" uid="uid://bceijafr0j870" path="res://trash.gd" id="94_g463j"]
 [ext_resource type="Texture2D" uid="uid://dqcu3dgl835jj" path="res://Assets/Trash.png" id="95_elkwf"]
-[ext_resource type="Script" uid="uid://ccjws5hie7otm" path="res://cuttingBoard.gd" id="96_30388"]
+[ext_resource type="Script" uid="uid://brw3ashgcafb7" path="res://tutorial_cutting_board.gd" id="96_gofs2"]
 [ext_resource type="Texture2D" uid="uid://doq02n40iwio7" path="res://Assets/CuttingBoardTable.png" id="97_78ntn"]
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="98_pl044"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="99_fqpck"]
 [ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="100_kltjy"]
-[ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://cuttingMinigame.gd" id="101_3oip6"]
+[ext_resource type="Script" uid="uid://b35qjs0y1sixl" path="res://tutorial_minigame_holder.gd" id="101_jejqe"]
 [ext_resource type="Texture2D" uid="uid://dxx1wx6tyv6tt" path="res://Assets/Knife.png" id="102_ox0ya"]
-[ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://assembly.gd" id="103_u1a7u"]
+[ext_resource type="Script" uid="uid://dk4nwsovdj38m" path="res://tutorial_assembly.gd" id="103_gofs2"]
+[ext_resource type="AudioStream" uid="uid://cdl44d0hhic7l" path="res://Assets/Music/Chop.mp3" id="103_jejqe"]
 [ext_resource type="Texture2D" uid="uid://5pygkcvi0esp" path="res://Assets/AssemblyStation.png" id="104_biydo"]
 [ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="105_d5wr7"]
 [ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="106_wkq15"]
@@ -503,7 +504,7 @@ shape = SubResource("RectangleShape2D_0cbny")
 [node name="MainMusic" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2(-408, 37)
 stream = ExtResource("82_1ux45")
-volume_db = -4.471
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
@@ -788,7 +789,7 @@ horizontal_alignment = 1
 [node name="Cutting Board" type="StaticBody2D" parent="."]
 texture_filter = 6
 position = Vector2(489, 80)
-script = ExtResource("96_30388")
+script = ExtResource("96_gofs2")
 item = "fish"
 
 [node name="Icon" type="Sprite2D" parent="Cutting Board"]
@@ -885,7 +886,7 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Fish"
 
 [node name="MinigameHolder" type="Node2D" parent="Cutting Board"]
-script = ExtResource("101_3oip6")
+script = ExtResource("101_jejqe")
 
 [node name="Knife" type="Node2D" parent="Cutting Board/MinigameHolder"]
 z_index = 2
@@ -915,9 +916,13 @@ rotation = 3.14159
 width = 0.635
 joint_mode = 2
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Cutting Board"]
+stream = ExtResource("103_jejqe")
+panning_strength = 0.0
+
 [node name="Assembly Board" type="StaticBody2D" parent="."]
 position = Vector2(321, 80)
-script = ExtResource("103_u1a7u")
+script = ExtResource("103_gofs2")
 
 [node name="Icon" type="Sprite2D" parent="Assembly Board"]
 scale = Vector2(0.495, 0.495)
@@ -1170,6 +1175,7 @@ script = ExtResource("111_c3m87")
 visible = false
 
 [node name="Button" type="Button" parent="MinigameLayer"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 26.0
 offset_top = 23.0
@@ -2740,21 +2746,21 @@ color = Color(0.705882, 0.682353, 0.643137, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("126_jhhba")
-volume_db = -0.99
+volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("127_bdtu1")
-volume_db = 7.923
+volume_db = 8.0
 
 [node name="Tutorial" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Tutorial"]
-offset_left = 475.0
-offset_top = 520.0
-offset_right = 1331.0
-offset_bottom = 893.0
+offset_left = 482.0
+offset_top = 521.0
+offset_right = 1338.0
+offset_bottom = 894.0
 scale = Vector2(0.834101, 0.852535)
 color = Color(0, 0, 0, 1)
 
@@ -2798,25 +2804,89 @@ position = Vector2(215, -209)
 scale = Vector2(0.135, 0.135)
 texture = ExtResource("127_c1b2g")
 
+[node name="Arrow2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-44, 180)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("127_c1b2g")
+
+[node name="Arrow3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(139, 192)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("127_c1b2g")
+
+[node name="Arrow4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(826, 180)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("127_c1b2g")
+
+[node name="Arrow5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(658, 174)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("127_c1b2g")
+
+[node name="Arrow6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(483, 176)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("127_c1b2g")
+
+[node name="Arrow7" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(322, 164)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("127_c1b2g")
+
+[node name="Arrow8" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-174, 9.00002)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("127_c1b2g")
+
+[connection signal="area_entered" from="Stove/Area2D" to="." method="_on_stove"]
 [connection signal="area_entered" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Stove/Area2D" to="." method="_on_stove_out"]
 [connection signal="area_exited" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Rice Reservoir/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Rice Reservoir/Area2D" to="Rice Reservoir" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Rice Reservoir/Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="area_exited" from="Rice Reservoir/Area2D" to="Rice Reservoir" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Fish Reservoir/Area2D" to="." method="_fish_entered"]
 [connection signal="area_entered" from="Fish Reservoir/Area2D" to="Fish Reservoir" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Fish Reservoir/Area2D" to="." method="_fish_exited"]
 [connection signal="area_exited" from="Fish Reservoir/Area2D" to="Fish Reservoir" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Seaweed Reservoir/Area2D" to="." method="_on_seaweed"]
 [connection signal="area_entered" from="Seaweed Reservoir/Area2D" to="Seaweed Reservoir" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Seaweed Reservoir/Area2D" to="." method="_on_seaweed_exit"]
 [connection signal="area_exited" from="Seaweed Reservoir/Area2D" to="Seaweed Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Trash/Area2D" to="Trash" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Trash/Area2D" to="Trash" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Cutting Board/Area2D" to="." method="_cutting_entered"]
 [connection signal="area_entered" from="Cutting Board/Area2D" to="Cutting Board" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Cutting Board/Area2D" to="." method="cutting_exited"]
 [connection signal="area_exited" from="Cutting Board/Area2D" to="Cutting Board" method="_on_area_2d_area_exited"]
 [connection signal="area_shape_entered" from="Cutting Board/MinigameHolder/Knife/Area2D" to="Cutting Board/MinigameHolder" method="_on_area_2d_area_shape_entered"]
 [connection signal="area_shape_exited" from="Cutting Board/MinigameHolder/Knife/Area2D" to="Cutting Board/MinigameHolder" method="_on_area_2d_area_shape_exited"]
+[connection signal="area_entered" from="Assembly Board/Area2D" to="." method="_on_assembly_entered"]
 [connection signal="area_entered" from="Assembly Board/Area2D" to="Assembly Board" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Assembly Board/Area2D" to="." method="_assembly_leaving"]
 [connection signal="area_exited" from="Assembly Board/Area2D" to="Assembly Board" method="_on_area_2d_area_exited"]
+[connection signal="pressed" from="MinigameLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MinigameLayer/Button" to="Cutting Board" method="_on_button_pressed"]
 [connection signal="timeout" from="Sushi Rollers/Timer" to="TV" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Plate Roller/Rollers/Area2D" to="." method="_on_roller_entered"]
 [connection signal="area_entered" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Plate Roller/Rollers/Area2D" to="." method="_on_roller_exited"]
 [connection signal="area_exited" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_exited"]
 [connection signal="pressed" from="Tutorial/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Tutorial/Quit" to="." method="_on_quit_pressed"]

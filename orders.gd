@@ -51,6 +51,9 @@ func _process(delta: float) -> void:
 		# Remove expired orders
 		if progress.value <= 0:
 			orders.remove_at(i)
+			$"..".score-=500
+			if($"..".score<0):
+				$"..".score=0
 			orderTimeRemaining.remove_at(i)
 			return  # Restart process to avoid index mismatch
 

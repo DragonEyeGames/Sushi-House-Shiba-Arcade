@@ -4,6 +4,7 @@ var playerInventorySelect=""
 var interactable=""
 var interactiveItem
 var playerInventory=[]
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Score/RichTextLabel2.text=str(score)
 	for i in range($CanvasLayer.get_child_count()):
 		var child = $CanvasLayer.get_child(i)
 		if i >= playerInventory.size():

@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 	if(colliding):
 		$"..".interactiveItem=self
 	if(colliding and settingPlate!=null):
-		print("si")
 		if($"..".playerInventorySelect!=""):
 			$Rollers/RichTextLabel.text="Place " + $"..".playerInventorySelect
 				
@@ -31,6 +30,11 @@ func _process(delta: float) -> void:
 					var index=$"../TV".orders.find($"..".playerInventorySelect)
 					$"../TV".orders.remove_at(index)
 					$"../TV".orderTimeRemaining.remove_at(index)
+					$"..".score+=1000
+				else:
+					$"..".score-=100
+					if($"..".score<0):
+						$"..".score=0
 				var item_node = settingPlate.get_node_or_null($"..".playerInventorySelect)
 				if item_node:
 					item_node.visible = true

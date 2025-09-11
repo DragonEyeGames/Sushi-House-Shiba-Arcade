@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=148 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://main.gd" id="1_7mycd"]
@@ -124,6 +124,7 @@
 [ext_resource type="AudioStream" uid="uid://b61e5drkiwvus" path="res://Assets/Music/PickUp.mp3" id="83_g5xqc"]
 [ext_resource type="AudioStream" uid="uid://74vrm5kgybho" path="res://Assets/Music/Beep.mp3" id="87_tttfs"]
 [ext_resource type="AudioStream" uid="uid://hucqmerp468e" path="res://Assets/Music/TimerEnd.mp3" id="88_1iygd"]
+[ext_resource type="AudioStream" uid="uid://cdl44d0hhic7l" path="res://Assets/Music/Chop.mp3" id="103_s4o1y"]
 [ext_resource type="AudioStream" uid="uid://p0ghh3yryvak" path="res://Assets/Music/Conveyer.mp3" id="122_asu84"]
 [ext_resource type="AudioStream" uid="uid://bt6jub4kssg6r" path="res://Assets/Music/Ninja Run.mp3" id="123_off2o"]
 [ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Assets/Music/Roller.mp3" id="123_qwt6e"]
@@ -465,7 +466,7 @@ size = Vector2(128, 967)
 size = Vector2(256, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrvbo"]
-size = Vector2(108, 292)
+size = Vector2(108, 202)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7mycd")
@@ -502,7 +503,7 @@ shape = SubResource("RectangleShape2D_0cbny")
 [node name="MainMusic" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2(-408, 37)
 stream = ExtResource("123_off2o")
-volume_db = -4.471
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
@@ -913,6 +914,10 @@ position = Vector2(-1, 7)
 rotation = 3.14159
 width = 0.635
 joint_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Cutting Board"]
+stream = ExtResource("103_s4o1y")
+panning_strength = 0.0
 
 [node name="Assembly Board" type="StaticBody2D" parent="."]
 position = Vector2(321, 80)
@@ -2593,7 +2598,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plate Roller/Rollers/Area2D"]
-position = Vector2(44, 10)
+position = Vector2(44, -35)
 shape = SubResource("RectangleShape2D_hrvbo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Plate Roller/Rollers"]
@@ -2734,13 +2739,41 @@ color = Color(0.705882, 0.682353, 0.643137, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("122_asu84")
-volume_db = -0.99
+volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("123_qwt6e")
-volume_db = 7.923
+volume_db = 8.0
+
+[node name="Score" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Score"]
+offset_left = 1199.0
+offset_top = 33.0
+offset_right = 1560.0
+offset_bottom = 108.0
+color = Color(0.808998, 0.808998, 0.808998, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Score"]
+offset_left = 1200.0
+offset_top = 33.0
+offset_right = 1562.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 49
+text = "Score:"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Score"]
+offset_left = 1200.0
+offset_top = 33.0
+offset_right = 1550.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 49
+text = "0"
+horizontal_alignment = 2
 
 [connection signal="area_entered" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stove/Area2D" to="Stove" method="_on_area_2d_area_exited"]
