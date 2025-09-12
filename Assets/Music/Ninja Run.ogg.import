@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d22u06bbsk4v7"
+path="res://.godot/imported/Ninja Run.ogg-75ec2ac00dac337cf88987b774cc2299.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music/Ninja Run.ogg"
+dest_files=["res://.godot/imported/Ninja Run.ogg-75ec2ac00dac337cf88987b774cc2299.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

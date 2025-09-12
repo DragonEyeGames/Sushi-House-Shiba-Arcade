@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if(running):
 		$Knife.global_position=get_global_mouse_position()
 		if(Input.is_action_pressed("Place")):
-			$Knife.scale=Vector2(.9, .9)
+			$Knife.scale=Vector2(1.9, 1.9)
 			if(cutting==false):
 				var line := Line2D.new()               # Make a new Line2D
 				line.width = 0.635                        # Set line thickness
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 				currentLine.add_point(currentLine.to_local($Knife/Area2D/CollisionShape2D.global_position))
 			cutting=true
 		else:
-			$Knife.scale=Vector2(1, 1)
+			$Knife.scale=Vector2(2, 2)
 			cutting=false
 	if(cutting and canCut):
 		if(is_point_inside($Knife/Area2D/CollisionShape2D.global_position)):
@@ -41,9 +41,9 @@ func _physics_process(delta: float) -> void:
 				var last_point = currentLine.points[-2]
 				var new_point = currentLine.points[-1]
 				cutAmount += last_point.distance_to(new_point)
-				if(cutAmount<80):
+				if(cutAmount<170):
 					$"../Fish".visible=true
-				elif(cutAmount<=140):
+				elif(cutAmount<=500):
 					if($"../Fish".visible):
 						for child in $Lines.get_children():
 							child.queue_free()

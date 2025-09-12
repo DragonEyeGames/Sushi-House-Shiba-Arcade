@@ -1,9 +1,9 @@
-extends StaticBody2D
+extends Sprite2D
 
 var colliding=false
 
 @export var item = "rice"
-
+@export var controller: Node2D
 var placed=false
 var cooked=false
 
@@ -19,19 +19,18 @@ func _process(delta: float) -> void:
 		if($Icon2/ProgressBar.value>=100 and cooked==false):
 			cooked=true
 			$AudioStreamPlayer2D2.play()
-	if(colliding and item==$"..".playerInventorySelect and placed==false):
-		$RichTextLabel.visible=true
-		$"..".interactable="rice stove"
-		$"..".interactiveItem=self
-	elif(cooked and len($"..".playerInventory)<=4):
+	if(colliding and item==controller.playerInventorySelect and placed==false):
+		self.material.set_shader_parameter("outline_size", 1.4)
+		controller.interactable="rice stove"
+		controller.interactiveItem=self
+	elif(cooked and len(controller.playerInventory)<=4):
 		if(colliding):
-			$"../Player/PickingUp".play()
-			$RichTextLabel.visible=true
-			$"..".interactable="rice stove"
-			$"..".interactiveItem=self
-			$"RichTextLabel".text="Grab Pot"
+			$"../../Player/PickingUp".play()
+			self.material.set_shader_parameter("outline_size", 1.4)
+			controller.interactable="rice stove"
+			controller.interactiveItem=self
 	else:
-		$RichTextLabel.visible=false
+		self.material.set_shader_parameter("outline_size", 0)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -39,35 +38,32 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	$RichTextLabel.visible=false
-	if($"..".interactiveItem==self):
-		$"..".interactable=""
-		$"..".interactiveItem=null
+	self.material.set_shader_parameter("outline_size", 0)
+	if(controller.interactiveItem==self):
+		controller.interactable=""
+		controller.interactiveItem=null
 	colliding=false
 	
 func interact():
-	if(not $"..".interactiveItem==self):
+	if(not controller.interactiveItem==self):
 		return
 	if(cooked):
-		$"..".playerInventory.append("cooked rice")
+		controller.playerInventory.append("cooked rice")
 		$Icon2.visible=false
-		$Icon.visible=true
 		$Icon2/ProgressBar.value=0
-		$"..".playerInventorySelect=""
-		for i in $"../CanvasLayer".get_children():
+		controller.playerInventorySelect=""
+		for i in $"../../CanvasLayer".get_children():
 			var outline = i.get_node_or_null("Outline")
 			if outline:
 				outline.visible = false
-		$Interactable.visible=false
 		placed=false
 		cooked=false
-	elif(item==$"..".playerInventorySelect):
+	elif(item==controller.playerInventorySelect):
 		$AudioStreamPlayer2D.play()
 		$Icon2.visible=true
-		$Icon.visible=false
-		$"..".playerInventory.erase($"..".playerInventorySelect)
-		$"..".playerInventorySelect=""
-		for i in $"../CanvasLayer".get_children():
+		controller.playerInventory.erase(controller.playerInventorySelect)
+		controller.playerInventorySelect=""
+		for i in $"../../CanvasLayer".get_children():
 			var outline = i.get_node_or_null("Outline")
 			if outline:
 				outline.visible = false

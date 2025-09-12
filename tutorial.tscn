@@ -81,7 +81,7 @@
 [ext_resource type="Texture2D" uid="uid://b6137wx3bpmo6" path="res://Assets/Character/Front-Walk-3-2.png" id="79_5yxyn"]
 [ext_resource type="Texture2D" uid="uid://dr5ux7wea1ah" path="res://Assets/Character/Front-Walk-4-2.png" id="80_26h0h"]
 [ext_resource type="Texture2D" uid="uid://b8gsdn3mysw2w" path="res://Assets/Character/Front-Walk-5-2.png" id="81_s1ahp"]
-[ext_resource type="AudioStream" uid="uid://bt6jub4kssg6r" path="res://Assets/Music/Ninja Run.mp3" id="82_1ux45"]
+[ext_resource type="AudioStream" uid="uid://d22u06bbsk4v7" path="res://Assets/Music/Ninja Run.ogg" id="82_jejqe"]
 [ext_resource type="AudioStream" uid="uid://b61e5drkiwvus" path="res://Assets/Music/PickUp.mp3" id="83_rrfi1"]
 [ext_resource type="Script" uid="uid://cngg15t1lim6i" path="res://stove.gd" id="84_w14sa"]
 [ext_resource type="Texture2D" uid="uid://c6e40ojmlanye" path="res://Assets/PotRice.png" id="85_s8gjy"]
@@ -126,9 +126,9 @@
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="123_ndey4"]
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="124_b82j6"]
 [ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="125_efkgy"]
-[ext_resource type="AudioStream" uid="uid://p0ghh3yryvak" path="res://Assets/Music/Conveyer.mp3" id="126_jhhba"]
 [ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Assets/Music/Roller.mp3" id="127_bdtu1"]
 [ext_resource type="Texture2D" uid="uid://2etdu3osoekr" path="res://Assets/arrow.png" id="127_c1b2g"]
+[ext_resource type="AudioStream" uid="uid://cdubke7rcmrmg" path="res://Assets/Music/Conveyer.ogg" id="127_jejqe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am8a1"]
 animations = [{
@@ -503,7 +503,7 @@ shape = SubResource("RectangleShape2D_0cbny")
 
 [node name="MainMusic" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2(-408, 37)
-stream = ExtResource("82_1ux45")
+stream = ExtResource("82_jejqe")
 volume_db = -10.0
 autoplay = true
 parameters/looping = true
@@ -2745,7 +2745,7 @@ offset_bottom = -163.0
 color = Color(0.705882, 0.682353, 0.643137, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("126_jhhba")
+stream = ExtResource("127_jejqe")
 volume_db = -5.0
 autoplay = true
 parameters/looping = true

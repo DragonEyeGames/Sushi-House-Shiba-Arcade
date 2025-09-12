@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Sprite2D
 
 var colliding = false
 
@@ -10,6 +10,7 @@ var fishPlaced = false
 
 var currentItem = ""
 var itemMatching = false
+@export var controller: Node2D
 
 func _ready() -> void:
 	pass
@@ -17,36 +18,35 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Check if the player's selected item is one we accept
-	itemMatching = $"..".playerInventorySelect in item
+	itemMatching = controller.playerInventorySelect in item
 
 	# Show prompts based on state
 	if colliding:
-		if $"..".playerInventorySelect == "seaweed" and not seaweedPlaced and currentItem == "":
+		if controller.playerInventorySelect == "seaweed" and not seaweedPlaced and currentItem == "":
 			_show_prompt("Place Seaweed")
-		elif $"..".playerInventorySelect == "cooked rice" and seaweedPlaced and not ricePlaced and currentItem == "seaweed":
+		elif controller.playerInventorySelect == "cooked rice" and seaweedPlaced and not ricePlaced and currentItem == "seaweed":
 			_show_prompt("Place Cooked Rice")
-		elif $"..".playerInventorySelect == "sliced fish" and ricePlaced and not fishPlaced and currentItem == "onigiri":
+		elif controller.playerInventorySelect == "sliced fish" and ricePlaced and not fishPlaced and currentItem == "onigiri":
 			_show_prompt("Place Sliced Fish")
-		elif $"..".playerInventorySelect == "onigiri" and currentItem == "":
+		elif controller.playerInventorySelect == "onigiri" and currentItem == "":
 			_show_prompt("Place Onigiri")
-		elif $"..".playerInventorySelect == "sushi" and currentItem == "":
+		elif controller.playerInventorySelect == "sushi" and currentItem == "":
 			_show_prompt("Place Sushi")
 		elif currentItem != "":
-			if(len($"..".playerInventory) <= 4):
+			if(len(controller.playerInventory) <= 4):
 				_show_prompt("Pickup " + str(currentItem))
 			else:
-				$RichTextLabel.visible = false
+				self.material.set_shader_parameter("outline_size", 0)
 		else:
-			$RichTextLabel.visible = false
+			self.material.set_shader_parameter("outline_size", 0)
 	else:
-		$RichTextLabel.visible = false
+		self.material.set_shader_parameter("outline_size", 0)
 
 
 func _show_prompt(text: String) -> void:
-	$RichTextLabel.visible = true
-	$RichTextLabel.text = text
-	$"..".interactable = "assembly board"
-	$"..".interactiveItem = self
+	self.material.set_shader_parameter("outline_size", 1.4)
+	controller.interactable = "assembly board"
+	controller.interactiveItem = self
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -54,25 +54,25 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	$RichTextLabel.visible = false
-	if($"..".interactiveItem==self):
-		$"..".interactable=""
-		$"..".interactiveItem=null
+	self.material.set_shader_parameter("outline_size", 0)
+	if(controller.interactiveItem==self):
+		controller.interactable=""
+		controller.interactiveItem=null
 	colliding = false
 
 
 func interact() -> void:
-	if(not $"..".interactiveItem==self):
+	if(not controller.interactiveItem==self):
 		return
 	# PLACE SEAWEED
-	if $"..".playerInventorySelect == "seaweed" and not seaweedPlaced:
+	if controller.playerInventorySelect == "seaweed" and not seaweedPlaced:
 		_consume_item("seaweed")
 		$Seaweed.visible = true
 		seaweedPlaced = true
 		currentItem = "seaweed"
 
 	# PLACE COOKED RICE
-	elif $"..".playerInventorySelect == "cooked rice" and seaweedPlaced and not ricePlaced:
+	elif controller.playerInventorySelect == "cooked rice" and seaweedPlaced and not ricePlaced:
 		_consume_item("cooked rice")
 		$Onigiri.visible = true
 		$Seaweed.visible = false
@@ -80,7 +80,7 @@ func interact() -> void:
 		currentItem = "onigiri"
 
 	# PLACE FISH
-	elif $"..".playerInventorySelect == "sliced fish" and ricePlaced and not fishPlaced:
+	elif controller.playerInventorySelect == "sliced fish" and ricePlaced and not fishPlaced:
 		_consume_item("sliced fish")
 		$Sushi.visible = true
 		$Onigiri.visible = false
@@ -88,7 +88,7 @@ func interact() -> void:
 		currentItem = "sushi"
 		
 	# PLACE ONIGIRI
-	elif $"..".playerInventorySelect == "onigiri" and currentItem=="":
+	elif controller.playerInventorySelect == "onigiri" and currentItem=="":
 		_consume_item("onigiri")
 		$Onigiri.visible = true
 		seaweedPlaced=true
@@ -96,7 +96,7 @@ func interact() -> void:
 		currentItem = "onigiri"
 		
 	# PLACE SUSHI
-	elif $"..".playerInventorySelect == "sushi" and currentItem=="":
+	elif controller.playerInventorySelect == "sushi" and currentItem=="":
 		_consume_item("sushi")
 		$Sushi.visible = true
 		seaweedPlaced=true
@@ -104,17 +104,17 @@ func interact() -> void:
 		fishPlaced=true
 		currentItem = "sushi"
 	
-	elif colliding and currentItem != "" and len($"..".playerInventory) <= 4:
-		$"..".playerInventory.append(currentItem)
-		$"../Player/PickingUp".play()
+	elif colliding and currentItem != "" and len(controller.playerInventory) <= 4:
+		controller.playerInventory.append(currentItem)
+		$"../../Player/PickingUp".play()
 		currentItem = ""
 		_reset_visuals()
 
 
 func _consume_item(item_name: String) -> void:
-	$"..".playerInventory.erase(item_name)
-	$"..".playerInventorySelect = ""
-	for i in $"../CanvasLayer".get_children():
+	controller.playerInventory.erase(item_name)
+	controller.playerInventorySelect = ""
+	for i in $"../../CanvasLayer".get_children():
 		var outline = i.get_node_or_null("Outline")
 		if outline:
 			outline.visible = false
