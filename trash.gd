@@ -1,6 +1,7 @@
-extends StaticBody2D
+extends Sprite2D
 
 var colliding=false
+@export var controller: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,30 +10,32 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if($"..".playerInventorySelect==""):
-		$RichTextLabel.text=""
+	if(controller.playerInventorySelect==""):
+		self.material.set_shader_parameter("outline_size", 0)
 		return
-	$RichTextLabel.text="Throw Away " + str($"..".playerInventorySelect)
-	if($"..".interactiveItem==self):
-		$RichTextLabel.visible=colliding
+	if(controller.interactiveItem==self):
+		if(colliding and controller.playerInventorySelect!=""):
+			self.material.set_shader_parameter("outline_size", 1.4)
+		else:
+			self.material.set_shader_parameter("outline_size", 0)
 	else:
-		$RichTextLabel.visible=false
+		self.material.set_shader_parameter("outline_size", 0)
 	if(colliding and Input.is_action_just_pressed("Place")):
-		if(not $"..".interactiveItem==self):
+		if(not controller.interactiveItem==self):
 			return
-		$"..".playerInventory.erase($"..".playerInventorySelect)
-		$"..".playerInventorySelect=""
-		for i in $"../CanvasLayer".get_children():
+		controller.playerInventory.erase(controller.playerInventorySelect)
+		controller.playerInventorySelect=""
+		for i in $"../../CanvasLayer".get_children():
 			var outline = i.get_node_or_null("Outline")
 			if outline:
 				outline.visible = false
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	$"..".interactiveItem=self
+	controller.interactiveItem=self
 	colliding=true
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if($"..".interactiveItem==self):
-		$"..".interactiveItem=null
+	if(controller.interactiveItem==self):
+		controller.interactiveItem=null
 	colliding=false

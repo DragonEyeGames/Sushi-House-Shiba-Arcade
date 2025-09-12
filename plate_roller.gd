@@ -21,10 +21,9 @@ func _process(delta: float) -> void:
 		$"..".interactiveItem=self
 	if(colliding and settingPlate!=null):
 		if($"..".playerInventorySelect!=""):
-			$Rollers/RichTextLabel.text="Place " + $"..".playerInventorySelect
-				
-			$Rollers/RichTextLabel.visible=true
+			settingPlate.material.set_shader_parameter("outline_size", 1.4)
 			if(Input.is_action_just_pressed("Place")):
+				settingPlate.material.set_shader_parameter("outline_size", 0)
 				$"../AudioStreamPlayer2D2".playing=true
 				if($"..".playerInventorySelect in $"../TV".orders):
 					var index=$"../TV".orders.find($"..".playerInventorySelect)
@@ -47,9 +46,10 @@ func _process(delta: float) -> void:
 					if outline:
 						outline.visible = false
 		else:
-			$Rollers/RichTextLabel.visible=false
+			settingPlate.material.set_shader_parameter("outline_size", 0)
 	else:
-		$Rollers/RichTextLabel.visible=false
+		if(settingPlate!=null):
+			settingPlate.material.set_shader_parameter("outline_size", 0)
 	if(rolling):
 		$RollBars.position.x-=speed*delta
 		$RollBars2.position.x-=speed*delta
@@ -76,13 +76,13 @@ func _process(delta: float) -> void:
 				plateState[index]="gliding"
 func getPlate():
 	var plate = $"../Plates/Plate".duplicate()
+	plate.material = plate.material.duplicate()
 	$"../Plates".add_child(plate)
 	plate.z_index=15
 	plate.visible=true
 	settingPlate=null
 	while plate.position.y<-117:
 		plate.position.y+=speed/2*_currentDelta
-		print(plate.position)
 		await get_tree().create_timer(0).timeout
 	plate.position.y=-117
 	settingPlate=plate
