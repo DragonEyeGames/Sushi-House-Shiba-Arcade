@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo1kcclquc7p4"]
+
+[ext_resource type="Script" uid="uid://cw47f8wo2ojm2" path="res://Scenes/assembly_items.gd" id="1_84mym"]
+[ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_j51bm"]
+[ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="2_bltvl"]
+[ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="4_jr540"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sbw16"]
+resource_local_to_scene = true
+shader = ExtResource("1_j51bm")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 0.0
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[node name="Items" type="Node2D"]
+material = SubResource("ShaderMaterial_sbw16")
+scale = Vector2(0.26, 0.26)
+script = ExtResource("1_84mym")
+
+[node name="cooked rice" type="Sprite2D" parent="."]
+visible = false
+use_parent_material = true
+position = Vector2(10, 193)
+scale = Vector2(2.34585, 2.16421)
+texture = ExtResource("2_bltvl")
+
+[node name="Area2D" type="Area2D" parent="cooked rice"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cooked rice/Area2D"]
+polygon = PackedVector2Array(-7.54196, -25.2002, -43.6122, -37.6403, -63.2869, -73.1836, -25.5771, -92.7324, 31.8074, -90.9552, 53.1216, -73.1836, 31.8074, -39.4175)
+
+[node name="sliced fish" type="Sprite2D" parent="."]
+visible = false
+use_parent_material = true
+position = Vector2(7.69231, 46.1539)
+rotation = 0.837758
+scale = Vector2(1.38281, 1.07813)
+texture = ExtResource("4_jr540")
+
+[node name="Area2D2" type="Area2D" parent="sliced fish"]
+position = Vector2(80.0342, 89.5479)
+rotation = -0.95872
+scale = Vector2(1.97564, 1.77678)
+skew = 0.245063
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="sliced fish/Area2D2"]
+polygon = PackedVector2Array(-48.5309, -42.9718, -27.2166, -12.76, -17.3793, -10.9829, 15.0768, -49.8028, 41.6447, -73.1836, 41.6447, -82.0694, 31.8074, -96.2867, 20.3305, -106.95, 5.57449, -108.727, -7.54196, -98.0638, -46.8913, -53.6348)
+
+[connection signal="mouse_entered" from="cooked rice/Area2D" to="." method="rice_entered"]
+[connection signal="mouse_exited" from="cooked rice/Area2D" to="." method="rice_exited"]
+[connection signal="mouse_entered" from="sliced fish/Area2D2" to="." method="fish_entered"]
+[connection signal="mouse_exited" from="sliced fish/Area2D2" to="." method="fish_exited"]
