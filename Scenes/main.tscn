@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=177 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -132,7 +132,14 @@
 [ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://Scripts/assembly.gd" id="129_ul0h4"]
 [ext_resource type="PackedScene" uid="uid://bo1kcclquc7p4" path="res://Scenes/assemblyItems.tscn" id="130_bdqux"]
 [ext_resource type="Texture2D" uid="uid://dqcu3dgl835jj" path="res://Assets/Trash.png" id="130_gqipy"]
+[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/CookedRiceAssembly.png" id="131_bpr0e"]
 [ext_resource type="Script" uid="uid://bceijafr0j870" path="res://Scripts/trash.gd" id="131_ore4n"]
+[ext_resource type="Texture2D" uid="uid://brb8ftp2raqmb" path="res://Assets/SlicedFishAssebmyl.png" id="132_14mkc"]
+[ext_resource type="Texture2D" uid="uid://bvssvmub8krmu" path="res://Assets/Roll.png" id="132_stool"]
+[ext_resource type="Texture2D" uid="uid://juyflj1byd6h" path="res://Assets/Pickup.png" id="133_ci23i"]
+[ext_resource type="Texture2D" uid="uid://cwj1rq65j18b7" path="res://Assets/ControllerSelection.png" id="138_14mkc"]
+[ext_resource type="Script" uid="uid://csroy366tlm7r" path="res://Scenes/main_tutorial.gd" id="139_hfu3o"]
+[ext_resource type="Texture2D" uid="uid://2etdu3osoekr" path="res://Assets/arrow.png" id="140_adgm5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am8a1"]
 animations = [{
@@ -421,10 +428,10 @@ animations = [{
 size = Vector2(48, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
-size = Vector2(35, 105)
+size = Vector2(35, 129)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0cbny"]
-size = Vector2(75, 25)
+size = Vector2(75, 57)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsp4k"]
 size = Vector2(188, 1795)
@@ -453,7 +460,7 @@ size = Vector2(128, 967)
 size = Vector2(256, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrvbo"]
-size = Vector2(108, 202)
+size = Vector2(238, 258)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bnk2o"]
 resource_local_to_scene = true
@@ -558,6 +565,47 @@ shader_parameter/outline_size = 0.0
 shader_parameter/threshold = 0.999
 shader_parameter/samples = 12
 
+[sub_resource type="Animation" id="Animation_ci23i"]
+resource_name = "scale"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button Holder:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.885, 0.885), Vector2(0.995, 0.995), Vector2(0.885, 0.885)]
+}
+
+[sub_resource type="Animation" id="Animation_myryv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button Holder:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.885, 0.885)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bpr0e"]
+_data = {
+&"RESET": SubResource("Animation_myryv"),
+&"scale": SubResource("Animation_ci23i")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14mkc"]
+radius = 114.286
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qe8ju"]
 shader = ExtResource("101_eyr7i")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
@@ -592,7 +640,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2(-0.5, 56.5)
+position = Vector2(-0.5, 44.5)
 shape = SubResource("RectangleShape2D_272bh")
 
 [node name="Area2D2" type="Area2D" parent="Player"]
@@ -600,7 +648,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D2"]
-position = Vector2(-27.5, 19.5)
+position = Vector2(-27.5, 3.5)
 shape = SubResource("RectangleShape2D_0cbny")
 
 [node name="MainMusic" type="AudioStreamPlayer2D" parent="Player"]
@@ -790,6 +838,18 @@ offset_right = 234.0
 offset_bottom = 83.0
 theme_override_font_sizes/font_size = 22
 text = "Finish Cutting"
+
+[node name="AssemblyLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Button" type="Button" parent="AssemblyLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 234.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 22
+text = "Exit Assembly"
 
 [node name="Floor" type="Node2D" parent="."]
 z_index = -9
@@ -2222,7 +2282,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plate Roller/Rollers/Area2D"]
-position = Vector2(44, -35)
+position = Vector2(7, -7)
 shape = SubResource("RectangleShape2D_hrvbo")
 
 [node name="Plates" type="Node2D" parent="."]
@@ -2405,7 +2465,7 @@ position = Vector2(0, 11.5)
 shape = SubResource("RectangleShape2D_3exxq")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Stations"]
-position = Vector2(881, 147)
+position = Vector2(881, 147.5)
 
 [node name="LongTable" type="Sprite2D" parent="Stations/StaticBody2D2"]
 scale = Vector2(0.5, 0.5)
@@ -2704,14 +2764,37 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 31
 text = "Seaweed"
 
+[node name="Area2D" type="Area2D" parent="Stations/Assembly Board/Seaweed"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stations/Assembly Board/Seaweed/Area2D"]
+polygon = PackedVector2Array(-60.5166, -75.8835, 63.0985, -65.933, 60.7903, 43.9325, -74.3686, 25.2803)
+
 [node name="Rice" type="Sprite2D" parent="Stations/Assembly Board"]
 visible = false
-position = Vector2(1.83486, -33.0275)
+position = Vector2(-3.66973, -53.211)
 rotation = -0.120428
-scale = Vector2(0.593, 0.52)
-texture = ExtResource("104_8bce4")
+scale = Vector2(0.625, 0.57)
+texture = ExtResource("131_bpr0e")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stations/Assembly Board/Rice"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Seaweed"
+
+[node name="SlicedFish" type="Sprite2D" parent="Stations/Assembly Board"]
+visible = false
+position = Vector2(-3.66973, -53.211)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("132_14mkc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stations/Assembly Board/SlicedFish"]
 visible = false
 offset_left = -26.9663
 offset_top = -47.1911
@@ -2775,6 +2858,74 @@ material = SubResource("ShaderMaterial_ci23i")
 position = Vector2(108.257, -42.2018)
 scale = Vector2(-0.26, 0.26)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stations/Assembly Board"]
+libraries = {
+&"": SubResource("AnimationLibrary_bpr0e")
+}
+autoplay = "scale"
+
+[node name="Button Holder" type="Control" parent="Stations/Assembly Board"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -7.33945
+offset_right = 32.6605
+offset_bottom = 40.0
+scale = Vector2(0.885, 0.885)
+
+[node name="TextureButton" type="TextureButton" parent="Stations/Assembly Board/Button Holder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.8696
+offset_top = -40.6232
+offset_right = 165.13
+offset_bottom = 46.3768
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.495, 0.495)
+texture_normal = ExtResource("132_stool")
+
+[node name="TextureButton2" type="TextureButton" parent="Stations/Assembly Board/Button Holder"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.8696
+offset_top = -40.6232
+offset_right = 165.13
+offset_bottom = 46.3768
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.495, 0.495)
+texture_normal = ExtResource("133_ci23i")
+
+[node name="ControllerCollisions" type="Area2D" parent="Stations/Assembly Board/Button Holder"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stations/Assembly Board/Button Holder/ControllerCollisions"]
+polygon = PackedVector2Array(-2.00204, -22.0226, -44.0453, -14.0144, -60.0617, 0, -48.0494, 14.0144, -2.00204, 20.0206, 46.0473, 14.0144, 58.0597, 0, 36.037, -16.0165)
+
+[node name="ControllerSelection" type="Sprite2D" parent="Stations/Assembly Board"]
+visible = false
+position = Vector2(-9.1743, -64.2202)
+scale = Vector2(0.029, 0.029)
+texture = ExtResource("138_14mkc")
+
+[node name="Area2D" type="Area2D" parent="Stations/Assembly Board/ControllerSelection"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stations/Assembly Board/ControllerSelection/Area2D"]
+shape = SubResource("CircleShape2D_14mkc")
+
 [node name="Trash" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 z_index = 20
 material = SubResource("ShaderMaterial_qe8ju")
@@ -2799,7 +2950,106 @@ collision_mask = 0
 position = Vector2(1, 36)
 shape = SubResource("RectangleShape2D_bnk2o")
 
+[node name="Tutorial" type="Node2D" parent="."]
+script = ExtResource("139_hfu3o")
+tutorial = false
+
+[node name="Arrow" type="Sprite2D" parent="Tutorial"]
+position = Vector2(215, -209)
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow2" type="Sprite2D" parent="Tutorial"]
+z_index = 19
+position = Vector2(648, 236)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow3" type="Sprite2D" parent="Tutorial"]
+z_index = 19
+position = Vector2(793, 237)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow4" type="Sprite2D" parent="Tutorial"]
+z_index = 19
+position = Vector2(947, 238)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow5" type="Sprite2D" parent="Tutorial"]
+z_index = 19
+position = Vector2(-5, 235)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow6" type="Sprite2D" parent="Tutorial"]
+z_index = 19
+position = Vector2(300, 239)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow7" type="Sprite2D" parent="Tutorial"]
+z_index = 19
+position = Vector2(151, 245)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow8" type="Sprite2D" parent="Tutorial"]
+z_index = 25
+position = Vector2(-172, -209)
+rotation = 1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow9" type="Sprite2D" parent="Tutorial"]
+z_index = 25
+position = Vector2(489, 255)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial"]
+offset_left = 152.0
+offset_top = 330.0
+offset_right = 744.0
+offset_bottom = 495.0
+color = Color(1, 0.903349, 0.684542, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/ColorRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 587.0
+offset_bottom = 120.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Hello and welcome to the kitchen! This is where you will make all of your food to fulfill orders! Press \"quit tutorial\" (or B on X-Box controller) to end this tutorial, or press \"next\" (or A on X-Box controller) to go to the next page!"
+
+[node name="Button" type="Button" parent="Tutorial/ColorRect"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 124.0
+offset_right = 456.0
+offset_bottom = 157.0
+text = "Next"
+
+[node name="Button2" type="Button" parent="Tutorial/ColorRect"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 123.0
+offset_right = 232.0
+offset_bottom = 154.0
+text = "Quit Tutorial"
+
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
+[connection signal="pressed" from="AssemblyLayer/Button" to="Stations/Assembly Board" method="_on_button_pressed"]
 [connection signal="timeout" from="Sushi Rollers/Timer" to="TV" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_exited"]
@@ -2819,5 +3069,11 @@ shape = SubResource("RectangleShape2D_bnk2o")
 [connection signal="area_shape_exited" from="Stations/Cutting Board/MinigameHolder/Knife/Area2D" to="Stations/Cutting Board/MinigameHolder" method="_on_area_2d_area_shape_exited"]
 [connection signal="area_entered" from="Stations/Assembly Board/Area2D" to="Stations/Assembly Board" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Assembly Board/Area2D" to="Stations/Assembly Board" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Stations/Assembly Board/Seaweed/Area2D" to="Stations/Assembly Board" method="_on_fish_entered"]
+[connection signal="area_exited" from="Stations/Assembly Board/Seaweed/Area2D" to="Stations/Assembly Board" method="_on_fish_exited"]
+[connection signal="pressed" from="Stations/Assembly Board/Button Holder/TextureButton" to="Stations/Assembly Board" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Stations/Assembly Board/Button Holder/TextureButton2" to="Stations/Assembly Board" method="_on_pickup"]
+[connection signal="area_entered" from="Stations/Assembly Board/Button Holder/ControllerCollisions" to="Stations/Assembly Board" method="_on_controller_collisions_area_entered"]
+[connection signal="area_exited" from="Stations/Assembly Board/Button Holder/ControllerCollisions" to="Stations/Assembly Board" method="_on_controller_collisions_area_exited"]
 [connection signal="area_entered" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_exited"]

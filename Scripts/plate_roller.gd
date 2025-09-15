@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	if(colliding):
 		$"..".interactiveItem=self
 	if(colliding and settingPlate!=null):
-		if($"..".playerInventorySelect!=""):
+		if($"..".playerInventorySelect!="" and len($"..".playerInventory)>0):
 			settingPlate.material.set_shader_parameter("outline_size", 1.4)
 			if(Input.is_action_just_pressed("Place")):
 				settingPlate.material.set_shader_parameter("outline_size", 0)
@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 					item_node.visible = true
 				rolling=true
 				settingPlate=null
-				$"..".placeCurrent()
+				$"..".placeCurrent("current")
 				for i in $"../CanvasLayer".get_children():
 					var outline = i.get_node_or_null("Outline")
 					if outline:

@@ -15,7 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(placed):
-		$Icon2/ProgressBar.value+=.08#TESTING PURPOSE BOOST
+		$Icon2/ProgressBar.value+=1.12#TESTING PURPOSE BOOST
 		if($Icon2/ProgressBar.value>=100 and cooked==false):
 			cooked=true
 			$AudioStreamPlayer2D2.play()
@@ -56,5 +56,5 @@ func interact():
 	elif(item==controller.playerInventorySelect and not placed):
 		$AudioStreamPlayer2D.play()
 		$Icon2.visible=true
-		controller.placeCurrent()
+		controller.placeCurrent("rice")
 		placed=true

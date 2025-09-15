@@ -20,6 +20,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if(len(orders)==0):
+		add_order()
 	# First, hide all order slots
 	for i in range(4):
 		var order_ui = get_node("Order %d" % (i + 1))

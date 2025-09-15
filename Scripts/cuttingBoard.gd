@@ -52,7 +52,7 @@ func interact():
 	if((not placed and not $MinigameHolder.running) or (placed and not $MinigameHolder.running and $Fish.visible)):
 		if(not (placed and not $MinigameHolder.running and $Fish.visible)):
 			placedItem=controller.playerInventorySelect
-			controller.placeCurrent()
+			controller.placeCurrent("fish")
 			$Fish.visible=true
 			placed=true
 		$"../../Camera2D".following=self

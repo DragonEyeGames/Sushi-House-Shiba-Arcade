@@ -17,7 +17,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(selectedSlot)
 	if(Input.is_action_just_pressed("1")):
 		selectedSlot=0
 	if(Input.is_action_just_pressed("2")):
@@ -118,6 +117,12 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("Place") and interactable!=""):
 		interactiveItem.interact()
 		
-func placeCurrent():
-	playerInventory.remove_at(selectedSlot)
+func placeCurrent(item):
+	if(item=="current"):
+		playerInventory.remove_at(selectedSlot)
+	else:
+		if(item==playerInventory[selectedSlot]):
+			playerInventory.remove_at(selectedSlot)
+		else:
+			playerInventory.erase(item)
 	$Player/SetDown.play()

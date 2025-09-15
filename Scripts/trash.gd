@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	if(colliding and Input.is_action_just_pressed("Place")):
 		if(not controller.interactiveItem==self):
 			return
-		controller.placeCurrent()
+		controller.placeCurrent("current")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	controller.interactiveItem=self

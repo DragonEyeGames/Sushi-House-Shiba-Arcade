@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 
 
 func rice_entered() -> void:
+	print("RAICE")
 	riceEntered=true
 
 
@@ -32,3 +33,20 @@ func fish_entered() -> void:
 
 func fish_exited() -> void:
 	fishEntered=false
+
+
+func _fish_controller_entered(area: Area2D) -> void:
+	fishEntered=true
+
+
+func _fish_controller_exited(area: Area2D) -> void:
+	fishEntered=false
+
+
+func _rice_controller_entered(area: Area2D) -> void:
+	print("raice")
+	riceEntered=true
+
+
+func rice_controller_exited(area: Area2D) -> void:
+	riceEntered=false
