@@ -15,7 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(placed):
-		$Icon2/ProgressBar.value+=1.12#TESTING PURPOSE BOOST
+		$Icon2/ProgressBar.value+=.12#TESTING PURPOSE BOOST
 		if($Icon2/ProgressBar.value>=100 and cooked==false):
 			cooked=true
 			$AudioStreamPlayer2D2.play()

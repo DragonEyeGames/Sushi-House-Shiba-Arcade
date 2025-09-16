@@ -2,7 +2,7 @@ extends Sprite2D
 
 var colliding=false
 
-@export var item = ""
+@export var item = ["fish", "cucumber"]
 
 var placed=false
 var placedItem
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		_on_button_pressed()
 	if(not controller.interactiveItem==self):
 		self.material.set_shader_parameter("outline_size", 0)
-	if(colliding and item==controller.playerInventorySelect and placed==false):
+	if(colliding and controller.playerInventorySelect in item and placed==false):
 		self.material.set_shader_parameter("outline_size", 1.4)
 		controller.interactable="cutting board"
 		controller.interactiveItem=self
@@ -49,7 +49,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 func interact():
 	if(not controller.interactiveItem==self):
 		return
-	if((not placed and not $MinigameHolder.running) or (placed and not $MinigameHolder.running and $Fish.visible)):
+	if(controller.playerInventorySelect=="fish" and ((not placed and not $MinigameHolder.running) or (placed and not $MinigameHolder.running and $Fish.visible))):
 		if(not (placed and not $MinigameHolder.running and $Fish.visible)):
 			placedItem=controller.playerInventorySelect
 			controller.placeCurrent("fish")
@@ -70,15 +70,42 @@ func interact():
 		await get_tree().create_timer(1.1).timeout
 		$MinigameHolder.running=true
 		return
-	elif(placed and not $MinigameHolder.running and $Fish.visible==false):
+	if(controller.playerInventorySelect=="cucumber" and ((not placed and not $MinigameHolder.running) or (placed and not $MinigameHolder.running and $Cucumber.visible))):
+		if(not (placed and not $MinigameHolder.running and $Cucumber.visible)):
+			placedItem=controller.playerInventorySelect
+			controller.placeCurrent("cucumber")
+			$Cucumber.visible=true
+			placed=true
+		$"../../Camera2D".following=self
+		$"../../Camera2D".followingPlayer=false
+		$"../../Camera2D".Zoom(5)
+		self.material.set_shader_parameter("outline_size", 0)
+		$"../../Player".canMove=false
+	# Animate the alpha of the modulate color
+		$"../../MinigameLayer".visible=true
+		for child in $"../../CanvasLayer".get_children():
+			var t = create_tween()
+			t.tween_property(child, "modulate:a", 0.0, 1.0)
+		var t = create_tween()
+		t.tween_property($"../../MinigameLayer/Button", "modulate:a", 1.0, 1.0)
+		await get_tree().create_timer(1.1).timeout
+		$MinigameHolder.running=true
+		return
+	elif(placed and not $MinigameHolder.running and $Fish.visible==false and $Cucumber.visible==false):
 		if(len(controller.playerInventory)<=4):
 			$"../../Player/PickingUp".play()
 			if($"Sliced Fish".visible):
 				$"Sliced Fish".visible=false
 				controller.playerInventory.append("sliced fish")
-			else:
+			elif($"Obliterated Fish".visible):
 				$"Obliterated Fish".visible=false
 				controller.playerInventory.append("obliterated fish")
+			elif($"Sliced Cucumber".visible):
+				$"Sliced Cucumber".visible=false
+				controller.playerInventory.append("sliced cucumber")
+			elif($"Obliterated Cucumber".visible):
+				$"Obliterated Cucumber".visible=false
+				controller.playerInventory.append("obliterated cucumber")
 			placed=false
 			placedItem=null
 			return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=177 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=183 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -123,12 +123,15 @@
 [ext_resource type="Texture2D" uid="uid://dvdvp6178qm1e" path="res://Assets/Stations/FishWell.png" id="120_refj4"]
 [ext_resource type="Texture2D" uid="uid://c0niub7ch5y6v" path="res://Assets/Stations/StationFish.png" id="121_47mp3"]
 [ext_resource type="Texture2D" uid="uid://bs3elngn5sixy" path="res://Assets/Stations/NoriBox.png" id="122_dv4iu"]
+[ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="123_adgm5"]
 [ext_resource type="Texture2D" uid="uid://bia57pnqhr0jn" path="res://Assets/Stations/CuttingBoard.png" id="123_e80kf"]
 [ext_resource type="Script" uid="uid://ccjws5hie7otm" path="res://Scripts/cuttingBoard.gd" id="124_8lmbg"]
 [ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://Scripts/cuttingMinigame.gd" id="125_n2cpk"]
 [ext_resource type="Texture2D" uid="uid://dxx1wx6tyv6tt" path="res://Assets/Knife.png" id="126_k7w2v"]
 [ext_resource type="AudioStream" uid="uid://cdl44d0hhic7l" path="res://Assets/Music/Chop.mp3" id="127_7va32"]
+[ext_resource type="Texture2D" uid="uid://bpff5mvja6m4b" path="res://Assets/Cucumber/SlicedCucumber.png" id="127_130ps"]
 [ext_resource type="Texture2D" uid="uid://bj0kcyiv6f2w7" path="res://Assets/Stations/AssemblyBoard.png" id="128_3xx7e"]
+[ext_resource type="Texture2D" uid="uid://chx0840iqbaqd" path="res://Assets/Cucumber/ObliteratedCucumber.png" id="128_odn5n"]
 [ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://Scripts/assembly.gd" id="129_ul0h4"]
 [ext_resource type="PackedScene" uid="uid://bo1kcclquc7p4" path="res://Scenes/assemblyItems.tscn" id="130_bdqux"]
 [ext_resource type="Texture2D" uid="uid://dqcu3dgl835jj" path="res://Assets/Trash.png" id="130_gqipy"]
@@ -137,6 +140,8 @@
 [ext_resource type="Texture2D" uid="uid://brb8ftp2raqmb" path="res://Assets/SlicedFishAssebmyl.png" id="132_14mkc"]
 [ext_resource type="Texture2D" uid="uid://bvssvmub8krmu" path="res://Assets/Roll.png" id="132_stool"]
 [ext_resource type="Texture2D" uid="uid://juyflj1byd6h" path="res://Assets/Pickup.png" id="133_ci23i"]
+[ext_resource type="Texture2D" uid="uid://chtft37bmy68c" path="res://Assets/Cucumber/Cucumber Sushi.png" id="136_b12iu"]
+[ext_resource type="Texture2D" uid="uid://cy0rtv6wioy0f" path="res://Assets/Cucumber/Cucumber Onigiri.png" id="137_gf7g1"]
 [ext_resource type="Texture2D" uid="uid://cwj1rq65j18b7" path="res://Assets/ControllerSelection.png" id="138_14mkc"]
 [ext_resource type="Script" uid="uid://csroy366tlm7r" path="res://Scenes/main_tutorial.gd" id="139_hfu3o"]
 [ext_resource type="Texture2D" uid="uid://2etdu3osoekr" path="res://Assets/arrow.png" id="140_adgm5"]
@@ -506,6 +511,13 @@ shader_parameter/outline_size = 1.4
 shader_parameter/threshold = 0.786
 shader_parameter/samples = 12
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_adgm5"]
+shader = ExtResource("101_eyr7i")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.786
+shader_parameter/samples = 12
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shlp4"]
 shader = ExtResource("101_eyr7i")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
@@ -820,6 +832,7 @@ offset_bottom = 120.0
 color = Color(1, 1, 1, 0.337255)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(391, 91)
 limit_left = -430
 limit_top = -320
 limit_right = 1235
@@ -1917,6 +1930,7 @@ text = "Orders"
 horizontal_alignment = 1
 
 [node name="Order 1" type="Node2D" parent="TV"]
+visible = false
 z_index = 1
 position = Vector2(-6, -3)
 
@@ -1933,6 +1947,16 @@ position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("93_qays4")
 
+[node name="Cucumber Sushi" type="Sprite2D" parent="TV/Order 1"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("136_b12iu")
+
+[node name="Cucumber Onigiri" type="Sprite2D" parent="TV/Order 1"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("137_gf7g1")
+
 [node name="Onigiri" type="Sprite2D" parent="TV/Order 1"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
@@ -1944,8 +1968,8 @@ offset_top = -321.0
 offset_right = 386.0
 offset_bottom = -250.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 17
-text = "1x Sushi With Fish"
+theme_override_font_sizes/normal_font_size = 13
+text = "1x Sushi With Cucumber"
 metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="TV/Order 1"]
@@ -1971,6 +1995,7 @@ text = "Time Left:"
 metadata/_edit_use_anchors_ = true
 
 [node name="Order 2" type="Node2D" parent="TV"]
+visible = false
 z_index = 1
 position = Vector2(177, -3)
 
@@ -1997,7 +2022,7 @@ offset_top = -321.0
 offset_right = 386.0
 offset_bottom = -250.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/normal_font_size = 13
 text = "1x Onigiri Plain"
 
 [node name="ProgressBar" type="ProgressBar" parent="TV/Order 2"]
@@ -2020,7 +2045,18 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
 
+[node name="Cucumber Sushi" type="Sprite2D" parent="TV/Order 2"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("136_b12iu")
+
+[node name="Cucumber Onigiri" type="Sprite2D" parent="TV/Order 2"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("137_gf7g1")
+
 [node name="Order 3" type="Node2D" parent="TV"]
+visible = false
 z_index = 1
 position = Vector2(-6, 76)
 
@@ -2048,7 +2084,7 @@ offset_top = -321.0
 offset_right = 386.0
 offset_bottom = -250.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/normal_font_size = 13
 text = "1x Sushi With Fish"
 metadata/_edit_use_anchors_ = true
 
@@ -2074,7 +2110,18 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
 metadata/_edit_use_anchors_ = true
 
+[node name="Cucumber Sushi" type="Sprite2D" parent="TV/Order 3"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("136_b12iu")
+
+[node name="Cucumber Onigiri" type="Sprite2D" parent="TV/Order 3"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("137_gf7g1")
+
 [node name="Order 4" type="Node2D" parent="TV"]
+visible = false
 z_index = 1
 position = Vector2(177, 76)
 
@@ -2102,7 +2149,7 @@ offset_top = -321.0
 offset_right = 386.0
 offset_bottom = -250.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/normal_font_size = 13
 text = "1x Onigiri Plain"
 
 [node name="ProgressBar" type="ProgressBar" parent="TV/Order 4"]
@@ -2124,6 +2171,16 @@ offset_bottom = -235.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
+
+[node name="Cucumber Sushi" type="Sprite2D" parent="TV/Order 4"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("136_b12iu")
+
+[node name="Cucumber Onigiri" type="Sprite2D" parent="TV/Order 4"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("137_gf7g1")
 
 [node name="Sushi Rollers" type="StaticBody2D" parent="."]
 z_index = -2
@@ -2397,6 +2454,18 @@ position = Vector2(19.7183, -14.0845)
 scale = Vector2(0.586, 0.522)
 texture = ExtResource("93_qays4")
 
+[node name="sushi with cucumber" type="Sprite2D" parent="Plates/Plate2"]
+visible = false
+position = Vector2(19.7183, -14.0845)
+scale = Vector2(0.586, 0.522)
+texture = ExtResource("136_b12iu")
+
+[node name="onigiri with cucumber" type="Sprite2D" parent="Plates/Plate2"]
+visible = false
+position = Vector2(19.7183, -14.0845)
+scale = Vector2(0.586, 0.522)
+texture = ExtResource("137_gf7g1")
+
 [node name="ColorRect" type="ColorRect" parent="Plates"]
 offset_left = -210.0
 offset_top = -166.0
@@ -2623,6 +2692,57 @@ texture = ExtResource("121_47mp3")
 flip_h = true
 flip_v = true
 
+[node name="Cucumber Reservoir" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
+material = SubResource("ShaderMaterial_adgm5")
+position = Vector2(1108, 148)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("120_refj4")
+script = ExtResource("119_jmisg")
+item = "cucumber"
+controller = NodePath("../..")
+
+[node name="Area2D" type="Area2D" parent="Stations/Cucumber Reservoir"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stations/Cucumber Reservoir/Area2D"]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Stations/Cucumber Reservoir"]
+visible = false
+offset_left = 21.0
+offset_top = 40.0
+offset_right = 61.0
+offset_bottom = 80.0
+text = "1"
+horizontal_alignment = 2
+
+[node name="Cucumber" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+position = Vector2(-66, -44)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber2" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+position = Vector2(-26, -46)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber3" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+position = Vector2(12, -46)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber4" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+position = Vector2(42, -44)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber5" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+position = Vector2(86, -44)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
 [node name="Seaweed Reservoir" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_shlp4")
 position = Vector2(946, 145)
@@ -2656,7 +2776,6 @@ position = Vector2(298, 147)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("123_e80kf")
 script = ExtResource("124_8lmbg")
-item = "fish"
 controller = NodePath("../..")
 
 [node name="Area2D" type="Area2D" parent="Stations/Cutting Board"]
@@ -2694,6 +2813,24 @@ visible = false
 position = Vector2(-3.99997, -62)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("107_ltyjx")
+
+[node name="Cucumber" type="Sprite2D" parent="Stations/Cutting Board"]
+visible = false
+position = Vector2(4.00003, -58)
+scale = Vector2(0.41, 0.335)
+texture = ExtResource("123_adgm5")
+
+[node name="Sliced Cucumber" type="Sprite2D" parent="Stations/Cutting Board"]
+visible = false
+position = Vector2(4.00003, -58)
+scale = Vector2(0.41, 0.335)
+texture = ExtResource("127_130ps")
+
+[node name="Obliterated Cucumber" type="Sprite2D" parent="Stations/Cutting Board"]
+visible = false
+position = Vector2(4.00003, -58)
+scale = Vector2(0.41, 0.335)
+texture = ExtResource("128_odn5n")
 
 [node name="MinigameHolder" type="Node2D" parent="Stations/Cutting Board"]
 script = ExtResource("125_n2cpk")
@@ -2771,6 +2908,13 @@ collision_mask = 32
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stations/Assembly Board/Seaweed/Area2D"]
 polygon = PackedVector2Array(-60.5166, -75.8835, 63.0985, -65.933, 60.7903, 43.9325, -74.3686, 25.2803)
 
+[node name="Area2D2" type="Area2D" parent="Stations/Assembly Board/Seaweed"]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stations/Assembly Board/Seaweed/Area2D2"]
+polygon = PackedVector2Array(-60.5166, -75.8835, 63.0985, -65.933, 60.7903, 43.9325, -74.3686, 25.2803)
+
 [node name="Rice" type="Sprite2D" parent="Stations/Assembly Board"]
 visible = false
 position = Vector2(-3.66973, -53.211)
@@ -2827,6 +2971,38 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("93_qays4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stations/Assembly Board/Sushi"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
+
+[node name="Cucumber Sushi" type="Sprite2D" parent="Stations/Assembly Board"]
+visible = false
+position = Vector2(5, -86)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("136_b12iu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stations/Assembly Board/Cucumber Sushi"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
+
+[node name="Cucumber Onigiri" type="Sprite2D" parent="Stations/Assembly Board"]
+visible = false
+position = Vector2(5, -86)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("137_gf7g1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stations/Assembly Board/Cucumber Onigiri"]
 visible = false
 offset_left = -26.9663
 offset_top = -47.1911
@@ -2952,14 +3128,15 @@ shape = SubResource("RectangleShape2D_bnk2o")
 
 [node name="Tutorial" type="Node2D" parent="."]
 script = ExtResource("139_hfu3o")
-tutorial = false
 
 [node name="Arrow" type="Sprite2D" parent="Tutorial"]
+visible = false
 position = Vector2(215, -209)
 scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow2" type="Sprite2D" parent="Tutorial"]
+visible = false
 z_index = 19
 position = Vector2(648, 236)
 rotation = -1.5708
@@ -2967,6 +3144,7 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow3" type="Sprite2D" parent="Tutorial"]
+visible = false
 z_index = 19
 position = Vector2(793, 237)
 rotation = -1.5708
@@ -2974,6 +3152,7 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow4" type="Sprite2D" parent="Tutorial"]
+visible = false
 z_index = 19
 position = Vector2(947, 238)
 rotation = -1.5708
@@ -2981,6 +3160,7 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow5" type="Sprite2D" parent="Tutorial"]
+visible = false
 z_index = 19
 position = Vector2(-5, 235)
 rotation = -1.5708
@@ -2988,6 +3168,7 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow6" type="Sprite2D" parent="Tutorial"]
+visible = false
 z_index = 19
 position = Vector2(300, 239)
 rotation = -1.5708
@@ -2995,6 +3176,7 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow7" type="Sprite2D" parent="Tutorial"]
+visible = false
 z_index = 19
 position = Vector2(151, 245)
 rotation = -1.5708
@@ -3002,6 +3184,7 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow8" type="Sprite2D" parent="Tutorial"]
+visible = false
 z_index = 25
 position = Vector2(-172, -209)
 rotation = 1.5708
@@ -3009,6 +3192,7 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow9" type="Sprite2D" parent="Tutorial"]
+visible = false
 z_index = 25
 position = Vector2(489, 255)
 rotation = -1.5708
@@ -3016,36 +3200,37 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="ColorRect" type="ColorRect" parent="Tutorial"]
-offset_left = 152.0
-offset_top = 330.0
-offset_right = 744.0
-offset_bottom = 495.0
+z_index = 21
+offset_left = 148.0
+offset_top = 282.0
+offset_right = 808.0
+offset_bottom = 503.0
 color = Color(1, 0.903349, 0.684542, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/ColorRect"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 5.0
-offset_right = 587.0
-offset_bottom = 120.0
+offset_right = 655.0
+offset_bottom = 157.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
 text = "Hello and welcome to the kitchen! This is where you will make all of your food to fulfill orders! Press \"quit tutorial\" (or B on X-Box controller) to end this tutorial, or press \"next\" (or A on X-Box controller) to go to the next page!"
 
-[node name="Button" type="Button" parent="Tutorial/ColorRect"]
+[node name="Next" type="Button" parent="Tutorial/ColorRect"]
 layout_mode = 0
-offset_left = 355.0
-offset_top = 124.0
-offset_right = 456.0
-offset_bottom = 157.0
+offset_left = 434.0
+offset_top = 149.0
+offset_right = 600.0
+offset_bottom = 208.0
 text = "Next"
 
-[node name="Button2" type="Button" parent="Tutorial/ColorRect"]
+[node name="Quit" type="Button" parent="Tutorial/ColorRect"]
 layout_mode = 0
-offset_left = 125.0
-offset_top = 123.0
-offset_right = 232.0
-offset_bottom = 154.0
+offset_left = 64.0
+offset_top = 155.0
+offset_right = 242.0
+offset_bottom = 212.0
 text = "Quit Tutorial"
 
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
@@ -3061,6 +3246,8 @@ text = "Quit Tutorial"
 [connection signal="area_exited" from="Stations/Rice Reservoir/Area2D" to="Stations/Rice Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Fish Reservoir/Area2D" to="Stations/Fish Reservoir" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Fish Reservoir/Area2D" to="Stations/Fish Reservoir" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Stations/Cucumber Reservoir/Area2D" to="Stations/Cucumber Reservoir" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Stations/Cucumber Reservoir/Area2D" to="Stations/Cucumber Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Seaweed Reservoir/Area2D" to="Stations/Seaweed Reservoir" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Seaweed Reservoir/Area2D" to="Stations/Seaweed Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Cutting Board/Area2D" to="Stations/Cutting Board" method="_on_area_2d_area_entered"]
@@ -3071,9 +3258,13 @@ text = "Quit Tutorial"
 [connection signal="area_exited" from="Stations/Assembly Board/Area2D" to="Stations/Assembly Board" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Assembly Board/Seaweed/Area2D" to="Stations/Assembly Board" method="_on_fish_entered"]
 [connection signal="area_exited" from="Stations/Assembly Board/Seaweed/Area2D" to="Stations/Assembly Board" method="_on_fish_exited"]
+[connection signal="area_entered" from="Stations/Assembly Board/Seaweed/Area2D2" to="Stations/Assembly Board" method="_on_cucumber_entered"]
+[connection signal="area_exited" from="Stations/Assembly Board/Seaweed/Area2D2" to="Stations/Assembly Board" method="_on_area_2d_2_area_exited"]
 [connection signal="pressed" from="Stations/Assembly Board/Button Holder/TextureButton" to="Stations/Assembly Board" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Stations/Assembly Board/Button Holder/TextureButton2" to="Stations/Assembly Board" method="_on_pickup"]
 [connection signal="area_entered" from="Stations/Assembly Board/Button Holder/ControllerCollisions" to="Stations/Assembly Board" method="_on_controller_collisions_area_entered"]
 [connection signal="area_exited" from="Stations/Assembly Board/Button Holder/ControllerCollisions" to="Stations/Assembly Board" method="_on_controller_collisions_area_exited"]
 [connection signal="area_entered" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_exited"]
+[connection signal="pressed" from="Tutorial/ColorRect/Next" to="Tutorial" method="_on_next_pressed"]
+[connection signal="pressed" from="Tutorial/ColorRect/Quit" to="Tutorial" method="_on_quit_pressed"]

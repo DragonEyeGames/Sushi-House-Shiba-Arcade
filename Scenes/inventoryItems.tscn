@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckbumgkfqrmoy"]
+[gd_scene load_steps=14 format=3 uid="uid://ckbumgkfqrmoy"]
 
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="1_7on13"]
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="2_ri7ka"]
@@ -6,8 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="3_o85l3"]
 [ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="4_wvdm6"]
 [ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="6_3pwg7"]
+[ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="6_hwat8"]
+[ext_resource type="Texture2D" uid="uid://bpff5mvja6m4b" path="res://Assets/Cucumber/SlicedCucumber.png" id="7_bpivd"]
 [ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="7_isl6y"]
 [ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="8_isl6y"]
+[ext_resource type="Texture2D" uid="uid://chx0840iqbaqd" path="res://Assets/Cucumber/ObliteratedCucumber.png" id="8_vg1oe"]
+[ext_resource type="Texture2D" uid="uid://chtft37bmy68c" path="res://Assets/Cucumber/Cucumber Sushi.png" id="12_vg1oe"]
+[ext_resource type="Texture2D" uid="uid://cy0rtv6wioy0f" path="res://Assets/Cucumber/Cucumber Onigiri.png" id="13_bnffl"]
 
 [node name="Items" type="Node2D"]
 scale = Vector2(0.72, 0.72)
@@ -91,6 +96,54 @@ theme_override_font_sizes/normal_font_size = 31
 text = "Obliterated Fish"
 horizontal_alignment = 1
 
+[node name="cucumber" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(20.8333, 25)
+scale = Vector2(1.38281, 1.07813)
+texture = ExtResource("6_hwat8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="cucumber"]
+offset_left = -101.444
+offset_top = -164.895
+offset_right = 79.5559
+offset_bottom = -62.8951
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+text = "Cucumber"
+horizontal_alignment = 1
+
+[node name="sliced cucumber" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(18.0556, 43.0556)
+scale = Vector2(1.223, 0.953)
+texture = ExtResource("7_bpivd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="sliced cucumber"]
+offset_left = -104.457
+offset_top = -212.559
+offset_right = 76.5427
+offset_bottom = -110.56
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+text = "Sliced Cucumber"
+horizontal_alignment = 1
+
+[node name="obliterated cucumber" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(29.1667, 26.3889)
+scale = Vector2(1.38281, 1.01953)
+texture = ExtResource("8_vg1oe")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="obliterated cucumber"]
+offset_left = -101.444
+offset_top = -177.097
+offset_right = 79.5562
+offset_bottom = -75.0965
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Obliterated Cucumber"
+horizontal_alignment = 1
+
 [node name="seaweed" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(2, 39)
@@ -153,5 +206,49 @@ offset_bottom = 1.7951
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 43
 text = "Sushi"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="sushi with cucumber" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(30, -16)
+scale = Vector2(1.46124, 1.30108)
+texture = ExtResource("12_vg1oe")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="sushi with cucumber"]
+anchors_preset = -1
+anchor_left = -0.0726326
+anchor_top = -0.00187692
+anchor_right = 0.360961
+anchor_bottom = -0.00187692
+offset_left = -105.54
+offset_top = -121.726
+offset_right = -5.53951
+offset_bottom = -19.7256
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 34
+text = "Sushi W/ Cucumber"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="onigiri with cucumber" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(30, -16)
+scale = Vector2(1.46124, 1.30108)
+texture = ExtResource("13_bnffl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="onigiri with cucumber"]
+anchors_preset = -1
+anchor_left = -0.0726326
+anchor_top = -0.00187692
+anchor_right = 0.360961
+anchor_bottom = -0.00187692
+offset_left = -105.54
+offset_top = -121.726
+offset_right = -5.53951
+offset_bottom = -19.7256
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 34
+text = "Onigiri W/ Cucumber"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

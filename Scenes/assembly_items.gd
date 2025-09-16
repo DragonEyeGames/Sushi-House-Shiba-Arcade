@@ -2,6 +2,7 @@ extends Node2D
 
 var fishEntered=false
 var riceEntered=false
+var cucumberEntered = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -9,8 +10,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if($"cooked rice".visible==false):
+		$"cooked rice/Area2D/CollisionPolygon2D".disabled=true
+	else:
+		$"cooked rice/Area2D/CollisionPolygon2D".disabled=false
+	if($"sliced fish".visible==false):
+		$"sliced fish/Area2D2/CollisionPolygon2D".disabled=true
+	else:
+		$"sliced fish/Area2D2/CollisionPolygon2D".disabled=false
+	if($"sliced cucumber".visible==false):
+		$"sliced cucumber/Area2D2/CollisionPolygon2D".disabled=true
+	else:
+		$"sliced cucumber/Area2D2/CollisionPolygon2D".disabled=false
 	if(visible):
-		if(riceEntered or fishEntered):
+		if(riceEntered or fishEntered or cucumberEntered):
 			self.material.set_shader_parameter("outline_size", 1.4)
 		else:
 			self.material.set_shader_parameter("outline_size", 0)
@@ -50,3 +63,15 @@ func _rice_controller_entered(area: Area2D) -> void:
 
 func rice_controller_exited(area: Area2D) -> void:
 	riceEntered=false
+
+
+func rice_controller_entered(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func cucumber_entered(area: Area2D) -> void:
+	cucumberEntered=true
+
+
+func cucumber_exited(area: Area2D) -> void:
+	cucumberEntered=false

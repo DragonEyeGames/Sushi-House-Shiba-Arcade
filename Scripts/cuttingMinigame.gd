@@ -51,9 +51,7 @@ func _physics_process(delta: float) -> void:
 				var last_point = currentLine.points[-2]
 				var new_point = currentLine.points[-1]
 				cutAmount += last_point.distance_to(new_point)
-				if(cutAmount<170):
-					$"../Fish".visible=true
-				elif(cutAmount<=500):
+				if(cutAmount<=500 and cutAmount >= 170):
 					if($"../Fish".visible):
 						for child in $Lines.get_children():
 							child.queue_free()
@@ -68,8 +66,24 @@ func _physics_process(delta: float) -> void:
 						if($"..".placedItem!="Sliced Fish"):
 							$"..".placedItem="Sliced Fish"
 							$"../AudioStreamPlayer2D".play()
-					$"../Fish".visible=false
-					$"../Sliced Fish".visible=true
+						$"../Fish".visible=false
+						$"../Sliced Fish".visible=true
+					elif($"../Cucumber".visible):
+						for child in $Lines.get_children():
+							child.queue_free()
+						var line := Line2D.new()               # Make a new Line2D
+						line.width = 0.635                        # Set line thickness
+						line.default_color = Color.BLACK       # Set color
+						line.z_index = 1    
+						currentLine=line                 # Make sure it's on top
+						$Lines.add_child(line)  
+						line.global_position=$Knife/Area2D.global_position
+						currentLine.add_point(currentLine.to_local($Knife/Area2D/CollisionShape2D.global_position))
+						if($"..".placedItem!="Sliced Cucumber"):
+							$"..".placedItem="Sliced Cucumber"
+							$"../AudioStreamPlayer2D".play()
+						$"../Cucumber".visible=false
+						$"../Sliced Cucumber".visible=true
 				else:
 					if($"../Sliced Fish".visible):
 						for child in $Lines.get_children():
@@ -85,8 +99,24 @@ func _physics_process(delta: float) -> void:
 						if($"..".placedItem!="Obliterated Fish"):
 							$"..".placedItem="Obliterated Fish"
 							$"../AudioStreamPlayer2D".play()
-					$"../Sliced Fish".visible=false
-					$"../Obliterated Fish".visible=true
+						$"../Sliced Fish".visible=false
+						$"../Obliterated Fish".visible=true
+					elif($"../Sliced Cucumber".visible):
+						for child in $Lines.get_children():
+							child.queue_free()
+						var line := Line2D.new()               # Make a new Line2D
+						line.width = 0.635                        # Set line thickness
+						line.default_color = Color.BLACK       # Set color
+						line.z_index = 1    
+						currentLine=line                 # Make sure it's on top
+						$Lines.add_child(line)  
+						line.global_position=$Knife/Area2D.global_position
+						currentLine.add_point(currentLine.to_local($Knife/Area2D/CollisionShape2D.global_position))
+						if($"..".placedItem!="Obliterated Cucumber"):
+							$"..".placedItem="Obliterated Cucumber"
+							$"../AudioStreamPlayer2D".play()
+						$"../Sliced Cucumber".visible=false
+						$"../Obliterated Cucumber".visible=true
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

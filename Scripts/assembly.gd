@@ -2,7 +2,7 @@ extends Sprite2D
 
 var colliding = false
 
-@export var item = ["seaweed", "onigiri", "sushi", "cooked rice", "fish"]
+@export var item = ["seaweed"]
 
 var seaweedPlaced = false
 var ricePlaced = false
@@ -55,31 +55,31 @@ func _process(delta: float) -> void:
 	# Check if the player's selected item is one we accept
 	itemMatching = controller.playerInventorySelect in item
 	if(minigame and ricePlaced and Input.is_action_just_pressed("Place") and not $SlicedFish.visible):
-		if($Items.fishEntered or $Items2.fishEntered or $Items3.fishEntered or $Items4.fishEntered):
-			if($Items.fishEntered):
+		if($Items.fishEntered or $Items2.fishEntered or $Items3.fishEntered or $Items4.fishEntered or $Items.cucumberEntered or $Items2.cucumberEntered or $Items3.cucumberEntered or $Items4.cucumberEntered):
+			if($Items.fishEntered or $Items.cucumberEntered) :
 				dragging=true
 				draggedItem=$Items
 				if(not controller.controller):
 					dragOffset=draggedItem.global_position-get_global_mouse_position()
 				else:
 					dragOffset=draggedItem.global_position-$ControllerSelection.global_position
-			elif($Items2.fishEntered):
+			elif($Items2.fishEntered or $Items2.cucumberEntered):
 				dragging=true
 				draggedItem=$Items2
 				if(not controller.controller):
 					dragOffset=draggedItem.global_position-get_global_mouse_position()
 				else:
 					dragOffset=draggedItem.global_position-$ControllerSelection.global_position
-			elif($Items3.fishEntered):
+			elif($Items3.fishEntered or $Items3.cucumberEntered):
 				dragging=true
 				draggedItem=$Items3
 				if(not controller.controller):
 					dragOffset=draggedItem.global_position-get_global_mouse_position()
 				else:
 					dragOffset=draggedItem.global_position-$ControllerSelection.global_position
-			elif($Items4.fishEntered):
+			elif($Items4.fishEntered or $Items4.cucumberEntered):
 				dragging=true
-				draggedItem=$Items3
+				draggedItem=$Items4
 				if(not controller.controller):
 					dragOffset=draggedItem.global_position-get_global_mouse_position()
 				else:
@@ -113,7 +113,7 @@ func _process(delta: float) -> void:
 			$Items4.visible=false
 			var showList=[]
 			for item in controller.playerInventory:
-				if(item=="sliced fish"):
+				if(item=="sliced fish" or item=="sliced cucumber"):
 					showList.append(item)
 			if len(showList)>=1:
 				$Items.visible=true
@@ -302,10 +302,18 @@ func _on_button_pressed() -> void:
 		controller.playerInventory.append("onigiri")
 		$"../../Player/PickingUp".play()
 		$Onigiri.visible=false
+	if($"Cucumber Onigiri".visible):
+		controller.playerInventory.append("onigiri with cucumber")
+		$"../../Player/PickingUp".play()
+		$"Cucumber Onigiri".visible=false
 	if($Sushi.visible):
 		controller.playerInventory.append("sushi")
 		$"../../Player/PickingUp".play()
 		$Sushi.visible=false
+	if($"Cucumber Sushi".visible):
+		controller.playerInventory.append("sushi with cucumber")
+		$"../../Player/PickingUp".play()
+		$"Cucumber Sushi".visible=false
 	$"../../Camera2D".followingPlayer=true
 	$"../../Camera2D".Zoom(1)
 	$"../../CanvasLayer".visible=true
@@ -334,10 +342,19 @@ func _on_texture_button_pressed() -> void:
 	$SlicedFish.visible=false
 	$Rice.visible=false
 	if("sliced fish" in assembly):
-		$Sushi.visible=true
-		_consume_item("sliced fish")
+		if("sliced cucumber" in assembly):
+			$"Cucumber Sushi".visible=true
+			_consume_item("sliced fish")
+			_consume_item("sliced cucumber")
+		else:
+			$Sushi.visible=true
+			_consume_item("sliced fish")
 	else:
-		$Onigiri.visible=true
+		if("sliced cucumber" in assembly):
+			_consume_item("sliced cucumber")
+			$"Cucumber Onigiri".visible=true
+		else:
+			$Onigiri.visible=true
 	$Items.visible=false
 	$Items2.visible=false
 	$Items3.visible=false
@@ -365,3 +382,11 @@ func _on_controller_collisions_area_entered(area: Area2D) -> void:
 
 func _on_controller_collisions_area_exited(area: Area2D) -> void:
 	controllerButtonHovered=false
+
+
+func _on_area_2d_2_area_exited(area: Area2D) -> void:
+	assembly.erase("sliced cucumber")
+
+
+func _on_cucumber_entered(area: Area2D) -> void:
+	assembly.append("sliced cucumber")

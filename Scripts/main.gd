@@ -121,8 +121,9 @@ func placeCurrent(item):
 	if(item=="current"):
 		playerInventory.remove_at(selectedSlot)
 	else:
-		if(item==playerInventory[selectedSlot]):
-			playerInventory.remove_at(selectedSlot)
-		else:
-			playerInventory.erase(item)
+		playerInventory.erase(item)
 	$Player/SetDown.play()
+
+
+func on_cucumber_entered(area: Area2D) -> void:
+	pass # Replace with function body.
