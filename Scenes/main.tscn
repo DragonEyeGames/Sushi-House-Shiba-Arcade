@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=187 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -145,6 +145,9 @@
 [ext_resource type="Texture2D" uid="uid://cwj1rq65j18b7" path="res://Assets/ControllerSelection.png" id="138_14mkc"]
 [ext_resource type="Script" uid="uid://csroy366tlm7r" path="res://Scenes/main_tutorial.gd" id="139_hfu3o"]
 [ext_resource type="Texture2D" uid="uid://2etdu3osoekr" path="res://Assets/arrow.png" id="140_adgm5"]
+[ext_resource type="Script" uid="uid://krm25ubwnp84" path="res://Scenes/shipments.gd" id="146_102yd"]
+[ext_resource type="Texture2D" uid="uid://b5wlkggxqam1h" path="res://Assets/Orders/GarageDoor.png" id="147_rtmaq"]
+[ext_resource type="Texture2D" uid="uid://ch7kyg03djt3" path="res://Assets/Orders/BoxTruck.png" id="148_rtmaq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am8a1"]
 animations = [{
@@ -442,7 +445,7 @@ size = Vector2(75, 57)
 size = Vector2(188, 1795)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_come4"]
-size = Vector2(1819, 24)
+size = Vector2(1276.51, 24)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lmeg"]
 shader = ExtResource("92_6wqo8")
@@ -577,6 +580,21 @@ shader_parameter/outline_size = 0.0
 shader_parameter/threshold = 0.999
 shader_parameter/samples = 12
 
+[sub_resource type="Animation" id="Animation_myryv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button Holder:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.885, 0.885)]
+}
+
 [sub_resource type="Animation" id="Animation_ci23i"]
 resource_name = "scale"
 length = 3.0
@@ -592,21 +610,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.885, 0.885), Vector2(0.995, 0.995), Vector2(0.885, 0.885)]
-}
-
-[sub_resource type="Animation" id="Animation_myryv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Button Holder:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.885, 0.885)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bpr0e"]
@@ -630,6 +633,9 @@ size = Vector2(172, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnk2o"]
 size = Vector2(326, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtmaq"]
+size = Vector2(387, 243)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_b05pg")
@@ -1892,7 +1898,11 @@ scale = Vector2(0.91, 0.91)
 script = ExtResource("91_rbkdr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TV"]
-position = Vector2(333.5, -147)
+position = Vector2(54.055, -147)
+shape = SubResource("RectangleShape2D_come4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TV"]
+position = Vector2(1699.49, -147.253)
 shape = SubResource("RectangleShape2D_come4")
 
 [node name="Tv Boarder" type="ColorRect" parent="TV"]
@@ -2181,6 +2191,9 @@ texture = ExtResource("136_b12iu")
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("137_gf7g1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TV"]
+polygon = PackedVector2Array(665.934, -145.055, 763.736, -264.835, 1018.68, -265.934, 1092.31, -139.56, 1153.85, -170.33, 1096.7, -262.637, 895.604, -305.495, 719.78, -305.495, 654.945, -215.385)
 
 [node name="Sushi Rollers" type="StaticBody2D" parent="."]
 z_index = -2
@@ -3232,6 +3245,52 @@ offset_top = 155.0
 offset_right = 242.0
 offset_bottom = 212.0
 text = "Quit Tutorial"
+
+[node name="Shipment Container" type="Node2D" parent="."]
+position = Vector2(887, -172)
+script = ExtResource("146_102yd")
+
+[node name="Control" type="Control" parent="Shipment Container"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -144.0
+offset_right = 214.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GarageDoor" type="Sprite2D" parent="Shipment Container/Control"]
+position = Vector2(190.175, 216.45)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("147_rtmaq")
+
+[node name="GarageDoor2" type="Sprite2D" parent="Shipment Container/Control"]
+position = Vector2(189.175, 130.45)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("147_rtmaq")
+
+[node name="GarageDoor3" type="Sprite2D" parent="Shipment Container/Control"]
+position = Vector2(188.175, 42.45)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("147_rtmaq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shipment Container/Control"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Control/StaticBody2D"]
+position = Vector2(183.5, 111.5)
+shape = SubResource("RectangleShape2D_rtmaq")
+
+[node name="BoxTruck" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(911.5, -186)
+scale = Vector2(0.352452, 0.332481)
+texture = ExtResource("148_rtmaq")
 
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
 [connection signal="pressed" from="AssemblyLayer/Button" to="Stations/Assembly Board" method="_on_button_pressed"]
