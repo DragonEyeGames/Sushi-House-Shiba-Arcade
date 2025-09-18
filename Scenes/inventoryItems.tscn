@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckbumgkfqrmoy"]
+[gd_scene load_steps=15 format=3 uid="uid://ckbumgkfqrmoy"]
 
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="1_7on13"]
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="2_ri7ka"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://chx0840iqbaqd" path="res://Assets/Cucumber/ObliteratedCucumber.png" id="8_vg1oe"]
 [ext_resource type="Texture2D" uid="uid://chtft37bmy68c" path="res://Assets/Cucumber/Cucumber Sushi.png" id="12_vg1oe"]
 [ext_resource type="Texture2D" uid="uid://cy0rtv6wioy0f" path="res://Assets/Cucumber/Cucumber Onigiri.png" id="13_bnffl"]
+[ext_resource type="Texture2D" uid="uid://b83v7s8ud7svn" path="res://Assets/Orders/Box.png" id="14_bnffl"]
 
 [node name="Items" type="Node2D"]
 scale = Vector2(0.72, 0.72)
@@ -252,3 +253,29 @@ theme_override_font_sizes/normal_font_size = 34
 text = "Onigiri W/ Cucumber"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="fish box" type="Sprite2D" parent="."]
+position = Vector2(111.111, 8.33333)
+texture = ExtResource("14_bnffl")
+
+[node name="fish" type="RichTextLabel" parent="fish box"]
+anchors_preset = -1
+anchor_left = -0.0726326
+anchor_top = -0.00187692
+anchor_right = 0.360961
+anchor_bottom = -0.00187692
+offset_left = -308.984
+offset_top = -184.643
+offset_right = -208.984
+offset_bottom = -82.6432
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 66
+text = "Fish Box"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fish" type="Sprite2D" parent="fish box"]
+position = Vector2(-141.667, 54.1667)
+rotation = -1.5708
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_ri7ka")

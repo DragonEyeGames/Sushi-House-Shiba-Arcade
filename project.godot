@@ -30,6 +30,19 @@ project/assembly_name="Sushi House Shiba"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "blue",
+"res://Assets/Character/": "teal",
+"res://Assets/Music/": "pink",
+"res://Builds/": "orange",
+"res://Scenes/": "green",
+"res://Scripts/": "yellow",
+"res://Shaders/": "purple",
+"res://addons/": "gray"
+}
+
 [input]
 
 Up={

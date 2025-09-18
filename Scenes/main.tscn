@@ -1,4 +1,4 @@
-[gd_scene load_steps=187 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=194 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -148,6 +148,7 @@
 [ext_resource type="Script" uid="uid://krm25ubwnp84" path="res://Scenes/shipments.gd" id="146_102yd"]
 [ext_resource type="Texture2D" uid="uid://b5wlkggxqam1h" path="res://Assets/Orders/GarageDoor.png" id="147_rtmaq"]
 [ext_resource type="Texture2D" uid="uid://ch7kyg03djt3" path="res://Assets/Orders/BoxTruck.png" id="148_rtmaq"]
+[ext_resource type="Texture2D" uid="uid://b83v7s8ud7svn" path="res://Assets/Orders/Box.png" id="149_eqnci"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am8a1"]
 animations = [{
@@ -436,7 +437,7 @@ animations = [{
 size = Vector2(48, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
-size = Vector2(35, 129)
+size = Vector2(35, 148)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0cbny"]
 size = Vector2(75, 57)
@@ -637,6 +638,44 @@ size = Vector2(326, 140)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtmaq"]
 size = Vector2(387, 243)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eqnci"]
+resource_local_to_scene = true
+shader = ExtResource("101_eyr7i")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqnci"]
+size = Vector2(54, 43)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eqnci"]
+radius = 147.89
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojylq"]
+resource_local_to_scene = true
+shader = ExtResource("101_eyr7i")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fle1e"]
+resource_local_to_scene = true
+shader = ExtResource("101_eyr7i")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1tr8"]
+resource_local_to_scene = true
+shader = ExtResource("101_eyr7i")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_b05pg")
 
@@ -658,7 +697,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2(-0.5, 44.5)
+position = Vector2(-0.5, 35)
 shape = SubResource("RectangleShape2D_272bh")
 
 [node name="Area2D2" type="Area2D" parent="Player"]
@@ -672,7 +711,7 @@ shape = SubResource("RectangleShape2D_0cbny")
 [node name="MainMusic" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2(-408, 37)
 stream = ExtResource("82_b7esa")
-volume_db = -10.0
+volume_db = -20.0
 autoplay = true
 parameters/looping = true
 
@@ -2674,11 +2713,10 @@ position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Stations/Fish Reservoir"]
-visible = false
-offset_left = 21.0
-offset_top = 40.0
-offset_right = 61.0
-offset_bottom = 80.0
+offset_left = 62.0
+offset_top = 26.0
+offset_right = 102.0
+offset_bottom = 66.0
 text = "1"
 horizontal_alignment = 2
 
@@ -3141,6 +3179,7 @@ shape = SubResource("RectangleShape2D_bnk2o")
 
 [node name="Tutorial" type="Node2D" parent="."]
 script = ExtResource("139_hfu3o")
+tutorial = false
 
 [node name="Arrow" type="Sprite2D" parent="Tutorial"]
 visible = false
@@ -3292,6 +3331,118 @@ position = Vector2(911.5, -186)
 scale = Vector2(0.352452, 0.332481)
 texture = ExtResource("148_rtmaq")
 
+[node name="Box" type="Sprite2D" parent="."]
+z_index = -7
+material = SubResource("ShaderMaterial_eqnci")
+position = Vector2(873, -181)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("149_eqnci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Box"]
+position = Vector2(60.8696, 39.1304)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box/StaticBody2D"]
+position = Vector2(-41, -0.5)
+shape = SubResource("RectangleShape2D_eqnci")
+
+[node name="Area2D" type="Area2D" parent="Box"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box/Area2D"]
+position = Vector2(-121.739, 43.4783)
+shape = SubResource("CircleShape2D_eqnci")
+
+[node name="Fish" type="Sprite2D" parent="Box"]
+position = Vector2(-143.478, 52.1738)
+rotation = -1.49226
+scale = Vector2(0.413043, 0.413043)
+texture = ExtResource("105_108im")
+
+[node name="Box2" type="Sprite2D" parent="."]
+z_index = -7
+material = SubResource("ShaderMaterial_ojylq")
+position = Vector2(936, -156)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("149_eqnci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Box2"]
+position = Vector2(60.8696, 39.1304)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2/StaticBody2D"]
+position = Vector2(-41, -0.5)
+shape = SubResource("RectangleShape2D_eqnci")
+
+[node name="Area2D" type="Area2D" parent="Box2"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2/Area2D"]
+position = Vector2(-121.739, 43.4783)
+shape = SubResource("CircleShape2D_eqnci")
+
+[node name="Seaweed" type="Sprite2D" parent="Box2"]
+position = Vector2(-134.782, 60.8695)
+scale = Vector2(0.456522, 0.456522)
+texture = ExtResource("108_xnck3")
+
+[node name="Box3" type="Sprite2D" parent="."]
+z_index = -7
+material = SubResource("ShaderMaterial_fle1e")
+position = Vector2(1020, -173)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("149_eqnci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Box3"]
+position = Vector2(60.8696, 39.1304)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box3/StaticBody2D"]
+position = Vector2(-41, -0.5)
+shape = SubResource("RectangleShape2D_eqnci")
+
+[node name="Area2D" type="Area2D" parent="Box3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box3/Area2D"]
+position = Vector2(-121.739, 43.4783)
+shape = SubResource("CircleShape2D_eqnci")
+
+[node name="Box4" type="Sprite2D" parent="."]
+z_index = -7
+material = SubResource("ShaderMaterial_r1tr8")
+position = Vector2(1016, -112)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("149_eqnci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Box4"]
+position = Vector2(60.8696, 39.1304)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box4/StaticBody2D"]
+position = Vector2(-41, -0.5)
+shape = SubResource("RectangleShape2D_eqnci")
+
+[node name="Area2D" type="Area2D" parent="Box4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box4/Area2D"]
+position = Vector2(-121.739, 43.4783)
+shape = SubResource("CircleShape2D_eqnci")
+
+[node name="Cucumber" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(985, -101)
+rotation = -1.43641
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("123_adgm5")
+
+[node name="RiceItem" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(990, -152)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("103_04ry5")
+
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
 [connection signal="pressed" from="AssemblyLayer/Button" to="Stations/Assembly Board" method="_on_button_pressed"]
 [connection signal="timeout" from="Sushi Rollers/Timer" to="TV" method="_on_timer_timeout"]
@@ -3327,3 +3478,7 @@ texture = ExtResource("148_rtmaq")
 [connection signal="area_exited" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_exited"]
 [connection signal="pressed" from="Tutorial/ColorRect/Next" to="Tutorial" method="_on_next_pressed"]
 [connection signal="pressed" from="Tutorial/ColorRect/Quit" to="Tutorial" method="_on_quit_pressed"]
+[connection signal="area_entered" from="Box/Area2D" to="Shipment Container" method="_1_entered"]
+[connection signal="area_exited" from="Box/Area2D" to="Shipment Container" method="_1_exited"]
+[connection signal="area_entered" from="Box2/Area2D" to="Shipment Container" method="_2_entered"]
+[connection signal="area_exited" from="Box2/Area2D" to="Shipment Container" method="_2_exited"]

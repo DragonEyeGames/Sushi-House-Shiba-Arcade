@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 			selectedSlot=0
 	if(len(playerInventory)==0):
 		selectedSlot=-1
+		playerInventorySelect=""
 	if(len(playerInventory)>0 and selectedSlot==-1):
 		selectedSlot=0
 	if(len(playerInventory)<(selectedSlot+1)):
