@@ -33,6 +33,8 @@ func _process(delta: float) -> void:
 			$"../../Player/SetDown".play()
 			if(item=="fish"):
 				stock+=$"../../Shipment Container".fish
+			if(item=="seaweed"):
+				stock+=$"../../Shipment Container".seaweed
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	controller.interactiveItem=self

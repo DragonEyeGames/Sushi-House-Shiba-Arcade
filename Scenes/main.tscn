@@ -2812,7 +2812,6 @@ position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Stations/Seaweed Reservoir"]
-visible = false
 offset_left = 17.0
 offset_top = -14.0
 offset_right = 57.0

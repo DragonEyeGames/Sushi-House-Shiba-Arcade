@@ -279,3 +279,28 @@ position = Vector2(-141.667, 54.1667)
 rotation = -1.5708
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("2_ri7ka")
+
+[node name="seaweed box" type="Sprite2D" parent="."]
+position = Vector2(111.111, 8.33333)
+texture = ExtResource("14_bnffl")
+
+[node name="fish" type="RichTextLabel" parent="seaweed box"]
+anchors_preset = -1
+anchor_left = -0.0726326
+anchor_top = -0.00187692
+anchor_right = 0.360961
+anchor_bottom = -0.00187692
+offset_left = -308.984
+offset_top = -184.643
+offset_right = -208.984
+offset_bottom = -82.6432
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 66
+text = "Fish Box"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fish" type="Sprite2D" parent="seaweed box"]
+position = Vector2(-136.111, 59.7222)
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("6_3pwg7")

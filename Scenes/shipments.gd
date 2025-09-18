@@ -48,6 +48,10 @@ func _process(delta: float) -> void:
 			$"../Box2".visible=false
 			$"../Box2/StaticBody2D/CollisionShape2D".disabled=true
 			$"../Box2/Area2D/CollisionShape2D".disabled=true
+			if(itemTypes[1]=="seaweed"):
+				if(len($"..".playerInventory)<=4):
+					$"..".playerInventory.append("seaweed box")
+					$"../Player/PickingUp".play()
 	
 func shipment():
 	rising=true
