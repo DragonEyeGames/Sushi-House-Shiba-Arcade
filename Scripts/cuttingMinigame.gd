@@ -10,7 +10,7 @@ var currentLine
 func _ready() -> void:
 	currentLine=$Lines/Line2D
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if(not running):
 		cutting=false
 		canCut=false
@@ -119,11 +119,11 @@ func _physics_process(delta: float) -> void:
 						$"../Obliterated Cucumber".visible=true
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	pass
 
 
-func _on_area_2d_area_shape_entered(area_rid, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_area_2d_area_shape_entered(_area_rid, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	var line := Line2D.new()               # Make a new Line2D
 	line.width = 0.635                        # Set line thickness
 	line.default_color = Color.BLACK       # Set color
@@ -134,7 +134,7 @@ func _on_area_2d_area_shape_entered(area_rid, area: Area2D, area_shape_index: in
 	currentLine.add_point(currentLine.to_local($Knife/Area2D/CollisionShape2D.global_position))
 	canCut=true
 
-func _on_area_2d_area_shape_exited(area_rid, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_area_2d_area_shape_exited(_area_rid, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	canCut = false
 	
 func is_point_inside(point: Vector2) -> bool:

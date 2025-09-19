@@ -7,6 +7,7 @@ var playerInventory=[]
 var score = 0
 var selectedSlot=-1
 var controller=false
+var outlineSize=2.4
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +17,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("1")):
 		selectedSlot=0
 	if(Input.is_action_just_pressed("2")):
@@ -126,5 +127,5 @@ func placeCurrent(item):
 	$Player/SetDown.play()
 
 
-func on_cucumber_entered(area: Area2D) -> void:
+func on_cucumber_entered(_area: Area2D) -> void:
 	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=195 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -81,9 +81,9 @@
 [ext_resource type="Texture2D" uid="uid://b6137wx3bpmo6" path="res://Assets/Character/Front-Walk-3-2.png" id="79_ycl58"]
 [ext_resource type="Texture2D" uid="uid://dr5ux7wea1ah" path="res://Assets/Character/Front-Walk-4-2.png" id="80_w32ys"]
 [ext_resource type="Texture2D" uid="uid://b8gsdn3mysw2w" path="res://Assets/Character/Front-Walk-5-2.png" id="81_g2ehk"]
-[ext_resource type="AudioStream" uid="uid://d22u06bbsk4v7" path="res://Assets/Music/Ninja Run.ogg" id="82_b7esa"]
-[ext_resource type="AudioStream" uid="uid://bhwls6rqkhfr1" path="res://Assets/Music/Pick Up.mp3" id="83_e1jjv"]
-[ext_resource type="AudioStream" uid="uid://33urjclpwohv" path="res://Assets/Music/Set Down.mp3" id="84_stool"]
+[ext_resource type="AudioStream" uid="uid://d22u06bbsk4v7" path="res://Music/Ninja Run.ogg" id="82_b7esa"]
+[ext_resource type="AudioStream" uid="uid://bhwls6rqkhfr1" path="res://Music/Pick Up.mp3" id="83_e1jjv"]
+[ext_resource type="AudioStream" uid="uid://33urjclpwohv" path="res://Music/Set Down.mp3" id="84_stool"]
 [ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://Assets/hotbar.png" id="84_xtnwn"]
 [ext_resource type="Texture2D" uid="uid://b44wrkr6d7pxe" path="res://Assets/Outline.png" id="85_4vtl5"]
 [ext_resource type="PackedScene" uid="uid://ckbumgkfqrmoy" path="res://Scenes/inventoryItems.tscn" id="86_y07ku"]
@@ -95,29 +95,29 @@
 [ext_resource type="Shader" uid="uid://cdwoss15yri8m" path="res://Shaders/tv.gdshader" id="92_6wqo8"]
 [ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="93_qays4"]
 [ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="94_brnef"]
-[ext_resource type="Texture2D" uid="uid://bew43yfuvkv2o" path="res://Assets/SushiRollerStand.png" id="95_37usx"]
+[ext_resource type="Texture2D" uid="uid://bew43yfuvkv2o" path="res://Assets/Desks/SushiRollerStand.png" id="95_37usx"]
 [ext_resource type="Texture2D" uid="uid://dhxsbkvy7xkrl" path="res://Assets/SushiConveyer.png" id="96_qywy7"]
 [ext_resource type="Script" uid="uid://ch10s3ken56ee" path="res://Scripts/sushi_conveyer.gd" id="97_a361w"]
 [ext_resource type="Script" uid="uid://d3a6krp7r1x2g" path="res://Scripts/plate_roller.gd" id="98_4q4m1"]
-[ext_resource type="Texture2D" uid="uid://c8rt7xd0x30bs" path="res://Assets/RollBars.png" id="99_5fyhb"]
-[ext_resource type="Texture2D" uid="uid://c043i6kvm2eg" path="res://Assets/Rollers.png" id="100_dx0u6"]
+[ext_resource type="Texture2D" uid="uid://c8rt7xd0x30bs" path="res://Assets/Desks/RollBars.png" id="99_5fyhb"]
+[ext_resource type="Texture2D" uid="uid://c043i6kvm2eg" path="res://Assets/Desks/Rollers.png" id="100_dx0u6"]
 [ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="101_eyr7i"]
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="102_n45ei"]
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="103_04ry5"]
 [ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="104_8bce4"]
-[ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="105_108im"]
+[ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Stations/Fish.png" id="105_108im"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="106_rq0ss"]
 [ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="107_ltyjx"]
 [ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="108_xnck3"]
 [ext_resource type="Material" uid="uid://cyyo48glneq" path="res://Shaders/outline.tres" id="109_ffxd5"]
-[ext_resource type="AudioStream" uid="uid://cdubke7rcmrmg" path="res://Assets/Music/Conveyer.ogg" id="110_f2hid"]
-[ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Assets/Music/Roller.mp3" id="111_jwypt"]
-[ext_resource type="Texture2D" uid="uid://cpwuhgkyvga5e" path="res://Assets/LongTable.png" id="112_bqs45"]
+[ext_resource type="AudioStream" uid="uid://cdubke7rcmrmg" path="res://Music/Conveyer.ogg" id="110_f2hid"]
+[ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Music/Roller.mp3" id="111_jwypt"]
+[ext_resource type="Texture2D" uid="uid://cpwuhgkyvga5e" path="res://Assets/Desks/LongTable.png" id="112_bqs45"]
 [ext_resource type="Texture2D" uid="uid://dym2oxxpvj6rv" path="res://Assets/Stations/OpenRice.png" id="113_s2nl6"]
 [ext_resource type="Script" uid="uid://cngg15t1lim6i" path="res://Scripts/stove.gd" id="114_ddyu8"]
 [ext_resource type="Texture2D" uid="uid://cx3ymggf4p56k" path="res://Assets/Stations/ClosedRice.png" id="115_e104q"]
-[ext_resource type="AudioStream" uid="uid://74vrm5kgybho" path="res://Assets/Music/Beep.mp3" id="116_y6fhn"]
-[ext_resource type="AudioStream" uid="uid://hucqmerp468e" path="res://Assets/Music/TimerEnd.mp3" id="117_ecp88"]
+[ext_resource type="AudioStream" uid="uid://74vrm5kgybho" path="res://Music/Beep.mp3" id="116_y6fhn"]
+[ext_resource type="AudioStream" uid="uid://hucqmerp468e" path="res://Music/TimerEnd.mp3" id="117_ecp88"]
 [ext_resource type="Texture2D" uid="uid://c50ms6m07kxex" path="res://Assets/Stations/RiceBowl.png" id="118_vhoi0"]
 [ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://Scripts/reservoir.gd" id="119_jmisg"]
 [ext_resource type="Texture2D" uid="uid://dvdvp6178qm1e" path="res://Assets/Stations/FishWell.png" id="120_refj4"]
@@ -128,14 +128,14 @@
 [ext_resource type="Script" uid="uid://ccjws5hie7otm" path="res://Scripts/cuttingBoard.gd" id="124_8lmbg"]
 [ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://Scripts/cuttingMinigame.gd" id="125_n2cpk"]
 [ext_resource type="Texture2D" uid="uid://dxx1wx6tyv6tt" path="res://Assets/Knife.png" id="126_k7w2v"]
-[ext_resource type="AudioStream" uid="uid://cdl44d0hhic7l" path="res://Assets/Music/Chop.mp3" id="127_7va32"]
+[ext_resource type="AudioStream" uid="uid://cdl44d0hhic7l" path="res://Music/Chop.mp3" id="127_7va32"]
 [ext_resource type="Texture2D" uid="uid://bpff5mvja6m4b" path="res://Assets/Cucumber/SlicedCucumber.png" id="127_130ps"]
 [ext_resource type="Texture2D" uid="uid://bj0kcyiv6f2w7" path="res://Assets/Stations/AssemblyBoard.png" id="128_3xx7e"]
 [ext_resource type="Texture2D" uid="uid://chx0840iqbaqd" path="res://Assets/Cucumber/ObliteratedCucumber.png" id="128_odn5n"]
 [ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://Scripts/assembly.gd" id="129_ul0h4"]
 [ext_resource type="PackedScene" uid="uid://bo1kcclquc7p4" path="res://Scenes/assemblyItems.tscn" id="130_bdqux"]
 [ext_resource type="Texture2D" uid="uid://dqcu3dgl835jj" path="res://Assets/Trash.png" id="130_gqipy"]
-[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/CookedRiceAssembly.png" id="131_bpr0e"]
+[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/Stations/CookedRiceAssembly.png" id="131_bpr0e"]
 [ext_resource type="Script" uid="uid://bceijafr0j870" path="res://Scripts/trash.gd" id="131_ore4n"]
 [ext_resource type="Texture2D" uid="uid://brb8ftp2raqmb" path="res://Assets/SlicedFishAssebmyl.png" id="132_14mkc"]
 [ext_resource type="Texture2D" uid="uid://bvssvmub8krmu" path="res://Assets/Roll.png" id="132_stool"]
@@ -149,6 +149,7 @@
 [ext_resource type="Texture2D" uid="uid://b5wlkggxqam1h" path="res://Assets/Orders/GarageDoor.png" id="147_rtmaq"]
 [ext_resource type="Texture2D" uid="uid://ch7kyg03djt3" path="res://Assets/Orders/BoxTruck.png" id="148_rtmaq"]
 [ext_resource type="Texture2D" uid="uid://b83v7s8ud7svn" path="res://Assets/Orders/Box.png" id="149_eqnci"]
+[ext_resource type="PackedScene" uid="uid://bvaxjpsmm7req" path="res://Scenes/computer.tscn" id="150_ojylq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am8a1"]
 animations = [{
@@ -2812,10 +2813,10 @@ position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Stations/Seaweed Reservoir"]
-offset_left = 17.0
-offset_top = -14.0
-offset_right = 57.0
-offset_bottom = 26.0
+offset_left = 20.0
+offset_top = 28.0
+offset_right = 60.0
+offset_bottom = 68.0
 text = "1"
 horizontal_alignment = 2
 
@@ -3324,123 +3325,127 @@ texture = ExtResource("147_rtmaq")
 position = Vector2(183.5, 111.5)
 shape = SubResource("RectangleShape2D_rtmaq")
 
-[node name="BoxTruck" type="Sprite2D" parent="."]
+[node name="BoxTruck" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
-position = Vector2(911.5, -186)
+position = Vector2(24.5, -14)
 scale = Vector2(0.352452, 0.332481)
 texture = ExtResource("148_rtmaq")
 
-[node name="Box" type="Sprite2D" parent="."]
+[node name="Box" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
 material = SubResource("ShaderMaterial_eqnci")
-position = Vector2(873, -181)
+position = Vector2(-14, -9)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("149_eqnci")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Box"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Shipment Container/Box"]
 position = Vector2(60.8696, 39.1304)
 scale = Vector2(4.34783, 4.34783)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box/StaticBody2D"]
 position = Vector2(-41, -0.5)
 shape = SubResource("RectangleShape2D_eqnci")
 
-[node name="Area2D" type="Area2D" parent="Box"]
+[node name="Area2D" type="Area2D" parent="Shipment Container/Box"]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box/Area2D"]
 position = Vector2(-121.739, 43.4783)
 shape = SubResource("CircleShape2D_eqnci")
 
-[node name="Fish" type="Sprite2D" parent="Box"]
+[node name="Fish" type="Sprite2D" parent="Shipment Container/Box"]
 position = Vector2(-143.478, 52.1738)
 rotation = -1.49226
 scale = Vector2(0.413043, 0.413043)
 texture = ExtResource("105_108im")
 
-[node name="Box2" type="Sprite2D" parent="."]
+[node name="Box2" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
 material = SubResource("ShaderMaterial_ojylq")
-position = Vector2(936, -156)
+position = Vector2(49, 16)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("149_eqnci")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Box2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Shipment Container/Box2"]
 position = Vector2(60.8696, 39.1304)
 scale = Vector2(4.34783, 4.34783)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box2/StaticBody2D"]
 position = Vector2(-41, -0.5)
 shape = SubResource("RectangleShape2D_eqnci")
 
-[node name="Area2D" type="Area2D" parent="Box2"]
+[node name="Area2D" type="Area2D" parent="Shipment Container/Box2"]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box2/Area2D"]
 position = Vector2(-121.739, 43.4783)
 shape = SubResource("CircleShape2D_eqnci")
 
-[node name="Seaweed" type="Sprite2D" parent="Box2"]
+[node name="Seaweed" type="Sprite2D" parent="Shipment Container/Box2"]
 position = Vector2(-134.782, 60.8695)
 scale = Vector2(0.456522, 0.456522)
 texture = ExtResource("108_xnck3")
 
-[node name="Box3" type="Sprite2D" parent="."]
+[node name="Box3" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
 material = SubResource("ShaderMaterial_fle1e")
-position = Vector2(1020, -173)
+position = Vector2(133, -1)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("149_eqnci")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Box3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Shipment Container/Box3"]
 position = Vector2(60.8696, 39.1304)
 scale = Vector2(4.34783, 4.34783)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box3/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box3/StaticBody2D"]
 position = Vector2(-41, -0.5)
 shape = SubResource("RectangleShape2D_eqnci")
 
-[node name="Area2D" type="Area2D" parent="Box3"]
+[node name="Area2D" type="Area2D" parent="Shipment Container/Box3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box3/Area2D"]
 position = Vector2(-121.739, 43.4783)
 shape = SubResource("CircleShape2D_eqnci")
 
-[node name="Box4" type="Sprite2D" parent="."]
+[node name="Box4" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
 material = SubResource("ShaderMaterial_r1tr8")
-position = Vector2(1016, -112)
+position = Vector2(129, 60)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("149_eqnci")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Box4"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Shipment Container/Box4"]
 position = Vector2(60.8696, 39.1304)
 scale = Vector2(4.34783, 4.34783)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box4/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box4/StaticBody2D"]
 position = Vector2(-41, -0.5)
 shape = SubResource("RectangleShape2D_eqnci")
 
-[node name="Area2D" type="Area2D" parent="Box4"]
+[node name="Area2D" type="Area2D" parent="Shipment Container/Box4"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box4/Area2D"]
 position = Vector2(-121.739, 43.4783)
 shape = SubResource("CircleShape2D_eqnci")
 
-[node name="Cucumber" type="Sprite2D" parent="."]
+[node name="Cucumber" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
-position = Vector2(985, -101)
+position = Vector2(98.0001, 71)
 rotation = -1.43641
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("123_adgm5")
 
-[node name="RiceItem" type="Sprite2D" parent="."]
+[node name="RiceItem" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
-position = Vector2(990, -152)
+position = Vector2(103, 20)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("103_04ry5")
+
+[node name="Computer" parent="Shipment Container" instance=ExtResource("150_ojylq")]
+position = Vector2(-771, 111)
+scale = Vector2(0.235, 0.235)
 
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
 [connection signal="pressed" from="AssemblyLayer/Button" to="Stations/Assembly Board" method="_on_button_pressed"]
@@ -3477,7 +3482,7 @@ texture = ExtResource("103_04ry5")
 [connection signal="area_exited" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_exited"]
 [connection signal="pressed" from="Tutorial/ColorRect/Next" to="Tutorial" method="_on_next_pressed"]
 [connection signal="pressed" from="Tutorial/ColorRect/Quit" to="Tutorial" method="_on_quit_pressed"]
-[connection signal="area_entered" from="Box/Area2D" to="Shipment Container" method="_1_entered"]
-[connection signal="area_exited" from="Box/Area2D" to="Shipment Container" method="_1_exited"]
-[connection signal="area_entered" from="Box2/Area2D" to="Shipment Container" method="_2_entered"]
-[connection signal="area_exited" from="Box2/Area2D" to="Shipment Container" method="_2_exited"]
+[connection signal="area_entered" from="Shipment Container/Box/Area2D" to="Shipment Container" method="_1_entered"]
+[connection signal="area_exited" from="Shipment Container/Box/Area2D" to="Shipment Container" method="_1_exited"]
+[connection signal="area_entered" from="Shipment Container/Box2/Area2D" to="Shipment Container" method="_2_entered"]
+[connection signal="area_exited" from="Shipment Container/Box2/Area2D" to="Shipment Container" method="_2_exited"]

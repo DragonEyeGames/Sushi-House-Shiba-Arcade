@@ -14,32 +14,32 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if($MinigameHolder.running==true and Input.is_action_just_pressed("Escape")):
 		_on_button_pressed()
 	if(not controller.interactiveItem==self):
 		self.material.set_shader_parameter("outline_size", 0)
 	if(colliding and controller.playerInventorySelect in item and placed==false):
-		self.material.set_shader_parameter("outline_size", 1.4)
+		self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 		controller.interactable="cutting board"
 		controller.interactiveItem=self
 	elif(colliding and placed and placedItem=="fish"):
-		self.material.set_shader_parameter("outline_size", 1.4)
+		self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 		controller.interactable="cutting board"
 		controller.interactiveItem=self
 	elif(colliding and placed and placedItem!="fish"):
-		self.material.set_shader_parameter("outline_size", 1.4)
+		self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 		controller.interactable="cutting board"
 		controller.interactiveItem=self
 	else:
 		self.material.set_shader_parameter("outline_size", 0)
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	colliding=true
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	self.material.set_shader_parameter("outline_size", 0)
 	if(controller.interactiveItem==self):
 		controller.interactable=""
@@ -63,8 +63,8 @@ func interact():
 	# Animate the alpha of the modulate color
 		$"../../MinigameLayer".visible=true
 		for child in $"../../CanvasLayer".get_children():
-			var t = create_tween()
-			t.tween_property(child, "modulate:a", 0.0, 1.0)
+			var t2 = create_tween()
+			t2.tween_property(child, "modulate:a", 0.0, 1.0)
 		var t = create_tween()
 		t.tween_property($"../../MinigameLayer/Button", "modulate:a", 1.0, 1.0)
 		await get_tree().create_timer(1.1).timeout
@@ -84,8 +84,8 @@ func interact():
 	# Animate the alpha of the modulate color
 		$"../../MinigameLayer".visible=true
 		for child in $"../../CanvasLayer".get_children():
-			var t = create_tween()
-			t.tween_property(child, "modulate:a", 0.0, 1.0)
+			var t2 = create_tween()
+			t2.tween_property(child, "modulate:a", 0.0, 1.0)
 		var t = create_tween()
 		t.tween_property($"../../MinigameLayer/Button", "modulate:a", 1.0, 1.0)
 		await get_tree().create_timer(1.1).timeout
@@ -122,8 +122,8 @@ func _on_button_pressed() -> void:
 	$"../../Player".canMove=true
 	#Animate the alpha of the modulate color
 	for child in $"../../CanvasLayer".get_children():
-		var t = create_tween()
-		t.tween_property(child, "modulate:a", 1.0, 1.0)
+		var t3 = create_tween()
+		t3.tween_property(child, "modulate:a", 1.0, 1.0)
 	var t = create_tween()
 	t.tween_property($"../../MinigameLayer/Button", "modulate:a", 0.0, 1.0)
 	await get_tree().create_timer(1).timeout

@@ -9,13 +9,33 @@ var itemTypes = ["fish", "seaweed"]
 @export var seaweed = 5
 @export var rice = 5
 @export var cucumber = 5
+var computerColliding=false
+var inComputer=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	shipment()
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Computer/Outline.visible=computerColliding
+	if(computerColliding and Input.is_action_just_pressed("Place") and not ($"Computer/Zoom Target".visible or $Computer/Computer.visible)):
+		$"Computer/Zoom Target".visible=true
+		$"../Camera2D".following=$"Computer/Zoom Target"
+		$"../Camera2D".followingPlayer=false
+		$"../Camera2D".Zoom(14)
+		$"../Player".canMove=false
+		var tween = create_tween()
+		tween.tween_property($"../Player", "modulate:a", 0.0, 1.0)
+		var tween2 = create_tween()
+		tween2.tween_property($"Computer/Zoom Target/ProgressBar", "value", 100.0, 3.0)
+		inComputer=true
+		await get_tree().create_timer(3.1).timeout
+		$"Computer/Zoom Target".visible=false
+		await get_tree().create_timer(.2).timeout
+		$Computer/Computer.visible=true
+	if(inComputer):
+		$Computer/Outline.visible=false
 	if(rising):
 		for child in $Control.get_children():
 			child.position.y-=120*delta
@@ -27,27 +47,27 @@ func _process(delta: float) -> void:
 			area1=false
 			area2=true
 	if(area1):
-		$"../Box".material.set_shader_parameter("outline_size", 2)
+		$"Box".material.set_shader_parameter("outline_size", GameManager.outlineSize)
 	else:
-		$"../Box".material.set_shader_parameter("outline_size", 0)
+		$"Box".material.set_shader_parameter("outline_size", 0)
 	if(area2):
-		$"../Box2".material.set_shader_parameter("outline_size", 2)
+		$"Box2".material.set_shader_parameter("outline_size", GameManager.outlineSize)
 	else:
-		$"../Box2".material.set_shader_parameter("outline_size", 0)
+		$"Box2".material.set_shader_parameter("outline_size", 0)
 		
 	if(Input.is_action_just_pressed("Place")):
 		if(area1):
-			$"../Box".visible=false
-			$"../Box/Area2D/CollisionShape2D".disabled=true
-			$"../Box/StaticBody2D/CollisionShape2D".disabled=false
+			$"Box".visible=false
+			$"Box/Area2D/CollisionShape2D".disabled=true
+			$"Box/StaticBody2D/CollisionShape2D".disabled=false
 			if(itemTypes[0]=="fish"):
 				if(len($"..".playerInventory)<=4):
 					$"..".playerInventory.append("fish box")
 					$"../Player/PickingUp".play()
 		elif(area2):
-			$"../Box2".visible=false
-			$"../Box2/StaticBody2D/CollisionShape2D".disabled=true
-			$"../Box2/Area2D/CollisionShape2D".disabled=true
+			$"Box2".visible=false
+			$"Box2/StaticBody2D/CollisionShape2D".disabled=true
+			$"Box2/Area2D/CollisionShape2D".disabled=true
 			if(itemTypes[1]=="seaweed"):
 				if(len($"..".playerInventory)<=4):
 					$"..".playerInventory.append("seaweed box")
@@ -55,25 +75,33 @@ func _process(delta: float) -> void:
 	
 func shipment():
 	rising=true
+	$"../Camera2D".followingPlayer=true
+	$"../Camera2D".Zoom(1)
+	$"../CanvasLayer".visible=true
+	$"../Player".canMove=true
+	var tween = create_tween()
+	tween.tween_property($"../Player", "modulate:a", 1.0, 1.0)
+	$Computer/Computer.visible=false
+	$"Computer/Zoom Target".visible=false
 
 
-func _1_entered(area: Area2D) -> void:
+func _1_entered(_area: Area2D) -> void:
 	area1=true
 	interacting.append("1")
 	area2=false
 
 
-func _1_exited(area: Area2D) -> void:
+func _1_exited(_area: Area2D) -> void:
 	area1=false
 	interacting.erase("1")
 
 
-func _2_entered(area: Area2D) -> void:
+func _2_entered(_area: Area2D) -> void:
 	area2=true
 	area1=false
 	interacting.append("2")
 
 
-func _2_exited(area: Area2D) -> void:
+func _2_exited(_area: Area2D) -> void:
 	area2=false
 	interacting.erase("2")

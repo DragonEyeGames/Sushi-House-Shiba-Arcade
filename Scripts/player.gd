@@ -4,7 +4,7 @@ var canMove=true
 var _dir = "down"
 var walking=false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var yChange = 0
 	var xChange = 0
 	if(Input.is_action_pressed("Up")):

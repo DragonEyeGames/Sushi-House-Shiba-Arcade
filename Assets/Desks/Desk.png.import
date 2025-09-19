@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5pygkcvi0esp"
-path="res://.godot/imported/AssemblyStation.png-c0d1b5561d5fd4778f7fe3aa68e8cab3.ctex"
+uid="uid://13jmkrykwny"
+path="res://.godot/imported/Desk.png-fe36572372d3e67c115d269fc10dc761.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/AssemblyStation.png"
-dest_files=["res://.godot/imported/AssemblyStation.png-c0d1b5561d5fd4778f7fe3aa68e8cab3.ctex"]
+source_file="res://Assets/Desks/Desk.png"
+dest_files=["res://.godot/imported/Desk.png-fe36572372d3e67c115d269fc10dc761.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

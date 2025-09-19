@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		$"..".interactiveItem=self
 	if(colliding and settingPlate!=null):
 		if($"..".playerInventorySelect!="" and len($"..".playerInventory)>0):
-			settingPlate.material.set_shader_parameter("outline_size", 1.4)
+			settingPlate.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 			if(Input.is_action_just_pressed("Place")):
 				settingPlate.material.set_shader_parameter("outline_size", 0)
 				$"../AudioStreamPlayer2D2".playing=true
@@ -81,7 +81,7 @@ func getPlate():
 	plate.visible=true
 	settingPlate=null
 	while plate.position.y<-117:
-		plate.position.y+=speed/2*_currentDelta
+		plate.position.y+=round(speed/2.0*_currentDelta)
 		await get_tree().create_timer(0).timeout
 	plate.position.y=-117
 	settingPlate=plate
@@ -89,9 +89,9 @@ func getPlate():
 	plateState.append("idle")
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	colliding=true
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	colliding=false

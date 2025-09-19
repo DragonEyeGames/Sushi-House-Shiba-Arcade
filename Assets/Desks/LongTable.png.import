@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doq02n40iwio7"
-path="res://.godot/imported/CuttingBoardTable.png-d99f4b044cae713f252848fc5cf348be.ctex"
+uid="uid://cpwuhgkyvga5e"
+path="res://.godot/imported/LongTable.png-b2ad2b5c912e9883e61e64d8fd7e2ee2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CuttingBoardTable.png"
-dest_files=["res://.godot/imported/CuttingBoardTable.png-d99f4b044cae713f252848fc5cf348be.ctex"]
+source_file="res://Assets/Desks/LongTable.png"
+dest_files=["res://.godot/imported/LongTable.png-b2ad2b5c912e9883e61e64d8fd7e2ee2.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

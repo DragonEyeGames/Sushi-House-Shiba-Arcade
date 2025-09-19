@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c043i6kvm2eg"
-path="res://.godot/imported/Rollers.png-8c505ab3d849632fef7f5c8f93a89f86.ctex"
+uid="uid://cgvay8ebs1ypn"
+path="res://.godot/imported/Fish.png-ce0ad74268ecc382c505f10d29f61169.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Rollers.png"
-dest_files=["res://.godot/imported/Rollers.png-8c505ab3d849632fef7f5c8f93a89f86.ctex"]
+source_file="res://Assets/Stations/Fish.png"
+dest_files=["res://.godot/imported/Fish.png-ce0ad74268ecc382c505f10d29f61169.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://ckbumgkfqrmoy"]
 
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="1_7on13"]
-[ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Fish.png" id="2_ri7ka"]
+[ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Stations/Fish.png" id="2_ri7ka"]
 [ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="2_vb3cu"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="3_o85l3"]
 [ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="4_wvdm6"]
@@ -264,12 +264,12 @@ anchor_left = -0.0726326
 anchor_top = -0.00187692
 anchor_right = 0.360961
 anchor_bottom = -0.00187692
-offset_left = -308.984
-offset_top = -184.643
-offset_right = -208.984
-offset_bottom = -82.6432
+offset_left = -306.206
+offset_top = -174.921
+offset_right = -206.206
+offset_bottom = -72.9213
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 66
+theme_override_font_sizes/normal_font_size = 62
 text = "Fish Box"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -281,6 +281,7 @@ scale = Vector2(0.375, 0.375)
 texture = ExtResource("2_ri7ka")
 
 [node name="seaweed box" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(111.111, 8.33333)
 texture = ExtResource("14_bnffl")
 
@@ -290,13 +291,13 @@ anchor_left = -0.0726326
 anchor_top = -0.00187692
 anchor_right = 0.360961
 anchor_bottom = -0.00187692
-offset_left = -308.984
-offset_top = -184.643
-offset_right = -208.984
-offset_bottom = -82.6432
+offset_left = -314.54
+offset_top = -166.588
+offset_right = -214.54
+offset_bottom = -64.588
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 66
-text = "Fish Box"
+theme_override_font_sizes/normal_font_size = 45
+text = "Seaweed Box"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

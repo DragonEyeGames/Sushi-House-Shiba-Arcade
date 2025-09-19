@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bew43yfuvkv2o"
-path="res://.godot/imported/SushiRollerStand.png-341c36e5a4bc30c153fa0a04c81e4e8a.ctex"
+uid="uid://c043i6kvm2eg"
+path="res://.godot/imported/Rollers.png-1d12e99a59d2334b060d604797bd931d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SushiRollerStand.png"
-dest_files=["res://.godot/imported/SushiRollerStand.png-341c36e5a4bc30c153fa0a04c81e4e8a.ctex"]
+source_file="res://Assets/Desks/Rollers.png"
+dest_files=["res://.godot/imported/Rollers.png-1d12e99a59d2334b060d604797bd931d.ctex"]
 
 [params]
 

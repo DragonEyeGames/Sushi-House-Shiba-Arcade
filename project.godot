@@ -13,7 +13,10 @@ config_version=5
 config/name="Sushi House Shiba"
 run/main_scene="uid://dyu40iyjut0ht"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+GameManager="*res://Scripts/GameManager.gd"
 
 [display]
 
@@ -35,8 +38,9 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 folder_colors={
 "res://Assets/": "blue",
 "res://Assets/Character/": "teal",
-"res://Assets/Music/": "pink",
+"res://Assets/Desks/": "red",
 "res://Builds/": "orange",
+"res://Music/": "pink",
 "res://Scenes/": "green",
 "res://Scripts/": "yellow",
 "res://Shaders/": "purple",

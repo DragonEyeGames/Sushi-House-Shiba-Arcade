@@ -3,11 +3,11 @@ extends Camera2D
 var followingPlayer=true
 var following
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(followingPlayer):
-		self.position=$"../Player".position
+		self.global_position=$"../Player".global_position
 	else:
-		self.position=following.position
+		self.global_position=following.global_position
 		
 func Zoom(amount: int):
 	var tween = create_tween()

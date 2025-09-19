@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if($"cooked rice".visible==false):
 		$"cooked rice/Area2D/CollisionPolygon2D".disabled=true
 	else:
@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 		$"sliced cucumber/Area2D2/CollisionPolygon2D".disabled=false
 	if(visible):
 		if(riceEntered or fishEntered or cucumberEntered):
-			self.material.set_shader_parameter("outline_size", 1.4)
+			self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 		else:
 			self.material.set_shader_parameter("outline_size", 0)
 	else:
@@ -32,7 +32,6 @@ func _process(delta: float) -> void:
 
 
 func rice_entered() -> void:
-	print("RAICE")
 	riceEntered=true
 
 
@@ -48,30 +47,29 @@ func fish_exited() -> void:
 	fishEntered=false
 
 
-func _fish_controller_entered(area: Area2D) -> void:
+func _fish_controller_entered(_area: Area2D) -> void:
 	fishEntered=true
 
 
-func _fish_controller_exited(area: Area2D) -> void:
+func _fish_controller_exited(_area: Area2D) -> void:
 	fishEntered=false
 
 
-func _rice_controller_entered(area: Area2D) -> void:
-	print("raice")
+func _rice_controller_entered(_area: Area2D) -> void:
 	riceEntered=true
 
 
-func rice_controller_exited(area: Area2D) -> void:
+func rice_controller_exited(_area: Area2D) -> void:
 	riceEntered=false
 
 
-func rice_controller_entered(area: Area2D) -> void:
+func rice_controller_entered(_area: Area2D) -> void:
 	pass # Replace with function body.
 
 
-func cucumber_entered(area: Area2D) -> void:
+func cucumber_entered(_area: Area2D) -> void:
 	cucumberEntered=true
 
 
-func cucumber_exited(area: Area2D) -> void:
+func cucumber_exited(_area: Area2D) -> void:
 	cucumberEntered=false

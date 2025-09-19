@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpwuhgkyvga5e"
-path="res://.godot/imported/LongTable.png-334f47b1dbb45b245117d52e5aec2c07.ctex"
+uid="uid://bew43yfuvkv2o"
+path="res://.godot/imported/SushiRollerStand.png-93de0bbfdc65f39956e11f55c406de30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/LongTable.png"
-dest_files=["res://.godot/imported/LongTable.png-334f47b1dbb45b245117d52e5aec2c07.ctex"]
+source_file="res://Assets/Desks/SushiRollerStand.png"
+dest_files=["res://.godot/imported/SushiRollerStand.png-93de0bbfdc65f39956e11f55c406de30.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

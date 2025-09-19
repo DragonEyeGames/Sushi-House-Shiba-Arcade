@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6e40ojmlanye"
-path="res://.godot/imported/PotRice.png-0ffba64267f5026a1dcb802e5a45ea1c.ctex"
+uid="uid://c8rt7xd0x30bs"
+path="res://.godot/imported/RollBars.png-d56824a0ec40bf9d28cf7a8aabbbe2e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PotRice.png"
-dest_files=["res://.godot/imported/PotRice.png-0ffba64267f5026a1dcb802e5a45ea1c.ctex"]
+source_file="res://Assets/Desks/RollBars.png"
+dest_files=["res://.godot/imported/RollBars.png-d56824a0ec40bf9d28cf7a8aabbbe2e3.ctex"]
 
 [params]
 

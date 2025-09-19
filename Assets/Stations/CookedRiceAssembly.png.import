@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c14luojaevyld"
-path="res://.godot/imported/FishCooler.png-17ac286f980b5e2b77ce6c9552815e5a.ctex"
+uid="uid://cy4ijxsbm24ao"
+path="res://.godot/imported/CookedRiceAssembly.png-981d4dae655b69b694e5633a6cc8024b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FishCooler.png"
-dest_files=["res://.godot/imported/FishCooler.png-17ac286f980b5e2b77ce6c9552815e5a.ctex"]
+source_file="res://Assets/Stations/CookedRiceAssembly.png"
+dest_files=["res://.godot/imported/CookedRiceAssembly.png-981d4dae655b69b694e5633a6cc8024b.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

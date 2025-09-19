@@ -26,7 +26,7 @@ func _ready() -> void:
 	pass
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(controllerButtonHovered and Input.is_action_just_pressed("Place") and $ControllerSelection.visible):
 		if($"Button Holder/TextureButton".visible):
 			_on_texture_button_pressed()
@@ -112,9 +112,9 @@ func _process(delta: float) -> void:
 			$Items3.visible=false
 			$Items4.visible=false
 			var showList=[]
-			for item in controller.playerInventory:
-				if(item=="sliced fish" or item=="sliced cucumber"):
-					showList.append(item)
+			for invItem in controller.playerInventory:
+				if(invItem=="sliced fish" or invItem=="sliced cucumber"):
+					showList.append(invItem)
 			if len(showList)>=1:
 				$Items.visible=true
 				$Items.global_position=$"../../Player".global_position
@@ -177,18 +177,17 @@ func _process(delta: float) -> void:
 	else:
 		self.material.set_shader_parameter("outline_size", 0)
 
-
-func _show_prompt(text: String) -> void:
-	self.material.set_shader_parameter("outline_size", 1.4)
+func _show_prompt(_text: String) -> void:
+	self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 	controller.interactable = "assembly board"
 	controller.interactiveItem = self
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	colliding = true
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	self.material.set_shader_parameter("outline_size", 0)
 	if(controller.interactiveItem==self):
 		controller.interactable=""
@@ -202,9 +201,9 @@ func interact() -> void:
 	_consume_item("seaweed")
 	$ControllerSelection.visible=controller.controller
 	var showList=[]
-	for item in controller.playerInventory:
-		if(item=="cooked rice"):
-			showList.append(item)
+	for invItem in controller.playerInventory:
+		if(invItem=="cooked rice"):
+			showList.append(invItem)
 	if len(showList)>=1:
 		$Items.visible=true
 		$Items.global_position=$"../../Player".global_position
@@ -258,8 +257,8 @@ func interact() -> void:
 	# Animate the alpha of the modulate color
 	$"../../AssemblyLayer".visible=true
 	for child in $"../../CanvasLayer".get_children():
-		var t = create_tween()
-		t.tween_property(child, "modulate:a", 0.0, 1.0)
+		var t2 = create_tween()
+		t2.tween_property(child, "modulate:a", 0.0, 1.0)
 	var t = create_tween()
 	t.tween_property($"../../AssemblyLayer/Button", "modulate:a", 1.0, 1.0)
 	minigame=true
@@ -287,7 +286,7 @@ func _on_button_pressed() -> void:
 	$Items2.visible=false
 	$Items3.visible=false
 	$Items4.visible=false
-	self.material.set_shader_parameter("outline_size", 1.4)
+	self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 	if($Seaweed.visible):
 		controller.playerInventory.append("seaweed")
 		$"../../Player/PickingUp".play()
@@ -320,8 +319,8 @@ func _on_button_pressed() -> void:
 	$"../../Player".canMove=true
 	#Animate the alpha of the modulate color
 	for child in $"../../CanvasLayer".get_children():
-		var t = create_tween()
-		t.tween_property(child, "modulate:a", 1.0, 1.0)
+		var t2 = create_tween()
+		t2.tween_property(child, "modulate:a", 1.0, 1.0)
 	var t = create_tween()
 	t.tween_property($"../../AssemblyLayer/Button", "modulate:a", 0.0, 1.0)
 	await get_tree().create_timer(1).timeout
@@ -368,25 +367,25 @@ func _on_pickup() -> void:
 	_on_button_pressed()
 
 
-func _on_fish_entered(area: Area2D) -> void:
+func _on_fish_entered(_area: Area2D) -> void:
 	assembly.append("sliced fish")
 
 
-func _on_fish_exited(area: Area2D) -> void:
+func _on_fish_exited(_area: Area2D) -> void:
 	assembly.erase("sliced fish")
 
 
-func _on_controller_collisions_area_entered(area: Area2D) -> void:
+func _on_controller_collisions_area_entered(_area: Area2D) -> void:
 	controllerButtonHovered=true
 
 
-func _on_controller_collisions_area_exited(area: Area2D) -> void:
+func _on_controller_collisions_area_exited(_area: Area2D) -> void:
 	controllerButtonHovered=false
 
 
-func _on_area_2d_2_area_exited(area: Area2D) -> void:
+func _on_area_2d_2_area_exited(_area: Area2D) -> void:
 	assembly.erase("sliced cucumber")
 
 
-func _on_cucumber_entered(area: Area2D) -> void:
+func _on_cucumber_entered(_area: Area2D) -> void:
 	assembly.append("sliced cucumber")

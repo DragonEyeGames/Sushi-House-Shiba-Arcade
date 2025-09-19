@@ -13,30 +13,30 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(placed):
 		$Icon2/ProgressBar.value+=.12#TESTING PURPOSE BOOST
 		if($Icon2/ProgressBar.value>=100 and cooked==false):
 			cooked=true
 			$AudioStreamPlayer2D2.play()
 	if(colliding and item==controller.playerInventorySelect and placed==false):
-		self.material.set_shader_parameter("outline_size", 1.4)
+		self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 		controller.interactable="rice stove"
 		controller.interactiveItem=self
 	elif(cooked and len(controller.playerInventory)<=4):
 		if(colliding):
-			self.material.set_shader_parameter("outline_size", 1.4)
+			self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 			controller.interactable="rice stove"
 			controller.interactiveItem=self
 	else:
 		self.material.set_shader_parameter("outline_size", 0)
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	colliding=true
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	self.material.set_shader_parameter("outline_size", 0)
 	if(controller.interactiveItem==self):
 		controller.interactable=""

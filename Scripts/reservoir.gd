@@ -11,11 +11,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$RichTextLabel2.text=str(stock)
 	if(controller.interactiveItem==self):
 		if(colliding and len(controller.playerInventory)<=4):
-			self.material.set_shader_parameter("outline_size", 1.4)
+			self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 		else:
 			self.material.set_shader_parameter("outline_size", 0)
 	else:
@@ -36,12 +36,12 @@ func _process(delta: float) -> void:
 			if(item=="seaweed"):
 				stock+=$"../../Shipment Container".seaweed
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	controller.interactiveItem=self
 	colliding=true
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	if(controller.interactiveItem==self):
 		controller.interactiveItem=null
 	colliding=false
