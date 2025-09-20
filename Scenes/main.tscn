@@ -3389,6 +3389,7 @@ scale = Vector2(0.456522, 0.456522)
 texture = ExtResource("108_xnck3")
 
 [node name="Box3" type="Sprite2D" parent="Shipment Container"]
+visible = false
 z_index = -7
 material = SubResource("ShaderMaterial_fle1e")
 position = Vector2(133, -1)
@@ -3410,6 +3411,7 @@ position = Vector2(-121.739, 43.4783)
 shape = SubResource("CircleShape2D_eqnci")
 
 [node name="Box4" type="Sprite2D" parent="Shipment Container"]
+visible = false
 z_index = -7
 material = SubResource("ShaderMaterial_r1tr8")
 position = Vector2(129, 60)
@@ -3431,6 +3433,7 @@ position = Vector2(-121.739, 43.4783)
 shape = SubResource("CircleShape2D_eqnci")
 
 [node name="Cucumber" type="Sprite2D" parent="Shipment Container"]
+visible = false
 z_index = -7
 position = Vector2(98.0001, 71)
 rotation = -1.43641
@@ -3438,6 +3441,7 @@ scale = Vector2(0.08, 0.08)
 texture = ExtResource("123_adgm5")
 
 [node name="RiceItem" type="Sprite2D" parent="Shipment Container"]
+visible = false
 z_index = -7
 position = Vector2(103, 20)
 scale = Vector2(0.15, 0.15)

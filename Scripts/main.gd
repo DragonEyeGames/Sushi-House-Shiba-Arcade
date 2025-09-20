@@ -14,6 +14,10 @@ func _ready() -> void:
 	var joypads = Input.get_connected_joypads()
 	if joypads.size() > 0:
 		controller=true
+	GameManager.player=$Player
+	GameManager.camera=$Camera2D
+	GameManager.canvasLayer=$CanvasLayer
+	GameManager.scoreLayer=$Score
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

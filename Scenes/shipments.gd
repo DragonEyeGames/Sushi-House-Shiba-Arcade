@@ -30,6 +30,12 @@ func _process(delta: float) -> void:
 		var tween2 = create_tween()
 		tween2.tween_property($"Computer/Zoom Target/ProgressBar", "value", 100.0, 3.0)
 		inComputer=true
+		for child in GameManager.canvasLayer.get_children():
+			var tweenChild = create_tween()
+			tweenChild.tween_property(child, "modulate:a", 0.0, 1.0)
+		for scoreChild in GameManager.scoreLayer.get_children():
+			var tweenChild = create_tween()
+			tweenChild.tween_property(scoreChild, "modulate:a", 0.0, 1.0)
 		await get_tree().create_timer(3.1).timeout
 		$"Computer/Zoom Target".visible=false
 		await get_tree().create_timer(.2).timeout
@@ -73,8 +79,9 @@ func _process(delta: float) -> void:
 					$"..".playerInventory.append("seaweed box")
 					$"../Player/PickingUp".play()
 	
-func shipment():
-	rising=true
+func shipment(inputFish, inputSeaweed):
+	fish=inputFish
+	seaweed=inputSeaweed
 	$"../Camera2D".followingPlayer=true
 	$"../Camera2D".Zoom(1)
 	$"../CanvasLayer".visible=true
@@ -83,6 +90,12 @@ func shipment():
 	tween.tween_property($"../Player", "modulate:a", 1.0, 1.0)
 	$Computer/Computer.visible=false
 	$"Computer/Zoom Target".visible=false
+	await get_tree().create_timer(40).timeout
+	if(fish==0):
+		$Box.visible=false
+	if(seaweed==0):
+		$Box2.visible=false
+	rising=true
 
 
 func _1_entered(_area: Area2D) -> void:
