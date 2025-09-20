@@ -32,11 +32,17 @@ func _process(_delta: float) -> void:
 			controller.placeCurrent(item + " box")
 			$"../../Player/SetDown".play()
 			if(item=="fish"):
-				stock+=$"../../Shipment Container".fish
+				stock+=$"../../Shipment Container".fish[0]
+				$"../../Shipment Container".fish.remove_at(0)
 			if(item=="seaweed"):
-				stock+=$"../../Shipment Container".seaweed
+				stock+=$"../../Shipment Container".seaweed[0]
+				$"../../Shipment Container".seaweed.remove_at(0)
 			if(item=="rice"):
-				stock+=$"../../Shipment Container".rice
+				stock+=$"../../Shipment Container".rice[0]
+				$"../../Shipment Container".rice.remove_at(0)
+			if(item=="cucumber"):
+				stock+=$"../../Shipment Container".cucumber[0]
+				$"../../Shipment Container".cucumber.remove_at(0)
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	controller.interactiveItem=self

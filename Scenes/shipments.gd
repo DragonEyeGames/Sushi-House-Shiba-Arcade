@@ -4,12 +4,14 @@ var rising = false
 var area1=false
 var area2=false
 var area3=false
+var area4=false
 var interacting=[]
-var itemTypes = ["fish", "seaweed", "rice"]
-@export var fish = 5
-@export var seaweed = 5
-@export var rice = 5
-@export var cucumber = 5
+var itemTypes = ["fish", "seaweed", "rice", "cucumber"]
+@export var fish = []
+@export var seaweed = []
+@export var rice = []
+@export var cucumber = []
+var shipmentList=[]
 var computerColliding=false
 var inComputer=false
 var doorOpen=false
@@ -62,14 +64,22 @@ func _process(delta: float) -> void:
 			area1=true
 			area2=false
 			area3=false
+			area4=false
 		elif(interacting[0]=="2"):
 			area1=false
 			area2=true
 			area3=false
+			area4=false
 		elif(interacting[0]=="3"):
 			area1=false
 			area2=false
 			area3=true
+			area4=false
+		elif(interacting[0]=="4"):
+			area1=false
+			area2=false
+			area3=false
+			area4=true
 	if(area1):
 		$"Box".material.set_shader_parameter("outline_size", GameManager.outlineSize*2.3)
 	else:
@@ -82,6 +92,10 @@ func _process(delta: float) -> void:
 		$"Box3".material.set_shader_parameter("outline_size", GameManager.outlineSize*2.3)
 	else:
 		$"Box3".material.set_shader_parameter("outline_size", 0)
+	if(area4):
+		$"Box4".material.set_shader_parameter("outline_size", GameManager.outlineSize*2.3)
+	else:
+		$"Box4".material.set_shader_parameter("outline_size", 0)
 		
 	if(Input.is_action_just_pressed("Place")):
 		if(area1):
@@ -108,13 +122,24 @@ func _process(delta: float) -> void:
 				if(len($"..".playerInventory)<=4):
 					$"..".playerInventory.append("rice box")
 					$"../Player/PickingUp".play()
-	if(not $Box.visible and not $Box2.visible and not $Box3.visible):
+		elif(area4):
+			$"Box4".visible=false
+			$"Box4/StaticBody2D/CollisionShape2D".disabled=true
+			$"Box4/Area2D/CollisionShape2D".disabled=true
+			if(itemTypes[3]=="cucumber"):
+				if(len($"..".playerInventory)<=4):
+					$"..".playerInventory.append("cucumber box")
+					$"../Player/PickingUp".play()
+	if((not $Box.visible) and (not $Box2.visible) and (not $Box3.visible) and (not $Box4.visible)):
 		GameManager.cargoClear=true
+	else:
+		GameManager.cargoClear=false
 	
-func shipment(inputFish, inputSeaweed, inputRice):
-	fish=inputFish
-	seaweed=inputSeaweed
-	rice=inputRice
+func shipment(inputFish, inputSeaweed, inputRice, inputCucumber):
+	fish.append(inputFish)
+	seaweed.append(inputSeaweed)
+	rice.append(inputRice)
+	cucumber.append(inputCucumber)
 	$"../Camera2D".followingPlayer=true
 	$"../Camera2D".Zoom(1)
 	$"../CanvasLayer".visible=true
@@ -131,7 +156,7 @@ func shipment(inputFish, inputSeaweed, inputRice):
 		tweenChild.tween_property(scoreChild, "modulate:a", 1.0, 1.0)
 	GameManager.waitTime=randi_range(3, 5)
 	await get_tree().create_timer(GameManager.waitTime).timeout
-	if(fish==0):
+	if(not inputFish>0):
 		$Box.visible=false
 		$"Box/Area2D/CollisionShape2D".disabled=true
 		$"Box/StaticBody2D/CollisionShape2D".disabled=true
@@ -139,7 +164,7 @@ func shipment(inputFish, inputSeaweed, inputRice):
 		$Box.visible=true
 		$"Box/Area2D/CollisionShape2D".disabled=false
 		$"Box/StaticBody2D/CollisionShape2D".disabled=false
-	if(seaweed==0):
+	if(not inputSeaweed>0):
 		$Box2.visible=false
 		$"Box2/Area2D/CollisionShape2D".disabled=true
 		$"Box2/StaticBody2D/CollisionShape2D".disabled=true
@@ -147,7 +172,7 @@ func shipment(inputFish, inputSeaweed, inputRice):
 		$Box2.visible=true
 		$"Box2/Area2D/CollisionShape2D".disabled=false
 		$"Box2/StaticBody2D/CollisionShape2D".disabled=false
-	if(rice==0):
+	if(not inputRice>0):
 		$Box3.visible=false
 		$"Box3/Area2D/CollisionShape2D".disabled=true
 		$"Box3/StaticBody2D/CollisionShape2D".disabled=true
@@ -155,6 +180,14 @@ func shipment(inputFish, inputSeaweed, inputRice):
 		$Box3.visible=true
 		$"Box3/Area2D/CollisionShape2D".disabled=false
 		$"Box3/StaticBody2D/CollisionShape2D".disabled=false
+	if(not inputCucumber>0):
+		$Box4.visible=false
+		$"Box4/Area2D/CollisionShape2D".disabled=true
+		$"Box4/StaticBody2D/CollisionShape2D".disabled=true
+	else:
+		$Box4.visible=true
+		$"Box4/Area2D/CollisionShape2D".disabled=false
+		$"Box4/StaticBody2D/CollisionShape2D".disabled=false
 	rising=true
 
 
@@ -163,6 +196,7 @@ func _1_entered(_area: Area2D) -> void:
 	interacting.append("1")
 	area2=false
 	area3=false
+	area4=false
 
 
 func _1_exited(_area: Area2D) -> void:
@@ -174,6 +208,7 @@ func _2_entered(_area: Area2D) -> void:
 	area2=true
 	area1=false
 	area3=false
+	area4=false
 	interacting.append("2")
 
 
@@ -196,9 +231,23 @@ func _3_entered(_area: Area2D) -> void:
 	area2=false
 	area3=true
 	area1=false
+	area4=false
 	interacting.append("3")
 
 
 func _3_exited(_area: Area2D) -> void:
 	area3=false
 	interacting.erase("3")
+
+
+func _4_entered(_area: Area2D) -> void:
+	area4=true
+	area1=false
+	area2=false
+	area3=false
+	interacting.append("4")
+
+
+func _4_exited(_area: Area2D) -> void:
+	area4=false
+	interacting.erase("4")

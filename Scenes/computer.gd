@@ -5,7 +5,9 @@ var inComputer=false
 var fish = 0
 var seaweed=0
 var rice = 0
+var cucumber = 0
 var countingDown=0
+var cost=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +16,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if($Computer.visible):
+		cost=(fish*3 + seaweed*1 + rice*1 + cucumber*2)
+		$Computer/RichTextLabel3.text="$"+str(GameManager.score-cost)
 	if(GameManager.cargoClear and $Waiting.visible):
 		$Waiting.visible=false
 		inComputer=false
@@ -26,7 +31,7 @@ func _process(delta: float) -> void:
 			await get_tree().create_timer(4).timeout
 			$Ordered.visible=false
 			$Waiting.visible=true
-	if(fish==0 and seaweed==0):
+	if((fish==0 and seaweed==0 and rice==0 and cucumber==0) or GameManager.score-cost<0):
 		$Computer/Order.visible=false
 	else:
 		$Computer/Order.visible=true
@@ -36,6 +41,7 @@ func _process(delta: float) -> void:
 		$Computer/Fish/Count.text=str(fish)
 		$Computer/Seaweed/Count.text=str(seaweed)
 		$Computer/Rice/Count.text=str(rice)
+		$Computer/Cucumber/Count.text=str(cucumber)
 	if(Input.is_action_just_pressed("Place") and playerColliding and not inComputer):
 		$"Zoom Target".visible=true
 		GameManager.camera.following=$"Zoom Target"
@@ -68,7 +74,8 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 
 
 func _on_order_pressed() -> void:
-	get_parent().shipment(fish, seaweed, rice)
+	GameManager.score-=cost
+	get_parent().shipment(fish, seaweed, rice, cucumber)
 	$Ordered.visible=true
 	$"Zoom Target/ProgressBar".value=0
 	countingDown=GameManager.waitTime
@@ -76,7 +83,7 @@ func _on_order_pressed() -> void:
 
 
 func _on_fish_p_pressed() -> void:
-	if(not fish<0):
+	if(not fish<=0):
 		fish-=1
 
 
@@ -86,7 +93,7 @@ func on_fish_n_pressed() -> void:
 
 
 func _seaweed_n() -> void:
-	if(not seaweed<0):
+	if(not seaweed<=0):
 		seaweed-=1
 
 
@@ -96,10 +103,20 @@ func _seaweed_p() -> void:
 
 
 func _rice_n_pressed() -> void:
-	if(not rice<0):
+	if(not rice<=0):
 		rice-=1
 
 
 func _rice_p_pressed() -> void:
 	if(rice<99):
 		rice+=1
+
+
+func _cucumber_n() -> void:
+	if(not cucumber<=0):
+		cucumber-=1
+
+
+func _cucumber_p() -> void:
+	if(cucumber<99):
+		cucumber+=1

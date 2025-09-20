@@ -4,7 +4,6 @@ var playerInventorySelect=""
 var interactable=""
 var interactiveItem
 var playerInventory=[]
-var score = 0
 var selectedSlot=-1
 var controller=false
 var outlineSize=2.4
@@ -47,7 +46,7 @@ func _process(_delta: float) -> void:
 		selectedSlot=0
 	if(len(playerInventory)<(selectedSlot+1)):
 		selectedSlot=len(playerInventory)-1
-	$Score/RichTextLabel2.text=str(score)
+	$Score/RichTextLabel2.text="$" + str(GameManager.score)
 	for i in range($CanvasLayer.get_child_count()):
 		var child = $CanvasLayer.get_child(i)
 		if i >= playerInventory.size():

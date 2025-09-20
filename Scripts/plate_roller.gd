@@ -27,13 +27,16 @@ func _process(delta: float) -> void:
 				$"../AudioStreamPlayer2D2".playing=true
 				if($"..".playerInventorySelect in $"../TV".orders):
 					var index=$"../TV".orders.find($"..".playerInventorySelect)
+					if($"../TV".orders[index]=="sushi"):
+						GameManager.score+=10
+					if($"../TV".orders[index]=="sushi with cucumber"):
+						GameManager.score+=15
+					if($"../TV".orders[index]=="onigiri"):
+						GameManager.score+=5
+					if($"../TV".orders[index]=="onigiri with cucumber"):
+						GameManager.score+=7
 					$"../TV".orders.remove_at(index)
 					$"../TV".orderTimeRemaining.remove_at(index)
-					$"..".score+=1000
-				else:
-					$"..".score-=100
-					if($"..".score<0):
-						$"..".score=0
 				var item_node = settingPlate.get_node_or_null($"..".playerInventorySelect)
 				if item_node:
 					item_node.visible = true

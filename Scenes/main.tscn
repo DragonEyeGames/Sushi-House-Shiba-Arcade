@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=194 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -637,7 +637,7 @@ size = Vector2(326, 140)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtmaq"]
 size = Vector2(387, 243)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_eqnci"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtmaq"]
 resource_local_to_scene = true
 shader = ExtResource("101_eyr7i")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
@@ -651,7 +651,23 @@ size = Vector2(54, 43)
 [sub_resource type="CircleShape2D" id="CircleShape2D_eqnci"]
 radius = 147.89
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eqnci"]
+resource_local_to_scene = true
+shader = ExtResource("101_eyr7i")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 2.4
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ojylq"]
+resource_local_to_scene = true
+shader = ExtResource("101_eyr7i")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 2.4
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fle1e"]
 resource_local_to_scene = true
 shader = ExtResource("101_eyr7i")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
@@ -1570,7 +1586,7 @@ offset_right = 1562.0
 offset_bottom = 128.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 49
-text = "Score:"
+text = "Money:"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Score"]
 offset_left = 1200.0
@@ -1685,7 +1701,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("118_vhoi0")
 script = ExtResource("119_jmisg")
 item = "rice"
-stock = 5
+stock = 2
 controller = NodePath("../..")
 
 [node name="Area2D" type="Area2D" parent="Stations/Rice Reservoir"]
@@ -1712,6 +1728,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("120_refj4")
 script = ExtResource("119_jmisg")
 item = "fish"
+stock = 2
 controller = NodePath("../..")
 
 [node name="Area2D" type="Area2D" parent="Stations/Fish Reservoir"]
@@ -1760,6 +1777,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("120_refj4")
 script = ExtResource("119_jmisg")
 item = "cucumber"
+stock = 2
 controller = NodePath("../..")
 
 [node name="Area2D" type="Area2D" parent="Stations/Cucumber Reservoir"]
@@ -1771,11 +1789,10 @@ position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Stations/Cucumber Reservoir"]
-visible = false
-offset_left = 21.0
-offset_top = 40.0
-offset_right = 61.0
-offset_bottom = 80.0
+offset_left = 68.0
+offset_top = 24.0
+offset_right = 108.0
+offset_bottom = 64.0
 text = "1"
 horizontal_alignment = 2
 
@@ -1811,6 +1828,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("122_dv4iu")
 script = ExtResource("119_jmisg")
 item = "seaweed"
+stock = 2
 controller = NodePath("../..")
 
 [node name="Area2D" type="Area2D" parent="Stations/Seaweed Reservoir"]
@@ -2343,8 +2361,8 @@ texture = ExtResource("148_rtmaq")
 
 [node name="Box" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
-material = SubResource("ShaderMaterial_eqnci")
-position = Vector2(-14, -9)
+material = SubResource("ShaderMaterial_rtmaq")
+position = Vector2(-34, -8)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("149_eqnci")
 
@@ -2372,7 +2390,7 @@ texture = ExtResource("105_108im")
 
 [node name="Box2" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
-material = SubResource("ShaderMaterial_ojylq")
+material = SubResource("ShaderMaterial_eqnci")
 position = Vector2(49, 16)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("149_eqnci")
@@ -2401,7 +2419,7 @@ texture = ExtResource("108_xnck3")
 [node name="Box3" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
 material = SubResource("ShaderMaterial_ojylq")
-position = Vector2(138, -3)
+position = Vector2(116, -11)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("149_eqnci")
 
@@ -2427,12 +2445,33 @@ position = Vector2(-130.435, 91.3044)
 scale = Vector2(0.652174, 0.652174)
 texture = ExtResource("103_04ry5")
 
-[node name="Cucumber" type="Sprite2D" parent="Shipment Container"]
-visible = false
+[node name="Box4" type="Sprite2D" parent="Shipment Container"]
 z_index = -7
-position = Vector2(98.0002, 71)
+material = SubResource("ShaderMaterial_fle1e")
+position = Vector2(165, 40)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("149_eqnci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Shipment Container/Box4"]
+position = Vector2(60.8696, 39.1304)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box4/StaticBody2D"]
+position = Vector2(-41, -0.5)
+shape = SubResource("RectangleShape2D_eqnci")
+
+[node name="Area2D" type="Area2D" parent="Shipment Container/Box4"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Box4/Area2D"]
+position = Vector2(-121.739, 43.4783)
+shape = SubResource("CircleShape2D_eqnci")
+
+[node name="Cucumber" type="Sprite2D" parent="Shipment Container/Box4"]
+position = Vector2(-134.783, 47.8261)
 rotation = -1.43641
-scale = Vector2(0.08, 0.08)
+scale = Vector2(0.347826, 0.347826)
 texture = ExtResource("123_adgm5")
 
 [node name="Computer" parent="Shipment Container" instance=ExtResource("150_ojylq")]
@@ -2486,5 +2525,7 @@ shape = SubResource("RectangleShape2D_ojylq")
 [connection signal="area_exited" from="Shipment Container/Box2/Area2D" to="Shipment Container" method="_2_exited"]
 [connection signal="area_entered" from="Shipment Container/Box3/Area2D" to="Shipment Container" method="_3_entered"]
 [connection signal="area_exited" from="Shipment Container/Box3/Area2D" to="Shipment Container" method="_3_exited"]
+[connection signal="area_entered" from="Shipment Container/Box4/Area2D" to="Shipment Container" method="_4_entered"]
+[connection signal="area_exited" from="Shipment Container/Box4/Area2D" to="Shipment Container" method="_4_exited"]
 [connection signal="area_exited" from="Shipment Container/Area2D" to="Shipment Container" method="_on_area_2d_area_exited"]
 [connection signal="body_exited" from="Shipment Container/Area2D" to="Shipment Container" method="_on_area_2d_body_exited"]
