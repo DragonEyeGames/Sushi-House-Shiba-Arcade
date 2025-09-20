@@ -49,19 +49,17 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 func interact():
 	if(not controller.interactiveItem==self):
 		return
-	if(controller.playerInventorySelect=="fish" and ((not placed and not $MinigameHolder.running) or (placed and not $MinigameHolder.running and $Fish.visible))):
-		if(not (placed and not $MinigameHolder.running and $Fish.visible)):
-			placedItem=controller.playerInventorySelect
-			controller.placeCurrent("fish")
-			$Fish.visible=true
-			placed=true
+	if(controller.playerInventorySelect=="fish" and ((not placed and not $MinigameHolder.running))):
+		placedItem="fish"
+		controller.placeCurrent("fish")
+		$Fish.visible=true
+		placed=true
 		$"../../Camera2D".following=self
 		$"../../Camera2D".followingPlayer=false
 		$"../../Camera2D".Zoom(5)
 		self.material.set_shader_parameter("outline_size", 0)
 		$"../../Player".canMove=false
 	# Animate the alpha of the modulate color
-		$"../../MinigameLayer".visible=true
 		for child in $"../../CanvasLayer".get_children():
 			var t2 = create_tween()
 			t2.tween_property(child, "modulate:a", 0.0, 1.0)
@@ -70,19 +68,17 @@ func interact():
 		await get_tree().create_timer(1.1).timeout
 		$MinigameHolder.running=true
 		return
-	if(controller.playerInventorySelect=="cucumber" and ((not placed and not $MinigameHolder.running) or (placed and not $MinigameHolder.running and $Cucumber.visible))):
-		if(not (placed and not $MinigameHolder.running and $Cucumber.visible)):
-			placedItem=controller.playerInventorySelect
-			controller.placeCurrent("cucumber")
-			$Cucumber.visible=true
-			placed=true
+	if(controller.playerInventorySelect=="cucumber" and ((not placed and not $MinigameHolder.running))):
+		placedItem="cucumber"
+		controller.placeCurrent("cucumber")
+		$Cucumber.visible=true
+		placed=true
 		$"../../Camera2D".following=self
 		$"../../Camera2D".followingPlayer=false
 		$"../../Camera2D".Zoom(5)
 		self.material.set_shader_parameter("outline_size", 0)
 		$"../../Player".canMove=false
 	# Animate the alpha of the modulate color
-		$"../../MinigameLayer".visible=true
 		for child in $"../../CanvasLayer".get_children():
 			var t2 = create_tween()
 			t2.tween_property(child, "modulate:a", 0.0, 1.0)
@@ -91,27 +87,31 @@ func interact():
 		await get_tree().create_timer(1.1).timeout
 		$MinigameHolder.running=true
 		return
-	elif(placed and not $MinigameHolder.running and $Fish.visible==false and $Cucumber.visible==false):
-		if(len(controller.playerInventory)<=4):
-			$"../../Player/PickingUp".play()
-			if($"Sliced Fish".visible):
-				$"Sliced Fish".visible=false
-				controller.playerInventory.append("sliced fish")
-			elif($"Obliterated Fish".visible):
-				$"Obliterated Fish".visible=false
-				controller.playerInventory.append("obliterated fish")
-			elif($"Sliced Cucumber".visible):
-				$"Sliced Cucumber".visible=false
-				controller.playerInventory.append("sliced cucumber")
-			elif($"Obliterated Cucumber".visible):
-				$"Obliterated Cucumber".visible=false
-				controller.playerInventory.append("obliterated cucumber")
-			placed=false
-			placedItem=null
-			return
 
 
 func _on_button_pressed() -> void:
+	if(len(controller.playerInventory)<=4):
+		$"../../Player/PickingUp".play()
+		if($"Fish".visible):
+			$"Fish".visible=false
+			controller.playerInventory.append("fish")
+		elif($"Cucumber".visible):
+			$"Cucumber".visible=false
+			controller.playerInventory.append("cucumber")
+		elif($"Sliced Fish".visible):
+			$"Sliced Fish".visible=false
+			controller.playerInventory.append("sliced fish")
+		elif($"Obliterated Fish".visible):
+			$"Obliterated Fish".visible=false
+			controller.playerInventory.append("obliterated fish")
+		elif($"Sliced Cucumber".visible):
+			$"Sliced Cucumber".visible=false
+			controller.playerInventory.append("sliced cucumber")
+		elif($"Obliterated Cucumber".visible):
+			$"Obliterated Cucumber".visible=false
+			controller.playerInventory.append("obliterated cucumber")
+		placed=false
+		placedItem=null
 	self.material.set_shader_parameter("outline_size", 1.4)
 	$MinigameHolder.running=false
 	var t2 = create_tween()
@@ -127,5 +127,4 @@ func _on_button_pressed() -> void:
 	var t = create_tween()
 	t.tween_property($"../../MinigameLayer/Button", "modulate:a", 0.0, 1.0)
 	await get_tree().create_timer(1).timeout
-	$"../../MinigameLayer".visible=false
 	$"../../CanvasLayer".visible=true

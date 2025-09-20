@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bo1kcclquc7p4"]
 
-[ext_resource type="Script" uid="uid://cw47f8wo2ojm2" path="res://Scenes/assembly_items.gd" id="1_84mym"]
+[ext_resource type="Script" uid="uid://cw47f8wo2ojm2" path="res://Scripts/assembly_items.gd" id="1_84mym"]
 [ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_j51bm"]
 [ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="2_bltvl"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="4_jr540"]

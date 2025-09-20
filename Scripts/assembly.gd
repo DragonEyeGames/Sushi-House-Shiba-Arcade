@@ -88,7 +88,6 @@ func _process(_delta: float) -> void:
 		if($Items.riceEntered or $Items2.riceEntered or $Items3.riceEntered or $Items4.riceEntered):
 			$Rice.visible=true
 			ricePlaced=true
-			$"Button Holder".visible=true
 			_consume_item("cooked rice")
 			if($Items.riceEntered):
 				$Items.visible=false
@@ -159,6 +158,8 @@ func _process(_delta: float) -> void:
 					$Items4.get_node_or_null(showList[3]).visible=true
 			else:
 				$Items4.visible=false
+			await get_tree().create_timer(.5).timeout
+			$"Button Holder".visible=true
 			
 	# Show prompts based on state
 	if colliding:

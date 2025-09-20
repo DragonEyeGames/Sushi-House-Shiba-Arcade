@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=195 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -141,9 +141,10 @@
 [ext_resource type="Texture2D" uid="uid://chtft37bmy68c" path="res://Assets/Cucumber/Cucumber Sushi.png" id="136_b12iu"]
 [ext_resource type="Texture2D" uid="uid://cy0rtv6wioy0f" path="res://Assets/Cucumber/Cucumber Onigiri.png" id="137_gf7g1"]
 [ext_resource type="Texture2D" uid="uid://cwj1rq65j18b7" path="res://Assets/ControllerSelection.png" id="138_14mkc"]
-[ext_resource type="Script" uid="uid://csroy366tlm7r" path="res://Scenes/main_tutorial.gd" id="139_hfu3o"]
+[ext_resource type="Script" uid="uid://csroy366tlm7r" path="res://Scripts/main_tutorial.gd" id="139_hfu3o"]
 [ext_resource type="Texture2D" uid="uid://2etdu3osoekr" path="res://Assets/arrow.png" id="140_adgm5"]
-[ext_resource type="Script" uid="uid://krm25ubwnp84" path="res://Scenes/shipments.gd" id="146_102yd"]
+[ext_resource type="Script" uid="uid://krm25ubwnp84" path="res://Scripts/shipments.gd" id="146_102yd"]
+[ext_resource type="AudioStream" uid="uid://c1e735lkn4cng" path="res://Music/GarageDoor.mp3" id="146_eqnci"]
 [ext_resource type="Texture2D" uid="uid://b5wlkggxqam1h" path="res://Assets/Orders/GarageDoor.png" id="147_rtmaq"]
 [ext_resource type="Texture2D" uid="uid://ch7kyg03djt3" path="res://Assets/Orders/BoxTruck.png" id="148_rtmaq"]
 [ext_resource type="Texture2D" uid="uid://b83v7s8ud7svn" path="res://Assets/Orders/Box.png" id="149_eqnci"]
@@ -432,8 +433,9 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(48, 64)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rtmaq"]
+radius = 27.0
+height = 56.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
 size = Vector2(35, 148)
@@ -692,7 +694,7 @@ animation = &"idle right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1, 30)
-shape = SubResource("RectangleShape2D_0xm2m")
+shape = SubResource("CapsuleShape2D_rtmaq")
 
 [node name="Area2D" type="Area2D" parent="Player"]
 collision_layer = 2
@@ -713,7 +715,7 @@ shape = SubResource("RectangleShape2D_0cbny")
 [node name="MainMusic" type="AudioStreamPlayer2D" parent="Player"]
 position = Vector2(-408, 37)
 stream = ExtResource("82_b7esa")
-volume_db = -20.0
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
@@ -888,7 +890,6 @@ position_smoothing_enabled = true
 script = ExtResource("87_17dee")
 
 [node name="MinigameLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Button" type="Button" parent="MinigameLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -1477,6 +1478,18 @@ visible = false
 position = Vector2(19.7183, -14.0845)
 scale = Vector2(0.586, 0.522)
 texture = ExtResource("93_qays4")
+
+[node name="sushi with cucumber" type="Sprite2D" parent="Plates/Plate"]
+visible = false
+position = Vector2(19.7183, -14.0845)
+scale = Vector2(0.586, 0.522)
+texture = ExtResource("136_b12iu")
+
+[node name="onigiri with cucumber" type="Sprite2D" parent="Plates/Plate"]
+visible = false
+position = Vector2(19.7183, -14.0845)
+scale = Vector2(0.586, 0.522)
+texture = ExtResource("137_gf7g1")
 
 [node name="Plate2" type="Sprite2D" parent="Plates"]
 z_index = 15
@@ -2206,7 +2219,6 @@ shape = SubResource("RectangleShape2D_bnk2o")
 
 [node name="Tutorial" type="Node2D" parent="."]
 script = ExtResource("139_hfu3o")
-tutorial = false
 
 [node name="Arrow" type="Sprite2D" parent="Tutorial"]
 visible = false
@@ -2271,10 +2283,31 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow9" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 25
+z_index = 21
 position = Vector2(489, 255)
 rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow10" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 25
+position = Vector2(1110, 242)
+rotation = -1.5708
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow11" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 25
+position = Vector2(-14, -85)
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("140_adgm5")
+
+[node name="Arrow12" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 25
+position = Vector2(650, -152)
 scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
@@ -2294,7 +2327,7 @@ offset_right = 655.0
 offset_bottom = 157.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
-text = "Hello and welcome to the kitchen! This is where you will make all of your food to fulfill orders! Press \"quit tutorial\" (or B on X-Box controller) to end this tutorial, or press \"next\" (or A on X-Box controller) to go to the next page!"
+text = "Hello and welcome to the kitchen! This is where you will make all of your sushi! It has everything you need to start! Click next to continue the tutorial or quit to end the tutorial!"
 
 [node name="Next" type="Button" parent="Tutorial/ColorRect"]
 layout_mode = 0
@@ -2352,6 +2385,10 @@ texture = ExtResource("147_rtmaq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Control/StaticBody2D"]
 position = Vector2(183.5, 111.5)
 shape = SubResource("RectangleShape2D_rtmaq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Shipment Container/Control"]
+position = Vector2(190, 128)
+stream = ExtResource("146_eqnci")
 
 [node name="BoxTruck" type="Sprite2D" parent="Shipment Container"]
 z_index = -7

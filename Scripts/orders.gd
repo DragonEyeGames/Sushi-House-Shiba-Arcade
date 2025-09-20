@@ -22,6 +22,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(len(orders)==0):
 		add_order()
+	if($"../Tutorial".tutorial):
+		return
 	# First, hide all order slots
 	for i in range(4):
 		var order_ui = get_node("Order %d" % (i + 1))
@@ -56,11 +58,13 @@ func _process(delta: float) -> void:
 
 		# Remove expired orders
 		if progress.value <= 0:
+			GameManager.score-=2
+			if(GameManager.score<0):
+				GameManager.score=0
 			orders.remove_at(i)
-			$"..".score-=500
-			if($"..".score<0):
-				$"..".score=0
 			orderTimeRemaining.remove_at(i)
+			for value in orderTimeRemaining:
+				value*=.7
 			return  # Restart process to avoid index mismatch
 
 
@@ -76,5 +80,6 @@ func orderCycle():
 
 
 func add_order():
-	orders.append(items[randi() % items.size()])
-	orderTimeRemaining.append(100)
+	if(not $"../Tutorial".tutorial):
+		orders.append(items[randi() % items.size()])
+		orderTimeRemaining.append(100)

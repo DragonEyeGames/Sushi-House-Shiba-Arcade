@@ -3,6 +3,7 @@ extends Node2D
 var playerInventorySelect=""
 var interactable=""
 var interactiveItem
+var shownScore=0
 var playerInventory=[]
 var selectedSlot=-1
 var controller=false
@@ -46,7 +47,11 @@ func _process(_delta: float) -> void:
 		selectedSlot=0
 	if(len(playerInventory)<(selectedSlot+1)):
 		selectedSlot=len(playerInventory)-1
-	$Score/RichTextLabel2.text="$" + str(GameManager.score)
+	if(GameManager.score>shownScore):
+		shownScore+=1
+	elif(GameManager.score<shownScore):
+		shownScore-=1
+	$Score/RichTextLabel2.text="$" + str(shownScore)
 	for i in range($CanvasLayer.get_child_count()):
 		var child = $CanvasLayer.get_child(i)
 		if i >= playerInventory.size():

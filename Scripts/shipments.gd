@@ -49,13 +49,13 @@ func _process(delta: float) -> void:
 		$Computer/Outline.visible=false
 	if(rising):
 		for child in $Control.get_children():
-			child.position.y-=120*delta
+			child.position.y-=100*delta
 			if(child.position.y<-220):
 				rising=false
 				doorOpen=true
 	if(falling):
 		for child in $Control.get_children():
-			child.position.y+=120*delta
+			child.position.y+=100*delta
 			if(child.position.y>216):
 				falling=false
 				doorOpen=false
@@ -154,7 +154,7 @@ func shipment(inputFish, inputSeaweed, inputRice, inputCucumber):
 	for scoreChild in GameManager.scoreLayer.get_children():
 		var tweenChild = create_tween()
 		tweenChild.tween_property(scoreChild, "modulate:a", 1.0, 1.0)
-	GameManager.waitTime=randi_range(3, 5)
+	GameManager.waitTime=randi_range(25, 35)
 	await get_tree().create_timer(GameManager.waitTime).timeout
 	if(not inputFish>0):
 		$Box.visible=false
@@ -189,6 +189,7 @@ func shipment(inputFish, inputSeaweed, inputRice, inputCucumber):
 		$"Box4/Area2D/CollisionShape2D".disabled=false
 		$"Box4/StaticBody2D/CollisionShape2D".disabled=false
 	rising=true
+	$Control/AudioStreamPlayer2D.play()
 
 
 func _1_entered(_area: Area2D) -> void:
@@ -223,8 +224,9 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	await get_tree().create_timer(2).timeout
-	if(GameManager.cargoClear and doorOpen):
+	if(GameManager.cargoClear and doorOpen and not falling):
 		falling=true
+		$Control/AudioStreamPlayer2D.play()
 
 
 func _3_entered(_area: Area2D) -> void:
