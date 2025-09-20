@@ -5,6 +5,8 @@ var camera
 var player
 var scoreLayer
 var canvasLayer
+var cargoClear
+var waitTime
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

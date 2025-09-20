@@ -255,6 +255,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="fish box" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(111.111, 8.33333)
 texture = ExtResource("14_bnffl")
 
@@ -305,3 +306,28 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-136.111, 59.7222)
 scale = Vector2(0.425, 0.425)
 texture = ExtResource("6_3pwg7")
+
+[node name="rice box" type="Sprite2D" parent="."]
+position = Vector2(111.111, 8.33333)
+texture = ExtResource("14_bnffl")
+
+[node name="fish" type="RichTextLabel" parent="rice box"]
+anchors_preset = -1
+anchor_left = -0.0726326
+anchor_top = -0.00187692
+anchor_right = 0.360961
+anchor_bottom = -0.00187692
+offset_left = -314.54
+offset_top = -166.588
+offset_right = -214.54
+offset_bottom = -64.588
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = "Seaweed Box"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fish" type="Sprite2D" parent="rice box"]
+position = Vector2(-133.333, 94.4444)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("1_7on13")

@@ -35,6 +35,8 @@ func _process(_delta: float) -> void:
 				stock+=$"../../Shipment Container".fish
 			if(item=="seaweed"):
 				stock+=$"../../Shipment Container".seaweed
+			if(item=="rice"):
+				stock+=$"../../Shipment Container".rice
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	controller.interactiveItem=self

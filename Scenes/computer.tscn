@@ -137,6 +137,8 @@ theme_override_font_sizes/font_size = 22
 text = "Order"
 
 [node name="Fish" type="Node2D" parent="Computer"]
+position = Vector2(10.4571, 23.5294)
+scale = Vector2(0.75, 0.75)
 
 [node name="-1" type="Button" parent="Computer/Fish"]
 offset_left = 26.1438
@@ -174,7 +176,8 @@ text = "0
 horizontal_alignment = 1
 
 [node name="Seaweed" type="Node2D" parent="Computer"]
-position = Vector2(260.131, 3.92161)
+position = Vector2(145.098, 20.9151)
+scale = Vector2(0.75, 0.75)
 
 [node name="-1" type="Button" parent="Computer/Seaweed"]
 offset_left = 28.7581
@@ -212,6 +215,97 @@ text = "0
 "
 horizontal_alignment = 1
 
+[node name="Rice" type="Node2D" parent="Computer"]
+position = Vector2(296.732, 18.3007)
+scale = Vector2(0.75, 0.75)
+
+[node name="-1" type="Button" parent="Computer/Rice"]
+offset_left = 28.7581
+offset_top = 128.105
+offset_right = 56.7581
+offset_bottom = 167.105
+theme_override_font_sizes/font_size = 20
+text = "-1"
+
+[node name="+1" type="Button" parent="Computer/Rice"]
+offset_left = 108.497
+offset_top = 129.412
+offset_right = 139.497
+offset_bottom = 168.412
+theme_override_font_sizes/font_size = 20
+text = "+1"
+
+[node name="Name" type="RichTextLabel" parent="Computer/Rice"]
+offset_left = -7.84314
+offset_top = 78.4314
+offset_right = 170.157
+offset_bottom = 160.431
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 37
+text = "Rice"
+horizontal_alignment = 1
+
+[node name="Count" type="RichTextLabel" parent="Computer/Rice"]
+offset_left = 60.0
+offset_top = 122.0
+offset_right = 103.0
+offset_bottom = 183.0
+theme_override_font_sizes/normal_font_size = 37
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="Ordered" type="Node2D" parent="."]
+visible = false
+position = Vector2(-168.627, -530.719)
+
+[node name="ScreenColored" type="ColorRect" parent="Ordered"]
+offset_left = 6.0
+offset_top = 4.99998
+offset_right = 133.0
+offset_bottom = 75.0
+scale = Vector2(3.5, 3.5)
+color = Color(0.472026, 0.786878, 0.842975, 1)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Ordered"]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 450.0
+offset_bottom = 137.0
+theme_override_font_sizes/normal_font_size = 45
+text = "Time Left Until Order Shows Up: "
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Ordered"]
+offset_left = 7.84313
+offset_top = 128.105
+offset_right = 450.843
+offset_bottom = 260.105
+theme_override_font_sizes/normal_font_size = 45
+text = "0:40"
+horizontal_alignment = 1
+
+[node name="Waiting" type="Node2D" parent="."]
+visible = false
+position = Vector2(-168.627, -530.719)
+
+[node name="ScreenColored" type="ColorRect" parent="Waiting"]
+offset_left = 6.0
+offset_top = 4.99998
+offset_right = 133.0
+offset_bottom = 75.0
+scale = Vector2(3.5, 3.5)
+color = Color(0.472026, 0.786878, 0.842975, 1)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Waiting"]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 450.0
+offset_bottom = 201.0
+theme_override_font_sizes/normal_font_size = 45
+text = "Clear Cargo Bay Before Ordering More"
+horizontal_alignment = 1
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="pressed" from="Computer/Order" to="." method="_on_order_pressed"]
@@ -219,3 +313,5 @@ horizontal_alignment = 1
 [connection signal="pressed" from="Computer/Fish/+1" to="." method="on_fish_n_pressed"]
 [connection signal="pressed" from="Computer/Seaweed/-1" to="." method="_seaweed_n"]
 [connection signal="pressed" from="Computer/Seaweed/+1" to="." method="_seaweed_p"]
+[connection signal="pressed" from="Computer/Rice/-1" to="." method="_rice_n_pressed"]
+[connection signal="pressed" from="Computer/Rice/+1" to="." method="_rice_p_pressed"]

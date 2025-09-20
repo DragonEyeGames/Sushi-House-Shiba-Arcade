@@ -1,0 +1,982 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1ydtvc7mbdrf"]
+
+[ext_resource type="Texture2D" uid="uid://di2ufu5v0ebq3" path="res://Assets/Wood1.png" id="1_wjf51"]
+[ext_resource type="Texture2D" uid="uid://bw8myrpkcf5g3" path="res://Assets/Wood2.png" id="2_1fqph"]
+[ext_resource type="Texture2D" uid="uid://bnigbowjs4dp2" path="res://Assets/Wood3.png" id="3_ugy24"]
+
+[node name="Floor" type="Node2D"]
+z_index = -9
+
+[node name="Row" type="Node2D" parent="."]
+
+[node name="Wood1" type="Sprite2D" parent="Row"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row27" type="Node2D" parent="."]
+position = Vector2(-1625, 0)
+
+[node name="Wood1" type="Sprite2D" parent="Row27"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row27"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row27"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row2" type="Node2D" parent="."]
+position = Vector2(-229, 81)
+
+[node name="Wood1" type="Sprite2D" parent="Row2"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row2"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row2"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row14" type="Node2D" parent="."]
+position = Vector2(-1852, 81)
+
+[node name="Wood1" type="Sprite2D" parent="Row14"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row14"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row14"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row3" type="Node2D" parent="."]
+position = Vector2(-100, 163)
+
+[node name="Wood1" type="Sprite2D" parent="Row3"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row3"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row3"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row15" type="Node2D" parent="."]
+position = Vector2(-1723, 163)
+
+[node name="Wood1" type="Sprite2D" parent="Row15"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row15"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row15"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row4" type="Node2D" parent="."]
+position = Vector2(-313, 244)
+
+[node name="Wood1" type="Sprite2D" parent="Row4"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row4"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row4"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row16" type="Node2D" parent="."]
+position = Vector2(-1936, 244)
+
+[node name="Wood1" type="Sprite2D" parent="Row16"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row16"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row16"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row17" type="Node2D" parent="."]
+position = Vector2(1299, 244)
+
+[node name="Wood1" type="Sprite2D" parent="Row17"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row17"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row17"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row5" type="Node2D" parent="."]
+position = Vector2(-69, 317)
+
+[node name="Wood1" type="Sprite2D" parent="Row5"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row5"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row5"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row18" type="Node2D" parent="."]
+position = Vector2(-1664, 317)
+
+[node name="Wood1" type="Sprite2D" parent="Row18"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row18"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row18"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row6" type="Node2D" parent="."]
+position = Vector2(-231, 400)
+
+[node name="Wood1" type="Sprite2D" parent="Row6"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row6"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row6"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row19" type="Node2D" parent="."]
+position = Vector2(-1841, 400)
+
+[node name="Wood1" type="Sprite2D" parent="Row19"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row19"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row19"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row7" type="Node2D" parent="."]
+position = Vector2(-190, -83)
+
+[node name="Wood1" type="Sprite2D" parent="Row7"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row7"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row7"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row20" type="Node2D" parent="."]
+position = Vector2(-1800, -83)
+
+[node name="Wood1" type="Sprite2D" parent="Row20"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row20"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row20"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row8" type="Node2D" parent="."]
+position = Vector2(-73, -166)
+
+[node name="Wood1" type="Sprite2D" parent="Row8"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row8"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row8"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row21" type="Node2D" parent="."]
+position = Vector2(-1691, -166)
+
+[node name="Wood1" type="Sprite2D" parent="Row21"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row21"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row21"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row9" type="Node2D" parent="."]
+position = Vector2(-345, -249)
+
+[node name="Wood1" type="Sprite2D" parent="Row9"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row9"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row9"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row22" type="Node2D" parent="."]
+position = Vector2(-1970, -249)
+
+[node name="Wood1" type="Sprite2D" parent="Row22"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row22"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row22"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row10" type="Node2D" parent="."]
+position = Vector2(-27, -332)
+
+[node name="Wood1" type="Sprite2D" parent="Row10"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row10"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row10"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row23" type="Node2D" parent="."]
+position = Vector2(-1645, -332)
+
+[node name="Wood1" type="Sprite2D" parent="Row23"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row23"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row23"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row11" type="Node2D" parent="."]
+position = Vector2(-289, -414)
+
+[node name="Wood1" type="Sprite2D" parent="Row11"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row11"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row11"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row24" type="Node2D" parent="."]
+position = Vector2(-1903, -414)
+
+[node name="Wood1" type="Sprite2D" parent="Row24"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row24"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row24"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row12" type="Node2D" parent="."]
+position = Vector2(-91, 483)
+
+[node name="Wood1" type="Sprite2D" parent="Row12"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row12"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row12"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row25" type="Node2D" parent="."]
+position = Vector2(-1705, 483)
+
+[node name="Wood1" type="Sprite2D" parent="Row25"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row25"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row25"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row13" type="Node2D" parent="."]
+position = Vector2(-91, 483)
+
+[node name="Wood1" type="Sprite2D" parent="Row13"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row13"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row13"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row26" type="Node2D" parent="."]
+position = Vector2(-91, 483)
+
+[node name="Wood1" type="Sprite2D" parent="Row26"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Row26"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Row26"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Floor2" type="Node2D" parent="."]
+z_index = -10
+position = Vector2(-138, -980)
+
+[node name="Row" type="Node2D" parent="Floor2"]
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row27" type="Node2D" parent="Floor2"]
+position = Vector2(-1625, 0)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row27"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row27"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row27"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row2" type="Node2D" parent="Floor2"]
+position = Vector2(-229, 81)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row2"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row2"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row2"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row14" type="Node2D" parent="Floor2"]
+position = Vector2(-1852, 81)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row14"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row14"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row14"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row3" type="Node2D" parent="Floor2"]
+position = Vector2(-100, 163)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row3"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row3"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row3"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row15" type="Node2D" parent="Floor2"]
+position = Vector2(-1723, 163)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row15"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row15"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row15"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row4" type="Node2D" parent="Floor2"]
+position = Vector2(-313, 244)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row4"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row4"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row4"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row16" type="Node2D" parent="Floor2"]
+position = Vector2(-1936, 244)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row16"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row16"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row16"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row17" type="Node2D" parent="Floor2"]
+position = Vector2(1299, 244)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row17"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row17"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row17"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row5" type="Node2D" parent="Floor2"]
+position = Vector2(-69, 317)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row5"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row5"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row5"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row18" type="Node2D" parent="Floor2"]
+position = Vector2(-1664, 317)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row18"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row18"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row18"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row6" type="Node2D" parent="Floor2"]
+position = Vector2(-231, 400)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row6"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row6"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row6"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row19" type="Node2D" parent="Floor2"]
+position = Vector2(-1841, 400)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row19"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row19"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row19"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row7" type="Node2D" parent="Floor2"]
+position = Vector2(-190, -83)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row7"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row7"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row7"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row20" type="Node2D" parent="Floor2"]
+position = Vector2(-1800, -83)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row20"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row20"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row20"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row8" type="Node2D" parent="Floor2"]
+position = Vector2(-73, -166)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row8"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row8"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row8"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row21" type="Node2D" parent="Floor2"]
+position = Vector2(-1691, -166)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row21"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row21"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row21"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row9" type="Node2D" parent="Floor2"]
+position = Vector2(-345, -249)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row9"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row9"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row9"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row22" type="Node2D" parent="Floor2"]
+position = Vector2(-1970, -249)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row22"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row22"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row22"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row10" type="Node2D" parent="Floor2"]
+position = Vector2(-27, -332)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row10"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row10"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row10"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row23" type="Node2D" parent="Floor2"]
+position = Vector2(-1645, -332)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row23"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row23"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row23"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row11" type="Node2D" parent="Floor2"]
+position = Vector2(-289, -414)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row11"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row11"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row11"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row24" type="Node2D" parent="Floor2"]
+position = Vector2(-1903, -414)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row24"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row24"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row24"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row12" type="Node2D" parent="Floor2"]
+position = Vector2(-91, 483)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row12"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row12"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row12"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row25" type="Node2D" parent="Floor2"]
+position = Vector2(-1705, 483)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row25"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row25"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row25"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row13" type="Node2D" parent="Floor2"]
+position = Vector2(-91, 483)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row13"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row13"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row13"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
+
+[node name="Row26" type="Node2D" parent="Floor2"]
+position = Vector2(-91, 483)
+
+[node name="Wood1" type="Sprite2D" parent="Floor2/Row26"]
+position = Vector2(-14, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_wjf51")
+
+[node name="Wood2" type="Sprite2D" parent="Floor2/Row26"]
+position = Vector2(527, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_1fqph")
+
+[node name="Wood3" type="Sprite2D" parent="Floor2/Row26"]
+position = Vector2(1067, 188)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("3_ugy24")
