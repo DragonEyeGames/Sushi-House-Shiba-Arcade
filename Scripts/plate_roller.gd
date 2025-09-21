@@ -3,55 +3,26 @@ extends Control
 @export var rolling=false
 var speed = 400
 var _currentDelta
-var currentPlate = []
-var plateState = []
+var currentPlate
 var colliding=false
-var settingPlate
+var replenishing=false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	currentPlate.append($"../Plates/Plate2")
-	settingPlate=$"../Plates/Plate2"
-	plateState.append("idle")
+	currentPlate=$"../Sushi Rollers/Control/Plate"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_currentDelta=delta
-	if(colliding):
-		$"..".interactiveItem=self
-	if(colliding and settingPlate!=null):
-		if($"..".playerInventorySelect!="" and len($"..".playerInventory)>0):
-			settingPlate.material.set_shader_parameter("outline_size", GameManager.outlineSize)
-			if(Input.is_action_just_pressed("Place")):
-				settingPlate.material.set_shader_parameter("outline_size", 0)
-				$"../AudioStreamPlayer2D2".playing=true
-				if($"..".playerInventorySelect in $"../TV".orders):
-					var index=$"../TV".orders.find($"..".playerInventorySelect)
-					if($"../TV".orders[index]=="sushi"):
-						GameManager.score+=10
-					if($"../TV".orders[index]=="sushi with cucumber"):
-						GameManager.score+=15
-					if($"../TV".orders[index]=="onigiri"):
-						GameManager.score+=5
-					if($"../TV".orders[index]=="onigiri with cucumber"):
-						GameManager.score+=7
-					$"../TV".orders.remove_at(index)
-					$"../TV".orderTimeRemaining.remove_at(index)
-				var item_node = settingPlate.get_node_or_null($"..".playerInventorySelect)
-				if item_node:
-					item_node.visible = true
-				rolling=true
-				settingPlate=null
-				$"..".placeCurrent("current")
-				for i in $"../CanvasLayer".get_children():
-					var outline = i.get_node_or_null("Outline")
-					if outline:
-						outline.visible = false
-		else:
-			settingPlate.material.set_shader_parameter("outline_size", 0)
+	if(colliding and $"..".playerInventorySelect!="" and len($"..".playerInventory)>0 and not replenishing):
+		currentPlate.get_child(0).material.set_shader_parameter("outline_size", GameManager.outlineSize)
 	else:
-		if(settingPlate!=null):
-			settingPlate.material.set_shader_parameter("outline_size", 0)
+		currentPlate.get_child(0).material.set_shader_parameter("outline_size", 0)
+	if(colliding and $"..".playerInventorySelect!="" and len($"..".playerInventory)>0 and Input.is_action_just_pressed("Place") and not replenishing and not rolling):
+		for child in currentPlate.get_child(0).get_children():
+			child.visible=child.name==$"..".playerInventorySelect
+		$"..".placeCurrent("current")
+		rolling=true
 	if(rolling):
 		$RollBars.position.x-=speed*delta
 		$RollBars2.position.x-=speed*delta
@@ -62,34 +33,24 @@ func _process(delta: float) -> void:
 			$RollBars2.position.x=249
 		if($RollBars.position.x<-98):
 			$RollBars.position.x=249
-	for plate in currentPlate:
-		var index = currentPlate.find(plate)
-		if(plateState[index]=="idle" and rolling):
-			plateState[index]="rolling"
-		if(plate.position.x<=-297 and plateState[index]=="gliding"):
-			plate.position.x=-297
-			plate.position.y+=80*delta
-		elif(plateState[index]=="rolling"):
-			plate.position.x-=speed*delta
-			if(plate.position.x<=-297):
-				plate.position.x=-297
-				getPlate()
-				rolling=false
-				plateState[index]="gliding"
+		currentPlate.position.x-=speed*delta
+		if(currentPlate.position.x<=64):
+			currentPlate.position.x=64
+			rolling=false
+			currentPlate.reparent($"../Sushi Rollers/Control/Path2D")
+			currentPlate.get_child(0).material.set_shader_parameter("outline_size", 0)
+			currentPlate=$"../Sushi Rollers/Control/Plate2".duplicate()
+			$"../Sushi Rollers/Control".add_child(currentPlate)
+			currentPlate.get_child(0).material=currentPlate.get_child(0).material.duplicate()
+			replenishing=true
+	if(replenishing):
+		currentPlate.position.y+=speed*delta
+		if(currentPlate.position.y>=60):
+			currentPlate.position.y=60
+			replenishing=false
+
 func getPlate():
-	var plate = $"../Plates/Plate".duplicate()
-	plate.material = plate.material.duplicate()
-	$"../Plates".add_child(plate)
-	plate.z_index=15
-	plate.visible=true
-	settingPlate=null
-	while plate.position.y<-117:
-		plate.position.y+=round(speed/2.0*_currentDelta)
-		await get_tree().create_timer(0).timeout
-	plate.position.y=-117
-	settingPlate=plate
-	currentPlate.append(plate)
-	plateState.append("idle")
+	pass
 
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
