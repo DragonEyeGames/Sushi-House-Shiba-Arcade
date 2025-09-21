@@ -4,6 +4,7 @@ var copies = []
 var orders = []
 var orderTimeRemaining = []
 var items = ["sushi", "sushi with cucumber", "onigiri", "onigiri with cucumber"]
+var plateStack=0
 
 func _ready() -> void:
 	randomize()
@@ -21,8 +22,14 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	for roller in $"../Sushi Rollers/Control/Path2D".get_children():
-		roller.progress+=100*delta
+		roller.progress+=1000*delta
 		roller.z_index = int(roller.progress_ratio*100)
+		if("Plate" in roller.get_child(0).name):
+			if(roller.progress_ratio>=0.666):
+				roller.progress_ratio=0.666
+				roller.reparent($"../Sushi Rollers/Control")
+				$"../Stations/PistonBase/AnimationPlayer".play("push")
+				slide(roller)
 	if(len(orders)==0):
 		add_order()
 	if($"../Tutorial".tutorial):
@@ -80,6 +87,13 @@ func orderCycle():
 	await get_tree().create_timer(randi_range(25, 35)).timeout
 	add_order()
 	orderCycle()
+	
+func slide(plate):
+	plateStack+=1
+	plate.position.y-=plateStack*4
+	for i in range(10):
+		plate.position.x-=11.5
+		await get_tree().create_timer(0).timeout
 
 
 func add_order():

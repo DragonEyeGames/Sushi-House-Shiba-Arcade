@@ -59,7 +59,11 @@ func _process(_delta: float) -> void:
 		if($Sprite.animation!="idle"):
 			$Sprite.play("idle")
 	velocity=Vector2.ZERO
-	if(position.y>50):
-		z_index=15
-	else:
-		z_index=-1
+	if(position.y<86):
+		z_index=5
+	elif(position.y>=86 and position.y<295):
+		z_index=100
+	elif(position.y>295 and position.y<387):
+		z_index=5
+	elif(position.y>=387):
+		z_index=30

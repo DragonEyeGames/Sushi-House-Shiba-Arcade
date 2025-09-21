@@ -42,6 +42,7 @@ func _process(delta: float) -> void:
 			currentPlate=$"../Sushi Rollers/Control/Plate2".duplicate()
 			$"../Sushi Rollers/Control".add_child(currentPlate)
 			currentPlate.get_child(0).material=currentPlate.get_child(0).material.duplicate()
+			currentPlate.name="Plate"
 			replenishing=true
 	if(replenishing):
 		currentPlate.position.y+=speed*delta
