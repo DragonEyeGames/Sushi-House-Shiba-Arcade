@@ -108,6 +108,7 @@ theme_override_font_sizes/normal_font_size = 26
 text = "Loading"
 
 [node name="Computer" type="Node2D" parent="."]
+visible = false
 position = Vector2(-168.627, -530.719)
 
 [node name="ScreenColored" type="ColorRect" parent="Computer"]

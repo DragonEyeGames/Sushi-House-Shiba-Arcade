@@ -3,8 +3,13 @@ extends Sprite2D
 var colliding=false
 
 @export var item = ""
-@export var stock=1
+@export var stock: float=1
 @export var controller: Node2D
+@export var liveCount=false
+@export var slideDisplay=false
+@export var yBottom=0
+@export var yTop=0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,7 +17,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$RichTextLabel2.text=str(stock)
+	if(liveCount):
+		for i in len($"Display".get_children()):
+			$"Display".get_children()[i].visible=i+1<=stock
+	if(slideDisplay):
+		$Control/Display.position.y = lerp(yTop, yBottom, stock/10)
+	$RichTextLabel2.text=str(int(round(stock)))
 	if(controller.interactiveItem==self):
 		if(colliding and len(controller.playerInventory)<=4):
 			self.material.set_shader_parameter("outline_size", GameManager.outlineSize)

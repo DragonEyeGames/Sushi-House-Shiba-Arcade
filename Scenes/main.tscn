@@ -1,4 +1,4 @@
-[gd_scene load_steps=195 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=201 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -116,20 +116,24 @@
 [ext_resource type="Texture2D" uid="uid://cx3ymggf4p56k" path="res://Assets/Stations/ClosedRice.png" id="115_e104q"]
 [ext_resource type="AudioStream" uid="uid://74vrm5kgybho" path="res://Music/Beep.mp3" id="116_y6fhn"]
 [ext_resource type="AudioStream" uid="uid://hucqmerp468e" path="res://Music/TimerEnd.mp3" id="117_ecp88"]
-[ext_resource type="Texture2D" uid="uid://c50ms6m07kxex" path="res://Assets/Stations/RiceBowl.png" id="118_vhoi0"]
 [ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://Scripts/reservoir.gd" id="119_jmisg"]
+[ext_resource type="Texture2D" uid="uid://bri8tymvhvfkp" path="res://Assets/DisplayItems/RiceBowlBack.png" id="119_r1tr8"]
 [ext_resource type="Texture2D" uid="uid://dvdvp6178qm1e" path="res://Assets/Stations/FishWell.png" id="120_refj4"]
 [ext_resource type="Texture2D" uid="uid://c0niub7ch5y6v" path="res://Assets/Stations/StationFish.png" id="121_47mp3"]
-[ext_resource type="Texture2D" uid="uid://bs3elngn5sixy" path="res://Assets/Stations/NoriBox.png" id="122_dv4iu"]
+[ext_resource type="Texture2D" uid="uid://uics87hi83ho" path="res://Assets/DisplayItems/RiceNewDispaly.png" id="121_vlivj"]
+[ext_resource type="Texture2D" uid="uid://nxe8r1oqqu2j" path="res://Assets/DisplayItems/RiceBowlFront.png" id="122_wt5iu"]
 [ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="123_adgm5"]
 [ext_resource type="Texture2D" uid="uid://bia57pnqhr0jn" path="res://Assets/Stations/CuttingBoard.png" id="123_e80kf"]
 [ext_resource type="Script" uid="uid://ccjws5hie7otm" path="res://Scripts/cuttingBoard.gd" id="124_8lmbg"]
 [ext_resource type="Script" uid="uid://dkhj6a3ew0wun" path="res://Scripts/cuttingMinigame.gd" id="125_n2cpk"]
 [ext_resource type="Texture2D" uid="uid://dxx1wx6tyv6tt" path="res://Assets/Knife.png" id="126_k7w2v"]
+[ext_resource type="Texture2D" uid="uid://dnf6o33edqjfx" path="res://Assets/DisplayItems/SeaweedBoxBack.png" id="126_wt5iu"]
 [ext_resource type="AudioStream" uid="uid://cdl44d0hhic7l" path="res://Music/Chop.mp3" id="127_7va32"]
 [ext_resource type="Texture2D" uid="uid://bpff5mvja6m4b" path="res://Assets/Cucumber/SlicedCucumber.png" id="127_130ps"]
+[ext_resource type="Texture2D" uid="uid://bkj25jvqtmp72" path="res://Assets/DisplayItems/SeaweedBoxFront.png" id="127_pmnrr"]
 [ext_resource type="Texture2D" uid="uid://bj0kcyiv6f2w7" path="res://Assets/Stations/AssemblyBoard.png" id="128_3xx7e"]
 [ext_resource type="Texture2D" uid="uid://chx0840iqbaqd" path="res://Assets/Cucumber/ObliteratedCucumber.png" id="128_odn5n"]
+[ext_resource type="Texture2D" uid="uid://elnvd5x750dc" path="res://Assets/DisplayItems/SeaWeedDisplay.png" id="128_s8cid"]
 [ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://Scripts/assembly.gd" id="129_ul0h4"]
 [ext_resource type="PackedScene" uid="uid://bo1kcclquc7p4" path="res://Scenes/assemblyItems.tscn" id="130_bdqux"]
 [ext_resource type="Texture2D" uid="uid://dqcu3dgl835jj" path="res://Assets/Trash.png" id="130_gqipy"]
@@ -148,6 +152,7 @@
 [ext_resource type="Texture2D" uid="uid://b5wlkggxqam1h" path="res://Assets/Orders/GarageDoor.png" id="147_rtmaq"]
 [ext_resource type="Texture2D" uid="uid://ch7kyg03djt3" path="res://Assets/Orders/BoxTruck.png" id="148_rtmaq"]
 [ext_resource type="Texture2D" uid="uid://b83v7s8ud7svn" path="res://Assets/Orders/Box.png" id="149_eqnci"]
+[ext_resource type="Shader" uid="uid://cf6fy00d4jp01" path="res://Scenes/fancy.gdshader" id="150_fle1e"]
 [ext_resource type="PackedScene" uid="uid://bvaxjpsmm7req" path="res://Scenes/computer.tscn" id="150_ojylq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_am8a1"]
@@ -679,6 +684,12 @@ shader_parameter/samples = 12
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojylq"]
 size = Vector2(379, 235)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1tr8"]
+shader = ExtResource("150_fle1e")
+shader_parameter/saturation = 1.12
+shader_parameter/contrast = 0.899
+shader_parameter/brightness = 1.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_b05pg")
@@ -1711,11 +1722,14 @@ volume_db = -5.0
 material = SubResource("ShaderMaterial_3exxq")
 position = Vector2(647, 137)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("118_vhoi0")
+texture = ExtResource("119_r1tr8")
 script = ExtResource("119_jmisg")
 item = "rice"
-stock = 2
+stock = 5.0
 controller = NodePath("../..")
+slideDisplay = true
+yBottom = 102
+yTop = 140
 
 [node name="Area2D" type="Area2D" parent="Stations/Rice Reservoir"]
 position = Vector2(12, -4)
@@ -1734,6 +1748,24 @@ offset_bottom = 22.0
 text = "1"
 horizontal_alignment = 2
 
+[node name="RiceNewDispaly2" type="Sprite2D" parent="Stations/Rice Reservoir"]
+z_index = 1
+texture = ExtResource("122_wt5iu")
+
+[node name="Control" type="Control" parent="Stations/Rice Reservoir"]
+clip_children = 1
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -58.0
+offset_top = -102.0
+offset_right = 48.0
+offset_bottom = -54.0
+
+[node name="Display" type="Sprite2D" parent="Stations/Rice Reservoir/Control"]
+position = Vector2(56, 101.86)
+texture = ExtResource("121_vlivj")
+
 [node name="Fish Reservoir" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_bmvma")
 position = Vector2(785, 147)
@@ -1741,8 +1773,9 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("120_refj4")
 script = ExtResource("119_jmisg")
 item = "fish"
-stock = 2
+stock = 3.0
 controller = NodePath("../..")
+liveCount = true
 
 [node name="Area2D" type="Area2D" parent="Stations/Fish Reservoir"]
 collision_layer = 2
@@ -1760,25 +1793,111 @@ offset_bottom = 66.0
 text = "1"
 horizontal_alignment = 2
 
-[node name="StationFish" type="Sprite2D" parent="Stations/Fish Reservoir"]
+[node name="Display" type="Node2D" parent="Stations/Fish Reservoir"]
+
+[node name="StationFish" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
 texture = ExtResource("121_47mp3")
 
-[node name="StationFish2" type="Sprite2D" parent="Stations/Fish Reservoir"]
-position = Vector2(38, -82)
+[node name="StationFish2" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(38, -84)
 texture = ExtResource("121_47mp3")
 flip_v = true
 
-[node name="StationFish3" type="Sprite2D" parent="Stations/Fish Reservoir"]
-position = Vector2(82, 4)
+[node name="StationFish3" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(76, -2)
 texture = ExtResource("121_47mp3")
 
-[node name="StationFish4" type="Sprite2D" parent="Stations/Fish Reservoir"]
-position = Vector2(-36, 2)
+[node name="StationFish4" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-36, 0)
 texture = ExtResource("121_47mp3")
 flip_h = true
 
-[node name="StationFish5" type="Sprite2D" parent="Stations/Fish Reservoir"]
-position = Vector2(4, -82)
+[node name="StationFish5" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(6, -84)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish6" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-14, -84)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish7" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-58, -84)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish8" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-98, -82)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish9" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-136, -84)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish10" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-118, -84)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish11" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-78, -82)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish12" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-34, -80)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish13" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(6, -82)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish14" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-158, -82)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish15" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-136, -84)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish16" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-98, -84)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish17" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-52, -82)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish18" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-16, -82)
+texture = ExtResource("121_47mp3")
+flip_h = true
+flip_v = true
+
+[node name="StationFish19" type="Sprite2D" parent="Stations/Fish Reservoir/Display"]
+position = Vector2(-16, -82)
 texture = ExtResource("121_47mp3")
 flip_h = true
 flip_v = true
@@ -1790,8 +1909,9 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("120_refj4")
 script = ExtResource("119_jmisg")
 item = "cucumber"
-stock = 2
+stock = 3.0
 controller = NodePath("../..")
+liveCount = true
 
 [node name="Area2D" type="Area2D" parent="Stations/Cucumber Reservoir"]
 collision_layer = 2
@@ -1809,28 +1929,90 @@ offset_bottom = 64.0
 text = "1"
 horizontal_alignment = 2
 
-[node name="Cucumber" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+[node name="Display" type="Node2D" parent="Stations/Cucumber Reservoir"]
+
+[node name="Cucumber" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
 position = Vector2(-66, -44)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("123_adgm5")
 
-[node name="Cucumber2" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+[node name="Cucumber2" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
 position = Vector2(-26, -46)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("123_adgm5")
 
-[node name="Cucumber3" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+[node name="Cucumber3" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
 position = Vector2(12, -46)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("123_adgm5")
 
-[node name="Cucumber4" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+[node name="Cucumber4" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
 position = Vector2(42, -44)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("123_adgm5")
 
-[node name="Cucumber5" type="Sprite2D" parent="Stations/Cucumber Reservoir"]
+[node name="Cucumber5" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
 position = Vector2(86, -44)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber6" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(64, -44)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber7" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(26, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber8" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(-8, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber9" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(-44, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber10" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(-82, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber11" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(-64, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber12" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(-26, -40)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber13" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(6, -38)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber14" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(46, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber15" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(76, -40)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber16" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(94, -40)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("123_adgm5")
+
+[node name="Cucumber17" type="Sprite2D" parent="Stations/Cucumber Reservoir/Display"]
+position = Vector2(60, -38)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("123_adgm5")
 
@@ -1838,11 +2020,14 @@ texture = ExtResource("123_adgm5")
 material = SubResource("ShaderMaterial_shlp4")
 position = Vector2(946, 145)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("122_dv4iu")
+texture = ExtResource("126_wt5iu")
 script = ExtResource("119_jmisg")
 item = "seaweed"
-stock = 2
+stock = 5.0
 controller = NodePath("../..")
+slideDisplay = true
+yBottom = 94
+yTop = 138
 
 [node name="Area2D" type="Area2D" parent="Stations/Seaweed Reservoir"]
 collision_layer = 2
@@ -1859,6 +2044,24 @@ offset_right = 60.0
 offset_bottom = 68.0
 text = "1"
 horizontal_alignment = 2
+
+[node name="SeaweedBoxFront" type="Sprite2D" parent="Stations/Seaweed Reservoir"]
+z_index = 1
+texture = ExtResource("127_pmnrr")
+
+[node name="Control" type="Control" parent="Stations/Seaweed Reservoir"]
+clip_children = 1
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -80.0
+offset_top = -94.0
+offset_right = 58.0
+offset_bottom = -42.0
+
+[node name="Display" type="Sprite2D" parent="Stations/Seaweed Reservoir/Control"]
+position = Vector2(82, 138)
+texture = ExtResource("128_s8cid")
 
 [node name="Cutting Board" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 texture_filter = 6
@@ -2520,6 +2723,15 @@ scale = Vector2(0.235, 0.235)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shipment Container/Area2D"]
 position = Vector2(22.5, -27.5)
 shape = SubResource("RectangleShape2D_ojylq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 26
+material = SubResource("ShaderMaterial_r1tr8")
+offset_left = -598.0
+offset_top = -520.0
+offset_right = 1260.0
+offset_bottom = 607.0
+mouse_filter = 2
 
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
 [connection signal="pressed" from="AssemblyLayer/Button" to="Stations/Assembly Board" method="_on_button_pressed"]
