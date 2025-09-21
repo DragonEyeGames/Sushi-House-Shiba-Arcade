@@ -95,7 +95,6 @@
 [ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="94_brnef"]
 [ext_resource type="Texture2D" uid="uid://bew43yfuvkv2o" path="res://Assets/Desks/SushiRollerStand.png" id="95_37usx"]
 [ext_resource type="Texture2D" uid="uid://dhxsbkvy7xkrl" path="res://Assets/SushiConveyer.png" id="96_qywy7"]
-[ext_resource type="Script" uid="uid://ch10s3ken56ee" path="res://Scripts/sushi_conveyer.gd" id="97_a361w"]
 [ext_resource type="Script" uid="uid://d3a6krp7r1x2g" path="res://Scripts/plate_roller.gd" id="98_4q4m1"]
 [ext_resource type="Texture2D" uid="uid://c8rt7xd0x30bs" path="res://Assets/Desks/RollBars.png" id="99_5fyhb"]
 [ext_resource type="Texture2D" uid="uid://c043i6kvm2eg" path="res://Assets/Desks/Rollers.png" id="100_dx0u6"]
@@ -110,8 +109,8 @@
 [ext_resource type="Material" uid="uid://cyyo48glneq" path="res://Shaders/outline.tres" id="109_ffxd5"]
 [ext_resource type="AudioStream" uid="uid://cdubke7rcmrmg" path="res://Music/Conveyer.ogg" id="110_f2hid"]
 [ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Music/Roller.mp3" id="111_jwypt"]
-[ext_resource type="Texture2D" uid="uid://cpwuhgkyvga5e" path="res://Assets/Desks/LongTable.png" id="112_bqs45"]
 [ext_resource type="Texture2D" uid="uid://dym2oxxpvj6rv" path="res://Assets/Stations/OpenRice.png" id="113_s2nl6"]
+[ext_resource type="Texture2D" uid="uid://0r4b7gt3b1xf" path="res://Assets/Shortened Counter.png" id="113_wt5iu"]
 [ext_resource type="Script" uid="uid://cngg15t1lim6i" path="res://Scripts/stove.gd" id="114_ddyu8"]
 [ext_resource type="Texture2D" uid="uid://cx3ymggf4p56k" path="res://Assets/Stations/ClosedRice.png" id="115_e104q"]
 [ext_resource type="AudioStream" uid="uid://74vrm5kgybho" path="res://Music/Beep.mp3" id="116_y6fhn"]
@@ -466,6 +465,12 @@ bg_color = Color(0.889783, 0, 0.0885715, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lmeg"]
 bg_color = Color(0, 0.718576, 0.359163, 1)
 
+[sub_resource type="Curve2D" id="Curve2D_vlivj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -191, -539, 0, -252.85, 0, 252.85, -194, 1052, -3.993, 177.023, 3.993, -177.023, 1293, 1077, 0, 0, 0, 0, 1295, -471, 0, 0, 0, 0, -109, -546, 0, 0, 0, 0, -205, -536)
+}
+point_count = 6
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gngh3"]
 size = Vector2(128, 967)
 
@@ -486,7 +491,7 @@ shader_parameter/threshold = 0.999
 shader_parameter/samples = 12
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3exxq"]
-size = Vector2(640, 105)
+size = Vector2(476, 105)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5aa3q"]
 resource_local_to_scene = true
@@ -514,6 +519,13 @@ shader_parameter/outline_size = 1.4
 shader_parameter/threshold = 0.888
 shader_parameter/samples = 12
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shlp4"]
+shader = ExtResource("101_eyr7i")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bmvma"]
 shader = ExtResource("101_eyr7i")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
@@ -526,13 +538,6 @@ shader = ExtResource("101_eyr7i")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
 shader_parameter/outline_size = 1.4
 shader_parameter/threshold = 0.786
-shader_parameter/samples = 12
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_shlp4"]
-shader = ExtResource("101_eyr7i")
-shader_parameter/outline_color = Vector4(1, 1, 1, 1)
-shader_parameter/outline_size = 1.4
-shader_parameter/threshold = 0.999
 shader_parameter/samples = 12
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2n44k"]
@@ -929,7 +934,7 @@ position = Vector2(938, 144)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1290, 99.5)
+position = Vector2(1358, 102)
 shape = SubResource("RectangleShape2D_qsp4k")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
@@ -955,18 +960,18 @@ offset_bottom = -58.0
 color = Color(0.705882, 0.682353, 0.643137, 1)
 
 [node name="Wall2" type="ColorRect" parent="."]
-offset_left = 1206.0
-offset_top = -425.0
-offset_right = 1359.0
-offset_bottom = 997.0
+offset_left = 1266.0
+offset_top = -422.0
+offset_right = 1419.0
+offset_bottom = 1000.0
 color = Color(0.808104, 0.790086, 0.760077, 1)
 
 [node name="Wall3" type="ColorRect" parent="."]
 z_index = -7
-offset_left = -837.0
-offset_top = -497.0
-offset_right = -499.0
-offset_bottom = 925.0
+offset_left = -726.0
+offset_top = -494.0
+offset_right = -388.0
+offset_bottom = 928.0
 color = Color(0.808104, 0.790086, 0.760077, 1)
 
 [node name="TV" type="StaticBody2D" parent="."]
@@ -1312,41 +1317,103 @@ position = Vector2(-192, -62)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("95_37usx")
 
-[node name="SushiRollerStand8" type="Sprite2D" parent="Sushi Rollers"]
-position = Vector2(-192, -179)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("95_37usx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sushi Rollers"]
-position = Vector2(-192, 335.5)
-shape = SubResource("RectangleShape2D_gngh3")
-
 [node name="ColorRect" type="ColorRect" parent="Sushi Rollers"]
-z_index = 12
+z_index = 100
 offset_left = -256.0
 offset_top = -182.0
 offset_right = -128.0
 offset_bottom = -169.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Sushi Rollers"]
-z_index = 11
-offset_left = -279.0
-offset_top = -318.0
-offset_right = -101.0
-offset_bottom = -174.0
-color = Color(0.705882, 0.682353, 0.643137, 1)
+[node name="Control" type="Control" parent="Sushi Rollers"]
+clip_children = 1
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -256.0
+offset_top = -179.0
+offset_right = 1362.0
+offset_bottom = 805.0
 
-[node name="Timer" type="Timer" parent="Sushi Rollers"]
-wait_time = 12.375
-autostart = true
+[node name="SushiRollerStand8" type="Sprite2D" parent="Sushi Rollers/Control"]
+position = Vector2(64, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("95_37usx")
 
-[node name="SushiConveyer" type="Sprite2D" parent="Sushi Rollers"]
+[node name="Path2D" type="Path2D" parent="Sushi Rollers/Control"]
+position = Vector2(256, 179)
+curve = SubResource("Curve2D_vlivj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Sushi Rollers/Control/Path2D"]
+position = Vector2(-191, -539)
+rotation = 1.57268
+
+[node name="SushiConveyer2" type="Sprite2D" parent="Sushi Rollers/Control/Path2D/PathFollow2D"]
 z_index = 1
-position = Vector2(-198, -167)
+position = Vector2(45.0331, 5.7462)
+rotation = -1.57643
 scale = Vector2(0.79, 0.79)
 texture = ExtResource("96_qywy7")
-script = ExtResource("97_a361w")
+
+[node name="Sushi Rollers2" type="StaticBody2D" parent="Sushi Rollers/Control"]
+z_index = -2
+position = Vector2(1747, 179)
+
+[node name="SushiRollerStand" type="Sprite2D" parent="Sushi Rollers/Control/Sushi Rollers2"]
+position = Vector2(-192, 65)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("95_37usx")
+
+[node name="SushiRollerStand2" type="Sprite2D" parent="Sushi Rollers/Control/Sushi Rollers2"]
+position = Vector2(-192, 193)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("95_37usx")
+
+[node name="SushiRollerStand3" type="Sprite2D" parent="Sushi Rollers/Control/Sushi Rollers2"]
+position = Vector2(-192, 320)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("95_37usx")
+
+[node name="SushiRollerStand4" type="Sprite2D" parent="Sushi Rollers/Control/Sushi Rollers2"]
+position = Vector2(-192, 445)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("95_37usx")
+
+[node name="SushiRollerStand5" type="Sprite2D" parent="Sushi Rollers/Control/Sushi Rollers2"]
+position = Vector2(-192, 572)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("95_37usx")
+
+[node name="SushiRollerStand6" type="Sprite2D" parent="Sushi Rollers/Control/Sushi Rollers2"]
+position = Vector2(-192, 693)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("95_37usx")
+
+[node name="SushiRollerStand7" type="Sprite2D" parent="Sushi Rollers/Control/Sushi Rollers2"]
+position = Vector2(-192, -62)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("95_37usx")
+
+[node name="SushiRollerStand8" type="Sprite2D" parent="Sushi Rollers/Control/Sushi Rollers2"]
+position = Vector2(-192, -179)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("95_37usx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sushi Rollers/Control/Sushi Rollers2"]
+position = Vector2(-192, 335.5)
+shape = SubResource("RectangleShape2D_gngh3")
+
+[node name="ColorRect" type="ColorRect" parent="Sushi Rollers/Control/Sushi Rollers2"]
+z_index = 100
+offset_left = -256.0
+offset_top = -182.0
+offset_right = -128.0
+offset_bottom = -169.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sushi Rollers"]
+position = Vector2(-192, 335.5)
+shape = SubResource("RectangleShape2D_gngh3")
 
 [node name="Plate Roller" type="Control" parent="."]
 clip_children = 2
@@ -1626,31 +1693,58 @@ horizontal_alignment = 2
 z_index = 18
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Stations"]
-position = Vector2(87, 147)
+position = Vector2(7, 147)
 
 [node name="LongTable" type="Sprite2D" parent="Stations/StaticBody2D"]
+rotation = 1.5708
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("112_bqs45")
+texture = ExtResource("113_wt5iu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stations/StaticBody2D"]
 position = Vector2(0, 11.5)
 shape = SubResource("RectangleShape2D_3exxq")
 
+[node name="StaticBody2D3" type="StaticBody2D" parent="Stations"]
+position = Vector2(7, 424)
+
+[node name="LongTable" type="Sprite2D" parent="Stations/StaticBody2D3"]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("113_wt5iu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stations/StaticBody2D3"]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_3exxq")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="Stations"]
-position = Vector2(881, 147.5)
+position = Vector2(895, 148)
 
 [node name="LongTable" type="Sprite2D" parent="Stations/StaticBody2D2"]
+rotation = -1.5708
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("112_bqs45")
+texture = ExtResource("113_wt5iu")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stations/StaticBody2D2"]
 position = Vector2(1, 11)
 shape = SubResource("RectangleShape2D_3exxq")
 
+[node name="StaticBody2D4" type="StaticBody2D" parent="Stations"]
+position = Vector2(895, 423)
+
+[node name="LongTable" type="Sprite2D" parent="Stations/StaticBody2D4"]
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("113_wt5iu")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stations/StaticBody2D4"]
+position = Vector2(1, 11)
+shape = SubResource("RectangleShape2D_3exxq")
+
 [node name="Stove" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_5aa3q")
-position = Vector2(12, 145)
+position = Vector2(148, 417)
 scale = Vector2(0.595, 0.595)
 texture = ExtResource("113_s2nl6")
 script = ExtResource("114_ddyu8")
@@ -1685,7 +1779,7 @@ volume_db = -5.0
 
 [node name="Stove2" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_ldnlw")
-position = Vector2(-138, 145)
+position = Vector2(-120, 414)
 scale = Vector2(0.595, 0.595)
 texture = ExtResource("113_s2nl6")
 script = ExtResource("114_ddyu8")
@@ -1720,8 +1814,8 @@ volume_db = -5.0
 
 [node name="Rice Reservoir" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_3exxq")
-position = Vector2(647, 137)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-100, 145)
+scale = Vector2(0.53, 0.53)
 texture = ExtResource("119_r1tr8")
 script = ExtResource("119_jmisg")
 item = "rice"
@@ -1766,9 +1860,56 @@ offset_bottom = -54.0
 position = Vector2(56, 101.86)
 texture = ExtResource("121_vlivj")
 
+[node name="Seaweed Reservoir" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
+material = SubResource("ShaderMaterial_shlp4")
+position = Vector2(136, 142)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("126_wt5iu")
+script = ExtResource("119_jmisg")
+item = "seaweed"
+stock = 5.0
+controller = NodePath("../..")
+slideDisplay = true
+yBottom = 94
+yTop = 138
+
+[node name="Area2D" type="Area2D" parent="Stations/Seaweed Reservoir"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stations/Seaweed Reservoir/Area2D"]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Stations/Seaweed Reservoir"]
+offset_left = 20.0
+offset_top = 28.0
+offset_right = 60.0
+offset_bottom = 68.0
+text = "1"
+horizontal_alignment = 2
+
+[node name="SeaweedBoxFront" type="Sprite2D" parent="Stations/Seaweed Reservoir"]
+z_index = 1
+texture = ExtResource("127_pmnrr")
+
+[node name="Control" type="Control" parent="Stations/Seaweed Reservoir"]
+clip_children = 1
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -80.0
+offset_top = -94.0
+offset_right = 58.0
+offset_bottom = -42.0
+
+[node name="Display" type="Sprite2D" parent="Stations/Seaweed Reservoir/Control"]
+position = Vector2(82, 138)
+texture = ExtResource("128_s8cid")
+
 [node name="Fish Reservoir" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_bmvma")
-position = Vector2(785, 147)
+position = Vector2(743, 148)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("120_refj4")
 script = ExtResource("119_jmisg")
@@ -1904,7 +2045,7 @@ flip_v = true
 
 [node name="Cucumber Reservoir" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_adgm5")
-position = Vector2(1108, 148)
+position = Vector2(993, 147)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("120_refj4")
 script = ExtResource("119_jmisg")
@@ -2016,57 +2157,10 @@ position = Vector2(60, -38)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("123_adgm5")
 
-[node name="Seaweed Reservoir" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
-material = SubResource("ShaderMaterial_shlp4")
-position = Vector2(946, 145)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("126_wt5iu")
-script = ExtResource("119_jmisg")
-item = "seaweed"
-stock = 5.0
-controller = NodePath("../..")
-slideDisplay = true
-yBottom = 94
-yTop = 138
-
-[node name="Area2D" type="Area2D" parent="Stations/Seaweed Reservoir"]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stations/Seaweed Reservoir/Area2D"]
-position = Vector2(-1, 10)
-shape = SubResource("RectangleShape2D_1bvp3")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Stations/Seaweed Reservoir"]
-offset_left = 20.0
-offset_top = 28.0
-offset_right = 60.0
-offset_bottom = 68.0
-text = "1"
-horizontal_alignment = 2
-
-[node name="SeaweedBoxFront" type="Sprite2D" parent="Stations/Seaweed Reservoir"]
-z_index = 1
-texture = ExtResource("127_pmnrr")
-
-[node name="Control" type="Control" parent="Stations/Seaweed Reservoir"]
-clip_children = 1
-clip_contents = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = -80.0
-offset_top = -94.0
-offset_right = 58.0
-offset_bottom = -42.0
-
-[node name="Display" type="Sprite2D" parent="Stations/Seaweed Reservoir/Control"]
-position = Vector2(82, 138)
-texture = ExtResource("128_s8cid")
-
 [node name="Cutting Board" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 texture_filter = 6
 material = SubResource("ShaderMaterial_2n44k")
-position = Vector2(298, 147)
+position = Vector2(966, 423)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("123_e80kf")
 script = ExtResource("124_8lmbg")
@@ -2164,7 +2258,7 @@ panning_strength = 0.0
 
 [node name="Assembly Board" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_86lig")
-position = Vector2(151, 151)
+position = Vector2(771, 427)
 scale = Vector2(0.545, 0.545)
 texture = ExtResource("128_3xx7e")
 script = ExtResource("129_ul0h4")
@@ -2399,7 +2493,7 @@ shape = SubResource("CircleShape2D_14mkc")
 [node name="Trash" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 z_index = 20
 material = SubResource("ShaderMaterial_qe8ju")
-position = Vector2(482, 153)
+position = Vector2(597, 435)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("130_gqipy")
 script = ExtResource("131_ore4n")
@@ -2421,7 +2515,9 @@ position = Vector2(1, 36)
 shape = SubResource("RectangleShape2D_bnk2o")
 
 [node name="Tutorial" type="Node2D" parent="."]
+visible = false
 script = ExtResource("139_hfu3o")
+tutorial = false
 
 [node name="Arrow" type="Sprite2D" parent="Tutorial"]
 visible = false
@@ -2486,6 +2582,7 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("140_adgm5")
 
 [node name="Arrow9" type="Sprite2D" parent="Tutorial"]
+visible = false
 z_index = 21
 position = Vector2(489, 255)
 rotation = -1.5708
@@ -2735,7 +2832,6 @@ mouse_filter = 2
 
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
 [connection signal="pressed" from="AssemblyLayer/Button" to="Stations/Assembly Board" method="_on_button_pressed"]
-[connection signal="timeout" from="Sushi Rollers/Timer" to="TV" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Stove/Area2D" to="Stations/Stove" method="_on_area_2d_area_entered"]
@@ -2744,12 +2840,12 @@ mouse_filter = 2
 [connection signal="area_exited" from="Stations/Stove2/Area2D" to="Stations/Stove2" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Rice Reservoir/Area2D" to="Stations/Rice Reservoir" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Rice Reservoir/Area2D" to="Stations/Rice Reservoir" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Stations/Seaweed Reservoir/Area2D" to="Stations/Seaweed Reservoir" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Stations/Seaweed Reservoir/Area2D" to="Stations/Seaweed Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Fish Reservoir/Area2D" to="Stations/Fish Reservoir" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Fish Reservoir/Area2D" to="Stations/Fish Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Cucumber Reservoir/Area2D" to="Stations/Cucumber Reservoir" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Cucumber Reservoir/Area2D" to="Stations/Cucumber Reservoir" method="_on_area_2d_area_exited"]
-[connection signal="area_entered" from="Stations/Seaweed Reservoir/Area2D" to="Stations/Seaweed Reservoir" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Stations/Seaweed Reservoir/Area2D" to="Stations/Seaweed Reservoir" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Cutting Board/Area2D" to="Stations/Cutting Board" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Cutting Board/Area2D" to="Stations/Cutting Board" method="_on_area_2d_area_exited"]
 [connection signal="area_shape_entered" from="Stations/Cutting Board/MinigameHolder/Knife/Area2D" to="Stations/Cutting Board/MinigameHolder" method="_on_area_2d_area_shape_entered"]

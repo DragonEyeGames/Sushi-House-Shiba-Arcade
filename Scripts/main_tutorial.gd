@@ -7,6 +7,7 @@ var page = 0
 func _ready() -> void:
 	if(tutorial):
 		$"../Player".canMove=false
+		$".".visible=true
 	else:
 		visible=false
 

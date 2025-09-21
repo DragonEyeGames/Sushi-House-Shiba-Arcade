@@ -8,18 +8,21 @@ var items = ["sushi", "sushi with cucumber", "onigiri", "onigiri with cucumber"]
 func _ready() -> void:
 	randomize()
 	add_order()
-	var original = $"../Sushi Rollers/SushiConveyer"
-	for i in range(11):
+	var original = $"../Sushi Rollers/Control/Path2D/PathFollow2D"
+	for i in range(69):
 		var copy = original.duplicate()
-		$"../Sushi Rollers".add_child(copy)
-		copy.global_position = Vector2(original.global_position.x, original.global_position.y + (i * 90))
-		copy.z_index = 10
+		$"../Sushi Rollers/Control/Path2D".add_child(copy)
+		copy.progress=i*90
 		copies.append(copy)
+		copy.z_index=i
 	original.visible = false
 	orderCycle()
 
 
 func _process(delta: float) -> void:
+	for roller in $"../Sushi Rollers/Control/Path2D".get_children():
+		roller.progress+=100*delta
+		roller.z_index = int(roller.progress_ratio*100)
 	if(len(orders)==0):
 		add_order()
 	if($"../Tutorial".tutorial):
