@@ -6,6 +6,7 @@ var _currentDelta
 var currentPlate
 var colliding=false
 var replenishing=false
+var plates=4
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,11 +15,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(colliding and $"..".playerInventorySelect!="" and len($"..".playerInventory)>0 and not replenishing):
-		currentPlate.get_child(0).material.set_shader_parameter("outline_size", GameManager.outlineSize)
-	else:
-		currentPlate.get_child(0).material.set_shader_parameter("outline_size", 0)
-	if(colliding and $"..".playerInventorySelect!="" and len($"..".playerInventory)>0 and Input.is_action_just_pressed("Place") and not replenishing and not rolling):
+	if(currentPlate!=null):
+		if(colliding and $"..".playerInventorySelect!="" and $"..".playerInventorySelect!="dirty plate" and len($"..".playerInventory)>0 and not replenishing):
+			currentPlate.get_child(0).material.set_shader_parameter("outline_size", GameManager.outlineSize)
+		else:
+			currentPlate.get_child(0).material.set_shader_parameter("outline_size", 0)
+	if(colliding and $"..".playerInventorySelect!="" and $"..".playerInventorySelect!="dirty plate" and len($"..".playerInventory)>0 and Input.is_action_just_pressed("Place") and not replenishing and not rolling and currentPlate!=null):
 		for child in currentPlate.get_child(0).get_children():
 			child.visible=child.name==$"..".playerInventorySelect
 		$"..".placeCurrent("current")
@@ -39,11 +41,15 @@ func _process(delta: float) -> void:
 			rolling=false
 			currentPlate.reparent($"../Sushi Rollers/Control/Path2D")
 			currentPlate.get_child(0).material.set_shader_parameter("outline_size", 0)
-			currentPlate=$"../Sushi Rollers/Control/Plate2".duplicate()
-			$"../Sushi Rollers/Control".add_child(currentPlate)
-			currentPlate.get_child(0).material=currentPlate.get_child(0).material.duplicate()
-			currentPlate.name="Plate"
-			replenishing=true
+			if(plates>0):
+				currentPlate=$"../Sushi Rollers/Control/Plate2".duplicate()
+				plates-=1
+				$"../Sushi Rollers/Control".add_child(currentPlate)
+				currentPlate.get_child(0).material=currentPlate.get_child(0).material.duplicate()
+				currentPlate.name="Plate"
+				replenishing=true
+			else:
+				currentPlate=null
 	if(replenishing):
 		currentPlate.position.y+=speed*delta
 		if(currentPlate.position.y>=60):

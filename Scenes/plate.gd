@@ -17,5 +17,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 		for child in get_children():
 			child.visible=false
 			cleaned=true
+		$dirt.visible=true
 	else:
 		get_parent().queue_free()

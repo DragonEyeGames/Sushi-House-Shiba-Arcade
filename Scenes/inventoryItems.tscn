@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckbumgkfqrmoy"]
+[gd_scene load_steps=17 format=3 uid="uid://ckbumgkfqrmoy"]
 
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="1_7on13"]
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Stations/Fish.png" id="2_ri7ka"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://chtft37bmy68c" path="res://Assets/Cucumber/Cucumber Sushi.png" id="12_vg1oe"]
 [ext_resource type="Texture2D" uid="uid://cy0rtv6wioy0f" path="res://Assets/Cucumber/Cucumber Onigiri.png" id="13_bnffl"]
 [ext_resource type="Texture2D" uid="uid://b83v7s8ud7svn" path="res://Assets/Orders/Box.png" id="14_bnffl"]
+[ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="15_3fgmu"]
+[ext_resource type="Texture2D" uid="uid://eap5vsidih7p" path="res://Assets/PlateDirt.png" id="16_x0ysk"]
 
 [node name="Items" type="Node2D"]
 scale = Vector2(0.72, 0.72)
@@ -308,6 +310,7 @@ scale = Vector2(0.425, 0.425)
 texture = ExtResource("6_3pwg7")
 
 [node name="rice box" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(111.111, 8.33333)
 texture = ExtResource("14_bnffl")
 
@@ -333,6 +336,7 @@ scale = Vector2(0.705, 0.705)
 texture = ExtResource("1_7on13")
 
 [node name="cucumber box" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(111.111, 8.33333)
 texture = ExtResource("14_bnffl")
 
@@ -357,3 +361,28 @@ position = Vector2(-136.111, 45.8333)
 rotation = -1.55683
 scale = Vector2(0.355, 0.355)
 texture = ExtResource("6_hwat8")
+
+[node name="dirty plate" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-6.94444, 1.38889)
+texture = ExtResource("15_3fgmu")
+
+[node name="fish" type="RichTextLabel" parent="dirty plate"]
+anchors_preset = -1
+anchor_left = -0.0721987
+anchor_top = -0.00187695
+anchor_right = 0.666083
+anchor_bottom = -0.00187695
+offset_left = -119.017
+offset_top = -130.075
+offset_right = -19.0171
+offset_bottom = -28.075
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = "Dirty Plate"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fish" type="Sprite2D" parent="dirty plate"]
+position = Vector2(11.1111, 0)
+texture = ExtResource("16_x0ysk")

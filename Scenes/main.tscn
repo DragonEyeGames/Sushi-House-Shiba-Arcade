@@ -1,4 +1,4 @@
-[gd_scene load_steps=206 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=209 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -106,6 +106,7 @@
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Stations/Fish.png" id="105_108im"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="106_rq0ss"]
 [ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="107_ltyjx"]
+[ext_resource type="Texture2D" uid="uid://eap5vsidih7p" path="res://Assets/PlateDirt.png" id="107_s8cid"]
 [ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="108_xnck3"]
 [ext_resource type="AudioStream" uid="uid://cdubke7rcmrmg" path="res://Music/Conveyer.ogg" id="110_f2hid"]
 [ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Music/Roller.mp3" id="111_jwypt"]
@@ -151,6 +152,7 @@
 [ext_resource type="AudioStream" uid="uid://c1e735lkn4cng" path="res://Music/GarageDoor.mp3" id="146_eqnci"]
 [ext_resource type="Texture2D" uid="uid://b1f5t6dcenw3c" path="res://Assets/PistonPusher.png" id="146_s8cid"]
 [ext_resource type="Texture2D" uid="uid://b5wlkggxqam1h" path="res://Assets/Orders/GarageDoor.png" id="147_rtmaq"]
+[ext_resource type="Script" uid="uid://di0a8mf1w7uuv" path="res://Scenes/plateHolder.gd" id="148_0w4wg"]
 [ext_resource type="Texture2D" uid="uid://ch7kyg03djt3" path="res://Assets/Orders/BoxTruck.png" id="148_rtmaq"]
 [ext_resource type="Texture2D" uid="uid://b83v7s8ud7svn" path="res://Assets/Orders/Box.png" id="149_eqnci"]
 [ext_resource type="Shader" uid="uid://cf6fy00d4jp01" path="res://Scenes/fancy.gdshader" id="150_fle1e"]
@@ -684,6 +686,9 @@ _data = {
 &"RESET": SubResource("Animation_s8cid"),
 &"push": SubResource("Animation_pmnrr")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w4wg"]
+size = Vector2(62, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtmaq"]
 size = Vector2(387, 243)
@@ -1460,6 +1465,11 @@ position = Vector2(19.7183, -14.0845)
 scale = Vector2(0.586, 0.522)
 texture = ExtResource("137_gf7g1")
 
+[node name="dirt" type="Sprite2D" parent="Sushi Rollers/Control/Plate/Plate"]
+visible = false
+position = Vector2(10.0032, 2.80128)
+texture = ExtResource("107_s8cid")
+
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Sushi Rollers/Control/Plate"]
 rotation = -1.5708
 scale = Vector2(0.355, 0.355)
@@ -1544,6 +1554,11 @@ visible = false
 position = Vector2(19.7183, -14.0845)
 scale = Vector2(0.586, 0.522)
 texture = ExtResource("137_gf7g1")
+
+[node name="dirt" type="Sprite2D" parent="Sushi Rollers/Control/Plate2/Plate"]
+visible = false
+position = Vector2(5.6338, -0.0119944)
+texture = ExtResource("107_s8cid")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Sushi Rollers/Control/Plate2"]
 rotation = -1.5708
@@ -1854,7 +1869,7 @@ volume_db = -5.0
 
 [node name="Stove2" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_ldnlw")
-position = Vector2(-120, 414)
+position = Vector2(-84, 417)
 scale = Vector2(0.595, 0.595)
 texture = ExtResource("113_s2nl6")
 script = ExtResource("114_ddyu8")
@@ -2120,7 +2135,7 @@ flip_v = true
 
 [node name="Cucumber Reservoir" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_adgm5")
-position = Vector2(993, 147)
+position = Vector2(929, 149)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("120_refj4")
 script = ExtResource("119_jmisg")
@@ -2565,6 +2580,10 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stations/Assembly Board/ControllerSelection/Area2D"]
 shape = SubResource("CircleShape2D_14mkc")
 
+[node name="PlateHolder" type="Node2D" parent="Stations"]
+position = Vector2(1087, 116)
+script = ExtResource("148_0w4wg")
+
 [node name="Trash" type="Sprite2D" parent="Stations" node_paths=PackedStringArray("controller")]
 material = SubResource("ShaderMaterial_qe8ju")
 position = Vector2(597, 435)
@@ -2603,6 +2622,16 @@ texture = ExtResource("146_s8cid")
 libraries = {
 &"": SubResource("AnimationLibrary_0w4wg")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1087, 116)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 19
+position = Vector2(-10, 35)
+shape = SubResource("RectangleShape2D_0w4wg")
 
 [node name="Tutorial" type="Node2D" parent="."]
 visible = false
@@ -2955,6 +2984,8 @@ mouse_filter = 2
 [connection signal="area_exited" from="Stations/Assembly Board/Button Holder/ControllerCollisions" to="Stations/Assembly Board" method="_on_controller_collisions_area_exited"]
 [connection signal="area_entered" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Area2D" to="Stations/PlateHolder" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="Stations/PlateHolder" method="_on_area_2d_area_exited"]
 [connection signal="pressed" from="Tutorial/ColorRect/Next" to="Tutorial" method="_on_next_pressed"]
 [connection signal="pressed" from="Tutorial/ColorRect/Quit" to="Tutorial" method="_on_quit_pressed"]
 [connection signal="area_entered" from="Shipment Container/Box/Area2D" to="Shipment Container" method="_1_entered"]

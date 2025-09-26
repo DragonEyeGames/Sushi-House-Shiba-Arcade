@@ -94,6 +94,8 @@ func slide(plate):
 	for i in range(10):
 		plate.position.x-=11.5
 		await get_tree().create_timer(0).timeout
+	plate.get_child(0).reparent($"../Stations/PlateHolder")
+	plate.queue_free()
 
 
 func add_order():
