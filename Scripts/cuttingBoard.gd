@@ -1,59 +1,31 @@
-extends Sprite2D
+extends Station
 
-var colliding=false
-
-@export var item = ["fish", "cucumber"]
-
-var placed=false
 var placedItem
-@export var controller: Node2D
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	item=["fish", "cucumber"]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	handleVisuals()
 	if($MinigameHolder.running==true and Input.is_action_just_pressed("Escape")):
 		_on_button_pressed()
-	if(not controller.interactiveItem==self):
-		self.material.set_shader_parameter("outline_size", 0)
-	if(colliding and controller.playerInventorySelect in item and placed==false):
-		self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
-		controller.interactable="cutting board"
-		controller.interactiveItem=self
-	elif(colliding and placed and placedItem=="fish"):
-		self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
-		controller.interactable="cutting board"
-		controller.interactiveItem=self
-	elif(colliding and placed and placedItem!="fish"):
-		self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
-		controller.interactable="cutting board"
-		controller.interactiveItem=self
+	if(colliding and controller.playerInventorySelect in item and state==""):
+		requirementsMet=true
+	elif(colliding and state=="placed" and placedItem in item):
+		requirementsMet=true
 	else:
-		self.material.set_shader_parameter("outline_size", 0)
-
-
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	colliding=true
-
-
-func _on_area_2d_area_exited(_area: Area2D) -> void:
-	self.material.set_shader_parameter("outline_size", 0)
-	if(controller.interactiveItem==self):
-		controller.interactable=""
-		controller.interactiveItem=null
-	colliding=false
+		requirementsMet=false
 	
 func interact():
 	if(not controller.interactiveItem==self):
 		return
-	if(controller.playerInventorySelect=="fish" and ((not placed and not $MinigameHolder.running))):
+	if(controller.playerInventorySelect=="fish" and ((state=="" and not $MinigameHolder.running))):
 		placedItem="fish"
-		controller.placeCurrent("fish")
+		removeItem("fish")
 		$Fish.visible=true
-		placed=true
+		state="placed"
 		$"../../Camera2D".following=self
 		$"../../Camera2D".followingPlayer=false
 		$"../../Camera2D".Zoom(5)
@@ -68,11 +40,11 @@ func interact():
 		await get_tree().create_timer(1.1).timeout
 		$MinigameHolder.running=true
 		return
-	if(controller.playerInventorySelect=="cucumber" and ((not placed and not $MinigameHolder.running))):
+	if(controller.playerInventorySelect=="cucumber" and ((state=="" and not $MinigameHolder.running))):
 		placedItem="cucumber"
 		controller.placeCurrent("cucumber")
 		$Cucumber.visible=true
-		placed=true
+		state="placed"
 		$"../../Camera2D".following=self
 		$"../../Camera2D".followingPlayer=false
 		$"../../Camera2D".Zoom(5)
@@ -110,7 +82,7 @@ func _on_button_pressed() -> void:
 		elif($"Obliterated Cucumber".visible):
 			$"Obliterated Cucumber".visible=false
 			controller.playerInventory.append("obliterated cucumber")
-		placed=false
+		state=""
 		placedItem=null
 	self.material.set_shader_parameter("outline_size", 1.4)
 	$MinigameHolder.running=false

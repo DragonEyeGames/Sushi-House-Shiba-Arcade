@@ -1,11 +1,4 @@
-extends Sprite2D
-
-var colliding=false
-
-@export var item = "rice"
-@export var controller: Node2D
-var placed=false
-var cooked=false
+extends Station
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,47 +7,31 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if(placed):
+	if(state!="" and state!="cooked"):
 		$Icon2/ProgressBar.value+=.12#TESTING PURPOSE BOOST
-		if($Icon2/ProgressBar.value>=100 and cooked==false):
-			cooked=true
+		if($Icon2/ProgressBar.value>=100 and state!="cooked"):
+			state="cooked"
 			$AudioStreamPlayer2D2.play()
-	if(colliding and item==controller.playerInventorySelect and placed==false):
-		self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
-		controller.interactable="rice stove"
-		controller.interactiveItem=self
-	elif(cooked and len(controller.playerInventory)<=4):
-		if(colliding):
-			self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
-			controller.interactable="rice stove"
-			controller.interactiveItem=self
+	if(colliding==true and item==controller.playerInventorySelect and state==""):
+		requirementsMet=true
+	elif(state=="cooked" and len(controller.playerInventory)<=4 and colliding==true):
+		requirementsMet=true
 	else:
-		self.material.set_shader_parameter("outline_size", 0)
+		requirementsMet=false
+	handleVisuals()
 
-
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	colliding=true
-
-
-func _on_area_2d_area_exited(_area: Area2D) -> void:
-	self.material.set_shader_parameter("outline_size", 0)
-	if(controller.interactiveItem==self):
-		controller.interactable=""
-		controller.interactiveItem=null
-	colliding=false
 	
 func interact():
 	if(not controller.interactiveItem==self):
 		return
-	if(cooked):
+	if(state=="cooked"):
 		controller.playerInventory.append("cooked rice")
 		$"../../Player/PickingUp".play()
 		$Icon2.visible=false
 		$Icon2/ProgressBar.value=0
-		placed=false
-		cooked=false
-	elif(item==controller.playerInventorySelect and not placed):
+		state=""
+	elif(item==controller.playerInventorySelect and state==""):
 		$AudioStreamPlayer2D.play()
 		$Icon2.visible=true
-		controller.placeCurrent("rice")
-		placed=true
+		removeItem("rice")
+		state="placed"

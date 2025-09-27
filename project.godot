@@ -43,7 +43,9 @@ folder_colors={
 "res://Builds/": "orange",
 "res://Music/": "pink",
 "res://Scenes/": "green",
+"res://Scenes/Stations/": "teal",
 "res://Scripts/": "yellow",
+"res://Scripts/Classes/": "red",
 "res://Shaders/": "purple",
 "res://addons/": "gray"
 }
