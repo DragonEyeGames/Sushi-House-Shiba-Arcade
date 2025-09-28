@@ -22,7 +22,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	for roller in $"../Sushi Rollers/Control/Path2D".get_children():
-		roller.progress+=1000*delta
+		roller.progress+=200*delta
 		roller.z_index = int(roller.progress_ratio*100)
 		if("Plate" in roller.get_child(0).name):
 			if(roller.progress_ratio>=0.666):

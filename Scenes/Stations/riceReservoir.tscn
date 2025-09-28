@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4vqcxxrrd2up"]
+
+[ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_4wwc2"]
+[ext_resource type="Texture2D" uid="uid://bri8tymvhvfkp" path="res://Assets/DisplayItems/RiceBowlBack.png" id="2_y03p5"]
+[ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://Scripts/reservoir.gd" id="3_pxg7i"]
+[ext_resource type="Texture2D" uid="uid://nxe8r1oqqu2j" path="res://Assets/DisplayItems/RiceBowlFront.png" id="4_ougs0"]
+[ext_resource type="Texture2D" uid="uid://uics87hi83ho" path="res://Assets/DisplayItems/RiceNewDispaly.png" id="5_1svgq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3exxq"]
+shader = ExtResource("1_4wwc2")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.888
+shader_parameter/samples = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(122, 40)
+
+[node name="Rice Reservoir" type="Sprite2D" node_paths=PackedStringArray("controller")]
+material = SubResource("ShaderMaterial_3exxq")
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("2_y03p5")
+script = ExtResource("3_pxg7i")
+item = "rice"
+stock = 5.0
+controller = NodePath("")
+slideDisplay = true
+yBottom = 102
+yTop = 140
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(12, -4)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 17.0
+offset_top = -18.0
+offset_right = 57.0
+offset_bottom = 22.0
+text = "1"
+horizontal_alignment = 2
+
+[node name="RiceNewDispaly2" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("4_ougs0")
+
+[node name="Control" type="Control" parent="."]
+clip_children = 1
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -58.0
+offset_top = -102.0
+offset_right = 48.0
+offset_bottom = -54.0
+
+[node name="Display" type="Sprite2D" parent="Control"]
+position = Vector2(56, 101.86)
+texture = ExtResource("5_1svgq")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

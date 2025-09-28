@@ -1,0 +1,132 @@
+[gd_scene load_steps=7 format=3 uid="uid://3nvttbh0lljq"]
+
+[ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_sdh0j"]
+[ext_resource type="Texture2D" uid="uid://dvdvp6178qm1e" path="res://Assets/Stations/FishWell.png" id="2_wlgsm"]
+[ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://Scripts/reservoir.gd" id="3_vnsgr"]
+[ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="4_hh5kd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_adgm5"]
+shader = ExtResource("1_sdh0j")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.786
+shader_parameter/samples = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(122, 40)
+
+[node name="Cucumber Reservoir" type="Sprite2D" node_paths=PackedStringArray("controller")]
+material = SubResource("ShaderMaterial_adgm5")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wlgsm")
+script = ExtResource("3_vnsgr")
+item = "cucumber"
+stock = 3.0
+controller = NodePath("")
+liveCount = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 68.0
+offset_top = 24.0
+offset_right = 108.0
+offset_bottom = 64.0
+text = "1"
+horizontal_alignment = 2
+
+[node name="Display" type="Node2D" parent="."]
+
+[node name="Cucumber" type="Sprite2D" parent="Display"]
+position = Vector2(-66, -44)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber2" type="Sprite2D" parent="Display"]
+position = Vector2(-26, -46)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber3" type="Sprite2D" parent="Display"]
+position = Vector2(12, -46)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber4" type="Sprite2D" parent="Display"]
+position = Vector2(42, -44)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber5" type="Sprite2D" parent="Display"]
+position = Vector2(86, -44)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber6" type="Sprite2D" parent="Display"]
+position = Vector2(64, -44)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber7" type="Sprite2D" parent="Display"]
+position = Vector2(26, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber8" type="Sprite2D" parent="Display"]
+position = Vector2(-8, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber9" type="Sprite2D" parent="Display"]
+position = Vector2(-44, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber10" type="Sprite2D" parent="Display"]
+position = Vector2(-82, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber11" type="Sprite2D" parent="Display"]
+position = Vector2(-64, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber12" type="Sprite2D" parent="Display"]
+position = Vector2(-26, -40)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber13" type="Sprite2D" parent="Display"]
+position = Vector2(6, -38)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber14" type="Sprite2D" parent="Display"]
+position = Vector2(46, -42)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber15" type="Sprite2D" parent="Display"]
+position = Vector2(76, -40)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber16" type="Sprite2D" parent="Display"]
+position = Vector2(94, -40)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[node name="Cucumber17" type="Sprite2D" parent="Display"]
+position = Vector2(60, -38)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_hh5kd")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

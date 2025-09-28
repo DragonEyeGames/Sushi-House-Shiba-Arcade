@@ -2,6 +2,7 @@ extends Sprite2D
 
 var cleaned=false
 var openingFailure=false
+var rolling=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -13,10 +14,10 @@ func _process(delta: float) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	if(not cleaned):
+	if(not cleaned and rolling):
 		for child in get_children():
 			child.visible=false
-			cleaned=true
+		cleaned=true
 		$dirt.visible=true
-	else:
+	elif(rolling):
 		get_parent().queue_free()

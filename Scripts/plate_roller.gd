@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 			child.visible=child.name==$"..".playerInventorySelect
 		$"..".placeCurrent("current")
 		rolling=true
+		currentPlate.get_child(0).rolling=true
 	if(rolling):
 		$RollBars.position.x-=speed*delta
 		$RollBars2.position.x-=speed*delta

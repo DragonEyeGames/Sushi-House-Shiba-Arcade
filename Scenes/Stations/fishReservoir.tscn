@@ -1,0 +1,154 @@
+[gd_scene load_steps=7 format=3 uid="uid://jvgko0ymb3hw"]
+
+[ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_a08mq"]
+[ext_resource type="Texture2D" uid="uid://dvdvp6178qm1e" path="res://Assets/Stations/FishWell.png" id="2_jlv7a"]
+[ext_resource type="Script" uid="uid://dcala8j2gjs5n" path="res://Scripts/reservoir.gd" id="3_to6e2"]
+[ext_resource type="Texture2D" uid="uid://c0niub7ch5y6v" path="res://Assets/Stations/StationFish.png" id="4_pbvym"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmvma"]
+shader = ExtResource("1_a08mq")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.786
+shader_parameter/samples = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(122, 40)
+
+[node name="Fish Reservoir" type="Sprite2D" node_paths=PackedStringArray("controller")]
+material = SubResource("ShaderMaterial_bmvma")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jlv7a")
+script = ExtResource("3_to6e2")
+item = "fish"
+stock = 3.0
+controller = NodePath("")
+liveCount = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 62.0
+offset_top = 26.0
+offset_right = 102.0
+offset_bottom = 66.0
+text = "1"
+horizontal_alignment = 2
+
+[node name="Display" type="Node2D" parent="."]
+
+[node name="StationFish" type="Sprite2D" parent="Display"]
+texture = ExtResource("4_pbvym")
+
+[node name="StationFish2" type="Sprite2D" parent="Display"]
+position = Vector2(38, -84)
+texture = ExtResource("4_pbvym")
+flip_v = true
+
+[node name="StationFish3" type="Sprite2D" parent="Display"]
+position = Vector2(76, -2)
+texture = ExtResource("4_pbvym")
+
+[node name="StationFish4" type="Sprite2D" parent="Display"]
+position = Vector2(-36, 0)
+texture = ExtResource("4_pbvym")
+flip_h = true
+
+[node name="StationFish5" type="Sprite2D" parent="Display"]
+position = Vector2(6, -84)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish6" type="Sprite2D" parent="Display"]
+position = Vector2(-14, -84)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish7" type="Sprite2D" parent="Display"]
+position = Vector2(-58, -84)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish8" type="Sprite2D" parent="Display"]
+position = Vector2(-98, -82)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish9" type="Sprite2D" parent="Display"]
+position = Vector2(-136, -84)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish10" type="Sprite2D" parent="Display"]
+position = Vector2(-118, -84)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish11" type="Sprite2D" parent="Display"]
+position = Vector2(-78, -82)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish12" type="Sprite2D" parent="Display"]
+position = Vector2(-34, -80)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish13" type="Sprite2D" parent="Display"]
+position = Vector2(6, -82)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish14" type="Sprite2D" parent="Display"]
+position = Vector2(-158, -82)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish15" type="Sprite2D" parent="Display"]
+position = Vector2(-136, -84)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish16" type="Sprite2D" parent="Display"]
+position = Vector2(-98, -84)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish17" type="Sprite2D" parent="Display"]
+position = Vector2(-52, -82)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish18" type="Sprite2D" parent="Display"]
+position = Vector2(-16, -82)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[node name="StationFish19" type="Sprite2D" parent="Display"]
+position = Vector2(-16, -82)
+texture = ExtResource("4_pbvym")
+flip_h = true
+flip_v = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

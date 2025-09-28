@@ -1,32 +1,13 @@
-extends Sprite2D
-
-var colliding = false
-
-@export var item = ["seaweed"]
-
-var seaweedPlaced = false
-var ricePlaced = false
-var fishPlaced = false
-
-var currentItem = ""
-var itemMatching = false
-var minigame=false
-
-var dragging=false
-var draggedItem
-var dragOffset
+extends Draggable
 
 var controllerButtonHovered=false
 
 var assembly=[]
 
-@export var controller: Node2D
-
-func _ready() -> void:
-	pass
-
-
 func _process(_delta: float) -> void:
+	handleVisuals()
+	if(dragging):
+		drag()
 	if(controllerButtonHovered and Input.is_action_just_pressed("Place") and $ControllerSelection.visible):
 		if($"Button Holder/TextureButton".visible):
 			_on_texture_button_pressed()
@@ -43,217 +24,87 @@ func _process(_delta: float) -> void:
 			$ControllerSelection.position.y+=1.5
 	elif(not controller.controller):
 		$ControllerSelection.global_position=get_global_mouse_position()
-	if(dragging):
-		if(not controller.controller):
-			draggedItem.global_position=get_global_mouse_position()+dragOffset
-		else:
-			draggedItem.global_position=$ControllerSelection.global_position+dragOffset
-		if(not Input.is_action_pressed("Place")):
-			dragging=false
 	if(Input.is_action_just_pressed("Escape") and $"../../AssemblyLayer".visible):
 		_on_button_pressed()
 	# Check if the player's selected item is one we accept
-	itemMatching = controller.playerInventorySelect in item
-	if(minigame and ricePlaced and Input.is_action_just_pressed("Place") and not $SlicedFish.visible):
-		if($Items.fishEntered or $Items2.fishEntered or $Items3.fishEntered or $Items4.fishEntered or $Items.cucumberEntered or $Items2.cucumberEntered or $Items3.cucumberEntered or $Items4.cucumberEntered):
-			if($Items.fishEntered or $Items.cucumberEntered) :
-				dragging=true
-				draggedItem=$Items
-				if(not controller.controller):
-					dragOffset=draggedItem.global_position-get_global_mouse_position()
-				else:
-					dragOffset=draggedItem.global_position-$ControllerSelection.global_position
-			elif($Items2.fishEntered or $Items2.cucumberEntered):
-				dragging=true
-				draggedItem=$Items2
-				if(not controller.controller):
-					dragOffset=draggedItem.global_position-get_global_mouse_position()
-				else:
-					dragOffset=draggedItem.global_position-$ControllerSelection.global_position
-			elif($Items3.fishEntered or $Items3.cucumberEntered):
-				dragging=true
-				draggedItem=$Items3
-				if(not controller.controller):
-					dragOffset=draggedItem.global_position-get_global_mouse_position()
-				else:
-					dragOffset=draggedItem.global_position-$ControllerSelection.global_position
-			elif($Items4.fishEntered or $Items4.cucumberEntered):
-				dragging=true
-				draggedItem=$Items4
-				if(not controller.controller):
-					dragOffset=draggedItem.global_position-get_global_mouse_position()
-				else:
-					dragOffset=draggedItem.global_position-$ControllerSelection.global_position
-	if(minigame and not ricePlaced and Input.is_action_just_pressed("Place")):
-		if($Items.riceEntered or $Items2.riceEntered or $Items3.riceEntered or $Items4.riceEntered):
-			$Rice.visible=true
-			ricePlaced=true
-			_consume_item("cooked rice")
-			if($Items.riceEntered):
-				$Items.visible=false
-			elif($Items2.riceEntered):
-				$Items2.visible=false
-			elif($Items3.riceEntered):
-				$Items3.visible=false
-			elif($Items4.riceEntered):
-				$Items4.visible=false
-			var tween = create_tween()
-			tween.tween_property($Items, "global_position", $"../../Player".global_position, .5)
-			var tween2 = create_tween()
-			tween2.tween_property($Items2, "global_position", $"../../Player".global_position, .5)
-			var tween3 = create_tween()
-			tween3.tween_property($Items3, "global_position", $"../../Player".global_position, .5)
-			var tween4 = create_tween()
-			tween4.tween_property($Items4, "global_position", $"../../Player".global_position, .5)
+	var itemMatching = controller.playerInventorySelect in item
+	if(state=="placing" and "rice" in assembly and Input.is_action_just_pressed("Place")):
+		if($Items/Items.fishEntered or $Items/Items2.fishEntered or $Items/Items3.fishEntered or $Items/Items4.fishEntered or $Items/Items.cucumberEntered or $Items/Items2.cucumberEntered or $Items/Items3.cucumberEntered or $Items/Items4.cucumberEntered):
+			for child in $Items.get_children():
+				if(child.fishEntered or child.cucumberEntered) :
+					dragging=true
+					draggedItem=child
+					if(not controller.controller):
+						dragOffset=draggedItem.global_position-get_global_mouse_position()
+					else:
+						dragOffset=draggedItem.global_position-$ControllerSelection.global_position
+	elif(state=="placing" and not "rice" in assembly and Input.is_action_just_pressed("Place")):
+		if($Items/Items.riceEntered or $Items/Items2.riceEntered or $Items/Items3.riceEntered or $Items/Items4.riceEntered):
+			$"Display Items/Rice".visible=true
+			assembly.append("rice")
+			removeItem("cooked rice")
+			for child in $Items.get_children():
+				if(child.riceEntered):
+					child.visible=false
+				var tween = create_tween()
+				tween.tween_property(child, "global_position", $"../../Player".global_position, .5)
 			await get_tree().create_timer(.5).timeout
-			$Items.visible=false
-			$Items2.visible=false
-			$Items3.visible=false
-			$Items4.visible=false
+			$Items/Items.visible=false
+			$Items/Items2.visible=false
+			$Items/Items3.visible=false
+			$Items/Items4.visible=false
 			var showList=[]
 			for invItem in controller.playerInventory:
 				if(invItem=="sliced fish" or invItem=="sliced cucumber"):
 					showList.append(invItem)
-			if len(showList)>=1:
-				$Items.visible=true
-				$Items.global_position=$"../../Player".global_position
-				var tween5 = create_tween()
-				tween5.tween_property($Items, "position", Vector2(-123, -99), .5) # move to (400, 300) in 0.5s
-				for i in $Items.get_children():
-					i.visible=false
-				if $Items.get_node_or_null(showList[0]) !=null:
-					$Items.get_node_or_null(showList[0]).visible=true
-			else:
-				$Items.visible=false
-			if len(showList)>=2:
-				$Items2.global_position=$"../../Player".global_position
-				$Items2.visible=true
-				var tween5 = create_tween()
-				tween5.tween_property($Items2, "position", Vector2(99, -104), .5) # move to (400, 300) in 0.5s
-				for i in $Items2.get_children():
-					i.visible=false
-				if $Items2.get_node_or_null(showList[1]) !=null:
-					$Items2.get_node_or_null(showList[1]).visible=true
-			else:
-				$Items2.visible=false
-			if len(showList)>=3:
-				$Items3.global_position=$"../../Player".global_position
-				$Items3.visible=true
-				var tween5 = create_tween()
-				tween5.tween_property($Items3, "position", Vector2(-126, -38), .5) # move to (400, 300) in 0.5s
-				for i in $Items3.get_children():
-					i.visible=false
-				if $Items3.get_node_or_null(showList[2]) !=null:
-					$Items3.get_node_or_null(showList[2]).visible=true
-			else:
-				$Items3.visible=false
-			if len(showList)>=4:
-				$Items4.global_position=$"../../Player".global_position
-				$Items4.visible=true
-				var tween5 = create_tween()
-				tween5.tween_property($Items4, "position", Vector2(108, -42), .5) # move to (400, 300) in 0.5s
-				for i in $Items4.get_children():
-					i.visible=false
-				if $Items4.get_node_or_null(showList[3]) !=null:
-					$Items4.get_node_or_null(showList[3]).visible=true
-			else:
-				$Items4.visible=false
+			for child in $Items.get_children():
+				if len(showList)>=$Items.get_children().find(child)+1:
+					child.visible=true
+					child.global_position=$"../../Player".global_position
+					var tween5 = create_tween()
+					tween5.tween_property(child, "position", Vector2(-123, -99), .5) # move to (400, 300) in 0.5s
+					for i in child.get_children():
+						i.visible=false
+					if child.get_node_or_null(showList[0]) !=null:
+						child.get_node_or_null(showList[0]).visible=true
+				else:
+					child.visible=false
 			await get_tree().create_timer(.5).timeout
 			$"Button Holder".visible=true
 			
 	# Show prompts based on state
 	if colliding:
-		if controller.playerInventorySelect == "seaweed" and not seaweedPlaced and currentItem == "":
-			_show_prompt("Place Seaweed")
-		elif controller.playerInventorySelect == "cooked rice" and seaweedPlaced and not ricePlaced and currentItem == "seaweed":
-			_show_prompt("Place Cooked Rice")
-		elif controller.playerInventorySelect == "sliced fish" and ricePlaced and not fishPlaced and currentItem == "onigiri":
-			_show_prompt("Place Sliced Fish")
-			if(len(controller.playerInventory) <= 4):
-				_show_prompt("Pickup " + str(currentItem))
-			else:
-				self.material.set_shader_parameter("outline_size", 0)
+		if controller.playerInventorySelect == "seaweed" and state=="":
+			requirementsMet=true
 		else:
-			self.material.set_shader_parameter("outline_size", 0)
-	else:
-		self.material.set_shader_parameter("outline_size", 0)
-
-func _show_prompt(_text: String) -> void:
-	self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
-	controller.interactable = "assembly board"
-	controller.interactiveItem = self
-
-
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	colliding = true
-
-
-func _on_area_2d_area_exited(_area: Area2D) -> void:
-	self.material.set_shader_parameter("outline_size", 0)
-	if(controller.interactiveItem==self):
-		controller.interactable=""
-		controller.interactiveItem=null
-	colliding = false
-
+			requirementsMet=false
 
 func interact() -> void:
-	if(minigame==true or controller.playerInventorySelect!="seaweed"):
+	if(state=="placing" or controller.playerInventorySelect!="seaweed"):
 		return
-	_consume_item("seaweed")
+	removeItem("seaweed")
 	$ControllerSelection.visible=controller.controller
 	var showList=[]
 	for invItem in controller.playerInventory:
 		if(invItem=="cooked rice"):
 			showList.append(invItem)
-	if len(showList)>=1:
-		$Items.visible=true
-		$Items.global_position=$"../../Player".global_position
-		var tween = create_tween()
-		tween.tween_property($Items, "position", Vector2(-123, -99), .5) # move to (400, 300) in 0.5s
-		for i in $Items.get_children():
-			i.visible=false
-		if $Items.get_node_or_null(showList[0]) !=null:
-			$Items.get_node_or_null(showList[0]).visible=true
-	else:
-		$Items.visible=false
-	if len(showList)>=2:
-		$Items2.global_position=$"../../Player".global_position
-		$Items2.visible=true
-		var tween = create_tween()
-		tween.tween_property($Items2, "position", Vector2(99, -104), .5) # move to (400, 300) in 0.5s
-		for i in $Items2.get_children():
-			i.visible=false
-		if $Items2.get_node_or_null(showList[1]) !=null:
-			$Items2.get_node_or_null(showList[1]).visible=true
-	else:
-		$Items2.visible=false
-	if len(showList)>=3:
-		$Items3.global_position=$"../../Player".global_position
-		$Items3.visible=true
-		var tween = create_tween()
-		tween.tween_property($Items3, "position", Vector2(-126, -38), .5) # move to (400, 300) in 0.5s
-		for i in $Items3.get_children():
-			i.visible=false
-		if $Items3.get_node_or_null(showList[2]) !=null:
-			$Items3.get_node_or_null(showList[2]).visible=true
-	else:
-		$Items3.visible=false
-	if len(showList)>=4:
-		$Items4.global_position=$"../../Player".global_position
-		$Items4.visible=true
-		var tween = create_tween()
-		tween.tween_property($Items4, "position", Vector2(108, -42), .5) # move to (400, 300) in 0.5s
-		for i in $Items4.get_children():
-			i.visible=false
-		if $Items4.get_node_or_null(showList[3]) !=null:
-			$Items4.get_node_or_null(showList[3]).visible=true
-	else:
-		$Items4.visible=false
+	for i in len($Items.get_children()):
+		if len(showList)>=i+1:
+			$Items.get_child(i).visible=true
+			$Items.get_child(i).global_position=$"../../Player".global_position
+			var tween = create_tween()
+			tween.tween_property($Items.get_child(i), "position", Vector2(-123, -99), .5) # move to (400, 300) in 0.5s
+			for miniChild in $Items.get_child(i).get_children():
+				miniChild.visible=false
+			if $Items.get_child(i).get_node_or_null(showList[0]) !=null:
+				$Items.get_child(i).get_node_or_null(showList[0]).visible=true
+		else:
+			$Items.get_child(i).visible=false
 	$"../../Camera2D".following=self
 	$"../../Camera2D".followingPlayer=false
 	$"../../Camera2D".Zoom(5)
-	$Seaweed.visible=true
-	self.material.set_shader_parameter("outline_size", 0)
+	$"Display Items/Seaweed".visible=true
+	requirementsMet=false
 	$"../../Player".canMove=false
 	# Animate the alpha of the modulate color
 	$"../../AssemblyLayer".visible=true
@@ -262,20 +113,13 @@ func interact() -> void:
 		t2.tween_property(child, "modulate:a", 0.0, 1.0)
 	var t = create_tween()
 	t.tween_property($"../../AssemblyLayer/Button", "modulate:a", 1.0, 1.0)
-	minigame=true
-
-
-func _consume_item(item_name: String) -> void:
-	controller.placeCurrent(item_name)
+	state="placing"
 
 
 func _reset_visuals() -> void:
-	$Seaweed.visible = false
-	$Onigiri.visible = false
-	$Sushi.visible = false
-	seaweedPlaced = false
-	ricePlaced = false
-	fishPlaced = false
+	for child in $"Display Items".get_children():
+		child.visible=false
+	state=""
 
 
 func _on_button_pressed() -> void:
@@ -283,37 +127,37 @@ func _on_button_pressed() -> void:
 	$"Button Holder/TextureButton".visible=true
 	$"Button Holder/TextureButton2".visible=false
 	$"Button Holder".visible=false
-	$Items.visible=false
-	$Items2.visible=false
-	$Items3.visible=false
-	$Items4.visible=false
+	$Items/Items.visible=false
+	$Items/Items2.visible=false
+	$Items/Items3.visible=false
+	$Items/Items4.visible=false
 	self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
-	if($Seaweed.visible):
+	if($"Display Items/Seaweed".visible):
 		controller.playerInventory.append("seaweed")
 		$"../../Player/PickingUp".play()
-		$Seaweed.visible=false
-	if($Rice.visible):
+		$"Display Items/Seaweed".visible=false
+	if($"Display Items/Rice".visible):
 		controller.playerInventory.append("cooked rice")
-		$Rice.visible=false
-	if($SlicedFish.visible):
+		$"Display Items/Rice".visible=false
+	if($"Display Items/SlicedFish".visible):
 		controller.playerInventory.append("sliced fish")
-		$SlicedFish.visible=false
-	if($Onigiri.visible):
+		$"Display Items/SlicedFish".visible=false
+	if($"Display Items/Onigiri".visible):
 		controller.playerInventory.append("onigiri")
 		$"../../Player/PickingUp".play()
-		$Onigiri.visible=false
-	if($"Cucumber Onigiri".visible):
+		$"Display Items/Onigiri".visible=false
+	if($"Display Items/Cucumber Onigiri".visible):
 		controller.playerInventory.append("onigiri with cucumber")
 		$"../../Player/PickingUp".play()
-		$"Cucumber Onigiri".visible=false
-	if($Sushi.visible):
+		$"Display Items/Cucumber Onigiri".visible=false
+	if($"Display Items/Sushi".visible):
 		controller.playerInventory.append("sushi")
 		$"../../Player/PickingUp".play()
-		$Sushi.visible=false
-	if($"Cucumber Sushi".visible):
+		$"Display Items/Sushi".visible=false
+	if($"Display Items/Cucumber Sushi".visible):
 		controller.playerInventory.append("sushi with cucumber")
 		$"../../Player/PickingUp".play()
-		$"Cucumber Sushi".visible=false
+		$"Display Items/Cucumber Sushi".visible=false
 	$"../../Camera2D".followingPlayer=true
 	$"../../Camera2D".Zoom(1)
 	$"../../CanvasLayer".visible=true
@@ -327,38 +171,34 @@ func _on_button_pressed() -> void:
 	await get_tree().create_timer(1).timeout
 	$"../../AssemblyLayer".visible=false
 	$"../../CanvasLayer".visible=true
-	ricePlaced=false
-	seaweedPlaced=false
-	fishPlaced=false
-	minigame=false
+	_reset_visuals()
 	assembly.clear()
 	dragging=false
 	draggedItem=null
-	$ControllerSelection.position=Vector2(-61, -21)
+	$ControllerSelection.position=Vector2(-60, -20)
 
 
 func _on_texture_button_pressed() -> void:
-	$Seaweed.visible=false
-	$SlicedFish.visible=false
-	$Rice.visible=false
+	$"Display Items/Seaweed".visible=false
+	$"Display Items/Rice".visible=false
 	if("sliced fish" in assembly):
 		if("sliced cucumber" in assembly):
-			$"Cucumber Sushi".visible=true
-			_consume_item("sliced fish")
-			_consume_item("sliced cucumber")
+			$"Display Items/Cucumber Sushi".visible=true
+			removeItem("sliced fish")
+			removeItem("sliced cucumber")
 		else:
-			$Sushi.visible=true
-			_consume_item("sliced fish")
+			$"Display Items/Sushi".visible=true
+			removeItem("sliced fish")
 	else:
 		if("sliced cucumber" in assembly):
-			_consume_item("sliced cucumber")
-			$"Cucumber Onigiri".visible=true
+			removeItem("sliced cucumber")
+			$"Display Items/Cucumber Onigiri".visible=true
 		else:
-			$Onigiri.visible=true
-	$Items.visible=false
-	$Items2.visible=false
-	$Items3.visible=false
-	$Items4.visible=false
+			$"Display Items/Onigiri".visible=true
+	$Items/Items.visible=false
+	$Items/Items2.visible=false
+	$Items/Items3.visible=false
+	$Items/Items4.visible=false
 	await get_tree().create_timer(.1).timeout
 	$"Button Holder/TextureButton".visible=false
 	$"Button Holder/TextureButton2".visible=true

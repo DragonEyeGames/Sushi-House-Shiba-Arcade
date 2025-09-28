@@ -1,0 +1,349 @@
+[gd_scene load_steps=25 format=3 uid="uid://d1po31elu8unb"]
+
+[ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_qma2c"]
+[ext_resource type="Texture2D" uid="uid://bj0kcyiv6f2w7" path="res://Assets/Stations/AssemblyBoard.png" id="2_dj5a1"]
+[ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://Scripts/assembly.gd" id="3_m725i"]
+[ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="4_pjlvh"]
+[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/Stations/CookedRiceAssembly.png" id="5_8towx"]
+[ext_resource type="Texture2D" uid="uid://brb8ftp2raqmb" path="res://Assets/SlicedFishAssebmyl.png" id="6_swmib"]
+[ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="7_xcri5"]
+[ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="8_av05w"]
+[ext_resource type="Texture2D" uid="uid://chtft37bmy68c" path="res://Assets/Cucumber/Cucumber Sushi.png" id="9_8jcg8"]
+[ext_resource type="Texture2D" uid="uid://cy0rtv6wioy0f" path="res://Assets/Cucumber/Cucumber Onigiri.png" id="10_5tw4v"]
+[ext_resource type="PackedScene" uid="uid://bo1kcclquc7p4" path="res://Scenes/assemblyItems.tscn" id="11_ask4c"]
+[ext_resource type="Texture2D" uid="uid://bvssvmub8krmu" path="res://Assets/Roll.png" id="12_mdqth"]
+[ext_resource type="Texture2D" uid="uid://juyflj1byd6h" path="res://Assets/Pickup.png" id="13_m7itj"]
+[ext_resource type="Texture2D" uid="uid://cwj1rq65j18b7" path="res://Assets/ControllerSelection.png" id="14_o7qsk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_86lig"]
+shader = ExtResource("1_qma2c")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 1.4
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(122, 40)
+
+[sub_resource type="Animation" id="Animation_myryv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button Holder:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.885, 0.885)]
+}
+
+[sub_resource type="Animation" id="Animation_ci23i"]
+resource_name = "scale"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button Holder:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.885, 0.885), Vector2(0.995, 0.995), Vector2(0.885, 0.885)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bpr0e"]
+_data = {
+&"RESET": SubResource("Animation_myryv"),
+&"scale": SubResource("Animation_ci23i")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14mkc"]
+radius = 114.286
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bdqux"]
+resource_local_to_scene = true
+shader = ExtResource("1_qma2c")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 0.0
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e1jjv"]
+resource_local_to_scene = true
+shader = ExtResource("1_qma2c")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 0.0
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_stool"]
+resource_local_to_scene = true
+shader = ExtResource("1_qma2c")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 0.0
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ci23i"]
+resource_local_to_scene = true
+shader = ExtResource("1_qma2c")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 0.0
+shader_parameter/threshold = 0.999
+shader_parameter/samples = 12
+
+[node name="Assembly Board" type="Sprite2D"]
+material = SubResource("ShaderMaterial_86lig")
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("2_dj5a1")
+script = ExtResource("3_m725i")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bpr0e")
+}
+autoplay = "scale"
+
+[node name="Button Holder" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -7.33945
+offset_right = 32.6605
+offset_bottom = 40.0
+scale = Vector2(0.885, 0.885)
+
+[node name="TextureButton" type="TextureButton" parent="Button Holder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.8696
+offset_top = -40.6232
+offset_right = 165.13
+offset_bottom = 46.3768
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.495, 0.495)
+texture_normal = ExtResource("12_mdqth")
+
+[node name="TextureButton2" type="TextureButton" parent="Button Holder"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.8696
+offset_top = -40.6232
+offset_right = 165.13
+offset_bottom = 46.3768
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.495, 0.495)
+texture_normal = ExtResource("13_m7itj")
+
+[node name="ControllerCollisions" type="Area2D" parent="Button Holder"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Button Holder/ControllerCollisions"]
+polygon = PackedVector2Array(-2.00204, -22.0226, -44.0453, -14.0144, -60.0617, 0, -48.0494, 14.0144, -2.00204, 20.0206, 46.0473, 14.0144, 58.0597, 0, 36.037, -16.0165)
+
+[node name="ControllerSelection" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-9.1743, -64.2202)
+scale = Vector2(0.029, 0.029)
+texture = ExtResource("14_o7qsk")
+
+[node name="Area2D" type="Area2D" parent="ControllerSelection"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ControllerSelection/Area2D"]
+shape = SubResource("CircleShape2D_14mkc")
+
+[node name="Items" type="Node2D" parent="."]
+z_index = 2
+
+[node name="Items" parent="Items" instance=ExtResource("11_ask4c")]
+visible = false
+material = SubResource("ShaderMaterial_bdqux")
+position = Vector2(-122.936, -99.0826)
+
+[node name="Items2" parent="Items" instance=ExtResource("11_ask4c")]
+visible = false
+material = SubResource("ShaderMaterial_e1jjv")
+position = Vector2(99.0826, -104.587)
+rotation = 3.14159
+scale = Vector2(0.26, -0.26)
+
+[node name="Items3" parent="Items" instance=ExtResource("11_ask4c")]
+visible = false
+material = SubResource("ShaderMaterial_stool")
+position = Vector2(-126.605, -38.5321)
+
+[node name="Items4" parent="Items" instance=ExtResource("11_ask4c")]
+visible = false
+material = SubResource("ShaderMaterial_ci23i")
+position = Vector2(108.257, -42.2018)
+rotation = 3.14159
+scale = Vector2(0.26, -0.26)
+
+[node name="Display Items" type="Node2D" parent="."]
+
+[node name="Seaweed" type="Sprite2D" parent="Display Items"]
+visible = false
+position = Vector2(-3.66973, -55.0459)
+rotation = -0.120428
+scale = Vector2(0.593, 0.52)
+texture = ExtResource("4_pjlvh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Display Items/Seaweed"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Seaweed"
+
+[node name="Area2D" type="Area2D" parent="Display Items/Seaweed"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Display Items/Seaweed/Area2D"]
+polygon = PackedVector2Array(-60.5166, -75.8835, 63.0985, -65.933, 60.7903, 43.9325, -74.3686, 25.2803)
+
+[node name="Area2D2" type="Area2D" parent="Display Items/Seaweed"]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Display Items/Seaweed/Area2D2"]
+polygon = PackedVector2Array(-60.5166, -75.8835, 63.0985, -65.933, 60.7903, 43.9325, -74.3686, 25.2803)
+
+[node name="Rice" type="Sprite2D" parent="Display Items"]
+visible = false
+position = Vector2(-3.66973, -53.211)
+rotation = -0.120428
+scale = Vector2(0.625, 0.57)
+texture = ExtResource("5_8towx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Display Items/Rice"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Seaweed"
+
+[node name="SlicedFish" type="Sprite2D" parent="Display Items"]
+visible = false
+position = Vector2(-3.66973, -53.211)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("6_swmib")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Display Items/SlicedFish"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Seaweed"
+
+[node name="Onigiri" type="Sprite2D" parent="Display Items"]
+visible = false
+position = Vector2(5, -86)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_xcri5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Display Items/Onigiri"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Onigiri"
+
+[node name="Sushi" type="Sprite2D" parent="Display Items"]
+visible = false
+position = Vector2(5, -86)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_av05w")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Display Items/Sushi"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
+
+[node name="Cucumber Sushi" type="Sprite2D" parent="Display Items"]
+visible = false
+position = Vector2(5, -86)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_8jcg8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Display Items/Cucumber Sushi"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
+
+[node name="Cucumber Onigiri" type="Sprite2D" parent="Display Items"]
+visible = false
+position = Vector2(5, -86)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_5tw4v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Display Items/Cucumber Onigiri"]
+visible = false
+offset_left = -26.9663
+offset_top = -47.1911
+offset_right = 73.0337
+offset_bottom = 54.8089
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Sushi"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="pressed" from="Button Holder/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Button Holder/TextureButton2" to="." method="_on_pickup"]
+[connection signal="area_entered" from="Button Holder/ControllerCollisions" to="." method="_on_controller_collisions_area_entered"]
+[connection signal="area_exited" from="Button Holder/ControllerCollisions" to="." method="_on_controller_collisions_area_exited"]
+[connection signal="area_entered" from="Display Items/Seaweed/Area2D" to="." method="_on_fish_entered"]
+[connection signal="area_exited" from="Display Items/Seaweed/Area2D" to="." method="_on_fish_exited"]
+[connection signal="area_entered" from="Display Items/Seaweed/Area2D2" to="." method="_on_cucumber_entered"]
+[connection signal="area_exited" from="Display Items/Seaweed/Area2D2" to="." method="_on_area_2d_2_area_exited"]
