@@ -97,7 +97,7 @@ func _process(delta: float) -> void:
 	else:
 		$"Box4".material.set_shader_parameter("outline_size", 0)
 		
-	if(Input.is_action_just_pressed("Place")):
+	if(Input.is_action_just_pressed("Place") and doorOpen):
 		if(area1):
 			$"Box".visible=false
 			$"Box/Area2D/CollisionShape2D".disabled=true
@@ -217,12 +217,7 @@ func _2_exited(_area: Area2D) -> void:
 	area2=false
 	interacting.erase("2")
 
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	pass
-
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	await get_tree().create_timer(2).timeout
 	if(GameManager.cargoClear and doorOpen and not falling):
 		falling=true

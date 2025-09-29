@@ -6,8 +6,6 @@ var colliding = false
 
 @export var item = ""
 
-@export var minigame=false
-
 @export var controller: Node2D
 
 var state=""

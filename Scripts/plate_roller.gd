@@ -2,7 +2,6 @@ extends Control
 
 @export var rolling=false
 var speed = 400
-var _currentDelta
 var currentPlate
 var colliding=false
 var replenishing=false

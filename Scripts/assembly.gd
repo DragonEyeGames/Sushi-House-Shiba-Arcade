@@ -27,7 +27,6 @@ func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("Escape") and $"../../AssemblyLayer".visible):
 		_on_button_pressed()
 	# Check if the player's selected item is one we accept
-	var itemMatching = controller.playerInventorySelect in item
 	if(state=="placing" and "rice" in assembly and Input.is_action_just_pressed("Place")):
 		if($Items/Items.fishEntered or $Items/Items2.fishEntered or $Items/Items3.fishEntered or $Items/Items4.fishEntered or $Items/Items.cucumberEntered or $Items/Items2.cucumberEntered or $Items/Items3.cucumberEntered or $Items/Items4.cucumberEntered):
 			for child in $Items.get_children():

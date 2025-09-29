@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=165 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -110,6 +110,7 @@
 [ext_resource type="AudioStream" uid="uid://cdubke7rcmrmg" path="res://Music/Conveyer.ogg" id="110_f2hid"]
 [ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Music/Roller.mp3" id="111_jwypt"]
 [ext_resource type="Texture2D" uid="uid://0r4b7gt3b1xf" path="res://Assets/Shortened Counter.png" id="113_wt5iu"]
+[ext_resource type="PackedScene" uid="uid://dtsko532j05kr" path="res://Scenes/Stations/sink.tscn" id="118_b05pg"]
 [ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="123_adgm5"]
 [ext_resource type="PackedScene" uid="uid://btlpnfho3cgw8" path="res://Scenes/Stations/cuttingBoard.tscn" id="124_102yd"]
 [ext_resource type="PackedScene" uid="uid://d1po31elu8unb" path="res://Scenes/assemblyBoard.tscn" id="125_hfu3o"]
@@ -1500,11 +1501,11 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_3exxq")
 
 [node name="Rice Reservoir" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("105_fvjqb")]
-position = Vector2(-100, 145)
+position = Vector2(-136, 145)
 controller = NodePath("../..")
 
 [node name="Seaweed Reservoir" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("106_b05pg")]
-position = Vector2(136, 142)
+position = Vector2(149, 142)
 controller = NodePath("../..")
 
 [node name="Fish Reservoir" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("107_bdqux")]
@@ -1578,6 +1579,11 @@ material = SubResource("ShaderMaterial_pmnrr")
 position = Vector2(-118, 389)
 scale = Vector2(0.6, 0.6)
 item = "rice"
+controller = NodePath("../..")
+
+[node name="Sink" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("118_b05pg")]
+position = Vector2(-4, 115)
+scale = Vector2(0.595, 0.595)
 controller = NodePath("../..")
 
 [node name="Area2D" type="Area2D" parent="."]
