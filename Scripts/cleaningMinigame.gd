@@ -7,6 +7,8 @@ var cutAmount=0
 var removeStuff=true
 var cutScene = preload("res://Scenes/cutting.tscn")
 var currentLine
+var cleaned = false
+var lastMousePos
 
 func _ready() -> void:
 	pass
@@ -26,9 +28,9 @@ func _physics_process(_delta: float) -> void:
 				$Sponge.position.y+=1.5
 		if(Input.is_action_pressed("Place")):
 			$Sponge.scale=Vector2(.5, .5)
-			$"../Plate".remove_circle($"../Plate/PlateDirt".to_local(get_global_mouse_position()), 12)
-			$"../Plate".remove_circle($"../Plate/PlateDirt".to_local(get_global_mouse_position()) + Vector2(0, 18), 12)
-			$"../Plate".remove_circle($"../Plate/PlateDirt".to_local(get_global_mouse_position()) - Vector2(0, 18), 12)
+			if(not cleaned):
+				var local_mouse = $"../Plate/PlateDirt".to_local(get_global_mouse_position())
+				$"../Plate".remove_circle(local_mouse+Vector2(0, 18), local_mouse-Vector2(0, 18), 12)
 		else:
 			$Sponge.scale=Vector2(.6, .6)
 

@@ -386,3 +386,24 @@ metadata/_edit_use_anchors_ = true
 [node name="Fish" type="Sprite2D" parent="dirty plate"]
 position = Vector2(11.1111, 0)
 texture = ExtResource("16_x0ysk")
+
+[node name="plate" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-6.94444, 1.38889)
+texture = ExtResource("15_3fgmu")
+
+[node name="fish" type="RichTextLabel" parent="plate"]
+anchors_preset = -1
+anchor_left = -0.0721987
+anchor_top = -0.00187695
+anchor_right = 0.666083
+anchor_bottom = -0.00187695
+offset_left = -119.017
+offset_top = -130.075
+offset_right = -19.0171
+offset_bottom = -28.075
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = "Plate"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=166 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -111,6 +111,7 @@
 [ext_resource type="AudioStream" uid="uid://qy3ybjs4fahc" path="res://Music/Roller.mp3" id="111_jwypt"]
 [ext_resource type="Texture2D" uid="uid://0r4b7gt3b1xf" path="res://Assets/Shortened Counter.png" id="113_wt5iu"]
 [ext_resource type="PackedScene" uid="uid://dtsko532j05kr" path="res://Scenes/Stations/sink.tscn" id="118_b05pg"]
+[ext_resource type="PackedScene" uid="uid://caauopofsn0cd" path="res://Scenes/Stations/plateHolder.tscn" id="119_bdqux"]
 [ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="123_adgm5"]
 [ext_resource type="PackedScene" uid="uid://btlpnfho3cgw8" path="res://Scenes/Stations/cuttingBoard.tscn" id="124_102yd"]
 [ext_resource type="PackedScene" uid="uid://d1po31elu8unb" path="res://Scenes/assemblyBoard.tscn" id="125_hfu3o"]
@@ -802,6 +803,18 @@ offset_bottom = 83.0
 theme_override_font_sizes/font_size = 22
 text = "Finish Cutting"
 
+[node name="CleaningLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Button" type="Button" parent="CleaningLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 234.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 22
+text = "Finish Cutting"
+
 [node name="AssemblyLayer" type="CanvasLayer" parent="."]
 visible = false
 
@@ -1227,10 +1240,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("95_37usx")
 
 [node name="Plate" parent="Sushi Rollers/Control" instance=ExtResource("97_ci23i")]
+visible = false
 position = Vector2(186.451, 59.998)
-
-[node name="Plate2" parent="Sushi Rollers/Control" instance=ExtResource("97_ci23i")]
-position = Vector2(184, -20)
 
 [node name="Path2D" type="Path2D" parent="Sushi Rollers/Control"]
 position = Vector2(256, 179)
@@ -1391,23 +1402,6 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plate Roller/Rollers/Area2D"]
 position = Vector2(7, -7)
 shape = SubResource("RectangleShape2D_hrvbo")
-
-[node name="Plates" type="Node2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Plates"]
-offset_left = -210.0
-offset_top = -166.0
-offset_right = -137.0
-offset_bottom = -143.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Plates"]
-z_index = 20
-offset_left = -213.0
-offset_top = -228.0
-offset_right = -131.0
-offset_bottom = -163.0
-color = Color(0.705882, 0.682353, 0.643137, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("110_f2hid")
@@ -1585,6 +1579,9 @@ controller = NodePath("../..")
 position = Vector2(-4, 115)
 scale = Vector2(0.595, 0.595)
 controller = NodePath("../..")
+
+[node name="Desk" parent="Stations" instance=ExtResource("119_bdqux")]
+position = Vector2(-14, -76)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1087, 116)
@@ -1903,16 +1900,17 @@ scale = Vector2(0.235, 0.235)
 position = Vector2(22.5, -27.5)
 shape = SubResource("RectangleShape2D_ojylq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Recolor Field" type="ColorRect" parent="."]
 z_index = 26
 material = SubResource("ShaderMaterial_r1tr8")
-offset_left = -598.0
-offset_top = -520.0
-offset_right = 1260.0
-offset_bottom = 607.0
+offset_left = -487.0
+offset_top = -374.0
+offset_right = 1371.0
+offset_bottom = 753.0
 mouse_filter = 2
 
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
+[connection signal="pressed" from="CleaningLayer/Button" to="Stations/Sink" method="_on_button_pressed"]
 [connection signal="area_entered" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_entered"]

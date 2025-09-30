@@ -4,7 +4,7 @@ var playerInventorySelect=""
 var interactable=""
 var interactiveItem
 var shownScore=0
-var playerInventory=["dirty plate", "cooked rice", "sliced fish", "seaweed"]
+var playerInventory=["plate", "dirty plate"]
 var selectedSlot=-1
 var controller=false
 var outlineSize=2.4

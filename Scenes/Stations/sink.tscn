@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtsko532j05kr"]
+[gd_scene load_steps=16 format=3 uid="uid://dtsko532j05kr"]
 
 [ext_resource type="Texture2D" uid="uid://fjgtfvnc78ym" path="res://Assets/Stations/wurterBasin.png" id="1_4h6iu"]
 [ext_resource type="Texture2D" uid="uid://dhdcpq27f7m71" path="res://Assets/Stations/Sponge.png" id="2_5af2n"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="6_nuqpg"]
 [ext_resource type="Script" uid="uid://dvkrx8si8h537" path="res://Scenes/Stations/cleaningPlate.gd" id="7_7oov4"]
 [ext_resource type="Texture2D" uid="uid://eap5vsidih7p" path="res://Assets/PlateDirt.png" id="7_wh123"]
+[ext_resource type="Texture2D" uid="uid://gdavpkuaun55" path="res://Assets/Sporkle.png" id="9_7oov4"]
 
 [sub_resource type="Shader" id="Shader_etd0p"]
 code = "shader_type canvas_item;
@@ -63,6 +64,22 @@ shader_parameter/samples = 12
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuqpg"]
 size = Vector2(122, 620.896)
 
+[sub_resource type="Curve" id="Curve_ujr7r"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.558824, 0.0449438), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xqgqn"]
+curve = SubResource("Curve_ujr7r")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_50xbm"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(60, 60, 1)
+angle_min = -180.0
+angle_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_xqgqn")
+
 [node name="Sink" type="Sprite2D"]
 material = SubResource("ShaderMaterial_xtxln")
 scale = Vector2(0.5, 0.5)
@@ -108,9 +125,19 @@ texture = ExtResource("6_nuqpg")
 script = ExtResource("7_7oov4")
 
 [node name="PlateDirt" type="Sprite2D" parent="Plate"]
+visible = false
 position = Vector2(-115.632, -128.48)
 texture = ExtResource("7_wh123")
 offset = Vector2(128, 128)
+
+[node name="Sparkle" type="GPUParticles2D" parent="Plate"]
+position = Vector2(8.56531, 4.28265)
+emitting = false
+amount = 20
+texture = ExtResource("9_7oov4")
+lifetime = 0.5
+explosiveness = 0.34
+process_material = SubResource("ParticleProcessMaterial_50xbm")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
