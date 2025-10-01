@@ -8,35 +8,35 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5siay"]
 shader = ExtResource("3_5siay")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
-shader_parameter/outline_size = 2.4
+shader_parameter/outline_size = 0.0
 shader_parameter/threshold = 0.1
 shader_parameter/samples = 12
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_270ie"]
 shader = ExtResource("3_5siay")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
-shader_parameter/outline_size = 2.4
+shader_parameter/outline_size = 0.0
 shader_parameter/threshold = 0.1
 shader_parameter/samples = 12
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ee3l5"]
 shader = ExtResource("3_5siay")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
-shader_parameter/outline_size = 2.4
+shader_parameter/outline_size = 0.0
 shader_parameter/threshold = 0.1
 shader_parameter/samples = 12
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l2a01"]
 shader = ExtResource("3_5siay")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
-shader_parameter/outline_size = 2.4
+shader_parameter/outline_size = 0.0
 shader_parameter/threshold = 0.1
 shader_parameter/samples = 12
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ltwer"]
 shader = ExtResource("3_5siay")
 shader_parameter/outline_color = Vector4(1, 1, 1, 1)
-shader_parameter/outline_size = 2.4
+shader_parameter/outline_size = 0.0
 shader_parameter/threshold = 0.1
 shader_parameter/samples = 12
 
@@ -47,10 +47,17 @@ size = Vector2(256, 194)
 size = Vector2(256, 20)
 
 [node name="Desk" type="Sprite2D"]
-z_index = -16
+z_index = -22
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ye6xt")
 script = ExtResource("2_bg5fh")
+
+[node name="Plate" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_5siay")
+position = Vector2(0, -64)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_engdm")
 
 [node name="Plates" type="Node2D" parent="."]
 
@@ -61,24 +68,28 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_engdm")
 
 [node name="Plate2" type="Sprite2D" parent="Plates"]
+z_index = 1
 material = SubResource("ShaderMaterial_270ie")
 position = Vector2(0, -68)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_engdm")
 
 [node name="Plate3" type="Sprite2D" parent="Plates"]
+z_index = 2
 material = SubResource("ShaderMaterial_ee3l5")
 position = Vector2(0, -72)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_engdm")
 
 [node name="Plate4" type="Sprite2D" parent="Plates"]
+z_index = 3
 material = SubResource("ShaderMaterial_l2a01")
 position = Vector2(0, -76)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_engdm")
 
 [node name="Plate5" type="Sprite2D" parent="Plates"]
+z_index = 4
 material = SubResource("ShaderMaterial_ltwer")
 position = Vector2(0, -80)
 scale = Vector2(0.6, 0.6)
@@ -96,6 +107,8 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_270ie")
+
+[node name="UsedPlates" type="Node2D" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
