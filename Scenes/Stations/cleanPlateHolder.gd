@@ -21,10 +21,7 @@ func _process(_delta: float) -> void:
 		else:
 			$Plates.get_child(-1).material.set_shader_parameter("outline_size", 0.0)
 	elif(colliding and $"../..".playerInventorySelect=="plate" and Input.is_action_just_pressed("Place")):
-		print("PPPPLLLLLLLLAAAAAAACCCCCCCEEEEEEE")
 		placePlate()
-	else:
-		print("NOTHING")
 
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:

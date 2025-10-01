@@ -41,6 +41,7 @@ folder_colors={
 "res://Assets/Desks/": "red",
 "res://Assets/DisplayItems/": "yellow",
 "res://Builds/": "orange",
+"res://Fonts/": "red",
 "res://Music/": "pink",
 "res://Scenes/": "green",
 "res://Scenes/Stations/": "teal",

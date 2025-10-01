@@ -32,8 +32,6 @@ func _process(delta: float) -> void:
 				slide(roller)
 	if(len(orders)==0):
 		add_order()
-	if($"../Tutorial".tutorial):
-		return
 	# First, hide all order slots
 	for i in range(4):
 		var order_ui = get_node("Order %d" % (i + 1))
@@ -102,3 +100,7 @@ func add_order():
 	if(not $"../Tutorial".tutorial):
 		orders.append(items[randi() % items.size()])
 		orderTimeRemaining.append(100)
+		
+func add_tutorial_order():
+	orders.append("sushi")
+	orderTimeRemaining.append(100)

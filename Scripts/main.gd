@@ -4,7 +4,7 @@ var playerInventorySelect=""
 var interactable=""
 var interactiveItem
 var shownScore=0
-var playerInventory=["plate", "dirty plate"]
+var playerInventory=[]
 var selectedSlot=-1
 var controller=false
 var outlineSize=2.4

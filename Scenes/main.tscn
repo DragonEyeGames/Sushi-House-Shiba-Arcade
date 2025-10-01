@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=166 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -112,6 +112,7 @@
 [ext_resource type="Texture2D" uid="uid://0r4b7gt3b1xf" path="res://Assets/Shortened Counter.png" id="113_wt5iu"]
 [ext_resource type="PackedScene" uid="uid://dtsko532j05kr" path="res://Scenes/Stations/sink.tscn" id="118_b05pg"]
 [ext_resource type="PackedScene" uid="uid://caauopofsn0cd" path="res://Scenes/Stations/plateHolder.tscn" id="119_bdqux"]
+[ext_resource type="FontFile" uid="uid://cpbq6a4wr7rsw" path="res://Fonts/Warung Kopi Light.otf" id="121_bdqux"]
 [ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="123_adgm5"]
 [ext_resource type="PackedScene" uid="uid://btlpnfho3cgw8" path="res://Scenes/Stations/cuttingBoard.tscn" id="124_102yd"]
 [ext_resource type="PackedScene" uid="uid://d1po31elu8unb" path="res://Scenes/assemblyBoard.tscn" id="125_hfu3o"]
@@ -1584,121 +1585,31 @@ position = Vector2(-10, 35)
 shape = SubResource("RectangleShape2D_0w4wg")
 
 [node name="Tutorial" type="Node2D" parent="."]
-visible = false
 script = ExtResource("139_hfu3o")
-tutorial = false
 
-[node name="Arrow" type="Sprite2D" parent="Tutorial"]
-visible = false
-position = Vector2(215, -209)
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
+[node name="CanvasLayer" type="CanvasLayer" parent="Tutorial"]
 
-[node name="Arrow2" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 19
-position = Vector2(648, 236)
-rotation = -1.5708
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow3" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 19
-position = Vector2(793, 237)
-rotation = -1.5708
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow4" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 19
-position = Vector2(947, 238)
-rotation = -1.5708
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow5" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 19
-position = Vector2(-5, 235)
-rotation = -1.5708
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow6" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 19
-position = Vector2(300, 239)
-rotation = -1.5708
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow7" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 19
-position = Vector2(151, 245)
-rotation = -1.5708
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow8" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 25
-position = Vector2(-172, -209)
-rotation = 1.5708
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow9" type="Sprite2D" parent="Tutorial"]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="Tutorial/CanvasLayer"]
 z_index = 21
-position = Vector2(489, 255)
-rotation = -1.5708
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow10" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 25
-position = Vector2(1110, 242)
-rotation = -1.5708
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow11" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 25
-position = Vector2(-14, -85)
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="Arrow12" type="Sprite2D" parent="Tutorial"]
-visible = false
-z_index = 25
-position = Vector2(650, -152)
-scale = Vector2(0.135, 0.135)
-texture = ExtResource("140_adgm5")
-
-[node name="ColorRect" type="ColorRect" parent="Tutorial"]
-z_index = 21
-offset_left = 148.0
-offset_top = 282.0
-offset_right = 808.0
-offset_bottom = 503.0
+offset_left = 455.0
+offset_top = 475.0
+offset_right = 1115.0
+offset_bottom = 696.0
 color = Color(1, 0.903349, 0.684542, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/ColorRect"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/CanvasLayer/ColorRect"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 5.0
 offset_right = 655.0
 offset_bottom = 157.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/normal_font = ExtResource("121_bdqux")
+theme_override_font_sizes/normal_font_size = 31
 text = "Hello and welcome to the kitchen! This is where you will make all of your sushi! It has everything you need to start! Click next to continue the tutorial or quit to end the tutorial!"
+horizontal_alignment = 1
 
-[node name="Next" type="Button" parent="Tutorial/ColorRect"]
+[node name="Next" type="Button" parent="Tutorial/CanvasLayer/ColorRect"]
 layout_mode = 0
 offset_left = 434.0
 offset_top = 149.0
@@ -1706,13 +1617,54 @@ offset_right = 600.0
 offset_bottom = 208.0
 text = "Next"
 
-[node name="Quit" type="Button" parent="Tutorial/ColorRect"]
+[node name="Hide" type="Button" parent="Tutorial/CanvasLayer/ColorRect"]
+visible = false
+layout_mode = 0
+offset_left = 434.0
+offset_top = 149.0
+offset_right = 600.0
+offset_bottom = 208.0
+text = "Hide"
+
+[node name="Quit" type="Button" parent="Tutorial/CanvasLayer/ColorRect"]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 155.0
 offset_right = 242.0
 offset_bottom = 212.0
 text = "Quit Tutorial"
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(-141, 216)
+rotation = -1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(146, 216)
+rotation = -1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(747, 221)
+rotation = -1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(137, 500)
+rotation = -1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
 
 [node name="Shipment Container" type="Node2D" parent="."]
 position = Vector2(887, -172)
@@ -1907,8 +1859,9 @@ mouse_filter = 2
 [connection signal="area_exited" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Area2D" to="Stations/PlateHolder" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="Stations/PlateHolder" method="_on_area_2d_area_exited"]
-[connection signal="pressed" from="Tutorial/ColorRect/Next" to="Tutorial" method="_on_next_pressed"]
-[connection signal="pressed" from="Tutorial/ColorRect/Quit" to="Tutorial" method="_on_quit_pressed"]
+[connection signal="pressed" from="Tutorial/CanvasLayer/ColorRect/Next" to="Tutorial" method="_on_next_pressed"]
+[connection signal="pressed" from="Tutorial/CanvasLayer/ColorRect/Hide" to="Tutorial" method="_on_hide_pressed"]
+[connection signal="pressed" from="Tutorial/CanvasLayer/ColorRect/Quit" to="Tutorial" method="_on_quit_pressed"]
 [connection signal="area_entered" from="Shipment Container/Box/Area2D" to="Shipment Container" method="_1_entered"]
 [connection signal="area_exited" from="Shipment Container/Box/Area2D" to="Shipment Container" method="_1_exited"]
 [connection signal="area_entered" from="Shipment Container/Box2/Area2D" to="Shipment Container" method="_2_entered"]
