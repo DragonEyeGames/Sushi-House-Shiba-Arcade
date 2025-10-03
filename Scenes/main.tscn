@@ -783,6 +783,7 @@ position_smoothing_enabled = true
 script = ExtResource("87_17dee")
 
 [node name="MinigameLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Button" type="Button" parent="MinigameLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -1605,7 +1606,7 @@ offset_right = 655.0
 offset_bottom = 157.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("121_bdqux")
-theme_override_font_sizes/normal_font_size = 31
+theme_override_font_sizes/normal_font_size = 30
 text = "Hello and welcome to the kitchen! This is where you will make all of your sushi! It has everything you need to start! Click next to continue the tutorial or quit to end the tutorial!"
 horizontal_alignment = 1
 
@@ -1662,6 +1663,14 @@ texture = ExtResource("140_adgm5")
 visible = false
 z_index = 100
 position = Vector2(137, 500)
+rotation = -1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(972, 498)
 rotation = -1.5708
 scale = Vector2(0.145, 0.145)
 texture = ExtResource("140_adgm5")

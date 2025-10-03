@@ -9,14 +9,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	handleVisuals()
-	if($MinigameHolder.running==true and Input.is_action_just_pressed("Escape")):
-		_on_button_pressed()
 	if(colliding and controller.playerInventorySelect in item and state==""):
 		requirementsMet=true
 	elif(colliding and state=="placed" and placedItem in item):
 		requirementsMet=true
 	else:
 		requirementsMet=false
+	if($"Sliced Fish".visible):
+		_on_button_pressed()
 	
 func interact():
 	if(not controller.interactiveItem==self):
