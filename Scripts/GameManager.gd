@@ -8,6 +8,10 @@ var canvasLayer
 var cargoClear
 var waitTime
 var score=10
+
+var masterValue=0
+var sfxValue=0
+var musicValue=0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

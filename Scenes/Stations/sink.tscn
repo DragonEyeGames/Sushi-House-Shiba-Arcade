@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bj4hyt6jvfxp7" path="res://Scripts/cleaningMinigame.gd" id="3_pha6k"]
 [ext_resource type="AudioStream" uid="uid://cdl44d0hhic7l" path="res://Music/Chop.mp3" id="5_846l7"]
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="6_nuqpg"]
-[ext_resource type="Script" uid="uid://dvkrx8si8h537" path="res://Scenes/Stations/cleaningPlate.gd" id="7_7oov4"]
+[ext_resource type="Script" uid="uid://dvkrx8si8h537" path="res://Scripts/cleaningPlate.gd" id="7_7oov4"]
 [ext_resource type="Texture2D" uid="uid://eap5vsidih7p" path="res://Assets/PlateDirt.png" id="7_wh123"]
 [ext_resource type="Texture2D" uid="uid://gdavpkuaun55" path="res://Assets/Sporkle.png" id="9_7oov4"]
 

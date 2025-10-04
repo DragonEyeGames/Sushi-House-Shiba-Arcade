@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://caauopofsn0cd"]
 
 [ext_resource type="Texture2D" uid="uid://13jmkrykwny" path="res://Assets/Desks/Desk.png" id="1_ye6xt"]
-[ext_resource type="Script" uid="uid://b6mc217bsyf4o" path="res://Scenes/Stations/cleanPlateHolder.gd" id="2_bg5fh"]
+[ext_resource type="Script" uid="uid://b6mc217bsyf4o" path="res://Scripts/cleanPlateHolder.gd" id="2_bg5fh"]
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="2_engdm"]
 [ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="3_5siay"]
 

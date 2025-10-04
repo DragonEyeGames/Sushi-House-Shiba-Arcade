@@ -5,9 +5,10 @@
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
 
 [node name="MainMusic" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 position = Vector2(0, 31)
 stream = ExtResource("1_4w0wc")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
-parameters/looping = false
+parameters/looping = true

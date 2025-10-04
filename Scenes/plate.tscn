@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_e6f4l"]
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="2_yvvte"]
-[ext_resource type="Script" uid="uid://w8ucsf2w8ulr" path="res://Scenes/plate.gd" id="3_ggelr"]
+[ext_resource type="Script" uid="uid://w8ucsf2w8ulr" path="res://Scripts/plate.gd" id="3_ggelr"]
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="4_o33vl"]
 [ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="5_ug38k"]
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Stations/Fish.png" id="6_t7y3g"]
