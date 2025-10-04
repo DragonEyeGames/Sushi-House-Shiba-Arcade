@@ -20,7 +20,7 @@ func _hover_exited() -> void:
 
 
 func _pressed() -> void:
-	pass
+	$CanvasLayer/AnimationPlayer.play("showUp")
 
 
 func _play_hovered() -> void:
@@ -32,4 +32,8 @@ func _on_texture_button_mouse_exited() -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	pass # Replace with function body.
+	$ColorRect.transition_to("res://Scenes/main.tscn")
+
+
+func _x() -> void:
+	$CanvasLayer/AnimationPlayer.play("hide")

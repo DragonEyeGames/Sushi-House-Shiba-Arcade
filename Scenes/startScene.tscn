@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://ifvttcpaxya8"]
+[gd_scene load_steps=96 format=3 uid="uid://ifvttcpaxya8"]
 
 [ext_resource type="Texture2D" uid="uid://2ohpoeetb60v" path="res://Assets/Menu/Title.png" id="1_hesrg"]
 [ext_resource type="Script" uid="uid://bwgep3news08h" path="res://Scenes/start_scene.gd" id="1_lfsur"]
@@ -45,6 +45,8 @@
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="47_6ae8i"]
 [ext_resource type="PackedScene" uid="uid://cotbohatei56l" path="res://Scenes/transitionOverlay.tscn" id="47_6ybu1"]
 [ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="48_1vuen"]
+[ext_resource type="FontFile" uid="uid://dyigg4ho3h74r" path="res://Fonts/OliverKitchen.otf" id="48_6ybu1"]
+[ext_resource type="Texture2D" uid="uid://b1b067t3pysmk" path="res://Assets/X.png" id="49_53j33"]
 [ext_resource type="PackedScene" uid="uid://bvaxjpsmm7req" path="res://Scenes/computer.tscn" id="49_vhs7x"]
 [ext_resource type="Shader" uid="uid://cf6fy00d4jp01" path="res://Scenes/fancy.gdshader" id="50_7a1yu"]
 
@@ -408,6 +410,60 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_6ybu1"),
 &"rotate": SubResource("Animation_lfsur")
+}
+
+[sub_resource type="Animation" id="Animation_eaphi"]
+resource_name = "showUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pu401"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wyahp"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghpwg"]
+_data = {
+&"RESET": SubResource("Animation_pu401"),
+&"hide": SubResource("Animation_wyahp"),
+&"showUp": SubResource("Animation_eaphi")
 }
 
 [node name="Control" type="Node2D"]
@@ -1384,7 +1440,150 @@ libraries = {
 autoplay = "rotate"
 
 [node name="ColorRect" parent="." instance=ExtResource("47_6ybu1")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1)
 mouse_filter = 2
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control"]
+z_index = 1
+offset_left = -419.0
+offset_top = -210.0
+offset_right = 482.0
+offset_bottom = 400.0
+color = Color(1, 1, 0.894118, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Control"]
+offset_left = -430.0
+offset_top = -222.0
+offset_right = 494.0
+offset_bottom = 412.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = -266.0
+offset_top = -221.0
+offset_right = 569.0
+offset_bottom = 73.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("48_6ybu1")
+theme_override_font_sizes/normal_font_size = 200
+text = "Settings"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = -91.0
+offset_top = -38.0
+offset_right = 744.0
+offset_bottom = 256.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("48_6ybu1")
+theme_override_font_sizes/normal_font_size = 115
+text = "Audio"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = -358.0
+offset_top = 57.0
+offset_right = 477.0
+offset_bottom = 351.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("48_6ybu1")
+theme_override_font_sizes/normal_font_size = 92
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Control"]
+z_index = 2
+layout_mode = 0
+offset_left = -102.0
+offset_top = 32.0
+offset_right = 172.0
+offset_bottom = 83.0
+scale = Vector2(2.02, 3)
+theme_override_constants/grabber_offset = 0
+value = 100.0
+tick_count = 11
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = -361.0
+offset_top = 152.0
+offset_right = 474.0
+offset_bottom = 446.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("48_6ybu1")
+theme_override_font_sizes/normal_font_size = 92
+text = "SFX"
+
+[node name="HSlider2" type="HSlider" parent="CanvasLayer/Control"]
+z_index = 2
+layout_mode = 0
+offset_left = -105.0
+offset_top = 127.0
+offset_right = 169.0
+offset_bottom = 178.0
+scale = Vector2(2.02, 3)
+theme_override_constants/grabber_offset = 0
+value = 100.0
+tick_count = 11
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = -359.0
+offset_top = 250.0
+offset_right = 476.0
+offset_bottom = 544.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("48_6ybu1")
+theme_override_font_sizes/normal_font_size = 92
+text = "Music"
+
+[node name="HSlider3" type="HSlider" parent="CanvasLayer/Control"]
+z_index = 2
+layout_mode = 0
+offset_left = -103.0
+offset_top = 225.0
+offset_right = 171.0
+offset_bottom = 276.0
+scale = Vector2(2.02, 3)
+theme_override_constants/grabber_offset = 0
+value = 100.0
+tick_count = 11
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = 371.0
+offset_top = -200.0
+offset_right = 883.0
+offset_bottom = 312.0
+scale = Vector2(0.19, 0.19)
+texture_normal = ExtResource("49_53j33")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_ghpwg")
+}
 
 [connection signal="mouse_entered" from="Settings/TextureButton2" to="." method="_hovered"]
 [connection signal="mouse_exited" from="Settings/TextureButton2" to="." method="_hover_exited"]
@@ -1408,3 +1607,4 @@ mouse_filter = 2
 [connection signal="area_exited" from="Node2D/Shipment Container/Box4/Area2D" to="Node2D/Shipment Container" method="_4_exited"]
 [connection signal="area_exited" from="Node2D/Shipment Container/Area2D" to="Node2D/Shipment Container" method="_on_area_2d_area_exited"]
 [connection signal="body_exited" from="Node2D/Shipment Container/Area2D" to="Node2D/Shipment Container" method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="CanvasLayer/Control/TextureButton" to="." method="_x"]

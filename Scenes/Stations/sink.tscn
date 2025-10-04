@@ -116,6 +116,7 @@ rotation = 1.5708
 scale = Vector2(0.335, 0.335)
 stream = ExtResource("5_846l7")
 panning_strength = 0.0
+bus = &"SFX"
 
 [node name="Plate" type="Sprite2D" parent="."]
 visible = false

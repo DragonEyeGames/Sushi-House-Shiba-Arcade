@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sushi House Shiba"
-run/main_scene="uid://dyu40iyjut0ht"
+run/main_scene="uid://ifvttcpaxya8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
@@ -165,6 +165,6 @@ B={
 viewport/hdr_2d=true
 anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/msaa_3d=1
-environment/defaults/default_clear_color=Color(0.306923, 0.306923, 0.306923, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 anti_aliasing/quality/screen_space_aa=1
 anti_aliasing/quality/use_taa=true
