@@ -16,17 +16,16 @@ shader_parameter/samples = 12
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(122, 40)
 
-[node name="Rice Reservoir" type="Sprite2D" node_paths=PackedStringArray("controller")]
+[node name="Rice Reservoir" type="Sprite2D"]
 material = SubResource("ShaderMaterial_3exxq")
 scale = Vector2(0.53, 0.53)
 texture = ExtResource("2_y03p5")
 script = ExtResource("3_pxg7i")
-item = "rice"
 stock = 5.0
-controller = NodePath("")
 slideDisplay = true
 yBottom = 102
 yTop = 140
+item = "rice"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(12, -4)

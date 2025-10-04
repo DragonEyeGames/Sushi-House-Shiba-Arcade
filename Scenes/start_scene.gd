@@ -37,3 +37,21 @@ func _on_texture_button_pressed() -> void:
 
 func _x() -> void:
 	$CanvasLayer/AnimationPlayer.play("hide")
+
+
+func _master_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value/4)
+	if(value==-80):
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), -80)
+
+
+func _sfx(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value/4)
+	if(value==-80):
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), -80)
+
+
+func _music(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value/4)
+	if(value==-80):
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), -80)

@@ -50,6 +50,21 @@
 [ext_resource type="PackedScene" uid="uid://bvaxjpsmm7req" path="res://Scenes/computer.tscn" id="49_vhs7x"]
 [ext_resource type="Shader" uid="uid://cf6fy00d4jp01" path="res://Scenes/fancy.gdshader" id="50_7a1yu"]
 
+[sub_resource type="Animation" id="Animation_56eit"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.43, 0.43)]
+}
+
 [sub_resource type="Animation" id="Animation_53j33"]
 resource_name = "grow"
 length = 0.25
@@ -64,21 +79,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.43, 0.43), Vector2(0.5, 0.5)]
-}
-
-[sub_resource type="Animation" id="Animation_56eit"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.43, 0.43)]
 }
 
 [sub_resource type="Animation" id="Animation_j6tu3"]
@@ -104,6 +104,21 @@ _data = {
 &"shrink": SubResource("Animation_j6tu3")
 }
 
+[sub_resource type="Animation" id="Animation_0o700"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.485, 0.485)]
+}
+
 [sub_resource type="Animation" id="Animation_bxsid"]
 resource_name = "grow"
 length = 0.25
@@ -118,21 +133,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.485, 0.485), Vector2(0.54, 0.54)]
-}
-
-[sub_resource type="Animation" id="Animation_0o700"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.485, 0.485)]
 }
 
 [sub_resource type="Animation" id="Animation_tdf03"]
@@ -312,6 +312,21 @@ shader_parameter/saturation = 1.12
 shader_parameter/contrast = 0.899
 shader_parameter/brightness = 1.0
 
+[sub_resource type="Animation" id="Animation_ywmsu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.479, 0.548)]
+}
+
 [sub_resource type="Animation" id="Animation_8vac2"]
 resource_name = "grow"
 length = 5.0
@@ -329,25 +344,37 @@ tracks/0/keys = {
 "values": [Vector2(0.479, 0.548), Vector2(0.51, 0.583), Vector2(0.479, 0.548)]
 }
 
-[sub_resource type="Animation" id="Animation_ywmsu"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lfsur"]
+_data = {
+&"RESET": SubResource("Animation_ywmsu"),
+&"grow": SubResource("Animation_8vac2")
+}
+
+[sub_resource type="Animation" id="Animation_6ybu1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Title:scale")
+tracks/0/path = NodePath("Settings:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.479, 0.548)]
+"values": [-0.174533]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lfsur"]
-_data = {
-&"RESET": SubResource("Animation_ywmsu"),
-&"grow": SubResource("Animation_8vac2")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Play:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0872665]
 }
 
 [sub_resource type="Animation" id="Animation_lfsur"]
@@ -379,53 +406,10 @@ tracks/1/keys = {
 "values": [-0.0872665, 0.0872665]
 }
 
-[sub_resource type="Animation" id="Animation_6ybu1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Settings:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.174533]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Play:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.0872665]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_53j33"]
 _data = {
 &"RESET": SubResource("Animation_6ybu1"),
 &"rotate": SubResource("Animation_lfsur")
-}
-
-[sub_resource type="Animation" id="Animation_eaphi"]
-resource_name = "showUp"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_pu401"]
@@ -457,6 +441,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_eaphi"]
+resource_name = "showUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ghpwg"]
@@ -1086,11 +1086,13 @@ shape = SubResource("RectangleShape2D_hrvbo")
 stream = ExtResource("19_3tgym")
 volume_db = -5.0
 autoplay = true
+bus = &"SFX"
 parameters/looping = true
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Node2D"]
 stream = ExtResource("20_rv7kw")
 volume_db = 8.0
+bus = &"SFX"
 
 [node name="Stations" type="Node2D" parent="Node2D"]
 z_index = 18
@@ -1286,6 +1288,7 @@ shape = SubResource("RectangleShape2D_rtmaq")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D/Shipment Container/Control"]
 position = Vector2(190, 128)
 stream = ExtResource("42_vdd2u")
+bus = &"SFX"
 
 [node name="BoxTruck" type="Sprite2D" parent="Node2D/Shipment Container"]
 z_index = -7
@@ -1461,6 +1464,7 @@ mouse_filter = 2
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control"]
 z_index = 1
+layout_mode = 0
 offset_left = -419.0
 offset_top = -210.0
 offset_right = 482.0
@@ -1468,6 +1472,7 @@ offset_bottom = 400.0
 color = Color(1, 1, 0.894118, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = -430.0
 offset_top = -222.0
 offset_right = 494.0
@@ -1519,7 +1524,8 @@ offset_right = 172.0
 offset_bottom = 83.0
 scale = Vector2(2.02, 3)
 theme_override_constants/grabber_offset = 0
-value = 100.0
+min_value = -80.0
+max_value = 0.0
 tick_count = 11
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer/Control"]
@@ -1543,7 +1549,8 @@ offset_right = 169.0
 offset_bottom = 178.0
 scale = Vector2(2.02, 3)
 theme_override_constants/grabber_offset = 0
-value = 100.0
+min_value = -80.0
+max_value = 0.0
 tick_count = 11
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="CanvasLayer/Control"]
@@ -1567,7 +1574,8 @@ offset_right = 171.0
 offset_bottom = 276.0
 scale = Vector2(2.02, 3)
 theme_override_constants/grabber_offset = 0
-value = 100.0
+min_value = -80.0
+max_value = 0.0
 tick_count = 11
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control"]
@@ -1607,4 +1615,7 @@ libraries = {
 [connection signal="area_exited" from="Node2D/Shipment Container/Box4/Area2D" to="Node2D/Shipment Container" method="_4_exited"]
 [connection signal="area_exited" from="Node2D/Shipment Container/Area2D" to="Node2D/Shipment Container" method="_on_area_2d_area_exited"]
 [connection signal="body_exited" from="Node2D/Shipment Container/Area2D" to="Node2D/Shipment Container" method="_on_area_2d_body_exited"]
+[connection signal="value_changed" from="CanvasLayer/Control/HSlider" to="." method="_master_changed"]
+[connection signal="value_changed" from="CanvasLayer/Control/HSlider2" to="." method="_sfx"]
+[connection signal="value_changed" from="CanvasLayer/Control/HSlider3" to="." method="_music"]
 [connection signal="pressed" from="CanvasLayer/Control/TextureButton" to="." method="_x"]

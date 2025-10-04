@@ -1,4 +1,4 @@
-[gd_scene load_steps=167 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=166 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -81,7 +81,6 @@
 [ext_resource type="Texture2D" uid="uid://b6137wx3bpmo6" path="res://Assets/Character/Front-Walk-3-2.png" id="79_ycl58"]
 [ext_resource type="Texture2D" uid="uid://dr5ux7wea1ah" path="res://Assets/Character/Front-Walk-4-2.png" id="80_w32ys"]
 [ext_resource type="Texture2D" uid="uid://b8gsdn3mysw2w" path="res://Assets/Character/Front-Walk-5-2.png" id="81_g2ehk"]
-[ext_resource type="AudioStream" uid="uid://d22u06bbsk4v7" path="res://Music/Ninja Run.ogg" id="82_b7esa"]
 [ext_resource type="AudioStream" uid="uid://bhwls6rqkhfr1" path="res://Music/Pick Up.mp3" id="83_e1jjv"]
 [ext_resource type="AudioStream" uid="uid://33urjclpwohv" path="res://Music/Set Down.mp3" id="84_stool"]
 [ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://Assets/hotbar.png" id="84_xtnwn"]
@@ -605,14 +604,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2(-0.5, 35)
 shape = SubResource("RectangleShape2D_272bh")
-
-[node name="MainMusic" type="AudioStreamPlayer2D" parent="Player"]
-position = Vector2(0, 31)
-stream = ExtResource("82_b7esa")
-volume_db = -10.0
-autoplay = true
-bus = &"Music"
-parameters/looping = true
 
 [node name="PickingUp" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("83_e1jjv")
@@ -1403,7 +1394,6 @@ shape = SubResource("RectangleShape2D_hrvbo")
 stream = ExtResource("110_f2hid")
 volume_db = -5.0
 autoplay = true
-stream_paused = true
 bus = &"SFX"
 parameters/looping = true
 

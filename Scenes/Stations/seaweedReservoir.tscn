@@ -16,17 +16,16 @@ shader_parameter/samples = 12
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(122, 40)
 
-[node name="Seaweed Reservoir" type="Sprite2D" node_paths=PackedStringArray("controller")]
+[node name="Seaweed Reservoir" type="Sprite2D"]
 material = SubResource("ShaderMaterial_shlp4")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_i3ts8")
 script = ExtResource("3_bv0gi")
-item = "seaweed"
 stock = 5.0
-controller = NodePath("")
 slideDisplay = true
 yBottom = 94
 yTop = 138
+item = "seaweed"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

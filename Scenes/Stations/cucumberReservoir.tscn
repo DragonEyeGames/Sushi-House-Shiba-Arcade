@@ -15,15 +15,14 @@ shader_parameter/samples = 12
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(122, 40)
 
-[node name="Cucumber Reservoir" type="Sprite2D" node_paths=PackedStringArray("controller")]
+[node name="Cucumber Reservoir" type="Sprite2D"]
 material = SubResource("ShaderMaterial_adgm5")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_wlgsm")
 script = ExtResource("3_vnsgr")
-item = "cucumber"
 stock = 3.0
-controller = NodePath("")
 liveCount = true
+item = "cucumber"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
