@@ -10,7 +10,6 @@ var orderSpeed=1
 
 func _ready() -> void:
 	randomize()
-	add_order()
 	var original = $"../Sushi Rollers/Control/Path2D/PathFollow2D"
 	for i in range(69):
 		var copy = original.duplicate()
@@ -19,7 +18,6 @@ func _ready() -> void:
 		copies.append(copy)
 		copy.z_index=i
 	original.visible = false
-	orderCycle()
 
 
 func _process(delta: float) -> void:
@@ -33,8 +31,6 @@ func _process(delta: float) -> void:
 				roller.reparent($"../Sushi Rollers/Control")
 				$"../Stations/PistonBase/AnimationPlayer".play("push")
 				slide(roller)
-	if(len(orders)==0):
-		add_order()
 	# First, hide all order slots
 	for i in range(4):
 		var order_ui = get_node("Order %d" % (i + 1))
@@ -83,13 +79,6 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	for copy in copies:
 		copy.z_index += 1
-
-
-func orderCycle():
-	orderSpeed+=.1
-	await get_tree().create_timer(randi_range(25, 35)/orderSpeed).timeout
-	add_order()
-	orderCycle()
 	
 func slide(plate):
 	plateStack+=1
@@ -99,13 +88,3 @@ func slide(plate):
 		await get_tree().create_timer(0).timeout
 	plate.get_child(0).reparent($"../Stations/PlateHolder")
 	plate.queue_free()
-
-
-func add_order():
-	if(not $"../Tutorial".tutorial):
-		orders.append(items[randi() % items.size()])
-		orderTimeRemaining.append(100)
-		
-func add_tutorial_order():
-	orders.append("sushi")
-	orderTimeRemaining.append(100)

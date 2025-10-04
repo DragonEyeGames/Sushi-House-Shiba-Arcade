@@ -231,3 +231,4 @@ func _on_quit_pressed() -> void:
 	tutorial=false
 	$"../Player".canMove=true
 	$".".visible=false
+	$CanvasLayer.visible=false

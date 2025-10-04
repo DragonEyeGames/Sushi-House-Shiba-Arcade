@@ -40,6 +40,7 @@ folder_colors={
 "res://Assets/Character/": "teal",
 "res://Assets/Desks/": "red",
 "res://Assets/DisplayItems/": "yellow",
+"res://Assets/Menu/": "pink",
 "res://Builds/": "orange",
 "res://Fonts/": "red",
 "res://Music/": "pink",
