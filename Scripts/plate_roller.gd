@@ -23,6 +23,19 @@ func _process(delta: float) -> void:
 	if(colliding and $"..".playerInventorySelect!="" and $"..".playerInventorySelect!="dirty plate" and $"..".playerInventorySelect!="plate" and len($"..".playerInventory)>0 and Input.is_action_just_pressed("Place") and platePlaced and not rolling and currentPlate!=null):
 		for child in currentPlate.get_child(0).get_children():
 			child.visible=child.name==$"..".playerInventorySelect
+			if(child.name in $"../TV".orders):
+				var index=$"../TV".orders.find(child.name)
+				$"../TV".orders.remove_at(index)
+				$"../TV".orderTimeRemaining.remove_at(index)
+				print(child.name)
+				if(child.name=="sushi"):
+					GameManager.score+=10
+				elif(child.name=="onigiri"):
+					GameManager.score+=6
+				elif(child.name=="sushi with cucumber"):
+					GameManager.score+=14
+				elif(child.name=="onigiri with cucumber"):
+					GameManager.score+8
 		$"..".placeCurrent("current")
 		rolling=true
 		platePlaced=false

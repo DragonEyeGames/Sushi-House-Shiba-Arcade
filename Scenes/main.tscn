@@ -1589,6 +1589,7 @@ shape = SubResource("RectangleShape2D_0w4wg")
 script = ExtResource("139_hfu3o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Tutorial"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Tutorial/CanvasLayer"]
 z_index = 21
@@ -1671,6 +1672,46 @@ texture = ExtResource("140_adgm5")
 visible = false
 z_index = 100
 position = Vector2(972, 498)
+rotation = -1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(764, 474)
+rotation = -1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(-6, -210)
+rotation = 1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(-175, -211)
+rotation = 1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(1079, 224)
+rotation = -1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(-18.0001, 219)
 rotation = -1.5708
 scale = Vector2(0.145, 0.145)
 texture = ExtResource("140_adgm5")

@@ -5,6 +5,7 @@ var orders = []
 var orderTimeRemaining = []
 var items = ["sushi", "sushi with cucumber", "onigiri", "onigiri with cucumber"]
 var plateStack=0
+var speed=200
 
 func _ready() -> void:
 	randomize()
@@ -22,7 +23,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	for roller in $"../Sushi Rollers/Control/Path2D".get_children():
-		roller.progress+=200*delta
+		roller.progress+=speed*delta
 		roller.z_index = int(roller.progress_ratio*100)
 		if("Plate" in roller.get_child(0).name):
 			if(roller.progress_ratio>=0.666):

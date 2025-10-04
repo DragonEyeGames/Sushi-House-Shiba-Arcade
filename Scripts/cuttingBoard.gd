@@ -17,6 +17,8 @@ func _process(_delta: float) -> void:
 		requirementsMet=false
 	if($"Sliced Fish".visible):
 		_on_button_pressed()
+	if($"Sliced Cucumber".visible):
+		_on_button_pressed()
 	
 func interact():
 	if(not controller.interactiveItem==self):

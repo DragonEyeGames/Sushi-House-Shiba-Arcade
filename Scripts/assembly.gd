@@ -45,9 +45,6 @@ func _process(_delta: float) -> void:
 			for child in $Items.get_children():
 				if(child.riceEntered):
 					child.visible=false
-				var tween = create_tween()
-				tween.tween_property(child, "global_position", $"../../Player".global_position, .5)
-			await get_tree().create_timer(.5).timeout
 			$Items/Items.visible=false
 			$Items/Items2.visible=false
 			$Items/Items3.visible=false
@@ -56,16 +53,15 @@ func _process(_delta: float) -> void:
 			for invItem in controller.playerInventory:
 				if(invItem=="sliced fish" or invItem=="sliced cucumber"):
 					showList.append(invItem)
+			var showItem=-1
 			for child in $Items.get_children():
+				showItem+=1
 				if len(showList)>=$Items.get_children().find(child)+1:
 					child.visible=true
-					child.global_position=$"../../Player".global_position
-					var tween5 = create_tween()
-					tween5.tween_property(child, "position", Vector2(-123, -99), .5) # move to (400, 300) in 0.5s
 					for i in child.get_children():
 						i.visible=false
-					if child.get_node_or_null(showList[0]) !=null:
-						child.get_node_or_null(showList[0]).visible=true
+					if child.get_node_or_null(showList[showItem]) !=null:
+						child.get_node_or_null(showList[showItem]).visible=true
 				else:
 					child.visible=false
 			await get_tree().create_timer(.5).timeout
