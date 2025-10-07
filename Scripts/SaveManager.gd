@@ -8,6 +8,8 @@ const SAVE_GAME_PATH := "user://savegame.tres"
 @export var sfxVolume := 0
 @export var musicVolume := 0
 
+@export var input_map: Dictionary
+
 func writeSave():
 	ResourceSaver.save(self, SAVE_GAME_PATH)
 	

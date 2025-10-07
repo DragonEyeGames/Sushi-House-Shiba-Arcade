@@ -8,6 +8,10 @@ func _ready() -> void:
 		GameManager.musicValue=save.musicVolume
 		GameManager.masterValue=save.masterVolume
 		GameManager.sfxValue=save.sfxVolume
+		for action in save.input_map:
+			InputMap.action_erase_events(action)
+			for input_event in save.input_map[action]:
+				InputMap.action_add_event(action, input_event)
 	$Audio/Control/HSlider.value=GameManager.masterValue
 	$Audio/Control/HSlider2.value=GameManager.sfxValue
 	$Audio/Control/HSlider3.value=GameManager.musicValue
@@ -50,6 +54,8 @@ func _on_texture_button_pressed() -> void:
 	save.masterVolume=GameManager.masterValue
 	save.sfxVolume=GameManager.sfxValue
 	save.musicVolume=GameManager.musicValue
+	for action in InputMap.get_actions():
+		save.input_map[action] = InputMap.action_get_events(action)
 	save.writeSave()
 	$ColorRect.transition_to("res://Scenes/main.tscn")
 
