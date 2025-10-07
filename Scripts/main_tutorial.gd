@@ -9,6 +9,7 @@ var seaweedSelected
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	tutorial=GameManager.tutorial
 	if(tutorial):
 		$"../Player".canMove=false
 		$".".visible=true
@@ -208,6 +209,15 @@ func _on_next_pressed() -> void:
 		waitingFor=""
 		await get_tree().create_timer(5).timeout
 		tutorial=false
+		GameManager.tutorial=false
+		var save = SaveData.new()
+		save.masterVolume=GameManager.masterValue
+		save.sfxVolume=GameManager.sfxValue
+		save.musicVolume=GameManager.musicValue
+		save.tutorial=GameManager.tutorial
+		for action in InputMap.get_actions():
+			save.input_map[action] = InputMap.action_get_events(action)
+		save.writeSave()
 		$"../Stations/Cucumber Reservoir/Area2D/CollisionShape2D".disabled=false
 		$"../Stations/Cutting Board/Area2D/CollisionShape2D".disabled=false
 		$"../Stations/Assembly Board/Area2D/CollisionShape2D".disabled=false
@@ -229,6 +239,15 @@ func _on_hide_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	tutorial=false
+	GameManager.tutorial=false
+	var save = SaveData.new()
+	save.masterVolume=GameManager.masterValue
+	save.sfxVolume=GameManager.sfxValue
+	save.musicVolume=GameManager.musicValue
+	save.tutorial=GameManager.tutorial
+	for action in InputMap.get_actions():
+		save.input_map[action] = InputMap.action_get_events(action)
+	save.writeSave()
 	$"../Player".canMove=true
 	$".".visible=false
 	$CanvasLayer.visible=false

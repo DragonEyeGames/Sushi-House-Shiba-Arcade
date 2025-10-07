@@ -379,6 +379,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1e-05, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_qoltt"]
 resource_name = "hide"
@@ -395,6 +407,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1e-05)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_2vhw8"]
 resource_name = "showUp"
@@ -410,6 +434,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r7l8j"]
@@ -721,6 +757,7 @@ libraries = {
 
 [node name="KeyRebind" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="Control" type="Control" parent="KeyRebind"]
 layout_mode = 3
@@ -910,6 +947,7 @@ libraries = {
 
 [node name="SettingsMenu" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="Control" type="Control" parent="SettingsMenu"]
 layout_mode = 3

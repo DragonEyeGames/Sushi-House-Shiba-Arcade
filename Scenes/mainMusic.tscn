@@ -2,11 +2,10 @@
 
 [ext_resource type="AudioStream" uid="uid://d22u06bbsk4v7" path="res://Music/Ninja Run.ogg" id="1_4w0wc"]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer"]
 
-[node name="MainMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-position = Vector2(0, 31)
 stream = ExtResource("1_4w0wc")
 volume_db = -10.0
 autoplay = true

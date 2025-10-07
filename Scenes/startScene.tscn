@@ -559,6 +559,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1e-05, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_qoltt"]
 resource_name = "hide"
@@ -575,6 +587,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1e-05)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_2vhw8"]
 resource_name = "showUp"
@@ -590,6 +614,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r7l8j"]
@@ -2115,6 +2151,7 @@ autoplay = "rotate"
 [node name="ColorRect" parent="." instance=ExtResource("47_6ybu1")]
 
 [node name="Audio" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="Control" parent="Audio"]
 layout_mode = 3
@@ -2264,6 +2301,7 @@ libraries = {
 }
 
 [node name="SettingsMenu" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="Control" parent="SettingsMenu"]
 layout_mode = 3
@@ -2386,6 +2424,7 @@ libraries = {
 }
 
 [node name="KeyRebind" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="Control" parent="KeyRebind"]
 layout_mode = 3
@@ -2578,7 +2617,7 @@ libraries = {
 [connection signal="pressed" from="Settings/TextureButton2" to="." method="_pressed"]
 [connection signal="mouse_entered" from="Play/TextureButton" to="." method="_play_hovered"]
 [connection signal="mouse_exited" from="Play/TextureButton" to="." method="_on_texture_button_mouse_exited"]
-[connection signal="pressed" from="Play/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Play/TextureButton" to="." method="_start_game"]
 [connection signal="area_entered" from="Node2D/Plate Roller/Rollers/Area2D" to="Node2D/Plate Roller" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Node2D/Plate Roller/Rollers/Area2D" to="Node2D/Plate Roller" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Node2D/Stations/Rice Reservoir/Area2D" to="Node2D/Stations/Rice Reservoir" method="_on_area_2d_area_entered"]

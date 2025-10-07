@@ -606,12 +606,12 @@ collision_mask = 2
 position = Vector2(-0.5, 35)
 shape = SubResource("RectangleShape2D_272bh")
 
-[node name="PickingUp" type="AudioStreamPlayer2D" parent="Player"]
+[node name="PickingUp" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("83_e1jjv")
 volume_db = 10.0
 bus = &"SFX"
 
-[node name="SetDown" type="AudioStreamPlayer2D" parent="Player"]
+[node name="SetDown" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("84_stool")
 volume_db = 5.0
 bus = &"SFX"
@@ -922,6 +922,21 @@ color = Color(0.712129, 0.712129, 0.712129, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Sushi" type="Sprite2D" parent="TV/Order 1"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("93_qays4")
+
+[node name="Cooked Rice" type="Sprite2D" parent="TV/Order 1"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("93_qays4")
+
+[node name="Sliced Fish" type="Sprite2D" parent="TV/Order 1"]
+position = Vector2(255, -310)
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("93_qays4")
+
+[node name="Sliced Cucumber" type="Sprite2D" parent="TV/Order 1"]
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("93_qays4")

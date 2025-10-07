@@ -10,6 +10,8 @@ const SAVE_GAME_PATH := "user://savegame.tres"
 
 @export var input_map: Dictionary
 
+@export var tutorial := true
+
 func writeSave():
 	ResourceSaver.save(self, SAVE_GAME_PATH)
 	

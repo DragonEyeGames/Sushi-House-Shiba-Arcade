@@ -42,7 +42,6 @@ folder_colors={
 "res://Assets/Desks/": "red",
 "res://Assets/DisplayItems/": "yellow",
 "res://Assets/Menu/": "pink",
-"res://Builds/": "orange",
 "res://Fonts/": "red",
 "res://Music/": "pink",
 "res://Scenes/": "green",
@@ -50,7 +49,8 @@ folder_colors={
 "res://Scripts/": "yellow",
 "res://Scripts/Classes/": "red",
 "res://Shaders/": "purple",
-"res://addons/": "gray"
+"res://addons/": "gray",
+"res://builds/": "orange"
 }
 
 [input]

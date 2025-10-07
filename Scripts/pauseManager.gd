@@ -166,6 +166,7 @@ func saveGame():
 	save.masterVolume=GameManager.masterValue
 	save.sfxVolume=GameManager.sfxValue
 	save.musicVolume=GameManager.musicValue
+	save.tutorial=GameManager.tutorial
 	for action in InputMap.get_actions():
 		save.input_map[action] = InputMap.action_get_events(action)
 	save.writeSave()

@@ -8,6 +8,7 @@ func _ready() -> void:
 		GameManager.musicValue=save.musicVolume
 		GameManager.masterValue=save.masterVolume
 		GameManager.sfxValue=save.sfxVolume
+		GameManager.tutorial=save.tutorial
 		for action in save.input_map:
 			InputMap.action_erase_events(action)
 			for input_event in save.input_map[action]:
@@ -46,7 +47,8 @@ func _on_texture_button_mouse_exited() -> void:
 	tween.tween_property($Play, "scale", Vector2(.43, .43), .25)
 
 
-func _on_texture_button_pressed() -> void:
+func _start_game() -> void:
+	$ColorRect.transition_to("res://Scenes/main.tscn")
 	GameManager.masterValue=$Audio/Control/HSlider.value
 	GameManager.sfxValue=$Audio/Control/HSlider2.value
 	GameManager.musicValue=$Audio/Control/HSlider3.value
@@ -54,10 +56,10 @@ func _on_texture_button_pressed() -> void:
 	save.masterVolume=GameManager.masterValue
 	save.sfxVolume=GameManager.sfxValue
 	save.musicVolume=GameManager.musicValue
+	save.tutorial=GameManager.tutorial
 	for action in InputMap.get_actions():
 		save.input_map[action] = InputMap.action_get_events(action)
 	save.writeSave()
-	$ColorRect.transition_to("res://Scenes/main.tscn")
 
 
 func _x() -> void:
