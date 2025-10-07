@@ -12,9 +12,9 @@ func _process(_delta: float) -> void:
 		canToggle=false
 		get_tree().paused = !get_tree().paused
 		if(get_tree().paused):
-			$CanvasLayer/Control/HSlider.value=GameManager.masterValue
-			$CanvasLayer/Control/HSlider2.value=GameManager.sfxValue
-			$CanvasLayer/Control/HSlider3.value=GameManager.musicValue
+			$Audio/Control/HSlider.value=GameManager.masterValue
+			$Audio/Control/HSlider2.value=GameManager.sfxValue
+			$Audio/Control/HSlider3.value=GameManager.musicValue
 			$Initialize.play("open")
 		else:
 			$Initialize.play("close")
@@ -28,13 +28,13 @@ func _process(_delta: float) -> void:
 
 
 func _on_texture_button_2_pressed() -> void:
-	$CanvasLayer/AnimationPlayer.play("showUp")
+	$SettingsMenu/AnimationPlayer.play("showUp")
 	
 
 
 
 func _on_texture_button_pressed() -> void:
-	$CanvasLayer/AnimationPlayer.play("hide")
+	$SettingsMenu/AnimationPlayer.play("hide")
 
 
 func _on_resume() -> void:

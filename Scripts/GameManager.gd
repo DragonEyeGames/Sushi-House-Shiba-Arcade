@@ -9,6 +9,8 @@ var cargoClear
 var waitTime
 var score=10
 
+var minigameControls=""
+
 var masterValue=0
 var sfxValue=0
 var musicValue=0

@@ -117,3 +117,12 @@ func _on_settings_input_pressed() -> void:
 func _input_remap_x_() -> void:
 	$SettingsMenu/AnimationPlayer.play("showUp")
 	$KeyRebind/AnimationPlayer.play("hide")
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	if(index==0):
+		GameManager.minigameControls="mouse"
+	if(index==1):
+		GameManager.minigameControls="arrows"
+	if(index==2):
+		GameManager.minigameControls="wasd"

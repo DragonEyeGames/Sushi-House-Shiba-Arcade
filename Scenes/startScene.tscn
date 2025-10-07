@@ -545,7 +545,7 @@ _data = {
 &"rotate": SubResource("Animation_lfsur")
 }
 
-[sub_resource type="Animation" id="Animation_pu401"]
+[sub_resource type="Animation" id="Animation_vfiib"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -560,7 +560,7 @@ tracks/0/keys = {
 "values": [Vector2(1e-05, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_wyahp"]
+[sub_resource type="Animation" id="Animation_qoltt"]
 resource_name = "hide"
 length = 0.5
 tracks/0/type = "value"
@@ -576,7 +576,7 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(1, 1e-05)]
 }
 
-[sub_resource type="Animation" id="Animation_eaphi"]
+[sub_resource type="Animation" id="Animation_2vhw8"]
 resource_name = "showUp"
 length = 0.5
 tracks/0/type = "value"
@@ -592,11 +592,11 @@ tracks/0/keys = {
 "values": [Vector2(1e-05, 1), Vector2(1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghpwg"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7l8j"]
 _data = {
-&"RESET": SubResource("Animation_pu401"),
-&"hide": SubResource("Animation_wyahp"),
-&"showUp": SubResource("Animation_eaphi")
+&"RESET": SubResource("Animation_vfiib"),
+&"hide": SubResource("Animation_qoltt"),
+&"showUp": SubResource("Animation_2vhw8")
 }
 
 [sub_resource type="Animation" id="Animation_3tgym"]
@@ -2260,7 +2260,7 @@ texture_normal = ExtResource("49_53j33")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Audio"]
 libraries = {
-&"": SubResource("AnimationLibrary_ghpwg")
+&"": SubResource("AnimationLibrary_r7l8j")
 }
 
 [node name="SettingsMenu" type="CanvasLayer" parent="."]
@@ -2382,7 +2382,7 @@ autoplay = "rotate"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SettingsMenu"]
 libraries = {
-&"": SubResource("AnimationLibrary_ghpwg")
+&"": SubResource("AnimationLibrary_r7l8j")
 }
 
 [node name="KeyRebind" type="CanvasLayer" parent="."]
@@ -2423,25 +2423,26 @@ color = Color(0, 0, 0, 1)
 [node name="RichTextLabel" type="RichTextLabel" parent="KeyRebind/Control"]
 z_index = 1
 layout_mode = 0
-offset_left = -266.0
-offset_top = -221.0
-offset_right = 569.0
-offset_bottom = 73.0
+offset_left = -418.0
+offset_top = -211.0
+offset_right = 484.0
+offset_bottom = -51.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("48_6ybu1")
-theme_override_font_sizes/normal_font_size = 200
+theme_override_font_sizes/normal_font_size = 153
 text = "Settings"
+horizontal_alignment = 1
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="KeyRebind/Control"]
 z_index = 1
 layout_mode = 0
 offset_left = -419.0
-offset_top = -38.0
+offset_top = -70.0
 offset_right = 484.0
-offset_bottom = 86.0
+offset_bottom = 65.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("48_6ybu1")
-theme_override_font_sizes/normal_font_size = 115
+theme_override_font_sizes/normal_font_size = 81
 text = "Key Rebind"
 horizontal_alignment = 1
 
@@ -2457,17 +2458,18 @@ texture_normal = ExtResource("49_53j33")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="KeyRebind/Control"]
 z_index = 1
+custom_minimum_size = Vector2(854, 295)
 layout_mode = 0
-offset_left = -399.0
-offset_top = 84.0
-offset_right = 455.0
-offset_bottom = 379.0
-vertical_scroll_mode = 2
+offset_left = -397.0
+offset_top = 36.0
+offset_right = 457.0
+offset_bottom = 423.0
 
 [node name="Control" type="Control" parent="KeyRebind/Control/ScrollContainer"]
 layout_mode = 2
 
 [node name="Button" parent="KeyRebind/Control/ScrollContainer/Control" instance=ExtResource("65_rv7kw")]
+layout_mode = 2
 offset_left = 19.0
 offset_top = 21.0
 offset_right = 495.0
@@ -2476,14 +2478,16 @@ textToShow = "Move Up:"
 actionToRebind = "Up"
 
 [node name="Button2" parent="KeyRebind/Control/ScrollContainer/Control" instance=ExtResource("65_rv7kw")]
+layout_mode = 2
 offset_left = 19.0
-offset_top = 124.0
+offset_top = 111.0
 offset_right = 495.0
-offset_bottom = 211.0
+offset_bottom = 198.0
 textToShow = "Move Down:"
 actionToRebind = "Down"
 
 [node name="Button3" parent="KeyRebind/Control/ScrollContainer/Control" instance=ExtResource("65_rv7kw")]
+layout_mode = 2
 offset_left = 443.0
 offset_top = 20.0
 offset_right = 919.0
@@ -2492,32 +2496,81 @@ textToShow = "Move Left:"
 actionToRebind = "Left"
 
 [node name="Button4" parent="KeyRebind/Control/ScrollContainer/Control" instance=ExtResource("65_rv7kw")]
+layout_mode = 2
 offset_left = 440.0
-offset_top = 127.0
+offset_top = 114.0
 offset_right = 916.0
-offset_bottom = 214.0
+offset_bottom = 201.0
 textToShow = "Move Right:"
 actionToRebind = "Right"
 
 [node name="Button5" parent="KeyRebind/Control/ScrollContainer/Control" instance=ExtResource("65_rv7kw")]
+layout_mode = 2
 offset_left = 20.0
-offset_top = 216.0
+offset_top = 203.0
 offset_right = 496.0
-offset_bottom = 303.0
+offset_bottom = 290.0
 textToShow = "Place:"
 actionToRebind = "Place"
 
 [node name="Button6" parent="KeyRebind/Control/ScrollContainer/Control" instance=ExtResource("65_rv7kw")]
+layout_mode = 2
 offset_left = 441.0
-offset_top = 215.0
+offset_top = 202.0
 offset_right = 917.0
-offset_bottom = 302.0
+offset_bottom = 289.0
 textToShow = "Escape:"
 actionToRebind = "Escape"
 
+[node name="Button7" type="Control" parent="KeyRebind/Control/ScrollContainer/Control"]
+visible = false
+z_index = 5
+layout_mode = 2
+anchors_preset = 0
+offset_left = 18.0
+offset_top = 293.0
+offset_right = 1023.0
+offset_bottom = 380.0
+scale = Vector2(0.8, 0.8)
+
+[node name="ColorRect" type="ColorRect" parent="KeyRebind/Control/ScrollContainer/Control/Button7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.647059)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="KeyRebind/Control/ScrollContainer/Control/Button7"]
+layout_mode = 0
+offset_right = 423.0
+offset_bottom = 87.0
+theme_override_font_sizes/normal_font_size = 33
+text = "Minigame Controls:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="KeyRebind/Control/ScrollContainer/Control/Button7"]
+layout_mode = 0
+offset_left = 518.75
+offset_top = 12.5
+offset_right = 939.75
+offset_bottom = 76.5
+theme_override_font_sizes/font_size = 34
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Snap to Mouse"
+popup/item_0/id = 0
+popup/item_1/text = "Arrow Keys"
+popup/item_1/id = 1
+popup/item_2/text = "WASD"
+popup/item_2/id = 2
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KeyRebind"]
 libraries = {
-&"": SubResource("AnimationLibrary_ghpwg")
+&"": SubResource("AnimationLibrary_r7l8j")
 }
 
 [connection signal="mouse_entered" from="Settings/TextureButton2" to="." method="_hovered"]
@@ -2570,3 +2623,4 @@ libraries = {
 [connection signal="mouse_exited" from="SettingsMenu/Control/Input" to="." method="_on_input_mouse_exited"]
 [connection signal="pressed" from="SettingsMenu/Control/Input" to="." method="_on_settings_input_pressed"]
 [connection signal="pressed" from="KeyRebind/Control/TextureButton" to="." method="_input_remap_x_"]
+[connection signal="item_selected" from="KeyRebind/Control/ScrollContainer/Control/Button7/OptionButton" to="." method="_on_option_button_item_selected"]

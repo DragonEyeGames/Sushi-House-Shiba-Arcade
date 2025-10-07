@@ -32,14 +32,6 @@ func _process(_delta: float) -> void:
 		selectedSlot=3
 	if(Input.is_action_just_pressed("5")):
 		selectedSlot=4
-	if(Input.is_action_just_pressed("InvLeft")):
-		selectedSlot-=1
-		if(selectedSlot<0):
-			selectedSlot=len(playerInventory)-1
-	if(Input.is_action_just_pressed("InvRight")):
-		selectedSlot+=1
-		if(selectedSlot>len(playerInventory)-1):
-			selectedSlot=0
 	if(len(playerInventory)==0):
 		selectedSlot=-1
 		playerInventorySelect=""
