@@ -3,6 +3,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var save = SaveData.loadSave()
+	if(save != null):
+		GameManager.musicValue=save.musicVolume
+		GameManager.masterValue=save.masterVolume
+		GameManager.sfxValue=save.sfxVolume
 	$CanvasLayer/Control/HSlider.value=GameManager.masterValue
 	$CanvasLayer/Control/HSlider2.value=GameManager.sfxValue
 	$CanvasLayer/Control/HSlider3.value=GameManager.musicValue
@@ -41,6 +46,11 @@ func _on_texture_button_pressed() -> void:
 	GameManager.masterValue=$CanvasLayer/Control/HSlider.value
 	GameManager.sfxValue=$CanvasLayer/Control/HSlider2.value
 	GameManager.musicValue=$CanvasLayer/Control/HSlider3.value
+	var save = SaveData.new()
+	save.masterVolume=GameManager.masterValue
+	save.sfxVolume=GameManager.sfxValue
+	save.musicVolume=GameManager.musicValue
+	save.writeSave()
 	$ColorRect.transition_to("res://Scenes/main.tscn")
 
 

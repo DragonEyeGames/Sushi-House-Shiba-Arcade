@@ -18,6 +18,11 @@ func _process(_delta: float) -> void:
 			$Initialize.play("open")
 		else:
 			$Initialize.play("close")
+			var save = SaveData.new()
+			save.masterVolume=GameManager.masterValue
+			save.sfxVolume=GameManager.sfxValue
+			save.musicVolume=GameManager.musicValue
+			save.writeSave()
 		await get_tree().create_timer(.51).timeout
 		canToggle=true
 
@@ -37,6 +42,11 @@ func _on_resume() -> void:
 		canToggle=false
 		get_tree().paused = false
 		$Initialize.play("close")
+		var save = SaveData.new()
+		save.masterVolume=GameManager.masterValue
+		save.sfxVolume=GameManager.sfxValue
+		save.musicVolume=GameManager.musicValue
+		save.writeSave()
 		await get_tree().create_timer(.51).timeout
 		canToggle=true
 		
@@ -63,6 +73,11 @@ func _music(value: float) -> void:
 
 func _main() -> void:
 	get_tree().paused = false
+	var save = SaveData.new()
+	save.masterVolume=GameManager.masterValue
+	save.sfxVolume=GameManager.sfxValue
+	save.musicVolume=GameManager.musicValue
+	save.writeSave()
 	$"../ColorRect".transition_to("res://Scenes/startScene.tscn")
 
 
