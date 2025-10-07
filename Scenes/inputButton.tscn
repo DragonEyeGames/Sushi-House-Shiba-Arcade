@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu44slctq1gts"]
+
+[ext_resource type="Script" uid="uid://co88qah8kssbg" path="res://Scenes/rebindButton.gd" id="1_tvkkr"]
+
+[node name="Button" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+offset_right = 473.0
+offset_bottom = 87.0
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_tvkkr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.647059)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 12.5
+offset_right = 174.5
+offset_bottom = 87.0
+theme_override_font_sizes/normal_font_size = 27
+text = "Move Up:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 7.0
+offset_right = 464.0
+offset_bottom = 80.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 26
+text = "W"
+
+[connection signal="pressed" from="Button" to="." method="start_rebind"]

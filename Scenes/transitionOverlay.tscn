@@ -81,7 +81,7 @@ _data = {
 &"leave": SubResource("Animation_pal4u")
 }
 
-[node name="ColorRect" type="CanvasLayer"]
+[node name="Transition" type="CanvasLayer"]
 layer = 2
 script = ExtResource("2_wdsrv")
 
