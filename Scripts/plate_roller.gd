@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	if(colliding and $"..".playerInventorySelect!="" and $"..".playerInventorySelect!="dirty plate" and $"..".playerInventorySelect!="plate" and len($"..".playerInventory)>0 and Input.is_action_just_pressed("Place") and platePlaced and not rolling and currentPlate!=null):
 		for child in currentPlate.get_child(0).get_children():
 			child.visible=child.name==$"..".playerInventorySelect
-			if(child.name in $"../TV".orders):
+			if(child.name in $"../TV".orders and child.visible):
 				var index=$"../TV".orders.find(child.name)
 				$"../TV".orders.remove_at(index)
 				$"../TV".orderTimeRemaining.remove_at(index)

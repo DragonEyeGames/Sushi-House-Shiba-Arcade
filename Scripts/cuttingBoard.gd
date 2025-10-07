@@ -28,6 +28,8 @@ func interact():
 		removeItem("fish")
 		$Fish.visible=true
 		state="placed"
+		var playerFade=create_tween()
+		playerFade.tween_property($"../../Player", "modulate:a", 0.0, 1.0)
 		$"../../Camera2D".following=self
 		$"../../Camera2D".followingPlayer=false
 		$"../../Camera2D".Zoom(5)
@@ -42,11 +44,13 @@ func interact():
 		await get_tree().create_timer(1.1).timeout
 		$MinigameHolder.running=true
 		return
-	if(controller.playerInventorySelect=="cucumber" and ((state=="" and not $MinigameHolder.running))):
+	elif(controller.playerInventorySelect=="cucumber" and ((state=="" and not $MinigameHolder.running))):
 		placedItem="cucumber"
 		controller.placeCurrent("cucumber")
 		$Cucumber.visible=true
 		state="placed"
+		var playerFade=create_tween()
+		playerFade.tween_property($"../../Player", "modulate:a", 0.0, 1.0)
 		$"../../Camera2D".following=self
 		$"../../Camera2D".followingPlayer=false
 		$"../../Camera2D".Zoom(5)
@@ -64,6 +68,8 @@ func interact():
 
 
 func _on_button_pressed() -> void:
+	var playerFade=create_tween()
+	playerFade.tween_property($"../../Player", "modulate:a", 1.0, 1.0)
 	if(len(controller.playerInventory)<=4):
 		$"../../Player/PickingUp".play()
 		if($"Fish".visible):

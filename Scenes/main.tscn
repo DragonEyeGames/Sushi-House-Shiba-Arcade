@@ -1903,6 +1903,7 @@ mouse_filter = 2
 [node name="ColorRect" parent="." instance=ExtResource("134_stool")]
 
 [node name="Pause" parent="." instance=ExtResource("134_ci23i")]
+visible = false
 
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
 [connection signal="pressed" from="CleaningLayer/Button" to="Stations/Sink" method="_on_button_pressed"]

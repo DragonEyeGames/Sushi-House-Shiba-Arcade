@@ -78,6 +78,8 @@ func interact() -> void:
 	if(state=="placing" or controller.playerInventorySelect!="seaweed"):
 		return
 	removeItem("seaweed")
+	var playerFade=create_tween()
+	playerFade.tween_property($"../../Player", "modulate:a", 0.0, 1.0)
 	$ControllerSelection.visible=controller.controller
 	var showList=[]
 	for invItem in controller.playerInventory:
@@ -86,9 +88,6 @@ func interact() -> void:
 	for i in len($Items.get_children()):
 		if len(showList)>=i+1:
 			$Items.get_child(i).visible=true
-			$Items.get_child(i).global_position=$"../../Player".global_position
-			var tween = create_tween()
-			tween.tween_property($Items.get_child(i), "position", Vector2(-123, -99), .5) # move to (400, 300) in 0.5s
 			for miniChild in $Items.get_child(i).get_children():
 				miniChild.visible=false
 			if $Items.get_child(i).get_node_or_null(showList[0]) !=null:
@@ -118,6 +117,8 @@ func _reset_visuals() -> void:
 
 
 func _on_button_pressed() -> void:
+	var playerFade=create_tween()
+	playerFade.tween_property($"../../Player", "modulate:a", 1.0, 1.0)
 	$ControllerSelection.visible=false
 	$"Button Holder/TextureButton".visible=true
 	$"Button Holder/TextureButton2".visible=false

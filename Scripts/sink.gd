@@ -21,6 +21,8 @@ func _process(_delta: float) -> void:
 func interact():
 	if(not controller.interactiveItem==self):
 		return
+	var playerFade=create_tween()
+	playerFade.tween_property($"../../Player", "modulate:a", 0.0, 1.0)
 	if(controller.playerInventorySelect=="dirty plate" and ((state=="" and not $MinigameHolder.running))):
 		placedItem="dirty plate"
 		removeItem("dirty plate")
@@ -44,6 +46,8 @@ func interact():
 
 
 func _on_button_pressed() -> void:
+	var playerFade=create_tween()
+	playerFade.tween_property($"../../Player", "modulate:a", 1.0, 1.0)
 	if(len(controller.playerInventory)<=4):
 		$"../../Player/PickingUp".play()
 		controller.playerInventory.append("plate")
