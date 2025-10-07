@@ -1,4 +1,4 @@
-[gd_scene load_steps=167 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=168 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -82,16 +82,17 @@
 [ext_resource type="Texture2D" uid="uid://dr5ux7wea1ah" path="res://Assets/Character/Front-Walk-4-2.png" id="80_w32ys"]
 [ext_resource type="Texture2D" uid="uid://b8gsdn3mysw2w" path="res://Assets/Character/Front-Walk-5-2.png" id="81_g2ehk"]
 [ext_resource type="AudioStream" uid="uid://bhwls6rqkhfr1" path="res://Music/Pick Up.mp3" id="83_e1jjv"]
+[ext_resource type="PackedScene" uid="uid://r4ntk26qo20y" path="res://Scenes/inventory.tscn" id="84_ci23i"]
 [ext_resource type="AudioStream" uid="uid://33urjclpwohv" path="res://Music/Set Down.mp3" id="84_stool"]
-[ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://Assets/hotbar.png" id="84_xtnwn"]
-[ext_resource type="Texture2D" uid="uid://b44wrkr6d7pxe" path="res://Assets/Outline.png" id="85_4vtl5"]
-[ext_resource type="PackedScene" uid="uid://ckbumgkfqrmoy" path="res://Scenes/inventoryItems.tscn" id="86_y07ku"]
 [ext_resource type="Script" uid="uid://dvbj345dy3by1" path="res://Scripts/camera.gd" id="87_17dee"]
 [ext_resource type="PackedScene" uid="uid://c1ydtvc7mbdrf" path="res://Scenes/floor.tscn" id="89_rtmaq"]
 [ext_resource type="Script" uid="uid://dac8gpkcvujsu" path="res://Scripts/orders.gd" id="91_rbkdr"]
 [ext_resource type="Shader" uid="uid://cdwoss15yri8m" path="res://Shaders/tv.gdshader" id="92_6wqo8"]
+[ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="92_bpr0e"]
+[ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="93_14mkc"]
 [ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="93_qays4"]
 [ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="94_brnef"]
+[ext_resource type="Texture2D" uid="uid://bpff5mvja6m4b" path="res://Assets/Cucumber/SlicedCucumber.png" id="94_l78ku"]
 [ext_resource type="Texture2D" uid="uid://bew43yfuvkv2o" path="res://Assets/Desks/SushiRollerStand.png" id="95_37usx"]
 [ext_resource type="Texture2D" uid="uid://dhxsbkvy7xkrl" path="res://Assets/SushiConveyer.png" id="96_qywy7"]
 [ext_resource type="PackedScene" uid="uid://c5nytlldsnih8" path="res://Scenes/plate.tscn" id="97_ci23i"]
@@ -616,158 +617,7 @@ stream = ExtResource("84_stool")
 volume_db = 5.0
 bus = &"SFX"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="1" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(541.24, 773.24)
-scale = Vector2(0.455, 0.455)
-texture = ExtResource("84_xtnwn")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/1"]
-offset_left = 94.0
-offset_top = 72.6153
-offset_right = 194.0
-offset_bottom = 174.615
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "1"
-metadata/_edit_use_anchors_ = true
-
-[node name="Outline" type="Sprite2D" parent="CanvasLayer/1"]
-visible = false
-z_index = -1
-scale = Vector2(1.025, 1.025)
-texture = ExtResource("85_4vtl5")
-
-[node name="Items" parent="CanvasLayer/1" instance=ExtResource("86_y07ku")]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/1"]
-z_index = -1
-offset_left = -121.0
-offset_top = -124.0
-offset_right = 123.0
-offset_bottom = 120.0
-color = Color(1, 1, 1, 0.337255)
-
-[node name="2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(675.24, 772.24)
-scale = Vector2(0.455, 0.455)
-texture = ExtResource("84_xtnwn")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/2"]
-offset_left = 88.4615
-offset_top = 74.7692
-offset_right = 188.462
-offset_bottom = 176.769
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "2"
-
-[node name="Outline" type="Sprite2D" parent="CanvasLayer/2"]
-visible = false
-z_index = -1
-scale = Vector2(1.025, 1.025)
-texture = ExtResource("85_4vtl5")
-
-[node name="Items" parent="CanvasLayer/2" instance=ExtResource("86_y07ku")]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/2"]
-z_index = -1
-offset_left = -121.0
-offset_top = -124.0
-offset_right = 123.0
-offset_bottom = 120.0
-color = Color(1, 1, 1, 0.337255)
-
-[node name="3" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(808.24, 774.24)
-scale = Vector2(0.455, 0.455)
-texture = ExtResource("84_xtnwn")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/3"]
-offset_left = 96.1538
-offset_top = 74.7692
-offset_right = 196.154
-offset_bottom = 176.769
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "3"
-
-[node name="Outline" type="Sprite2D" parent="CanvasLayer/3"]
-visible = false
-z_index = -1
-scale = Vector2(1.025, 1.025)
-texture = ExtResource("85_4vtl5")
-
-[node name="Items" parent="CanvasLayer/3" instance=ExtResource("86_y07ku")]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/3"]
-z_index = -1
-offset_left = -121.0
-offset_top = -124.0
-offset_right = 123.0
-offset_bottom = 120.0
-color = Color(1, 1, 1, 0.337255)
-
-[node name="4" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(943.92, 774.92)
-scale = Vector2(0.455, 0.455)
-texture = ExtResource("84_xtnwn")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/4"]
-offset_left = 88.4615
-offset_top = 69.2307
-offset_right = 188.462
-offset_bottom = 171.231
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "4"
-
-[node name="Outline" type="Sprite2D" parent="CanvasLayer/4"]
-visible = false
-z_index = -1
-scale = Vector2(1.025, 1.025)
-texture = ExtResource("85_4vtl5")
-
-[node name="Items" parent="CanvasLayer/4" instance=ExtResource("86_y07ku")]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/4"]
-z_index = -1
-offset_left = -121.0
-offset_top = -124.0
-offset_right = 123.0
-offset_bottom = 120.0
-color = Color(1, 1, 1, 0.337255)
-
-[node name="5" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1098.24, 774.24)
-scale = Vector2(0.455, 0.455)
-texture = ExtResource("84_xtnwn")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/5"]
-offset_left = 92.3077
-offset_top = 76.923
-offset_right = 192.308
-offset_bottom = 178.923
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 31
-text = "5"
-
-[node name="Outline" type="Sprite2D" parent="CanvasLayer/5"]
-visible = false
-z_index = -1
-scale = Vector2(1.025, 1.025)
-texture = ExtResource("85_4vtl5")
-
-[node name="Items" parent="CanvasLayer/5" instance=ExtResource("86_y07ku")]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/5"]
-z_index = -1
-offset_left = -121.0
-offset_top = -124.0
-offset_right = 123.0
-offset_bottom = 120.0
-color = Color(1, 1, 1, 0.337255)
+[node name="Inventory" parent="." instance=ExtResource("84_ci23i")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(391, 91)
@@ -927,19 +777,21 @@ scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("93_qays4")
 
 [node name="Cooked Rice" type="Sprite2D" parent="TV/Order 1"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("93_qays4")
+position = Vector2(253.253, -268.429)
+scale = Vector2(0.49, 0.497)
+texture = ExtResource("92_bpr0e")
 
 [node name="Sliced Fish" type="Sprite2D" parent="TV/Order 1"]
-position = Vector2(255, -310)
+position = Vector2(246.659, -297)
+rotation = -0.994838
 scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("93_qays4")
+texture = ExtResource("93_14mkc")
 
 [node name="Sliced Cucumber" type="Sprite2D" parent="TV/Order 1"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("93_qays4")
+position = Vector2(252.154, -301.396)
+rotation = -0.951204
+scale = Vector2(0.215, 0.218)
+texture = ExtResource("94_l78ku")
 
 [node name="Cucumber Sushi" type="Sprite2D" parent="TV/Order 1"]
 position = Vector2(255, -310)
@@ -1049,6 +901,23 @@ position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("137_gf7g1")
 
+[node name="Cooked Rice" type="Sprite2D" parent="TV/Order 2"]
+position = Vector2(253.253, -268.429)
+scale = Vector2(0.49, 0.497)
+texture = ExtResource("92_bpr0e")
+
+[node name="Sliced Fish" type="Sprite2D" parent="TV/Order 2"]
+position = Vector2(246.659, -297)
+rotation = -0.994838
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("93_14mkc")
+
+[node name="Sliced Cucumber" type="Sprite2D" parent="TV/Order 2"]
+position = Vector2(252.154, -301.396)
+rotation = -0.951204
+scale = Vector2(0.215, 0.218)
+texture = ExtResource("94_l78ku")
+
 [node name="Order 3" type="Node2D" parent="TV"]
 visible = false
 z_index = 1
@@ -1114,6 +983,23 @@ position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("137_gf7g1")
 
+[node name="Cooked Rice" type="Sprite2D" parent="TV/Order 3"]
+position = Vector2(253.253, -268.429)
+scale = Vector2(0.49, 0.497)
+texture = ExtResource("92_bpr0e")
+
+[node name="Sliced Fish" type="Sprite2D" parent="TV/Order 3"]
+position = Vector2(246.659, -297)
+rotation = -0.994838
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("93_14mkc")
+
+[node name="Sliced Cucumber" type="Sprite2D" parent="TV/Order 3"]
+position = Vector2(252.154, -301.396)
+rotation = -0.951204
+scale = Vector2(0.215, 0.218)
+texture = ExtResource("94_l78ku")
+
 [node name="Order 4" type="Node2D" parent="TV"]
 visible = false
 z_index = 1
@@ -1175,6 +1061,23 @@ texture = ExtResource("136_b12iu")
 position = Vector2(255, -310)
 scale = Vector2(0.274687, 0.278594)
 texture = ExtResource("137_gf7g1")
+
+[node name="Cooked Rice" type="Sprite2D" parent="TV/Order 4"]
+position = Vector2(253.253, -268.429)
+scale = Vector2(0.49, 0.497)
+texture = ExtResource("92_bpr0e")
+
+[node name="Sliced Fish" type="Sprite2D" parent="TV/Order 4"]
+position = Vector2(246.659, -297)
+rotation = -0.994838
+scale = Vector2(0.274687, 0.278594)
+texture = ExtResource("93_14mkc")
+
+[node name="Sliced Cucumber" type="Sprite2D" parent="TV/Order 4"]
+position = Vector2(252.154, -301.396)
+rotation = -0.951204
+scale = Vector2(0.215, 0.218)
+texture = ExtResource("94_l78ku")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TV"]
 polygon = PackedVector2Array(665.934, -145.055, 763.736, -264.835, 1018.68, -265.934, 1092.31, -139.56, 1153.85, -170.33, 1096.7, -262.637, 895.604, -305.495, 719.78, -305.495, 654.945, -215.385)

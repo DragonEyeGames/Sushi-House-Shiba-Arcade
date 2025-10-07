@@ -16,7 +16,7 @@ func _ready() -> void:
 		controller=true
 	GameManager.player=$Player
 	GameManager.camera=$Camera2D
-	GameManager.canvasLayer=$CanvasLayer
+	GameManager.canvasLayer=$Inventory
 	GameManager.scoreLayer=$Score
 
 
@@ -44,16 +44,16 @@ func _process(_delta: float) -> void:
 	elif(GameManager.score<shownScore):
 		shownScore-=1
 	$Score/RichTextLabel2.text="$" + str(shownScore)
-	for i in range($CanvasLayer.get_child_count()):
-		var child = $CanvasLayer.get_child(i)
+	for i in range($Inventory.get_child(0).get_child_count()):
+		var child = $Inventory.get_child(0).get_child(i)
 		if i >= playerInventory.size():
 			if(child.name!="Outline"):
 				child.visible=false
 		else:
 			child.visible=true
 	#Visibility mod
-	for i in range($CanvasLayer.get_child_count()):
-		var slot = $CanvasLayer.get_child(i).get_child(2)
+	for i in range($Inventory.get_child(0).get_child_count()):
+		var slot = $Inventory.get_child(0).get_child(i).get_child(0).get_child(2)
 
 		# Hide everything in this slot first
 		for child in slot.get_children():
@@ -69,53 +69,53 @@ func _process(_delta: float) -> void:
 	if(selectedSlot==0):
 		if(len(playerInventory)>=1):
 			playerInventorySelect=playerInventory[0]
-			$"CanvasLayer/1/Outline".visible=true
-			for child in $"CanvasLayer/1/Items".get_children():
+			$"Inventory/container/1/1/Outline".visible=true
+			for child in $"Inventory/container/1/1/Items".get_children():
 				child.visible=false
-			var item = $"CanvasLayer/1/Items".get_node(playerInventorySelect)
+			var item = $"Inventory/container/1/1/Items".get_node(playerInventorySelect)
 			item.visible=true
 	else:
-		$"CanvasLayer/1/Outline".visible=false
+		$"Inventory/container/1/1/Outline".visible=false
 	if(selectedSlot==1):
 		if(len(playerInventory)>=2):
 			playerInventorySelect=playerInventory[1]
-			$"CanvasLayer/2/Outline".visible=true
-			for child in $"CanvasLayer/2/Items".get_children():
+			$"Inventory/container/2/1/Outline".visible=true
+			for child in $"Inventory/container/2/1/Items".get_children():
 				child.visible=false
-			var item = $"CanvasLayer/2/Items".get_node(playerInventorySelect)
+			var item = $"Inventory/container/2/1/Items".get_node(playerInventorySelect)
 			item.visible=true
 	else:
-		$"CanvasLayer/2/Outline".visible=false
+		$"Inventory/container/2/1/Outline".visible=false
 	if(selectedSlot==2):
 		if(len(playerInventory)>=3):
 			playerInventorySelect=playerInventory[2]
-			$"CanvasLayer/3/Outline".visible=true
-			for child in $"CanvasLayer/3/Items".get_children():
+			$"Inventory/container/3/1/Outline".visible=true
+			for child in $"Inventory/container/3/1/Items".get_children():
 				child.visible=false
-			var item = $"CanvasLayer/3/Items".get_node(playerInventorySelect)
+			var item = $"Inventory/container/3/1/Items".get_node(playerInventorySelect)
 			item.visible=true
 	else:
-		$"CanvasLayer/3/Outline".visible=false
+		$"Inventory/container/3/1/Outline".visible=false
 	if(selectedSlot==3):
 		if(len(playerInventory)>=4):
 			playerInventorySelect=playerInventory[3]
-			$"CanvasLayer/4/Outline".visible=true
-			for child in $"CanvasLayer/4/Items".get_children():
+			$"Inventory/container/4/1/Outline".visible=true
+			for child in $"Inventory/container/4/1/Items".get_children():
 				child.visible=false
-			var item = $"CanvasLayer/4/Items".get_node(playerInventorySelect)
+			var item = $"Inventory/container/4/1/Items".get_node(playerInventorySelect)
 			item.visible=true
 	else:
-		$"CanvasLayer/4/Outline".visible=false
+		$"Inventory/container/4/1/Outline".visible=false
 	if(selectedSlot==4):
 		if(len(playerInventory)>=5):
 			playerInventorySelect=playerInventory[4]
-			$"CanvasLayer/5/Outline".visible=true
-			for child in $"CanvasLayer/5/Items".get_children():
+			$"Inventory/container/5/1/Outline".visible=true
+			for child in $"Inventory/container/5/1/Items".get_children():
 				child.visible=false
-			var item = $"CanvasLayer/5/Items".get_node(playerInventorySelect)
+			var item = $"Inventory/container/5/1/Items".get_node(playerInventorySelect)
 			item.visible=true
 	else:
-		$"CanvasLayer/5/Outline".visible=false
+		$"Inventory/container/5/1/Outline".visible=false
 	if(Input.is_action_just_pressed("Place") and interactable!=""):
 		interactiveItem.interact()
 		

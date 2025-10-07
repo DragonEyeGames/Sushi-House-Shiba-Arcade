@@ -1,0 +1,203 @@
+[gd_scene load_steps=4 format=3 uid="uid://r4ntk26qo20y"]
+
+[ext_resource type="Texture2D" uid="uid://dukslok5fus07" path="res://Assets/hotbar.png" id="1_yxepq"]
+[ext_resource type="Texture2D" uid="uid://b44wrkr6d7pxe" path="res://Assets/Outline.png" id="2_0n8tc"]
+[ext_resource type="PackedScene" uid="uid://ckbumgkfqrmoy" path="res://Scenes/inventoryItems.tscn" id="3_k1vlg"]
+
+[node name="Inventory" type="CanvasLayer"]
+
+[node name="container" type="HBoxContainer" parent="."]
+offset_left = 467.0
+offset_top = 703.0
+offset_right = 1171.0
+offset_bottom = 844.0
+alignment = 1
+
+[node name="1" type="Control" parent="container"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="1" type="Sprite2D" parent="container/1"]
+position = Vector2(65, 63)
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("1_yxepq")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="container/1/1"]
+offset_left = 94.0
+offset_top = 72.6153
+offset_right = 194.0
+offset_bottom = 174.615
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Outline" type="Sprite2D" parent="container/1/1"]
+visible = false
+z_index = -1
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("2_0n8tc")
+
+[node name="Items" parent="container/1/1" instance=ExtResource("3_k1vlg")]
+
+[node name="ColorRect" type="ColorRect" parent="container/1/1"]
+z_index = -1
+offset_left = -121.0
+offset_top = -124.0
+offset_right = 123.0
+offset_bottom = 120.0
+color = Color(1, 1, 1, 0.337255)
+
+[node name="2" type="Control" parent="container"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="1" type="Sprite2D" parent="container/2"]
+position = Vector2(65, 63)
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("1_yxepq")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="container/2/1"]
+offset_left = 94.0
+offset_top = 72.6153
+offset_right = 194.0
+offset_bottom = 174.615
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "2
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Outline" type="Sprite2D" parent="container/2/1"]
+visible = false
+z_index = -1
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("2_0n8tc")
+
+[node name="Items" parent="container/2/1" instance=ExtResource("3_k1vlg")]
+
+[node name="ColorRect" type="ColorRect" parent="container/2/1"]
+z_index = -1
+offset_left = -121.0
+offset_top = -124.0
+offset_right = 123.0
+offset_bottom = 120.0
+color = Color(1, 1, 1, 0.337255)
+
+[node name="3" type="Control" parent="container"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="1" type="Sprite2D" parent="container/3"]
+position = Vector2(65, 63)
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("1_yxepq")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="container/3/1"]
+offset_left = 94.0
+offset_top = 72.6153
+offset_right = 194.0
+offset_bottom = 174.615
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "3
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Outline" type="Sprite2D" parent="container/3/1"]
+visible = false
+z_index = -1
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("2_0n8tc")
+
+[node name="Items" parent="container/3/1" instance=ExtResource("3_k1vlg")]
+
+[node name="ColorRect" type="ColorRect" parent="container/3/1"]
+z_index = -1
+offset_left = -121.0
+offset_top = -124.0
+offset_right = 123.0
+offset_bottom = 120.0
+color = Color(1, 1, 1, 0.337255)
+
+[node name="4" type="Control" parent="container"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="1" type="Sprite2D" parent="container/4"]
+position = Vector2(65, 63)
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("1_yxepq")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="container/4/1"]
+offset_left = 94.0
+offset_top = 72.6153
+offset_right = 194.0
+offset_bottom = 174.615
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "4
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Outline" type="Sprite2D" parent="container/4/1"]
+visible = false
+z_index = -1
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("2_0n8tc")
+
+[node name="Items" parent="container/4/1" instance=ExtResource("3_k1vlg")]
+
+[node name="ColorRect" type="ColorRect" parent="container/4/1"]
+z_index = -1
+offset_left = -121.0
+offset_top = -124.0
+offset_right = 123.0
+offset_bottom = 120.0
+color = Color(1, 1, 1, 0.337255)
+
+[node name="5" type="Control" parent="container"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="1" type="Sprite2D" parent="container/5"]
+position = Vector2(65, 63)
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("1_yxepq")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="container/5/1"]
+offset_left = 94.0
+offset_top = 72.6153
+offset_right = 194.0
+offset_bottom = 174.615
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "5
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Outline" type="Sprite2D" parent="container/5/1"]
+visible = false
+z_index = -1
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("2_0n8tc")
+
+[node name="Items" parent="container/5/1" instance=ExtResource("3_k1vlg")]
+
+[node name="ColorRect" type="ColorRect" parent="container/5/1"]
+z_index = -1
+offset_left = -121.0
+offset_top = -124.0
+offset_right = 123.0
+offset_bottom = 120.0
+color = Color(1, 1, 1, 0.337255)
