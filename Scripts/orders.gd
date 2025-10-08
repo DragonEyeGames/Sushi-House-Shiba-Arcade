@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if(not $"../Tutorial".tutorial):
-		orderSpeed+=delta/75
+		orderSpeed+=delta/100
 	for roller in $"../Sushi Rollers/Control/Path2D".get_children():
 		roller.progress+=speed*delta
 		roller.z_index = int(roller.progress_ratio*100)
@@ -68,7 +68,7 @@ func _process(delta: float) -> void:
 
 		# Remove expired orders
 		if progress.value <= 0:
-			orderSpeed+=.2
+			orderSpeed+=delta
 			GameManager.score-=2
 			if(GameManager.score<0):
 				GameManager.score=0
