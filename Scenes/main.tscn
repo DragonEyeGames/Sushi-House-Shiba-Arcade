@@ -1139,6 +1139,7 @@ offset_left = -256.0
 offset_top = -179.0
 offset_right = 1362.0
 offset_bottom = 805.0
+mouse_filter = 2
 
 [node name="SushiRollerStand8" type="Sprite2D" parent="Sushi Rollers/Control"]
 position = Vector2(64, 0)

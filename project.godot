@@ -120,6 +120,7 @@ Escape={
 2d_physics/layer_5="--- DRAGGABLE ITEMS ---"
 2d_physics/layer_6="Sliced Fish"
 2d_physics/layer_7="Cucumber"
+2d_physics/layer_8="Plating Item"
 
 [rendering]
 

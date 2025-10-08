@@ -1,17 +1,32 @@
-extends Station
+extends Draggable
 
+var itemList=[]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	item="plate"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	print(itemList)
 	handleVisuals()
 	if(colliding and controller.playerInventorySelect in item and state==""):
 		requirementsMet=true
 	else:
 		requirementsMet=false
+	if(state=="placed"):
+		for displayItem in $Items.get_children():
+			if(displayItem.mouseEntered):
+				if(Input.is_action_just_pressed("Place")):
+					dragging=true
+					draggedItem=displayItem
+					dragOffset=draggedItem.global_position-get_global_mouse_position()
+	drag()
+	if(len(itemList)>=1):
+		$TextureButton.visible=true
+	else:
+		$TextureButton.visible=false
+					
 		
 func interact():
 	if(state=="placed"):
@@ -22,12 +37,27 @@ func interact():
 	$"../../Player/SetDown".play()
 	zoomIn()
 	var plateIndex=0
-	for item in controller.playerInventory:
+	for newItem in controller.playerInventory:
 		var stringList = []
 		for child in $"Items".get_child(plateIndex).get_children():
 			stringList.append(child.name)
-		if(item in stringList):
-			print("true")
-			$Items.get_child(plateIndex).get_node(item).visible=true
+		if(newItem in stringList):
+			$Items.get_child(plateIndex).get_node(newItem).visible=true
 			plateIndex+=1
-		print(item)
+
+
+func _plate_entered(area: Area2D) -> void:
+	itemList.append(area.get_parent())
+
+
+func _plate_exited(area: Area2D) -> void:
+	itemList.erase(area.get_parent())
+
+
+func _assemble_hover() -> void:
+	var tween = create_tween()
+	tween.tween_property($TextureButton, "scale", Vector2(1.1, 1.1), .25)
+	
+func _assemble_exit() -> void:
+	var tween = create_tween()
+	tween.tween_property($TextureButton, "scale", Vector2(1, 1), .25)
