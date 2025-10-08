@@ -8,7 +8,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	print(itemList)
 	handleVisuals()
 	if(colliding and controller.playerInventorySelect in item and state==""):
 		requirementsMet=true
@@ -56,8 +55,30 @@ func _plate_exited(area: Area2D) -> void:
 
 func _assemble_hover() -> void:
 	var tween = create_tween()
-	tween.tween_property($TextureButton, "scale", Vector2(1.1, 1.1), .25)
+	tween.tween_property($TextureButton, "scale", Vector2(1.1, 1.1), .15)
 	
 func _assemble_exit() -> void:
 	var tween = create_tween()
-	tween.tween_property($TextureButton, "scale", Vector2(1, 1), .25)
+	tween.tween_property($TextureButton, "scale", Vector2(1, 1), .15)
+
+
+func _on_assemble() -> void:
+	var onPlate=[]
+	for displayItem in itemList:
+		for visual in displayItem.get_children():
+			if(visual.visible and visual.name!="Area2D"):
+				onPlate.append(visual.name)
+	onPlate = onPlate.map(func(x): return str(x))
+	print(onPlate)
+	onPlate.sort()
+	print(onPlate)
+	if(len(onPlate)==1):
+		controller.playerInventory.append(onPlate[0] + " meal")
+	elif(len(onPlate)==2):
+		controller.playerInventory.append(onPlate[0] + " with " + onPlate[1] + " meal")
+	elif(len(onPlate)==3):
+		controller.playerInventory.append(onPlate[0] + " with " + onPlate[1] + " with " + onPlate[2] + " meal")
+	elif(len(onPlate)==4):
+		controller.playerInventory.append(onPlate[0] + " with " + onPlate[1] + " with " + onPlate[2] + " with " + onPlate[3] + " meal")
+	print(controller.playerInventory)
+	zoomOut()

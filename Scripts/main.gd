@@ -62,9 +62,18 @@ func _process(_delta: float) -> void:
 		# Show the player's inventory item if it exists for this slot
 		if i < playerInventory.size():
 			var item_name = playerInventory[i]
-			var item_node = slot.get_node_or_null(item_name)
-			if item_node:
-				item_node.visible = true
+			if(not "meal" in item_name):
+				var item_node = slot.get_node_or_null(item_name)
+				if item_node:
+					item_node.visible = true
+			else:
+				slot.get_child(-1).visible=true
+				for mealItem in slot.get_child(-1).get_child(-1).get_children():
+					mealItem.visible=false
+				var item_node = slot.get_child(-1).get_child(-1).get_node_or_null(item_name)
+				if item_node:
+					item_node.visible = true
+					print("VVVVVVV")
 		
 	if(selectedSlot==0):
 		if(len(playerInventory)>=1):

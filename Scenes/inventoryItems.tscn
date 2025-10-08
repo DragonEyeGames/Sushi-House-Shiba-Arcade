@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ckbumgkfqrmoy"]
+[gd_scene load_steps=26 format=3 uid="uid://ckbumgkfqrmoy"]
 
 [ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="1_7on13"]
 [ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Stations/Fish.png" id="2_ri7ka"]
@@ -16,6 +16,27 @@
 [ext_resource type="Texture2D" uid="uid://b83v7s8ud7svn" path="res://Assets/Orders/Box.png" id="14_bnffl"]
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="15_3fgmu"]
 [ext_resource type="Texture2D" uid="uid://eap5vsidih7p" path="res://Assets/PlateDirt.png" id="16_x0ysk"]
+[ext_resource type="Texture2D" uid="uid://5pnyyh17qylb" path="res://Assets/Cucumber+Fish.png" id="17_oauf4"]
+[ext_resource type="Texture2D" uid="uid://cxa503h801ic0" path="res://Assets/Cucumber+Rice+Fish.png" id="18_pq1e5"]
+[ext_resource type="Texture2D" uid="uid://50vlutc4kxb" path="res://Assets/Cucumber+Rice.png" id="19_47tda"]
+[ext_resource type="Texture2D" uid="uid://u4hiwjd5jwg8" path="res://Assets/Fish+Rice.png" id="20_7eqk2"]
+[ext_resource type="Texture2D" uid="uid://brb8ftp2raqmb" path="res://Assets/SlicedFishAssebmyl.png" id="21_sqhp3"]
+[ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="22_46j73"]
+[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/Stations/CookedRiceAssembly.png" id="23_dyufg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oauf4"]
+shader = ExtResource("22_46j73")
+shader_parameter/outline_color = Vector4(0, 0, 0, 1)
+shader_parameter/outline_size = 2.0
+shader_parameter/threshold = 0.6
+shader_parameter/samples = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l380m"]
+shader = ExtResource("22_46j73")
+shader_parameter/outline_color = Vector4(0, 0, 0, 1)
+shader_parameter/outline_size = 2.0
+shader_parameter/threshold = 0.1
+shader_parameter/samples = 12
 
 [node name="Items" type="Node2D"]
 scale = Vector2(0.72, 0.72)
@@ -426,3 +447,98 @@ theme_override_font_sizes/normal_font_size = 45
 text = "Plate"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="meal" type="Sprite2D" parent="."]
+position = Vector2(-5.55556, 26.3889)
+scale = Vector2(1.415, 1.415)
+texture = ExtResource("15_3fgmu")
+
+[node name="title" type="RichTextLabel" parent="meal"]
+anchors_preset = -1
+anchor_left = -0.0721987
+anchor_top = -0.00187695
+anchor_right = 0.666083
+anchor_bottom = -0.00187695
+offset_left = -119.017
+offset_top = -130.075
+offset_right = -19.0171
+offset_bottom = -28.075
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 45
+text = "Meal"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="mealItems" type="Node2D" parent="meal"]
+material = SubResource("ShaderMaterial_oauf4")
+
+[node name="cucumber with fish meal" type="Sprite2D" parent="meal/mealItems"]
+z_index = 1
+position = Vector2(9.72222, 31.9444)
+scale = Vector2(1, 1)
+texture = ExtResource("17_oauf4")
+
+[node name="cooked rice with cucumber with sliced fish meal" type="Sprite2D" parent="meal/mealItems"]
+z_index = 1
+use_parent_material = true
+position = Vector2(9.72222, 13.8889)
+texture = ExtResource("18_pq1e5")
+
+[node name="cucumber with rice meal" type="Sprite2D" parent="meal/mealItems"]
+z_index = 1
+use_parent_material = true
+position = Vector2(8.33333, 9.72222)
+texture = ExtResource("19_47tda")
+
+[node name="cooked rice with sliced fish meal" type="Sprite2D" parent="meal/mealItems"]
+z_index = 1
+use_parent_material = true
+position = Vector2(5.88928, 6.87083)
+scale = Vector2(1.11, 1.11)
+texture = ExtResource("20_7eqk2")
+
+[node name="onigiri meal" type="Sprite2D" parent="meal/mealItems"]
+z_index = 2
+position = Vector2(22.2222, -20.8333)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("7_isl6y")
+
+[node name="sliced fish meal" type="Sprite2D" parent="meal/mealItems"]
+z_index = 1
+position = Vector2(-1.38889, -9.72222)
+rotation = -3.35103
+scale = Vector2(0.94, 0.94)
+texture = ExtResource("21_sqhp3")
+
+[node name="sushi meal" type="Sprite2D" parent="meal/mealItems"]
+z_index = 2
+position = Vector2(20.8333, -16.6667)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("8_isl6y")
+
+[node name="cucumber onigiri meal" type="Sprite2D" parent="meal/mealItems"]
+z_index = 2
+position = Vector2(22.2222, -23.6111)
+scale = Vector2(0.665, 0.665)
+texture = ExtResource("13_bnffl")
+
+[node name="cucumber sushi meal" type="Sprite2D" parent="meal/mealItems"]
+z_index = 2
+position = Vector2(23.6111, -26.3889)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("12_vg1oe")
+
+[node name="cucumber" type="Sprite2D" parent="meal/mealItems"]
+z_index = 1
+position = Vector2(13.8889, -9.53674e-07)
+rotation = -1.02102
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("7_bpivd")
+
+[node name="cooked rice meal" type="Sprite2D" parent="meal/mealItems"]
+material = SubResource("ShaderMaterial_l380m")
+use_parent_material = true
+position = Vector2(12.5, 27.7778)
+scale = Vector2(0.955, 0.955)
+texture = ExtResource("23_dyufg")

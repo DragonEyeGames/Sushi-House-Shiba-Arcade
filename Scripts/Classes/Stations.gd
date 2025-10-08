@@ -51,6 +51,8 @@ func zoomIn():
 		t2.tween_property(child, "modulate:a", 0.0, 1.0)
 		
 func zoomOut():
+	var playerFade=create_tween()
+	playerFade.tween_property($"../../Player", "modulate:a", 1.0, 1.0)
 	$"../../Camera2D".followingPlayer=true
 	$"../../Camera2D".Zoom(1)
 	$"../../Inventory".visible=true
