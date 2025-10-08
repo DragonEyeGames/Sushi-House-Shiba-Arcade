@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://caauopofsn0cd"]
+[gd_scene load_steps=10 format=3 uid="uid://caauopofsn0cd"]
 
-[ext_resource type="Texture2D" uid="uid://13jmkrykwny" path="res://Assets/Desks/Desk.png" id="1_ye6xt"]
 [ext_resource type="Script" uid="uid://b6mc217bsyf4o" path="res://Scripts/cleanPlateHolder.gd" id="2_bg5fh"]
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="2_engdm"]
 [ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="3_5siay"]
@@ -40,16 +39,12 @@ shader_parameter/outline_size = 0.0
 shader_parameter/threshold = 0.1
 shader_parameter/samples = 12
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5siay"]
-size = Vector2(256, 194)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_270ie"]
-size = Vector2(256, 20)
+size = Vector2(162, 20)
 
 [node name="Desk" type="Sprite2D"]
 z_index = -22
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ye6xt")
 script = ExtResource("2_bg5fh")
 
 [node name="Plate" type="Sprite2D" parent="."]
@@ -95,17 +90,12 @@ position = Vector2(0, -80)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_engdm")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -31)
-shape = SubResource("RectangleShape2D_5siay")
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11, 0)
 shape = SubResource("RectangleShape2D_270ie")
 
 [node name="UsedPlates" type="Node2D" parent="."]

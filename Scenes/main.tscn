@@ -1415,11 +1415,11 @@ position = Vector2(743, 148)
 controller = NodePath("../..")
 
 [node name="Cucumber Reservoir" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("108_e1jjv")]
-position = Vector2(929, 149)
+position = Vector2(2, 148)
 controller = NodePath("../..")
 
 [node name="Cutting Board" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("124_102yd")]
-position = Vector2(966, 423)
+position = Vector2(878, 424)
 controller = NodePath("../..")
 
 [node name="Assembly Board" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("125_hfu3o")]
@@ -1484,12 +1484,13 @@ item = "rice"
 controller = NodePath("../..")
 
 [node name="Sink" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("118_b05pg")]
-position = Vector2(-4, 115)
+position = Vector2(932, 115)
 scale = Vector2(0.595, 0.595)
 controller = NodePath("../..")
 
 [node name="Desk" parent="Stations" instance=ExtResource("119_bdqux")]
-position = Vector2(-14, -76)
+z_index = 0
+position = Vector2(1065, 427)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1087, 116)
