@@ -36,6 +36,12 @@ func _process(delta: float) -> void:
 					GameManager.score+=14
 				elif(child.name=="onigiri with cucumber"):
 					GameManager.score+=8
+				elif(child.name=="sliced fish"):
+					GameManager.score+=5
+				elif(child.name=="cooked rice"):
+					GameManager.score+=2
+				elif(child.name=="sliced cucumber"):
+					GameManager.score+=4
 				$"../TV".orderSpeed-=.4
 		$"..".placeCurrent("current")
 		rolling=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dtsko532j05kr"]
+[gd_scene load_steps=18 format=3 uid="uid://dtsko532j05kr"]
 
 [ext_resource type="Texture2D" uid="uid://fjgtfvnc78ym" path="res://Assets/Stations/wurterBasin.png" id="1_4h6iu"]
 [ext_resource type="Texture2D" uid="uid://dhdcpq27f7m71" path="res://Assets/Stations/Sponge.png" id="2_5af2n"]
@@ -6,9 +6,11 @@
 [ext_resource type="Script" uid="uid://bj4hyt6jvfxp7" path="res://Scripts/cleaningMinigame.gd" id="3_pha6k"]
 [ext_resource type="AudioStream" uid="uid://cdl44d0hhic7l" path="res://Music/Chop.mp3" id="5_846l7"]
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="6_nuqpg"]
+[ext_resource type="AudioStream" uid="uid://p6p7ytodygx4" path="res://Music/WaterSplash.mp3" id="6_xqgqn"]
 [ext_resource type="Script" uid="uid://dvkrx8si8h537" path="res://Scripts/cleaningPlate.gd" id="7_7oov4"]
 [ext_resource type="Texture2D" uid="uid://eap5vsidih7p" path="res://Assets/PlateDirt.png" id="7_wh123"]
 [ext_resource type="Texture2D" uid="uid://gdavpkuaun55" path="res://Assets/Sporkle.png" id="9_7oov4"]
+[ext_resource type="AudioStream" uid="uid://dyvv8ichkrh0y" path="res://Music/Sparkle.mp3" id="10_ujr7r"]
 
 [sub_resource type="Shader" id="Shader_etd0p"]
 code = "shader_type canvas_item;
@@ -118,6 +120,15 @@ stream = ExtResource("5_846l7")
 panning_strength = 0.0
 bus = &"SFX"
 
+[node name="Water" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(50, 12)
+rotation = 1.5708
+scale = Vector2(0.335, 0.335)
+stream = ExtResource("6_xqgqn")
+volume_db = 2.0
+panning_strength = 0.0
+bus = &"SFX"
+
 [node name="Plate" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-6, 10)
@@ -139,6 +150,13 @@ texture = ExtResource("9_7oov4")
 lifetime = 0.5
 explosiveness = 0.34
 process_material = SubResource("ParticleProcessMaterial_50xbm")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Plate"]
+position = Vector2(12.848, -21.4133)
+scale = Vector2(2.14133, 2.14133)
+stream = ExtResource("10_ujr7r")
+volume_db = 1.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 	if(state=="placing" and "rice" in assembly and Input.is_action_just_pressed("Place")):
 		if($Items/Items.fishEntered or $Items/Items2.fishEntered or $Items/Items3.fishEntered or $Items/Items4.fishEntered or $Items/Items.cucumberEntered or $Items/Items2.cucumberEntered or $Items/Items3.cucumberEntered or $Items/Items4.cucumberEntered):
 			for child in $Items.get_children():
-				if(child.fishEntered or child.cucumberEntered) :
+				if((child.fishEntered or child.cucumberEntered) and child.visible):
 					dragging=true
 					draggedItem=child
 					if(not controller.controller):
@@ -105,6 +105,9 @@ func interact() -> void:
 	for child in $"../../Inventory".get_child(0).get_children():
 		var t2 = create_tween()
 		t2.tween_property(child, "modulate:a", 0.0, 1.0)
+	for child in $"../../Score".get_children():
+		var t2 = create_tween()
+		t2.tween_property(child, "modulate:a", 0.0, 1.0)
 	var t = create_tween()
 	t.tween_property($"../../AssemblyLayer/Button", "modulate:a", 1.0, 1.0)
 	state="placing"
@@ -157,9 +160,13 @@ func _on_button_pressed() -> void:
 	$"../../Camera2D".followingPlayer=true
 	$"../../Camera2D".Zoom(1)
 	$"../../Inventory".visible=true
+	$"../../Score".visible=true
 	$"../../Player".canMove=true
 	#Animate the alpha of the modulate color
 	for child in $"../../Inventory".get_child(0).get_children():
+		var t2 = create_tween()
+		t2.tween_property(child, "modulate:a", 1.0, 1.0)
+	for child in $"../../Score".get_children():
 		var t2 = create_tween()
 		t2.tween_property(child, "modulate:a", 1.0, 1.0)
 	var t = create_tween()
@@ -167,6 +174,7 @@ func _on_button_pressed() -> void:
 	await get_tree().create_timer(1).timeout
 	$"../../AssemblyLayer".visible=false
 	$"../../Inventory".visible=true
+	$"../../Score".visible=true
 	_reset_visuals()
 	assembly.clear()
 	dragging=false
@@ -226,3 +234,7 @@ func _on_area_2d_2_area_exited(_area: Area2D) -> void:
 
 func _on_cucumber_entered(_area: Area2D) -> void:
 	assembly.append("sliced cucumber")
+
+
+func _on_exit_pressed() -> void:
+	_on_button_pressed()

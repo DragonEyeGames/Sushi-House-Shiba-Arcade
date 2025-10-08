@@ -10,15 +10,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if($"cooked rice".visible==false):
+	if($"cooked rice".visible==false or visible==false):
 		$"cooked rice/Area2D/CollisionPolygon2D".disabled=true
 	else:
 		$"cooked rice/Area2D/CollisionPolygon2D".disabled=false
-	if($"sliced fish".visible==false):
+	if($"sliced fish".visible==false or visible==false):
 		$"sliced fish/Area2D2/CollisionPolygon2D".disabled=true
 	else:
 		$"sliced fish/Area2D2/CollisionPolygon2D".disabled=false
-	if($"sliced cucumber".visible==false):
+	if($"sliced cucumber".visible==false or visible==false):
 		$"sliced cucumber/Area2D2/CollisionPolygon2D".disabled=true
 	else:
 		$"sliced cucumber/Area2D2/CollisionPolygon2D".disabled=false

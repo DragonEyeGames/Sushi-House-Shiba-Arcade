@@ -3,7 +3,7 @@ extends StaticBody2D
 var copies = []
 var orders = []
 var orderTimeRemaining = []
-var items = ["sliced fish", "cooked rice", "sliced cucumber"]
+var items = ["sushi", "onigiri", "sushi with cucumber", "onigiri with cucumber", "sliced fish", "cooked rice", "sliced cucumber"]
 var plateStack=0
 var speed=200
 var orderSpeed=1

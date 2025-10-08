@@ -24,7 +24,8 @@ func remove_circle(p1: Vector2, p2: Vector2, radius: float):
 		sprite.queue_free()
 		get_parent().get_child(1).cleaned=true
 		$Sparkle.emitting=true
-		await get_tree().create_timer(.8).timeout
+		$AudioStreamPlayer2D2.play()
+		await get_tree().create_timer(.9).timeout
 		$Sparkle.emitting=false
 		await get_tree().create_timer(1).timeout
 		get_parent()._on_button_pressed()

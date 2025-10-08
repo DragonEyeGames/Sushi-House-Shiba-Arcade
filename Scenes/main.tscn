@@ -1825,6 +1825,7 @@ visible = false
 
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
 [connection signal="pressed" from="CleaningLayer/Button" to="Stations/Sink" method="_on_button_pressed"]
+[connection signal="pressed" from="AssemblyLayer/Button" to="Stations/Assembly Board" method="_on_exit_pressed"]
 [connection signal="area_entered" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Plate Roller/Rollers/Area2D" to="Plate Roller" method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="Stations/Trash/Area2D" to="Stations/Trash" method="_on_area_2d_area_entered"]
