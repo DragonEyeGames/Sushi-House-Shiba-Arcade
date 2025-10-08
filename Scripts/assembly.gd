@@ -102,7 +102,7 @@ func interact() -> void:
 	$"../../Player".canMove=false
 	# Animate the alpha of the modulate color
 	$"../../AssemblyLayer".visible=true
-	for child in $"../../CanvasLayer".get_children():
+	for child in $"../../Inventory".get_child(0).get_children():
 		var t2 = create_tween()
 		t2.tween_property(child, "modulate:a", 0.0, 1.0)
 	var t = create_tween()
@@ -156,17 +156,17 @@ func _on_button_pressed() -> void:
 		$"Display Items/Cucumber Sushi".visible=false
 	$"../../Camera2D".followingPlayer=true
 	$"../../Camera2D".Zoom(1)
-	$"../../CanvasLayer".visible=true
+	$"../../Inventory".visible=true
 	$"../../Player".canMove=true
 	#Animate the alpha of the modulate color
-	for child in $"../../CanvasLayer".get_children():
+	for child in $"../../Inventory".get_child(0).get_children():
 		var t2 = create_tween()
 		t2.tween_property(child, "modulate:a", 1.0, 1.0)
 	var t = create_tween()
 	t.tween_property($"../../AssemblyLayer/Button", "modulate:a", 0.0, 1.0)
 	await get_tree().create_timer(1).timeout
 	$"../../AssemblyLayer".visible=false
-	$"../../CanvasLayer".visible=true
+	$"../../Inventory".visible=true
 	_reset_visuals()
 	assembly.clear()
 	dragging=false

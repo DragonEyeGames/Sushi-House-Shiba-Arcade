@@ -97,7 +97,7 @@ func _process(delta: float) -> void:
 	else:
 		$"Box4".material.set_shader_parameter("outline_size", 0)
 		
-	if(Input.is_action_just_pressed("Place") and doorOpen):
+	if(Input.is_action_just_pressed("Place") and doorOpen and len($"..".playerInventory)<=4):
 		if(area1):
 			$"Box".visible=false
 			$"Box/Area2D/CollisionShape2D".disabled=true
@@ -142,7 +142,7 @@ func shipment(inputFish, inputSeaweed, inputRice, inputCucumber):
 	cucumber.append(inputCucumber)
 	$"../Camera2D".followingPlayer=true
 	$"../Camera2D".Zoom(1)
-	$"../CanvasLayer".visible=true
+	$"../Inventory".visible=true
 	$"../Player".canMove=true
 	var tween = create_tween()
 	tween.tween_property($"../Player", "modulate:a", 1.0, 1.0)

@@ -36,7 +36,7 @@ func interact():
 		self.material.set_shader_parameter("outline_size", 0)
 		$"../../Player".canMove=false
 	# Animate the alpha of the modulate color
-		for child in $"../../CanvasLayer".get_children():
+		for child in $"../../Inventory".get_child(0).get_children():
 			var t2 = create_tween()
 			t2.tween_property(child, "modulate:a", 0.0, 1.0)
 		var t = create_tween()
@@ -57,7 +57,7 @@ func interact():
 		self.material.set_shader_parameter("outline_size", 0)
 		$"../../Player".canMove=false
 	# Animate the alpha of the modulate color
-		for child in $"../../CanvasLayer".get_children():
+		for child in $"../../Inventory".get_child(0).get_children():
 			var t2 = create_tween()
 			t2.tween_property(child, "modulate:a", 0.0, 1.0)
 		var t = create_tween()
@@ -98,13 +98,13 @@ func _on_button_pressed() -> void:
 	t2.tween_property($MinigameHolder/Knife, "position", Vector2(50, -36), 1.0)
 	$"../../Camera2D".followingPlayer=true
 	$"../../Camera2D".Zoom(1)
-	$"../../CanvasLayer".visible=true
+	$"../../Inventory".visible=true
 	$"../../Player".canMove=true
 	#Animate the alpha of the modulate color
-	for child in $"../../CanvasLayer".get_children():
+	for child in $"../../Inventory".get_child(0).get_children():
 		var t3 = create_tween()
 		t3.tween_property(child, "modulate:a", 1.0, 1.0)
 	var t = create_tween()
 	t.tween_property($"../../MinigameLayer/Button", "modulate:a", 0.0, 1.0)
 	await get_tree().create_timer(1).timeout
-	$"../../CanvasLayer".visible=true
+	$"../../Inventory".visible=true
