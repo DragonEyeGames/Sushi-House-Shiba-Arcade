@@ -3,7 +3,7 @@ extends StaticBody2D
 var copies = []
 var orders = []
 var orderTimeRemaining = []
-var items = ["sushi", "onigiri", "sushi with cucumber", "onigiri with cucumber", "sliced fish", "cooked rice", "sliced cucumber"]
+var items = ["sushi meal", "onigiri meal", "sushi with cucumber meal", "onigiri with cucumber meal", "sliced fish meal", "cooked rice meal", "sliced cucumber meal", "cooked rice with sliced cucumber meal", "cooked rice with sliced fish meal", "cooked rice with sliced cucumber with sliced fish meal", "sliced cucumber with sliced fish meal"]
 var plateStack=0
 var speed=200
 var orderSpeed=1
@@ -52,22 +52,10 @@ func _process(delta: float) -> void:
 		order_ui.visible = true
 		order_ui.get_node("RichTextLabel").text = "1x " + str(order)
 		
-		var sushi_node = order_ui.get_node("Sushi")
-		var onigiri_node = order_ui.get_node("Onigiri")
-		var _cucumber_sushi_node = order_ui.get_node("Cucumber Sushi")
-		var _cucumber_onigiri_node = order_ui.get_node("Cucumber Onigiri")
-		
-		var cookedRice = order_ui.get_node("Cooked Rice")
-		var slicedFish = order_ui.get_node("Sliced Fish")
-		var slicedCucumber = order_ui.get_node("Sliced Cucumber")
-		
-		sushi_node.visible = order == "sushi"
-		onigiri_node.visible = order == "onigiri"
-		_cucumber_sushi_node.visible = order == "sushi with cucumber"
-		_cucumber_onigiri_node.visible = order == "onigiri with cucumber"
-		cookedRice.visible = order == "cooked rice"
-		slicedFish.visible = order == "sliced fish"
-		slicedCucumber.visible = order == "sliced cucumber"
+		for visibleDisplayItem in order_ui.get_child(-1).get_children():
+			visibleDisplayItem.visible=false
+			if(visibleDisplayItem.name==order):
+				visibleDisplayItem.visible=true
 
 		# Update progress
 		var progress = order_ui.get_node("ProgressBar")

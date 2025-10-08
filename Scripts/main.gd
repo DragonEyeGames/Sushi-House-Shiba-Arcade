@@ -4,7 +4,7 @@ var playerInventorySelect=""
 var interactable=""
 var interactiveItem
 var shownScore=0
-var playerInventory=["seaweed", "cooked rice", "sliced fish", "dirty plate"]
+var playerInventory=["plate", "cooked rice", "sliced fish", "sliced cucumber", "onigiri with cucumber"]
 var selectedSlot=-1
 var controller=false
 var outlineSize=2.4
@@ -79,50 +79,30 @@ func _process(_delta: float) -> void:
 		if(len(playerInventory)>=1):
 			playerInventorySelect=playerInventory[0]
 			$"Inventory/container/1/1/Outline".visible=true
-			for child in $"Inventory/container/1/1/Items".get_children():
-				child.visible=false
-			var item = $"Inventory/container/1/1/Items".get_node(playerInventorySelect)
-			item.visible=true
 	else:
 		$"Inventory/container/1/1/Outline".visible=false
 	if(selectedSlot==1):
 		if(len(playerInventory)>=2):
 			playerInventorySelect=playerInventory[1]
 			$"Inventory/container/2/1/Outline".visible=true
-			for child in $"Inventory/container/2/1/Items".get_children():
-				child.visible=false
-			var item = $"Inventory/container/2/1/Items".get_node(playerInventorySelect)
-			item.visible=true
 	else:
 		$"Inventory/container/2/1/Outline".visible=false
 	if(selectedSlot==2):
 		if(len(playerInventory)>=3):
 			playerInventorySelect=playerInventory[2]
 			$"Inventory/container/3/1/Outline".visible=true
-			for child in $"Inventory/container/3/1/Items".get_children():
-				child.visible=false
-			var item = $"Inventory/container/3/1/Items".get_node(playerInventorySelect)
-			item.visible=true
 	else:
 		$"Inventory/container/3/1/Outline".visible=false
 	if(selectedSlot==3):
 		if(len(playerInventory)>=4):
 			playerInventorySelect=playerInventory[3]
 			$"Inventory/container/4/1/Outline".visible=true
-			for child in $"Inventory/container/4/1/Items".get_children():
-				child.visible=false
-			var item = $"Inventory/container/4/1/Items".get_node(playerInventorySelect)
-			item.visible=true
 	else:
 		$"Inventory/container/4/1/Outline".visible=false
 	if(selectedSlot==4):
 		if(len(playerInventory)>=5):
 			playerInventorySelect=playerInventory[4]
 			$"Inventory/container/5/1/Outline".visible=true
-			for child in $"Inventory/container/5/1/Items".get_children():
-				child.visible=false
-			var item = $"Inventory/container/5/1/Items".get_node(playerInventorySelect)
-			item.visible=true
 	else:
 		$"Inventory/container/5/1/Outline".visible=false
 	if(Input.is_action_just_pressed("Place") and interactable!=""):

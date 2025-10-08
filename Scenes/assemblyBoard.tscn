@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bj0kcyiv6f2w7" path="res://Assets/Stations/AssemblyBoard.png" id="2_dj5a1"]
 [ext_resource type="Script" uid="uid://y00fuog7pdhm" path="res://Scripts/assembly.gd" id="3_m725i"]
 [ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="4_pjlvh"]
-[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/Stations/CookedRiceAssembly.png" id="5_8towx"]
+[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/CookedRiceAssembly.png" id="5_8towx"]
 [ext_resource type="Texture2D" uid="uid://brb8ftp2raqmb" path="res://Assets/SlicedFishAssebmyl.png" id="6_swmib"]
 [ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="7_xcri5"]
 [ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="8_av05w"]

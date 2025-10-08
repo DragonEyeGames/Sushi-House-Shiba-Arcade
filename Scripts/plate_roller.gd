@@ -15,38 +15,42 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(currentPlate!=null):
-		if(colliding and $"..".playerInventorySelect!="" and $"..".playerInventorySelect!="dirty plate" and $"..".playerInventorySelect!="plate" and len($"..".playerInventory)>0 and not replenishing):
-			currentPlate.get_child(0).material.set_shader_parameter("outline_size", GameManager.outlineSize)
-		else:
-			currentPlate.get_child(0).material.set_shader_parameter("outline_size", 0)
-	if(colliding and $"..".playerInventorySelect!="" and $"..".playerInventorySelect!="dirty plate" and $"..".playerInventorySelect!="plate" and len($"..".playerInventory)>0 and Input.is_action_just_pressed("Place") and platePlaced and not rolling and currentPlate!=null):
-		for child in currentPlate.get_child(0).get_children():
-			child.visible=child.name==$"..".playerInventorySelect
-			if(child.name in $"../TV".orders and child.visible):
-				var index=$"../TV".orders.find(child.name)
-				$"../TV".orders.remove_at(index)
-				$"../TV".orderTimeRemaining.remove_at(index)
-				print(child.name)
-				if(child.name=="sushi"):
-					GameManager.score+=10
-				elif(child.name=="onigiri"):
-					GameManager.score+=6
-				elif(child.name=="sushi with cucumber"):
-					GameManager.score+=14
-				elif(child.name=="onigiri with cucumber"):
-					GameManager.score+=8
-				elif(child.name=="sliced fish"):
-					GameManager.score+=5
-				elif(child.name=="cooked rice"):
-					GameManager.score+=2
-				elif(child.name=="sliced cucumber"):
-					GameManager.score+=4
-				$"../TV".orderSpeed-=.4
-		$"..".placeCurrent("current")
-		rolling=true
-		platePlaced=false
-		currentPlate.get_child(0).rolling=true
+	if(currentPlate==null):
+		if(colliding and $"..".playerInventorySelect!="" and $"..".playerInventorySelect!="dirty plate" and "meal" in $"..".playerInventorySelect and len($"..".playerInventory)>0 and not replenishing):
+			if(Input.is_action_just_pressed("Place")):
+				newPlate()
+				for child in currentPlate.get_child(0).get_children():
+					child.visible=child.name==$"..".playerInventorySelect
+					if(child.name in $"../TV".orders and child.visible):
+						var index=$"../TV".orders.find(child.name)
+						$"../TV".orders.remove_at(index)
+						$"../TV".orderTimeRemaining.remove_at(index)
+						print(child.name)
+						if(child.name=="sushi meal"):
+							GameManager.score+=10
+						elif(child.name=="onigiri meal"):
+							GameManager.score+=6
+						elif(child.name=="sushi with cucumber meal"):
+							GameManager.score+=14
+						elif(child.name=="onigiri with cucumber meal"):
+							GameManager.score+=8
+						elif(child.name=="sliced fish meal"):
+							GameManager.score+=5
+						elif(child.name=="cooked rice meal"):
+							GameManager.score+=2
+						elif(child.name=="cooked rice with sliced cucumber meal"):
+							GameManager.score+=6
+						elif(child.name=="cooked rice with sliced fish meal"):
+							GameManager.score+=8
+						elif(child.name=="sliced cucumber with sliced fish meal"):
+							GameManager.score+=10
+						elif(child.name=="sliced cucumber meal"):
+							GameManager.score+=4
+						$"../TV".orderSpeed-=.4
+				$"..".placeCurrent("current")
+				rolling=true
+				platePlaced=false
+				currentPlate.get_child(0).rolling=true
 	if(colliding and $"..".playerInventorySelect!="" and $"..".playerInventorySelect=="plate" and len($"..".playerInventory)>0 and Input.is_action_just_pressed("Place") and not platePlaced):
 		$"..".placeCurrent("plate")
 		newPlate()
@@ -65,7 +69,6 @@ func _process(delta: float) -> void:
 			currentPlate.position.x=64
 			rolling=false
 			currentPlate.reparent($"../Sushi Rollers/Control/Path2D")
-			currentPlate.get_child(0).material.set_shader_parameter("outline_size", 0)
 			currentPlate=null
 	if(replenishing):
 		currentPlate.position.y+=speed*delta

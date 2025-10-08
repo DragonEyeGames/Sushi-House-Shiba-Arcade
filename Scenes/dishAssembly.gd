@@ -21,7 +21,13 @@ func _process(_delta: float) -> void:
 					draggedItem=displayItem
 					dragOffset=draggedItem.global_position-get_global_mouse_position()
 	drag()
-	if(len(itemList)>=1):
+	var onPlate=[]
+	for displayItem in itemList:
+		for visual in displayItem.get_children():
+			if(visual.visible and visual.name!="Area2D"):
+				onPlate.append(visual.name)
+	onPlate = onPlate.map(func(x): return str(x))
+	if(len(itemList)>=1 and not (len(itemList)>=2 and ("onigiri" in onPlate or "sushi" in onPlate or "onigiri with cucumber" in onPlate or "sushi with cucumber" in onPlate))):
 		$TextureButton.visible=true
 	else:
 		$TextureButton.visible=false
@@ -81,4 +87,10 @@ func _on_assemble() -> void:
 	elif(len(onPlate)==4):
 		controller.playerInventory.append(onPlate[0] + " with " + onPlate[1] + " with " + onPlate[2] + " with " + onPlate[3] + " meal")
 	print(controller.playerInventory)
+	itemList.clear()
+	for container in $Items.get_children():
+		for sprite in container.get_children():
+			if(sprite.name!="Area2D"):
+				sprite.visible=false
 	zoomOut()
+	$Plate.visible=false

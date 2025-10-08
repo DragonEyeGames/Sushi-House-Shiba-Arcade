@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_50vc3"]
 [ext_resource type="Script" uid="uid://carsno8twkrnu" path="res://Scenes/platingItem.gd" id="1_a2fa5"]
-[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/Stations/CookedRiceAssembly.png" id="2_a2fa5"]
+[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/CookedRiceAssembly.png" id="2_a2fa5"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="3_js7qg"]
 [ext_resource type="Texture2D" uid="uid://bpff5mvja6m4b" path="res://Assets/Cucumber/SlicedCucumber.png" id="4_e3bup"]
 [ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="5_4lrak"]

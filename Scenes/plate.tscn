@@ -1,28 +1,27 @@
-[gd_scene load_steps=18 format=3 uid="uid://c5nytlldsnih8"]
+[gd_scene load_steps=17 format=3 uid="uid://c5nytlldsnih8"]
 
 [ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_e6f4l"]
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="2_yvvte"]
 [ext_resource type="Script" uid="uid://w8ucsf2w8ulr" path="res://Scripts/plate.gd" id="3_ggelr"]
-[ext_resource type="Texture2D" uid="uid://tobj1so60jko" path="res://Assets/RiceItem.png" id="4_o33vl"]
-[ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="5_ug38k"]
-[ext_resource type="Texture2D" uid="uid://cgvay8ebs1ypn" path="res://Assets/Stations/Fish.png" id="6_t7y3g"]
-[ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="7_akehi"]
+[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/CookedRiceAssembly.png" id="4_e6f4l"]
 [ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="8_8svek"]
-[ext_resource type="Texture2D" uid="uid://c788mt3wijsi7" path="res://Assets/Obliterated.png" id="9_eanm2"]
 [ext_resource type="Texture2D" uid="uid://bpff5mvja6m4b" path="res://Assets/Cucumber/SlicedCucumber.png" id="9_yvvte"]
-[ext_resource type="Texture2D" uid="uid://b3bkr5gdrogfa" path="res://Assets/Seaweed.png" id="10_yxuk5"]
 [ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="11_8vonv"]
+[ext_resource type="Texture2D" uid="uid://50vlutc4kxb" path="res://Assets/Cucumber+Rice.png" id="11_yvvte"]
+[ext_resource type="Texture2D" uid="uid://u4hiwjd5jwg8" path="res://Assets/Fish+Rice.png" id="12_ggelr"]
 [ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="12_gsksk"]
 [ext_resource type="Texture2D" uid="uid://chtft37bmy68c" path="res://Assets/Cucumber/Cucumber Sushi.png" id="13_ilq5u"]
+[ext_resource type="Texture2D" uid="uid://cxa503h801ic0" path="res://Assets/Cucumber+Rice+Fish.png" id="13_o33vl"]
 [ext_resource type="Texture2D" uid="uid://cy0rtv6wioy0f" path="res://Assets/Cucumber/Cucumber Onigiri.png" id="14_54hvi"]
+[ext_resource type="Texture2D" uid="uid://5pnyyh17qylb" path="res://Assets/Cucumber+Fish.png" id="14_ug38k"]
 [ext_resource type="Texture2D" uid="uid://eap5vsidih7p" path="res://Assets/PlateDirt.png" id="15_va3sf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bnk2o"]
 resource_local_to_scene = true
 shader = ExtResource("1_e6f4l")
-shader_parameter/outline_color = Vector4(1, 1, 1, 1)
-shader_parameter/outline_size = 0.0
-shader_parameter/threshold = 0.999
+shader_parameter/outline_color = Vector4(0, 0, 0, 1)
+shader_parameter/outline_size = 2.4
+shader_parameter/threshold = 0.078
 shader_parameter/samples = 12
 
 [node name="Plate" type="PathFollow2D"]
@@ -38,78 +37,75 @@ scale = Vector2(0.355, 0.355)
 texture = ExtResource("2_yvvte")
 script = ExtResource("3_ggelr")
 
-[node name="rice" type="Sprite2D" parent="Plate"]
+[node name="cooked rice meal" type="Sprite2D" parent="Plate"]
 visible = false
-position = Vector2(14.0845, 70.4225)
-scale = Vector2(1.061, 0.979)
-texture = ExtResource("4_o33vl")
-
-[node name="cooked rice" type="Sprite2D" parent="Plate"]
-visible = false
-position = Vector2(14.0845, 70.4225)
+use_parent_material = true
+position = Vector2(16.9551, 25.3162)
 scale = Vector2(1.051, 0.969)
-texture = ExtResource("5_ug38k")
+texture = ExtResource("4_e6f4l")
 
-[node name="fish" type="Sprite2D" parent="Plate"]
-visible = false
-position = Vector2(2.8169, 2.8169)
-scale = Vector2(0.568, 0.443)
-texture = ExtResource("6_t7y3g")
-
-[node name="cucumber" type="Sprite2D" parent="Plate"]
-visible = false
-position = Vector2(12.8201, 2.79529)
-rotation = -0.837758
-scale = Vector2(0.508, 0.396)
-texture = ExtResource("7_akehi")
-
-[node name="sliced fish" type="Sprite2D" parent="Plate"]
+[node name="sliced fish meal" type="Sprite2D" parent="Plate"]
 visible = false
 position = Vector2(2.8169, 5.6338)
 scale = Vector2(0.528, 0.412)
 texture = ExtResource("8_8svek")
 
-[node name="sliced cucumber" type="Sprite2D" parent="Plate"]
+[node name="sliced cucumber meal" type="Sprite2D" parent="Plate"]
 visible = false
 position = Vector2(2.8169, 5.6338)
 scale = Vector2(0.528, 0.412)
 texture = ExtResource("9_yvvte")
 
-[node name="obliterated fish" type="Sprite2D" parent="Plate"]
-visible = false
-position = Vector2(5.6338, 2.8169)
-scale = Vector2(0.573, 0.423)
-texture = ExtResource("9_eanm2")
-
-[node name="seaweed" type="Sprite2D" parent="Plate"]
-visible = false
-position = Vector2(11.2676, 16.9014)
-scale = Vector2(0.567, 0.567)
-texture = ExtResource("10_yxuk5")
-
-[node name="onigiri" type="Sprite2D" parent="Plate"]
+[node name="onigiri meal" type="Sprite2D" parent="Plate"]
 visible = false
 position = Vector2(22.5352, -14.0845)
 scale = Vector2(0.556, 0.495)
 texture = ExtResource("11_8vonv")
 
-[node name="sushi" type="Sprite2D" parent="Plate"]
+[node name="sushi meal" type="Sprite2D" parent="Plate"]
 visible = false
 position = Vector2(19.7183, -14.0845)
 scale = Vector2(0.586, 0.522)
 texture = ExtResource("12_gsksk")
 
-[node name="sushi with cucumber" type="Sprite2D" parent="Plate"]
+[node name="sushi with cucumber meal" type="Sprite2D" parent="Plate"]
 visible = false
 position = Vector2(19.7183, -14.0845)
 scale = Vector2(0.586, 0.522)
 texture = ExtResource("13_ilq5u")
 
-[node name="onigiri with cucumber" type="Sprite2D" parent="Plate"]
+[node name="onigiri with cucumber meal" type="Sprite2D" parent="Plate"]
 visible = false
 position = Vector2(19.7183, -14.0845)
 scale = Vector2(0.586, 0.522)
 texture = ExtResource("14_54hvi")
+
+[node name="cooked rice with sliced cucumber meal" type="Sprite2D" parent="Plate"]
+visible = false
+use_parent_material = true
+position = Vector2(5.65171, 8.43874)
+scale = Vector2(1.231, 1.097)
+texture = ExtResource("11_yvvte")
+
+[node name="cooked rice with sliced fish meal" type="Sprite2D" parent="Plate"]
+visible = false
+use_parent_material = true
+position = Vector2(5.65171, 8.43874)
+scale = Vector2(1.231, 1.097)
+texture = ExtResource("12_ggelr")
+
+[node name="cooked rice with sliced cucumber with sliced fish meal" type="Sprite2D" parent="Plate"]
+visible = false
+use_parent_material = true
+position = Vector2(5.65171, 8.43874)
+scale = Vector2(1.231, 1.097)
+texture = ExtResource("13_o33vl")
+
+[node name="sliced cucumber with sliced fish meal" type="Sprite2D" parent="Plate"]
+visible = false
+position = Vector2(11.3213, 25.3282)
+scale = Vector2(0.891, 0.794)
+texture = ExtResource("14_ug38k")
 
 [node name="dirt" type="Sprite2D" parent="Plate"]
 visible = false

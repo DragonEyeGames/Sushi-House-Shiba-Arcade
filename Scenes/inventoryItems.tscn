@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://u4hiwjd5jwg8" path="res://Assets/Fish+Rice.png" id="20_7eqk2"]
 [ext_resource type="Texture2D" uid="uid://brb8ftp2raqmb" path="res://Assets/SlicedFishAssebmyl.png" id="21_sqhp3"]
 [ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="22_46j73"]
-[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/Stations/CookedRiceAssembly.png" id="23_dyufg"]
+[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/CookedRiceAssembly.png" id="23_dyufg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oauf4"]
 shader = ExtResource("22_46j73")
@@ -473,19 +473,18 @@ metadata/_edit_use_anchors_ = true
 [node name="mealItems" type="Node2D" parent="meal"]
 material = SubResource("ShaderMaterial_oauf4")
 
-[node name="cucumber with fish meal" type="Sprite2D" parent="meal/mealItems"]
+[node name="sliced cucumber with sliced fish meal" type="Sprite2D" parent="meal/mealItems"]
 z_index = 1
 position = Vector2(9.72222, 31.9444)
-scale = Vector2(1, 1)
 texture = ExtResource("17_oauf4")
 
-[node name="cooked rice with cucumber with sliced fish meal" type="Sprite2D" parent="meal/mealItems"]
+[node name="cooked rice with sliced cucumber with sliced fish meal" type="Sprite2D" parent="meal/mealItems"]
 z_index = 1
 use_parent_material = true
 position = Vector2(9.72222, 13.8889)
 texture = ExtResource("18_pq1e5")
 
-[node name="cucumber with rice meal" type="Sprite2D" parent="meal/mealItems"]
+[node name="cooked rice with sliced cucumber meal" type="Sprite2D" parent="meal/mealItems"]
 z_index = 1
 use_parent_material = true
 position = Vector2(8.33333, 9.72222)
@@ -517,13 +516,13 @@ position = Vector2(20.8333, -16.6667)
 scale = Vector2(0.62, 0.62)
 texture = ExtResource("8_isl6y")
 
-[node name="cucumber onigiri meal" type="Sprite2D" parent="meal/mealItems"]
+[node name="onigiri with cucumber meal" type="Sprite2D" parent="meal/mealItems"]
 z_index = 2
 position = Vector2(22.2222, -23.6111)
 scale = Vector2(0.665, 0.665)
 texture = ExtResource("13_bnffl")
 
-[node name="cucumber sushi meal" type="Sprite2D" parent="meal/mealItems"]
+[node name="sushi with cucumber meal" type="Sprite2D" parent="meal/mealItems"]
 z_index = 2
 position = Vector2(23.6111, -26.3889)
 scale = Vector2(0.72, 0.72)
