@@ -28,20 +28,9 @@ func interact():
 		removeItem("fish")
 		$Fish.visible=true
 		state="placed"
-		var playerFade=create_tween()
-		playerFade.tween_property($"../../Player", "modulate:a", 0.0, 1.0)
-		$"../../Camera2D".following=self
-		$"../../Camera2D".followingPlayer=false
-		$"../../Camera2D".Zoom(5)
+		zoomIn()
 		self.material.set_shader_parameter("outline_size", 0)
-		$"../../Player".canMove=false
 	# Animate the alpha of the modulate color
-		for child in $"../../Inventory".get_child(0).get_children():
-			var t2 = create_tween()
-			t2.tween_property(child, "modulate:a", 0.0, 1.0)
-		for child in $"../../Score".get_children():
-			var t2 = create_tween()
-			t2.tween_property(child, "modulate:a", 0.0, 1.0)
 		var t = create_tween()
 		t.tween_property($"../../MinigameLayer/Button", "modulate:a", 1.0, 1.0)
 		await get_tree().create_timer(1.1).timeout
@@ -52,17 +41,9 @@ func interact():
 		controller.placeCurrent("cucumber")
 		$Cucumber.visible=true
 		state="placed"
-		var playerFade=create_tween()
-		playerFade.tween_property($"../../Player", "modulate:a", 0.0, 1.0)
-		$"../../Camera2D".following=self
-		$"../../Camera2D".followingPlayer=false
-		$"../../Camera2D".Zoom(5)
+		zoomIn()
 		self.material.set_shader_parameter("outline_size", 0)
-		$"../../Player".canMove=false
 	# Animate the alpha of the modulate color
-		for child in $"../../Inventory".get_child(0).get_children():
-			var t2 = create_tween()
-			t2.tween_property(child, "modulate:a", 0.0, 1.0)
 		var t = create_tween()
 		t.tween_property($"../../MinigameLayer/Button", "modulate:a", 1.0, 1.0)
 		await get_tree().create_timer(1.1).timeout
@@ -95,22 +76,11 @@ func _on_button_pressed() -> void:
 			controller.playerInventory.append("obliterated cucumber")
 		state=""
 		placedItem=null
-	self.material.set_shader_parameter("outline_size", 1.4)
+	self.material.set_shader_parameter("outline_size", GameManager.outlineSize)
 	$MinigameHolder.running=false
 	var t2 = create_tween()
 	t2.tween_property($MinigameHolder/Knife, "position", Vector2(50, -36), 1.0)
-	$"../../Camera2D".followingPlayer=true
-	$"../../Camera2D".Zoom(1)
-	$"../../Inventory".visible=true
-	$"../../Score".visible=true
-	$"../../Player".canMove=true
-	#Animate the alpha of the modulate color
-	for child in $"../../Inventory".get_child(0).get_children():
-		var t3 = create_tween()
-		t3.tween_property(child, "modulate:a", 1.0, 1.0)
-	for child in $"../../Score".get_children():
-		var t3 = create_tween()
-		t3.tween_property(child, "modulate:a", 1.0, 1.0)
+	zoomOut()
 	var t = create_tween()
 	t.tween_property($"../../MinigameLayer/Button", "modulate:a", 0.0, 1.0)
 	await get_tree().create_timer(1).timeout

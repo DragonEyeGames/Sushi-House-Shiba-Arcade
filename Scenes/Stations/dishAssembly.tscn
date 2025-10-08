@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://l0gbg768hux8"]
+
+[ext_resource type="Shader" uid="uid://caqd0bamidwsf" path="res://Shaders/outline.gdshader" id="1_wiq5x"]
+[ext_resource type="Texture2D" uid="uid://cgerech7dtr41" path="res://Assets/Stations/PlateHolder.png" id="2_l0brx"]
+[ext_resource type="Script" uid="uid://br7grxqvuyksb" path="res://Scenes/dishAssembly.gd" id="3_5tq1r"]
+[ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="4_10glg"]
+[ext_resource type="PackedScene" uid="uid://bv5vffjno1sjl" path="res://Scenes/platingItems.tscn" id="5_d24yp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14mkc"]
+shader = ExtResource("1_wiq5x")
+shader_parameter/outline_color = Vector4(1, 1, 1, 1)
+shader_parameter/outline_size = 0.0
+shader_parameter/threshold = 0.92
+shader_parameter/samples = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adgm5"]
+size = Vector2(268.75, 25.3125)
+
+[node name="DishAssembly" type="Sprite2D"]
+material = SubResource("ShaderMaterial_14mkc")
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("2_l0brx")
+script = ExtResource("3_5tq1r")
+item = "plate"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(6.25, 81.4063)
+shape = SubResource("RectangleShape2D_adgm5")
+
+[node name="Plate" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-6.25, -3.125)
+texture = ExtResource("4_10glg")
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Items" parent="Items" instance=ExtResource("5_d24yp")]
+position = Vector2(-184.375, -59.375)
+
+[node name="Items2" parent="Items" instance=ExtResource("5_d24yp")]
+position = Vector2(-181.25, 46.875)
+
+[node name="Items3" parent="Items" instance=ExtResource("5_d24yp")]
+position = Vector2(171.875, -59.375)
+
+[node name="Items4" parent="Items" instance=ExtResource("5_d24yp")]
+position = Vector2(184.375, 43.75)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

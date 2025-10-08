@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=169 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -112,6 +112,7 @@
 [ext_resource type="Texture2D" uid="uid://0r4b7gt3b1xf" path="res://Assets/Shortened Counter.png" id="113_wt5iu"]
 [ext_resource type="PackedScene" uid="uid://dtsko532j05kr" path="res://Scenes/Stations/sink.tscn" id="118_b05pg"]
 [ext_resource type="PackedScene" uid="uid://caauopofsn0cd" path="res://Scenes/Stations/plateHolder.tscn" id="119_bdqux"]
+[ext_resource type="PackedScene" uid="uid://l0gbg768hux8" path="res://Scenes/Stations/dishAssembly.tscn" id="120_myryv"]
 [ext_resource type="FontFile" uid="uid://cpbq6a4wr7rsw" path="res://Fonts/Warung Kopi Light.otf" id="121_bdqux"]
 [ext_resource type="Texture2D" uid="uid://bb50hgvilojf" path="res://Assets/Cucumber/Cucumber.png" id="123_adgm5"]
 [ext_resource type="PackedScene" uid="uid://btlpnfho3cgw8" path="res://Scenes/Stations/cuttingBoard.tscn" id="124_102yd"]
@@ -1419,11 +1420,11 @@ position = Vector2(2, 148)
 controller = NodePath("../..")
 
 [node name="Cutting Board" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("124_102yd")]
-position = Vector2(878, 424)
+position = Vector2(864, 423)
 controller = NodePath("../..")
 
 [node name="Assembly Board" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("125_hfu3o")]
-position = Vector2(771, 427)
+position = Vector2(739, 426)
 controller = NodePath("../..")
 
 [node name="PlateHolder" type="Node2D" parent="Stations"]
@@ -1490,7 +1491,11 @@ controller = NodePath("../..")
 
 [node name="Desk" parent="Stations" instance=ExtResource("119_bdqux")]
 z_index = 0
-position = Vector2(1065, 427)
+position = Vector2(1085, 423)
+
+[node name="DishAssembly" parent="Stations" node_paths=PackedStringArray("controller") instance=ExtResource("120_myryv")]
+position = Vector2(979, 393)
+controller = NodePath("../..")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1087, 116)
@@ -1813,10 +1818,10 @@ shape = SubResource("RectangleShape2D_ojylq")
 [node name="Recolor Field" type="ColorRect" parent="."]
 z_index = 26
 material = SubResource("ShaderMaterial_r1tr8")
-offset_left = -487.0
-offset_top = -374.0
-offset_right = 1371.0
-offset_bottom = 753.0
+offset_left = -498.0
+offset_top = -369.0
+offset_right = 1360.0
+offset_bottom = 758.0
 mouse_filter = 2
 
 [node name="ColorRect" parent="." instance=ExtResource("134_stool")]
