@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=164 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -87,19 +87,10 @@
 [ext_resource type="Script" uid="uid://dvbj345dy3by1" path="res://Scripts/camera.gd" id="87_17dee"]
 [ext_resource type="Texture2D" uid="uid://cbesdag5lq45t" path="res://Assets/Plate.png" id="89_qxkn4"]
 [ext_resource type="PackedScene" uid="uid://c1ydtvc7mbdrf" path="res://Scenes/floor.tscn" id="89_rtmaq"]
-[ext_resource type="Texture2D" uid="uid://cy4ijxsbm24ao" path="res://Assets/CookedRiceAssembly.png" id="91_adgm5"]
+[ext_resource type="PackedScene" uid="uid://theowea8v1h" path="res://Scenes/orderItemScene.tscn" id="90_b05pg"]
 [ext_resource type="Script" uid="uid://dac8gpkcvujsu" path="res://Scripts/orders.gd" id="91_rbkdr"]
 [ext_resource type="Shader" uid="uid://cdwoss15yri8m" path="res://Shaders/tv.gdshader" id="92_6wqo8"]
-[ext_resource type="Texture2D" uid="uid://ci6s8w4fd7grx" path="res://Assets/CookedRiceItem.png" id="92_bpr0e"]
-[ext_resource type="Texture2D" uid="uid://50vlutc4kxb" path="res://Assets/Cucumber+Rice.png" id="92_qxkn4"]
-[ext_resource type="Texture2D" uid="uid://dp8lfrkwnyc38" path="res://Assets/Sliced Fish.png" id="93_14mkc"]
-[ext_resource type="Texture2D" uid="uid://u4hiwjd5jwg8" path="res://Assets/Fish+Rice.png" id="93_130ps"]
-[ext_resource type="Texture2D" uid="uid://cg6wd6etney0i" path="res://Assets/Sushi.png" id="93_qays4"]
-[ext_resource type="Texture2D" uid="uid://cb7rrbaf4c4h4" path="res://Assets/Onigiri.png" id="94_brnef"]
-[ext_resource type="Texture2D" uid="uid://bpff5mvja6m4b" path="res://Assets/Cucumber/SlicedCucumber.png" id="94_l78ku"]
-[ext_resource type="Texture2D" uid="uid://cxa503h801ic0" path="res://Assets/Cucumber+Rice+Fish.png" id="94_odn5n"]
 [ext_resource type="Texture2D" uid="uid://bew43yfuvkv2o" path="res://Assets/Desks/SushiRollerStand.png" id="95_37usx"]
-[ext_resource type="Texture2D" uid="uid://5pnyyh17qylb" path="res://Assets/Cucumber+Fish.png" id="96_b12iu"]
 [ext_resource type="Texture2D" uid="uid://dhxsbkvy7xkrl" path="res://Assets/SushiConveyer.png" id="96_qywy7"]
 [ext_resource type="PackedScene" uid="uid://c5nytlldsnih8" path="res://Scenes/plate.tscn" id="97_ci23i"]
 [ext_resource type="Script" uid="uid://d3a6krp7r1x2g" path="res://Scripts/plate_roller.gd" id="98_4q4m1"]
@@ -127,8 +118,6 @@
 [ext_resource type="Script" uid="uid://bceijafr0j870" path="res://Scripts/trash.gd" id="131_ore4n"]
 [ext_resource type="PackedScene" uid="uid://cvdsygg7pgf1l" path="res://Scenes/pause.tscn" id="134_ci23i"]
 [ext_resource type="PackedScene" uid="uid://cotbohatei56l" path="res://Scenes/transitionOverlay.tscn" id="134_stool"]
-[ext_resource type="Texture2D" uid="uid://chtft37bmy68c" path="res://Assets/Cucumber/Cucumber Sushi.png" id="136_b12iu"]
-[ext_resource type="Texture2D" uid="uid://cy0rtv6wioy0f" path="res://Assets/Cucumber/Cucumber Onigiri.png" id="137_gf7g1"]
 [ext_resource type="Script" uid="uid://csroy366tlm7r" path="res://Scripts/main_tutorial.gd" id="139_hfu3o"]
 [ext_resource type="Texture2D" uid="uid://2etdu3osoekr" path="res://Assets/arrow.png" id="140_adgm5"]
 [ext_resource type="PackedScene" uid="uid://drvcef8gttejq" path="res://Scenes/Stations/stove.tscn" id="144_vlivj"]
@@ -450,13 +439,6 @@ bg_color = Color(0.889783, 0, 0.0885715, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lmeg"]
 bg_color = Color(0, 0.718576, 0.359163, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gf7g1"]
-shader = ExtResource("101_eyr7i")
-shader_parameter/outline_color = Vector4(0, 0, 0, 1)
-shader_parameter/outline_size = 2.4
-shader_parameter/threshold = 0.1
-shader_parameter/samples = 12
 
 [sub_resource type="Curve2D" id="Curve2D_vlivj"]
 _data = {
@@ -821,79 +803,7 @@ position = Vector2(246.659, -299.198)
 scale = Vector2(0.285, 0.285)
 texture = ExtResource("89_qxkn4")
 
-[node name="orderItems" type="Node2D" parent="TV/Order 1"]
-material = SubResource("ShaderMaterial_gf7g1")
-
-[node name="sushi meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-position = Vector2(252.154, -305.791)
-scale = Vector2(0.175, 0.177)
-texture = ExtResource("93_qays4")
-
-[node name="cooked rice meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-use_parent_material = true
-position = Vector2(249.956, -291.505)
-scale = Vector2(0.3, 0.304)
-texture = ExtResource("91_adgm5")
-
-[node name="cooked rice with sliced cucumber meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-use_parent_material = true
-position = Vector2(248.857, -295.901)
-scale = Vector2(0.305, 0.309)
-texture = ExtResource("92_qxkn4")
-
-[node name="cooked rice with sliced fish meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-use_parent_material = true
-position = Vector2(247.758, -295.901)
-scale = Vector2(0.315, 0.319)
-texture = ExtResource("93_130ps")
-
-[node name="cooked rice with sliced cucumber with sliced fish meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-use_parent_material = true
-position = Vector2(247.758, -295.901)
-scale = Vector2(0.3, 0.304)
-texture = ExtResource("94_odn5n")
-
-[node name="sliced fish meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-position = Vector2(246.659, -297)
-rotation = -0.994838
-scale = Vector2(0.145, 0.147)
-texture = ExtResource("93_14mkc")
-
-[node name="sliced cucumber with sliced fish meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-position = Vector2(248.857, -292.604)
-scale = Vector2(0.24, 0.244)
-texture = ExtResource("96_b12iu")
-
-[node name="sliced cucumber meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-position = Vector2(251.055, -299.198)
-rotation = -0.951204
-scale = Vector2(0.135, 0.137)
-texture = ExtResource("94_l78ku")
-
-[node name="sushi with cucumber meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-position = Vector2(253.253, -305.791)
-scale = Vector2(0.18, 0.183)
-texture = ExtResource("136_b12iu")
-
-[node name="onigiri with cucumber meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-visible = false
-position = Vector2(253.253, -305.791)
-scale = Vector2(0.175, 0.178)
-texture = ExtResource("137_gf7g1")
-
-[node name="onigiri meal" type="Sprite2D" parent="TV/Order 1/orderItems"]
-position = Vector2(252.154, -303.593)
-scale = Vector2(0.17, 0.173)
-texture = ExtResource("94_brnef")
+[node name="orderItems" parent="TV/Order 1" instance=ExtResource("90_b05pg")]
 
 [node name="Order 2" type="Node2D" parent="TV"]
 visible = false
@@ -906,16 +816,6 @@ offset_top = -320.0
 offset_right = 386.0
 offset_bottom = -249.0
 color = Color(0.712129, 0.712129, 0.712129, 1)
-
-[node name="Sushi" type="Sprite2D" parent="TV/Order 2"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("93_qays4")
-
-[node name="Onigiri" type="Sprite2D" parent="TV/Order 2"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("94_brnef")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 2"]
 offset_left = 287.0
@@ -946,32 +846,12 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
 
-[node name="Cucumber Sushi" type="Sprite2D" parent="TV/Order 2"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("136_b12iu")
+[node name="Plate" type="Sprite2D" parent="TV/Order 2"]
+position = Vector2(246.659, -299.198)
+scale = Vector2(0.285, 0.285)
+texture = ExtResource("89_qxkn4")
 
-[node name="Cucumber Onigiri" type="Sprite2D" parent="TV/Order 2"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("137_gf7g1")
-
-[node name="Cooked Rice" type="Sprite2D" parent="TV/Order 2"]
-position = Vector2(253.253, -268.429)
-scale = Vector2(0.49, 0.497)
-texture = ExtResource("92_bpr0e")
-
-[node name="Sliced Fish" type="Sprite2D" parent="TV/Order 2"]
-position = Vector2(246.659, -297)
-rotation = -0.994838
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("93_14mkc")
-
-[node name="Sliced Cucumber" type="Sprite2D" parent="TV/Order 2"]
-position = Vector2(252.154, -301.396)
-rotation = -0.951204
-scale = Vector2(0.215, 0.218)
-texture = ExtResource("94_l78ku")
+[node name="orderItems" parent="TV/Order 2" instance=ExtResource("90_b05pg")]
 
 [node name="Order 3" type="Node2D" parent="TV"]
 visible = false
@@ -985,16 +865,6 @@ offset_right = 386.0
 offset_bottom = -249.0
 color = Color(0.712129, 0.712129, 0.712129, 1)
 metadata/_edit_use_anchors_ = true
-
-[node name="Sushi" type="Sprite2D" parent="TV/Order 3"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("93_qays4")
-
-[node name="Onigiri" type="Sprite2D" parent="TV/Order 3"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("94_brnef")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 3"]
 offset_left = 287.0
@@ -1028,32 +898,12 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
 metadata/_edit_use_anchors_ = true
 
-[node name="Cucumber Sushi" type="Sprite2D" parent="TV/Order 3"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("136_b12iu")
+[node name="Plate" type="Sprite2D" parent="TV/Order 3"]
+position = Vector2(246.659, -299.198)
+scale = Vector2(0.285, 0.285)
+texture = ExtResource("89_qxkn4")
 
-[node name="Cucumber Onigiri" type="Sprite2D" parent="TV/Order 3"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("137_gf7g1")
-
-[node name="Cooked Rice" type="Sprite2D" parent="TV/Order 3"]
-position = Vector2(253.253, -268.429)
-scale = Vector2(0.49, 0.497)
-texture = ExtResource("92_bpr0e")
-
-[node name="Sliced Fish" type="Sprite2D" parent="TV/Order 3"]
-position = Vector2(246.659, -297)
-rotation = -0.994838
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("93_14mkc")
-
-[node name="Sliced Cucumber" type="Sprite2D" parent="TV/Order 3"]
-position = Vector2(252.154, -301.396)
-rotation = -0.951204
-scale = Vector2(0.215, 0.218)
-texture = ExtResource("94_l78ku")
+[node name="orderItems" parent="TV/Order 3" instance=ExtResource("90_b05pg")]
 
 [node name="Order 4" type="Node2D" parent="TV"]
 visible = false
@@ -1066,17 +916,6 @@ offset_top = -320.0
 offset_right = 386.0
 offset_bottom = -249.0
 color = Color(0.712129, 0.712129, 0.712129, 1)
-
-[node name="Sushi" type="Sprite2D" parent="TV/Order 4"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("93_qays4")
-
-[node name="Onigiri" type="Sprite2D" parent="TV/Order 4"]
-visible = false
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("94_brnef")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TV/Order 4"]
 offset_left = 287.0
@@ -1107,32 +946,12 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 16
 text = "Time Left:"
 
-[node name="Cucumber Sushi" type="Sprite2D" parent="TV/Order 4"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("136_b12iu")
+[node name="Plate" type="Sprite2D" parent="TV/Order 4"]
+position = Vector2(246.659, -299.198)
+scale = Vector2(0.285, 0.285)
+texture = ExtResource("89_qxkn4")
 
-[node name="Cucumber Onigiri" type="Sprite2D" parent="TV/Order 4"]
-position = Vector2(255, -310)
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("137_gf7g1")
-
-[node name="Cooked Rice" type="Sprite2D" parent="TV/Order 4"]
-position = Vector2(253.253, -268.429)
-scale = Vector2(0.49, 0.497)
-texture = ExtResource("92_bpr0e")
-
-[node name="Sliced Fish" type="Sprite2D" parent="TV/Order 4"]
-position = Vector2(246.659, -297)
-rotation = -0.994838
-scale = Vector2(0.274687, 0.278594)
-texture = ExtResource("93_14mkc")
-
-[node name="Sliced Cucumber" type="Sprite2D" parent="TV/Order 4"]
-position = Vector2(252.154, -301.396)
-rotation = -0.951204
-scale = Vector2(0.215, 0.218)
-texture = ExtResource("94_l78ku")
+[node name="orderItems" parent="TV/Order 4" instance=ExtResource("90_b05pg")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TV"]
 polygon = PackedVector2Array(665.934, -145.055, 763.736, -264.835, 1018.68, -265.934, 1092.31, -139.56, 1153.85, -170.33, 1096.7, -262.637, 895.604, -305.495, 719.78, -305.495, 654.945, -215.385)
@@ -1648,7 +1467,7 @@ texture = ExtResource("140_adgm5")
 [node name="Sprite2D5" type="Sprite2D" parent="Tutorial"]
 visible = false
 z_index = 100
-position = Vector2(972, 498)
+position = Vector2(864, 493)
 rotation = -1.5708
 scale = Vector2(0.145, 0.145)
 texture = ExtResource("140_adgm5")
@@ -1656,7 +1475,7 @@ texture = ExtResource("140_adgm5")
 [node name="Sprite2D6" type="Sprite2D" parent="Tutorial"]
 visible = false
 z_index = 100
-position = Vector2(764, 474)
+position = Vector2(735, 474)
 rotation = -1.5708
 scale = Vector2(0.145, 0.145)
 texture = ExtResource("140_adgm5")
@@ -1664,23 +1483,31 @@ texture = ExtResource("140_adgm5")
 [node name="Sprite2D7" type="Sprite2D" parent="Tutorial"]
 visible = false
 z_index = 100
-position = Vector2(-6, -210)
-rotation = 1.5708
+position = Vector2(1089, 497)
+rotation = -1.5708
 scale = Vector2(0.145, 0.145)
 texture = ExtResource("140_adgm5")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Tutorial"]
 visible = false
 z_index = 100
-position = Vector2(-175, -211)
-rotation = 1.5708
+position = Vector2(981, 497)
+rotation = -1.5708
 scale = Vector2(0.145, 0.145)
 texture = ExtResource("140_adgm5")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Tutorial"]
 visible = false
 z_index = 100
-position = Vector2(1079, 224)
+position = Vector2(-182, -200)
+rotation = 1.5708
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("140_adgm5")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Tutorial"]
+visible = false
+z_index = 100
+position = Vector2(1090, 223)
 rotation = -1.5708
 scale = Vector2(0.145, 0.145)
 texture = ExtResource("140_adgm5")
@@ -1688,7 +1515,7 @@ texture = ExtResource("140_adgm5")
 [node name="Sprite2D10" type="Sprite2D" parent="Tutorial"]
 visible = false
 z_index = 100
-position = Vector2(-18.0001, 219)
+position = Vector2(936, 225)
 rotation = -1.5708
 scale = Vector2(0.145, 0.145)
 texture = ExtResource("140_adgm5")

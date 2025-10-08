@@ -528,7 +528,7 @@ position = Vector2(23.6111, -26.3889)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("12_vg1oe")
 
-[node name="cucumber" type="Sprite2D" parent="meal/mealItems"]
+[node name="sliced cucumber meal" type="Sprite2D" parent="meal/mealItems"]
 z_index = 1
 position = Vector2(13.8889, -9.53674e-07)
 rotation = -1.02102

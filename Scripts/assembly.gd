@@ -3,7 +3,11 @@ extends Draggable
 var controllerButtonHovered=false
 
 var assembly=[]
+var itemLocations = []
 
+func _ready() -> void:
+	for child in $Items.get_children():
+		itemLocations.append(child.position)
 func _process(_delta: float) -> void:
 	handleVisuals()
 	if(dragging):
@@ -180,6 +184,8 @@ func _on_button_pressed() -> void:
 	dragging=false
 	draggedItem=null
 	$ControllerSelection.position=Vector2(-60, -20)
+	for location in len($Items.get_children()):
+		$Items.get_child(location).position=itemLocations[location]
 
 
 func _on_texture_button_pressed() -> void:

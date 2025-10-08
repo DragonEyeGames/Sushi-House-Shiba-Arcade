@@ -9,7 +9,7 @@ var seaweedSelected
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	tutorial=GameManager.tutorial
+	#tutorial=GameManager.tutorial
 	if(tutorial):
 		$"../Player".canMove=false
 		$".".visible=true
@@ -59,16 +59,17 @@ func _process(_delta: float) -> void:
 		if("plate" in $"..".playerInventory):
 			_on_next_pressed()
 	elif(waitingFor=="placed"):
-		if($"../Plate Roller".currentPlate!=null):
+		if($"../Stations/DishAssembly/Plate".visible):
 			_on_next_pressed()
 	elif(waitingFor=="shipped"):
-		if($"../Plate Roller".currentPlate.get_child(0).rolling):
+		if(not "sushi meal" in $"..".playerInventory):
 			_on_next_pressed()
 	elif(waitingFor=="dirtyPlate"):
 		if("dirty plate" in $"..".playerInventory):
 			_on_next_pressed()
-		else:
-			print($"..".playerInventory)
+	elif(waitingFor=="sushiMeal"):
+		if("sushi meal" in $"..".playerInventory):
+			_on_next_pressed()
 	elif(waitingFor=="placedDirty"):
 		if(not "dirty plate" in $"..".playerInventory):
 			_on_next_pressed()
@@ -171,39 +172,44 @@ func _on_next_pressed() -> void:
 		$"../Plate Roller/Rollers/Area2D/CollisionShape2D".disabled=false
 		$Sprite2D7.visible=false
 		$Sprite2D8.visible=true
-		$CanvasLayer/ColorRect/RichTextLabel.text="Now with the plate selected click on the plate roller so you have a spot to put your sushi."
+		$CanvasLayer/ColorRect/RichTextLabel.text="Now with the plate selected click on the dish assembly so we can prepare our dish for the customers!"
 		waitingFor="placed"
 	elif(page==12):
 		$CanvasLayer.visible=true
 		$Sprite2D8.visible=false
-		$CanvasLayer/ColorRect/RichTextLabel.text="Now that the plate is placed select your sushi and click again to place it on the plate and ship it off!"
-		waitingFor="shipped"
-		
+		$CanvasLayer/ColorRect/RichTextLabel.text="Now that the plate is placed drag the sushi onto the plate and then pick it up!"
+		waitingFor="sushiMeal"
 	elif(page==13):
+		$CanvasLayer.visible=true
+		$Sprite2D9.visible=true
+		$CanvasLayer/ColorRect/RichTextLabel.text="Now it is time to give your order to the customer! Walk over here and click with your meal selected to ship it off!"
+		waitingFor="shipped"
+	elif(page==14):
 		$CanvasLayer.visible=true
 		$"../Plate Roller/Rollers/Area2D/CollisionShape2D".disabled=true
 		$"../Area2D/CollisionShape2D".disabled=false
-		$Sprite2D9.visible=true
+		$Sprite2D9.visible=false
+		$Sprite2D11.visible=true
 		$CanvasLayer/ColorRect/RichTextLabel.text="Amazing! You just shipped your first order! When that meal comes back it will be dirty so lets learn how to clean dishes next! Walk over here to pick up the diry plate."
 		waitingFor="dirtyPlate"
 		$"../TV".speed=1500
 		
-	elif(page==14):
+	elif(page==15):
 		$CanvasLayer.visible=true
 		$"../Area2D/CollisionShape2D".disabled=true
 		$"../Stations/Sink/Area2D/CollisionShape2D".disabled=false
-		$Sprite2D9.visible=false
+		$Sprite2D11.visible=false
 		$Sprite2D10.visible=true
-		$CanvasLayer/ColorRect/RichTextLabel.text="Now that we have a dirty plate its time to clean it! Walk over here and click with the dirty plate selected to starts cleaning!"
+		$CanvasLayer/ColorRect/RichTextLabel.text="Now that we have a dirty plate its time to clean it! Walk over here and click with the dirty plate selected to start cleaning!"
 		waitingFor="placedDirty"
 		$"../TV".speed=200
 		
-	elif(page==15):
+	elif(page==16):
 		$CanvasLayer.visible=true
 		$Sprite2D10.visible=false
 		$CanvasLayer/ColorRect/RichTextLabel.text="Now its time to clean the plate! Just click and wipe the sponge over the plate to remove any grime! When done it will sparkle because its very clean!"
 		waitingFor="plate"
-	elif(page==16):
+	elif(page==17):
 		$CanvasLayer.visible=true
 		$CanvasLayer/ColorRect/RichTextLabel.text="You can also order in items from the computer, but thats pretty self explanatory once you open it. The tutorial is now finished! Have fun playing!"
 		waitingFor=""
@@ -230,6 +236,7 @@ func _on_next_pressed() -> void:
 		$"../Stations/Rice Reservoir/Area2D/CollisionShape2D".disabled=false
 		$"../Plate Roller/Rollers/Area2D/CollisionShape2D".disabled=false
 		$"../Area2D/CollisionShape2D".disabled=false
+		$"../TV".orderSpeed=1
 
 
 

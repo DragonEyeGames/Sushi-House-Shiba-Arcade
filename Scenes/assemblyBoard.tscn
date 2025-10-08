@@ -186,7 +186,7 @@ z_index = 2
 [node name="Items" parent="Items" instance=ExtResource("11_ask4c")]
 visible = false
 material = SubResource("ShaderMaterial_bdqux")
-position = Vector2(-122.936, -99.0826)
+position = Vector2(-104.587, -93.578)
 
 [node name="Items2" parent="Items" instance=ExtResource("11_ask4c")]
 visible = false
@@ -198,7 +198,7 @@ scale = Vector2(0.26, -0.26)
 [node name="Items3" parent="Items" instance=ExtResource("11_ask4c")]
 visible = false
 material = SubResource("ShaderMaterial_stool")
-position = Vector2(-126.605, -38.5321)
+position = Vector2(-111.927, -40.367)
 
 [node name="Items4" parent="Items" instance=ExtResource("11_ask4c")]
 visible = false

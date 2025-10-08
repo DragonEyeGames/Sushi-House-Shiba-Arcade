@@ -1,10 +1,12 @@
 extends Draggable
 
 var itemList=[]
+var itemLocations = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	item="plate"
-
+	for location in $Items.get_children():
+		itemLocations.append(location.position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -93,4 +95,12 @@ func _on_assemble() -> void:
 			if(sprite.name!="Area2D"):
 				sprite.visible=false
 	zoomOut()
+	$"../../Player/PickingUp".play()
+	onPlate = onPlate.map(func(x): return str(x))
+	for ingredient in onPlate:
+		removeItem(ingredient)
+	state=""
+	onPlate.clear()
+	for location in len($Items.get_children()):
+		$Items.get_child(location).position = itemLocations[location]
 	$Plate.visible=false

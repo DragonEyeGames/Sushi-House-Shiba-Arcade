@@ -7,6 +7,7 @@ var items = ["sushi meal", "onigiri meal", "sushi with cucumber meal", "onigiri 
 var plateStack=0
 var speed=200
 var orderSpeed=1
+var fancyName = ["Sushi", "Onigiri", "Cucumber Sushi", "Cucumber Onigiri", "Sliced Fish", "Cooked Rice", "Sliced Cucumber", "Rice with Cucumber", "Rice with Fish", "Rice w/ Fish + Cucumber", "Sliced Cucumber and Sliced Fish"]
 
 func _ready() -> void:
 	randomize()
@@ -23,7 +24,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	orderSpeed+=delta/50
+	if(not $"../Tutorial".tutorial):
+		orderSpeed+=delta/75
 	for roller in $"../Sushi Rollers/Control/Path2D".get_children():
 		roller.progress+=speed*delta
 		roller.z_index = int(roller.progress_ratio*100)
@@ -50,7 +52,7 @@ func _process(delta: float) -> void:
 		var remaining = orderTimeRemaining[i]
 		var order_ui = get_node("Order %d" % (i + 1))
 		order_ui.visible = true
-		order_ui.get_node("RichTextLabel").text = "1x " + str(order)
+		order_ui.get_node("RichTextLabel").text = fancyName[items.find(str(order))]
 		
 		for visibleDisplayItem in order_ui.get_child(-1).get_children():
 			visibleDisplayItem.visible=false
@@ -60,7 +62,8 @@ func _process(delta: float) -> void:
 		# Update progress
 		var progress = order_ui.get_node("ProgressBar")
 		progress.value = remaining
-		progress.value -= delta*orderSpeed
+		if(not $"../Tutorial".tutorial):
+			progress.value -= delta*orderSpeed
 		orderTimeRemaining[i] = progress.value
 
 		# Remove expired orders
@@ -103,5 +106,5 @@ func add_order():
 		orderTimeRemaining.append(100)
 		
 func add_tutorial_order():
-	orders.append("sushi")
+	orders.append("sushi meal")
 	orderTimeRemaining.append(100)
