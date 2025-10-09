@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://dyu40iyjut0ht"]
+[gd_scene load_steps=173 format=3 uid="uid://dyu40iyjut0ht"]
 
 [ext_resource type="Script" uid="uid://bnfbc7u202bvo" path="res://Scripts/main.gd" id="1_b05pg"]
 [ext_resource type="Script" uid="uid://drpd5ypjrw67y" path="res://Scripts/player.gd" id="2_bdqux"]
@@ -116,7 +116,10 @@
 [ext_resource type="PackedScene" uid="uid://d1po31elu8unb" path="res://Scenes/assemblyBoard.tscn" id="125_hfu3o"]
 [ext_resource type="Texture2D" uid="uid://dqcu3dgl835jj" path="res://Assets/Trash.png" id="130_gqipy"]
 [ext_resource type="Script" uid="uid://bceijafr0j870" path="res://Scripts/trash.gd" id="131_ore4n"]
+[ext_resource type="Texture2D" uid="uid://cvn72j1uqfgmu" path="res://Assets/clock/Clock.png" id="132_stool"]
+[ext_resource type="Texture2D" uid="uid://bdsjf8j06qhvq" path="res://Assets/clock/Hour.png" id="133_ci23i"]
 [ext_resource type="PackedScene" uid="uid://cvdsygg7pgf1l" path="res://Scenes/pause.tscn" id="134_ci23i"]
+[ext_resource type="Texture2D" uid="uid://blib8ta1jlvfn" path="res://Assets/clock/Minutes.png" id="134_myryv"]
 [ext_resource type="PackedScene" uid="uid://cotbohatei56l" path="res://Scenes/transitionOverlay.tscn" id="134_stool"]
 [ext_resource type="Script" uid="uid://csroy366tlm7r" path="res://Scripts/main_tutorial.gd" id="139_hfu3o"]
 [ext_resource type="Texture2D" uid="uid://2etdu3osoekr" path="res://Assets/arrow.png" id="140_adgm5"]
@@ -578,6 +581,81 @@ shader = ExtResource("150_fle1e")
 shader_parameter/saturation = 1.12
 shader_parameter/contrast = 0.899
 shader_parameter/brightness = 1.0
+
+[sub_resource type="Animation" id="Animation_bpr0e"]
+resource_name = "spin"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Minutes:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_14mkc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Minutes:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l78ku"]
+_data = {
+&"RESET": SubResource("Animation_14mkc"),
+&"spin": SubResource("Animation_bpr0e")
+}
+
+[sub_resource type="Animation" id="Animation_hfu3o"]
+resource_name = "spin"
+length = 576.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hour:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 576),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.5708, 4.71239]
+}
+
+[sub_resource type="Animation" id="Animation_adgm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hour:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxkn4"]
+_data = {
+&"RESET": SubResource("Animation_adgm5"),
+&"spin": SubResource("Animation_hfu3o")
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_b05pg")
@@ -1708,6 +1786,35 @@ mouse_filter = 2
 [node name="ColorRect" parent="." instance=ExtResource("134_stool")]
 
 [node name="Pause" parent="." instance=ExtResource("134_ci23i")]
+
+[node name="Clock" type="Sprite2D" parent="."]
+position = Vector2(-11, -255)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("132_stool")
+
+[node name="Hour" type="Sprite2D" parent="Clock"]
+position = Vector2(-2.7027, -1.62125e-05)
+rotation = -1.5708
+texture = ExtResource("133_ci23i")
+offset = Vector2(2.26, 0)
+
+[node name="Minutes" type="Sprite2D" parent="Clock"]
+position = Vector2(-2.7027, 2.70269)
+scale = Vector2(1, 0.91)
+texture = ExtResource("134_myryv")
+offset = Vector2(2.355, 2.375)
+
+[node name="MinuteSpin" type="AnimationPlayer" parent="Clock"]
+libraries = {
+&"": SubResource("AnimationLibrary_l78ku")
+}
+autoplay = "spin"
+
+[node name="HourSpin" type="AnimationPlayer" parent="Clock"]
+libraries = {
+&"": SubResource("AnimationLibrary_qxkn4")
+}
+autoplay = "spin"
 
 [connection signal="pressed" from="MinigameLayer/Button" to="Stations/Cutting Board" method="_on_button_pressed"]
 [connection signal="pressed" from="CleaningLayer/Button" to="Stations/Sink" method="_on_button_pressed"]

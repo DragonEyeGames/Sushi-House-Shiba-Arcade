@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if(not $"../Tutorial".tutorial):
-		orderSpeed+=delta/100
+		orderSpeed+=delta/200
 	for roller in $"../Sushi Rollers/Control/Path2D".get_children():
 		roller.progress+=speed*delta
 		roller.z_index = int(roller.progress_ratio*100)
